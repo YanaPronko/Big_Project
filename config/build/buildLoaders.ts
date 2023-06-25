@@ -1,4 +1,4 @@
-import { BuildOptions } from "config/types/config";
+import { BuildOptions } from "../types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { RuleSetRule } from "webpack";
 
