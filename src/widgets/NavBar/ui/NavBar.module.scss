@@ -1,0 +1,14 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 2rem;
+  background: var(--inverted-bg-color);
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}

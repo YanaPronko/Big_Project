@@ -3,6 +3,10 @@
 @import './themes/normal.scss';
 @import './themes/dark.scss';
 
+html {
+  font-size: 10px;
+}
+
 .app {
   font: var(--font-m);
   background-color: var(--bg-color);

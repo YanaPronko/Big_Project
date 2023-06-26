@@ -3,6 +3,7 @@ import { classNames } from "shared/lib/classNames";
 import { useTheme } from "app/providers/Theme";
 import { AppRouter } from "app/providers/router";
 import './styles/index.scss';
+import { NavBar } from "widgets/NavBar";
 
 
 export const App = () => {
@@ -10,8 +11,7 @@ export const App = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Link to="/">Main</Link>
-      <Link to="/about">About us</Link>
+      <NavBar/>
       <button onClick={toggleTheme}>
         Toggle
       </button>
