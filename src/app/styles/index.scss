@@ -13,3 +13,12 @@ html {
   color: var(--primary-color);
   min-height: 100vh;
 }
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  padding: 2rem;
+  flex-grow: 1;
+}

@@ -1,0 +1,21 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--inverted-bg-color);
+}
+
+.collappsed {
+  width: var(--collapsed-sidebar-width);
+}
+
+.switchers {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
