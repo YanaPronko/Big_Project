@@ -1,3 +1,11 @@
 {
-  "MainPage": "Главная страница"
+  "1-message": "\"+1 сообщение\"",
+  "MainPage": "Главная страница",
+  "my-name-is": "Меня зовут",
+  "wolf": "",
+  "yana": "Yana",
+  "you-have_one": "У вас есть {{count}} сообщение",
+  "you-have_many": "У ваc {{count}} сообщений",
+  "you-have_few": "У ваc {{count}} сообщения",
+  "you-have_zero": "У вас нет сообщений"
 }

@@ -19,7 +19,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
 
   return (
     <Button
-      className={classNames(cls.languageSwitcher, {}, [className])}
+      className={classNames(cls.LanguageSwitcher, {}, [cls.btnColor, className])}
       theme="clear"
       onClick={toggleLang}
       {...otherProps}

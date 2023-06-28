@@ -1,3 +1,10 @@
 {
-  "MainPage": "MainPage"
+  "1-message": "\"+1 message\"",
+  "MainPage": "MainPage",
+  "my-name-is": "My name is",
+  "wolf": "",
+  "yana": "Yana",
+  "you-have_one": "You have one message",
+  "you-have_other": "You have {{count}} messsages",
+  "you-have_zero": "You have'nt messages"
 }
