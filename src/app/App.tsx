@@ -1,12 +1,12 @@
-import "shared/config/i18n/i18n";
+import { Suspense } from "react";
 import { classNames } from "shared/lib/classNames";
 import { useTheme } from "app/providers/Theme";
-import { AppRouter } from "app/providers/router";
 import { NavBar } from "widgets/NavBar";
 import { SideBar } from "widgets/SideBar";
+import { AppRouter } from "app/providers/Router";
+import "shared/config/i18n/i18n";
 
 import "./styles/index.scss";
-import { Suspense } from "react";
 
 export const App = () => {
   const { theme } = useTheme();

@@ -19,6 +19,6 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
-    })
+    }),
   ];
 }
