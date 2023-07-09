@@ -1,13 +1,12 @@
-import { buildLoaders } from "./buildLoaders";
-import { buildPlugins } from "./buildPlugins";
-import { buildResolvers } from "./buildResolvers";
-import { Configuration } from "webpack";
-import { BuildOptions } from "../types/config";
-import { buildDevServer } from "./buildDevServer";
-
+import { Configuration } from 'webpack';
+import { buildLoaders } from './buildLoaders';
+import { buildPlugins } from './buildPlugins';
+import { buildResolvers } from './buildResolvers';
+import { BuildOptions } from '../types/config';
+import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfig(options: BuildOptions): Configuration {
-  const {mode, paths, isDev} = options
+  const { mode, paths, isDev } = options;
   return {
     mode,
     // Можно указывать несколько entry points, тогда нужно сделать объектом entry{},
@@ -21,7 +20,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
     output: {
       // contenthash - добавление hash к файлу, чтобы браузер отслеживал изменения файла
       // [name] - дефолтное имя подставляется
-      filename: "[name].[contenthash].js",
+      filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
     },
@@ -30,7 +29,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
       rules: buildLoaders(options),
     },
     resolve: buildResolvers(options),
-    devtool:  isDev ? "inline-source-map" : undefined,
+    devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 }

@@ -14,8 +14,8 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
-  }
+    i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
+  };
 
   return (
     <Button
@@ -27,4 +27,4 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
       {t('Language')}
     </Button>
   );
-}
+};

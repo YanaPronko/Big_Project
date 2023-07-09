@@ -8,16 +8,15 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "ru",
+    fallbackLng: 'ru',
     debug: __IS_DEV__,
     returnEmptyString: false,
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
   });
-
 
 export default i18n;

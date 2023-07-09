@@ -16,12 +16,12 @@ export const NavBar: FC<NavBarProps> = (props) => {
     <div className={classNames(cls.navBar, {}, [className])} {...otherProps}>
       <div className={cls.links}>
         <AppLink to="/" theme="inverted">
-          {t("Main")}
+          {t('Main')}
         </AppLink>
         <AppLink to="/about" theme="inverted">
-          {t("About us")}
+          {t('About us')}
         </AppLink>
       </div>
     </div>
   );
-}
+};

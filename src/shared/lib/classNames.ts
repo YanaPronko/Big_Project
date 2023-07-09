@@ -3,11 +3,11 @@ type Mods = Record<string, boolean | string>
 export function classNames(cls: string, mods?: Mods, additional?: string[]): string {
   return [
     cls,
-    ...additional.filter((cls)=> !!cls),
+    ...additional.filter((cls) => !!cls),
     ...Object.entries(mods)
-      .filter(([cls, value]) => !!value)
-      .map(([cls, value]) => cls)
-  ].join(" ");
+      .filter(([_, value]) => !!value)
+      .map(([cls, _]) => cls),
+  ].join(' ');
   // Вариант с Object.keys()
   // ...Object.keys(mods).filter(cls=> !!mods[cls])
 
