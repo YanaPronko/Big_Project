@@ -6,7 +6,7 @@ module.exports = {
     node: true,
   },
   root: true,
-  extends: ["plugin:react/recommended", "airbnb"],
+  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     // project:['./tsconfig.json'],
@@ -17,7 +17,11 @@ module.exports = {
     sourceType: "module",
   },
   // ignorePatterns: ["**/*"],
-  plugins: ["react", "@typescript-eslint"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next"
+  ],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -39,6 +43,11 @@ module.exports = {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
+    "react/jsx-props-no-spreading": "off",
+    "i18next/no-literal-string": [
+      "error",
+      { markupOnly: true, onlyAttribute: [""] },
+    ],
   },
   globals: {
     __IS_DEV__: true,

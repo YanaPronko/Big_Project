@@ -5,8 +5,8 @@
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
   padding: 0.5rem;
-  transition: all 0.3s ease-in-out;
   background-color: var(--inverted-bg-color);
+  transition: all 0.3s ease-in-out;
 }
 
 .collappsed {
@@ -15,11 +15,11 @@
 
 .switchers {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
 .color {
-  color:  var(--inverted-secondary-color);
+  color: var(--inverted-secondary-color);
 }
