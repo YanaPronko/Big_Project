@@ -61,11 +61,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     loader: 'ts-loader',
   };
 
-  return [
-    fileLoader,
-    SVGLoader,
-    babelLoader,
-    tsLoader,
-    cssLoader,
-  ];
+  return [fileLoader, SVGLoader, babelLoader, tsLoader, cssLoader];
 }

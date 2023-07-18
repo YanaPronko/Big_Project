@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-recess-order"
-  ],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "string-quotes": "single",
     "scss/at-import-partial-extension": "always",
