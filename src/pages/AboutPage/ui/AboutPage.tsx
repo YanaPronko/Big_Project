@@ -3,6 +3,6 @@ import { useTranslation } from 'react-i18next';
 export default function AboutPage() {
   const { t } = useTranslation('about');
   return (
-    <div>{t('about-page')}</div>
+    <h1>{t('about-page')}</h1>
   );
 }

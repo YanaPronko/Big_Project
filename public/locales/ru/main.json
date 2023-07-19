@@ -4,8 +4,10 @@
   "my-name-is": "Меня зовут",
   "wolf": "",
   "yana": "Yana",
-  "you-have_one": "У вас есть {{count}} сообщение",
-  "you-have_many": "У ваc {{count}} сообщений",
   "you-have_few": "У ваc {{count}} сообщения",
-  "you-have_zero": "У вас нет сообщений"
+  "you-have_many": "У ваc {{count}} сообщений",
+  "you-have_one": "У вас есть {{count}} сообщение",
+  "you-have_other": "",
+  "you-have_zero": "У вас нет сообщений",
+  "you-have": "У вас"
 }

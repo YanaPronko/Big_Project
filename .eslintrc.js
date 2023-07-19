@@ -17,11 +17,7 @@ module.exports = {
     sourceType: "module",
   },
   // ignorePatterns: ["**/*"],
-  plugins: [
-    "react",
-    "@typescript-eslint",
-    "i18next"
-  ],
+  plugins: ["react", "@typescript-eslint", "i18next"],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -48,6 +44,7 @@ module.exports = {
       "error",
       { markupOnly: true, onlyAttribute: [""] },
     ],
+    "max-len": ["error", { ignoreComments: true }],
   },
   globals: {
     __IS_DEV__: true,
