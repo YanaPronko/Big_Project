@@ -9,5 +9,6 @@
   "you-have_one": "У вас есть {{count}} сообщение",
   "you-have_other": "",
   "you-have_zero": "У вас нет сообщений",
-  "you-have": "У вас"
+  "you-have": "У вас",
+  "throw-error": "Выбросить ошибку"
 }

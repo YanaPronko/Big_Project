@@ -3,5 +3,6 @@
   "Language": "English",
   "Main": "Главная",
   "Toggle": "Переключить",
-  "page-not-found": "Страница не найдена"
+  "page-not-found": "Страница не найдена",
+  "reload-page": "Перезагрузить страницу"
 }

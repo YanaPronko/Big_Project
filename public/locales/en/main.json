@@ -9,5 +9,6 @@
   "you-have_one": "You have one message",
   "you-have_other": "You have {{count}} messsages",
   "you-have_zero": "You have'nt messages",
-  "you-have": "You have"
+  "you-have": "You have",
+  "throw-error": "Throw Error"
 }

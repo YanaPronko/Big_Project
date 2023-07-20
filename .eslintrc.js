@@ -45,6 +45,7 @@ module.exports = {
       { markupOnly: true, onlyAttribute: [""] },
     ],
     "max-len": ["error", { ignoreComments: true }],
+    "react/state-in-constructor": ["enable","never"]
   },
   globals: {
     __IS_DEV__: true,

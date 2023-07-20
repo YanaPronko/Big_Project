@@ -19,11 +19,11 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     use: ['@svgr/webpack', 'url-loader'],
   };
 
-  const fileLoader = {
+  const fileLoader: RuleSetRule = {
     test: /\.(png|jpe?g|gif|woff2|woff|ttf)$/i,
     use: [
       {
-        loader: 'file-loader',
+        loader: "file-loader",
       },
     ],
   };
