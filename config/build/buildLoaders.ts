@@ -1,6 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RuleSetRule } from 'webpack';
 import { BuildOptions } from '../types/config';
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   const babelLoader: RuleSetRule = {
@@ -28,30 +28,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  const cssLoader: RuleSetRule = {
-    test: /\.s|[ac]ss$/i,
-    use: [
-      // Creates `style` nodes from JS strings
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-
-      // Translates CSS into CommonJS
-      // Если нам нужны доп опции для лоадера, то передаем вместо названия
-      // лоадера объект, в котором указываем название лоадера и нужные опции
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => resPath.includes('.module.'),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]',
-          },
-        },
-      },
-      // Compiles Sass to CSS
-      'sass-loader',
-    ],
-  };
+  const cssLoader: RuleSetRule = buildCssLoader(isDev);
 
   //  Если использовать JS, то нужен был бы еще babel-loader
   //  с TS отдеьлный babel-loader не нужен
