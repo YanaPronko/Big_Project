@@ -1,9 +1,10 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExctractPlugin from 'mini-css-extract-plugin';
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import webpack, { WebpackPluginInstance } from 'webpack';
 import { BuildOptions } from '../types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, analyze }: BuildOptions): WebpackPluginInstance[] {
   return [
     // template - нужен для того, чтобы за исходник брал наш текущий html
     // можно использоватьи просто new HtmlWebpackPlugin() - тогда сформируется
@@ -20,5 +21,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: analyze ? "server" : 'disabled'
+    })
   ];
 }

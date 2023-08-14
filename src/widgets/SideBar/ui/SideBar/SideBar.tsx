@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher/LanguageSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
@@ -22,10 +22,20 @@ export const SideBar: FC<SideBarProps> = (props) => {
 
   return (
     <div
-      className={classNames(cls.sideBar, { [cls.collappsed]: collapsed }, [className])}
+      data-testid="sidebar"
+      className={classNames(cls.sideBar, { [cls.collappsed]: collapsed }, [
+        className,
+      ])}
       {...otherProps}
     >
-      <Button className={cls.color} theme="clear" onClick={onToggle}>{t('Toggle')}</Button>
+      <Button
+        data-testid="toggle"
+        className={cls.color}
+        theme="clear"
+        onClick={onToggle}
+      >
+        {t("Toggle")}
+      </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LanguageSwitcher />

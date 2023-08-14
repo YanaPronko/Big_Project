@@ -44,11 +44,17 @@ module.exports = {
       "error",
       { markupOnly: true, onlyAttribute: [""] },
     ],
-    "max-len": ["error", { ignoreComments: true }],
-    "react/state-in-constructor": ["enable","never"]
+    "max-len": ["error", { ignoreComments: true, code: 120 }],
+    "react/state-in-constructor": ["off","never"]
   },
   globals: {
     __IS_DEV__: true,
+  },
+  overrides: {
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      "i18next/no-literal-string": "off",
+    }
   },
   settings: {
     react: {
