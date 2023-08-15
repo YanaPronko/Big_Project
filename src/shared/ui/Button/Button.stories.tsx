@@ -1,18 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
 import { Button } from "./Button";
+import { Meta, StoryObj } from "@storybook/react";
+import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/Theme/lib/ThemeContext";
 
 const meta: Meta<typeof Button> = {
   title: "shared/Button",
-  component: Button,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
-  // args: { children: "Test" },
-  argTypes: {
-    // theme: BtnTheme,
-  },
+  component: Button
 };
 
 export default meta;
@@ -30,4 +23,24 @@ export const Clear: Story = {
     theme: "clear"
   },
 };
-
+export const Outline: Story = {
+  args: {
+    children: "Text",
+    theme: "outline"
+  },
+};
+export const OutlineDark: Story = {
+  args: {
+    children: "Text",
+    theme: "outline",
+  },
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    // (Story) => (
+    //   <div className={`app ${Theme.DARK}`}>
+    //     <Story />
+    //   </div>
+    // ),
+  ],
+};
+// OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
