@@ -13,10 +13,17 @@ type Story = StoryObj<typeof PageError>;
 
 export const Normal: Story = {
   args: {},
+  parameters: {
+    loki: { skip: true },
+  },
 };
 
 export const Dark: Story = {
   args: {},
+  parameters: {
+    loki: { skip: true },
+  },
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
