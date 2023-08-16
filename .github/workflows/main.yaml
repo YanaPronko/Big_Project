@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install
+        run: npm install npm i loki@0.32.0 --force
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
