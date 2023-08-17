@@ -33,7 +33,6 @@ jobs:
         uses: chromaui/action@v1
         with: projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
-
 # name: linting, testing, building
 # on:
 #   push:
