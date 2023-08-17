@@ -1,10 +1,10 @@
-import { PageError } from "./PageError";
-import { Meta, StoryObj } from "@storybook/react";
-import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/Theme/lib/ThemeContext";
+import { Meta, StoryObj } from '@storybook/react';
+import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+import { PageError } from './PageError';
 
 const meta: Meta<typeof PageError> = {
-  title: "widgets/PageError",
+  title: 'widgets/PageError',
   component: PageError,
 };
 
@@ -26,4 +26,3 @@ export const Dark: Story = {
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-

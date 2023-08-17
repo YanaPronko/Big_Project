@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 
-
 // Тестовый компонент для отработкі ошибок
 export const BugButton = () => {
   const { t } = useTranslation('main');
@@ -15,8 +14,8 @@ export const BugButton = () => {
   }, [error]);
 
   const onThrowError = () => {
-    setError(true)
-  }
+    setError(true);
+  };
 
   return (
     <Button
@@ -25,4 +24,4 @@ export const BugButton = () => {
       {t('throw-error')}
     </Button>
   );
-}
+};

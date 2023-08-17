@@ -1,10 +1,10 @@
-import { SideBar } from "./SideBar";
-import { Meta, StoryObj } from "@storybook/react";
-import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/Theme/lib/ThemeContext";
+import { Meta, StoryObj } from '@storybook/react';
+import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+import { SideBar } from './SideBar';
 
 const meta: Meta<typeof SideBar> = {
-  title: "widgets/SideBar",
+  title: 'widgets/SideBar',
   component: SideBar,
 };
 
@@ -19,4 +19,4 @@ export const Dark: Story = {
   args: {},
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

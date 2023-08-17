@@ -1,19 +1,19 @@
-import path from "path";
-import webpack from "webpack";
-import { buildCssLoader } from "../build/loaders/buildCssLoader";
-import { BuildPaths } from "../types/config";
+import path from 'path';
+import webpack, { RuleSetRule } from 'webpack';
+import { BuildPaths } from '../types/config';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
-    build: "",
-    entry: "",
-    html: "",
-    src: path.resolve(__dirname, "..", "..", "src"),
+    build: '',
+    entry: '',
+    html: '',
+    src: path.resolve(__dirname, '..', '..', 'src'),
   };
   config.resolve?.modules?.push(paths.src);
-  config.resolve?.extensions?.push(".tsx", ".ts");
+  config.resolve?.extensions?.push('.tsx', '.ts');
   if (config.module?.rules) {
     // @ts-ignore
+    // eslint-disable-next-line no-param-reassign
     config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
@@ -25,19 +25,19 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.module?.rules?.push({
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: ['@svgr/webpack'],
   });
   config.module?.rules?.push({
     test: /\.s(a|c)ss$/,
     // include: path.resolve(__dirname, '../'),
     use: [
-      "style-loader",
+      'style-loader',
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
-            auto: (resPath: string) => resPath.includes(".module."),
-            localIdentName: "[path][name]__[local]--[hash:base64:5]"
+            auto: (resPath: string) => resPath.includes('.module.'),
+            localIdentName: '[path][name]__[local]--[hash:base64:5]',
           },
           // modules: {
           //   auto: true,
@@ -45,7 +45,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
           // },
         },
       },
-      "sass-loader",
+      'sass-loader',
     ],
   });
   return config;

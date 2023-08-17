@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import img from '../assets/error.gif';
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from './PageError.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
+import cls from './PageError.module.scss';
+import img from '../assets/error.gif';
 
 interface PageErrorProps {
   className?: string;
@@ -15,7 +15,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
 
   const onReload = () => {
     window.location.reload();
-  }
+  };
 
   return (
     <>
@@ -25,9 +25,9 @@ export const PageError: FC<PageErrorProps> = (props) => {
         alt="Error gif"
         {...otherProps}
       />
-      <Button className='normal' onClick={onReload}>
+      <Button className="normal" onClick={onReload}>
         {t('reload-page')}
       </Button>
     </>
   );
-}
+};

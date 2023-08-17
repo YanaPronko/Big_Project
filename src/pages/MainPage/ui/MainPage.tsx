@@ -9,8 +9,8 @@ export default function MainPage() {
 
   return (
     <>
-      <h1>{t("MainPage")}</h1>
-      <h2>{t("you-have", { count: messages })}</h2>
+      <h1>{t('MainPage')}</h1>
+      <h2>{t('you-have', { count: messages })}</h2>
       <CounterBtn setMessages={() => setMessages(messages + 1)} />
       <BugButton />
     </>
