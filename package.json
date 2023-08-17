@@ -18,7 +18,8 @@
     "analyze:dev": "npm run build:dev --env analyze=true",
     "analyze:prod": "npm run build:prod --env analyze=true",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "build-storybook": "storybook build -c ./config/storybook",
+    "chromatic": "npx chromatic --project-token=chpt_f82a4d28981c10c"
   },
   "keywords": [],
   "author": "",
@@ -47,6 +48,7 @@
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.22.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -59,7 +61,6 @@
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
-    "loki": "^0.32.0",
     "mini-css-extract-plugin": "^2.5.3",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.65.1",
@@ -101,5 +102,7 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "big-project@1.0.0"
 }
