@@ -9,7 +9,7 @@ export interface ComponentRenderProps {
 }
 
 export const componentRender = (componet: ReactNode, options: ComponentRenderProps = {}) => {
-  const { route } = options;
+  const { route = '/' } = options;
   render(
     <MemoryRouter initialEntries={[route]}>
       <I18nextProvider i18n={i18nForTest}>
