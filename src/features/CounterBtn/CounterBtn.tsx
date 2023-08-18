@@ -1,8 +1,6 @@
 import { FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import cls from './CounterBtn.module.scss';
 
 interface CounterBtnProps {
   className?: string;
@@ -10,13 +8,13 @@ interface CounterBtnProps {
 }
 
 export const CounterBtn: FC<CounterBtnProps> = (props) => {
-  const { className, setMessages, ...otherProps } = props;
+  const { setMessages, ...otherProps } = props;
 
   const { t } = useTranslation('main');
 
   return (
     <Button
-      className={classNames(cls.counterBtn, {}, [className])}
+      size={BtnSize.M}
       onClick={setMessages}
       {...otherProps}
     >

@@ -18,16 +18,16 @@ export const PageError: FC<PageErrorProps> = (props) => {
   };
 
   return (
-    <>
+    <div className={cls.wrapper}>
       <img
-        className={classNames(cls.pageError, {}, [className])}
+        className={cls.pageError}
         src={img}
         alt="Error gif"
         {...otherProps}
       />
-      <Button className="normal" onClick={onReload}>
+      <Button onClick={onReload}>
         {t('reload-page')}
       </Button>
-    </>
+    </div>
   );
 };

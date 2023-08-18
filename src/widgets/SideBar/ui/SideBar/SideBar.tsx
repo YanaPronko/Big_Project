@@ -1,9 +1,14 @@
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher/LanguageSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePaths } from 'app/config/routeConfig';
+import { MainIcon } from 'shared/ui/MainIcon/MainIcon';
+import { AboutIcon } from 'shared/ui/AboutIcon/AboutIcon';
 import cls from './SideBar.module.scss';
 
 interface SideBarProps {
@@ -13,8 +18,8 @@ interface SideBarProps {
 export const SideBar: FC<SideBarProps> = (props) => {
   const { className, ...otherProps } = props;
 
-  const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
+  const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -30,15 +35,33 @@ export const SideBar: FC<SideBarProps> = (props) => {
     >
       <Button
         data-testid="toggle"
-        className={cls.color}
-        theme="clear"
+        className={cls.collapseBtn}
+        theme="background_inverted"
+        square
+        size={BtnSize.L}
         onClick={onToggle}
       >
-        {t('Toggle')}
+        {collapsed ? '>' : '<'}
       </Button>
-      <div className={cls.switchers}>
+      <div className={cls.links}>
+        <AppLink to={RoutePaths.main} theme="inverted">
+          <MainIcon className={cls.icon} />
+          <span className={cls.link}>
+            {t('Main')}
+          </span>
+        </AppLink>
+        <AppLink to={RoutePaths.about} theme="inverted">
+          <AboutIcon className={cls.icon} />
+          <span className={cls.link}>
+            {t('About us')}
+          </span>
+        </AppLink>
+      </div>
+      <div
+        className={classNames(cls.switchers, { [cls.collappsed]: collapsed })}
+      >
         <ThemeSwitcher />
-        <LanguageSwitcher />
+        <LanguageSwitcher short={collapsed} />
       </div>
     </div>
   );

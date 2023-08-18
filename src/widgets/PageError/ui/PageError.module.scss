@@ -1,13 +1,13 @@
 .pageError {
   display: block;
-  width: 25rem;
-  height: 25rem;
-  object-fit: contain;
   margin: 0 auto;
 }
 
-.normal {
-  width: 20rem;
-  height: 10rem;
-  padding: 0.5rem;
+.wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - var(--sidebar-width));
+  padding-top: 1rem;
 }
