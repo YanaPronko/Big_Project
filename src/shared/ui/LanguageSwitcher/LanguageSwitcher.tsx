@@ -25,7 +25,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
       onClick={toggleLang}
       {...otherProps}
     >
-      {short ? t("ShortLng") : t("Language")}
+      {short ? t('ShortLng') : t('Language')}
     </Button>
   );
 };

@@ -9,7 +9,7 @@ interface NavBarProps {
 
 export const NavBar: FC<NavBarProps> = (props) => {
   const { className, ...otherProps } = props;
- 
+
   return (
     <div className={classNames(cls.navBar, {}, [className])} {...otherProps} />
   );

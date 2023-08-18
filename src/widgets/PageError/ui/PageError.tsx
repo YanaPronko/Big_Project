@@ -18,7 +18,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
   };
 
   return (
-    <div className={cls.wrapper}>
+    <div className={classNames(cls.wrapper, {}, [className])}>
       <img
         className={cls.pageError}
         src={img}
