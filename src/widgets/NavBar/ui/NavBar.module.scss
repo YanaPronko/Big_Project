@@ -1,8 +1,13 @@
 .navBar {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   width: 100%;
   height: var(--navbar-height);
   padding: 2rem;
   background: var(--inverted-bg-color);
+}
+
+.sign {
+  color: var(--inverted-primary-color);
 }

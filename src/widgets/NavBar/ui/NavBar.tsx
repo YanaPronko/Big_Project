@@ -1,6 +1,8 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
 import { Modal } from 'shared/ui/Modal/Modal';
 import cls from './NavBar.module.scss';
 
@@ -10,10 +12,22 @@ interface NavBarProps {
 
 export const NavBar: FC<NavBarProps> = (props) => {
   const { className, ...otherProps } = props;
+  const { t } = useTranslation();
+
+  const [isAuthModal, setIsAuthModal] = useState(false);
+
+  const toggleAuthModal = useCallback(() => {
+    setIsAuthModal((prev) => !prev);
+  }, []);
 
   return (
     <div className={classNames(cls.navBar, {}, [className])} {...otherProps}>
-      <Modal />
+      <Button theme="clear_inverted" onClick={toggleAuthModal}>
+        {t('sign-in')}
+      </Button>
+      <Modal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)}>
+        {t('lorem')}
+      </Modal>
     </div>
   );
 };

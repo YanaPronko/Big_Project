@@ -23,12 +23,21 @@ export const Clear: Story = {
     theme: 'clear',
   },
 };
+
+export const ClearInverted: Story = {
+  args: {
+    children: 'Text',
+    theme: 'clear_inverted',
+  },
+};
+
 export const Outline: Story = {
   args: {
     children: 'Text',
     theme: 'outline',
   },
 };
+
 export const OutlineDark: Story = {
   args: {
     children: 'Text',

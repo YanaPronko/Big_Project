@@ -1,8 +1,8 @@
 .modal {
   position: fixed;
   inset: 0;
-  opacity: 1;
-  z-index: 1;
+  opacity: 0;
+  z-index: -1;
   transition: all 0.3s ease-in-out;
   pointer-events: none;
 }
@@ -17,10 +17,20 @@
 }
 
 .content {
-  width: 50%;
+  max-width: 60%;
   padding: 2rem;
   background: #e8e8ea;
   border-radius: 1.2rem;
-  opacity: 1;
+  transform: scale(0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.opened {
   z-index: var(--modal-index);
+  opacity: 1;
+  pointer-events: auto;
+
+  .content {
+    transform: scale(1);
+  }
 }

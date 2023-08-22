@@ -7,6 +7,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  font: var(--font-m);
+}
+
 .app {
   min-height: 100vh;
   font: var(--font-m);
