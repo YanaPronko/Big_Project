@@ -10,5 +10,7 @@
   "you-have_other": "",
   "you-have_zero": "У вас нет сообщений",
   "you-have": "У вас",
-  "throw-error": "Выбросить ошибку"
+  "throw-error": "Выбросить ошибку",
+  "increment": "приращение",
+  "decrement": "уменьшение"
 }

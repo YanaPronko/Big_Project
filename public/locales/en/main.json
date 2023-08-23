@@ -10,5 +10,8 @@
   "you-have_other": "You have {{count}} messsages",
   "you-have_zero": "You have'nt messages",
   "you-have": "You have",
-  "throw-error": "Throw Error"
+  "throw-error": "Throw Error",
+  "value": "value",
+  "increment": "increment",
+  "decrement": "decrement"
 }

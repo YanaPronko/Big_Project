@@ -18,20 +18,24 @@ export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   // The root directory that Jest should scan for tests and modules within
-  rootDir: "../../",
-  testEnvironment: "jsdom",
-  testPathIgnorePatterns: ["\\\\node_modules\\\\"],
+  rootDir: '../../',
+  testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ['\\\\node_modules\\\\'],
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ["node_modules", "<rootDir>/src"],
+  moduleDirectories: ['node_modules', '<rootDir>/src'],
   // modulePaths: ["<rootDir>src"],
   // An array of file extensions your modules use
-  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   // The glob patterns Jest uses to detect test files
-  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
-  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
   moduleNameMapper: {
-    "\\.(s?css|less)$": "identity-obj-proxy",
-    "\\.svg": path.resolve(__dirname, "jestEmptyComponent")
+    '\\.(s?css|less)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+  },
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    '__IS_DEV__': true,
   },
 
   // Indicates whether the coverage information should be collected while executing the test
@@ -76,9 +80,6 @@ export default {
 
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
-
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
