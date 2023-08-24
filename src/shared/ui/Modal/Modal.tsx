@@ -1,3 +1,4 @@
+import { useTheme } from 'app/providers/Theme';
 import React, {
   FC, ReactNode, useCallback, useEffect,
 } from 'react';
@@ -23,6 +24,8 @@ export const Modal: FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
   };
+
+  const { theme } = useTheme();
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -52,12 +55,9 @@ export const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, mods, [className])}>
+      <div className={classNames(cls.modal, mods, [className, theme])}>
         <div className={classNames(cls.overlay, {})} onClick={closeHandler}>
-          <div
-            className={classNames(cls.content)}
-            onClick={onContentClick}
-          >
+          <div className={classNames(cls.content)} onClick={onContentClick}>
             {children}
           </div>
         </div>

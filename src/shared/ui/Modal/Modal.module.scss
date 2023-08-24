@@ -1,6 +1,7 @@
 .modal {
   position: fixed;
   inset: 0;
+  color: var(--primary-color);
   opacity: 0;
   z-index: -1;
   transition: all 0.3s ease-in-out;
@@ -19,7 +20,7 @@
 .content {
   max-width: 60%;
   padding: 2rem;
-  background: #e8e8ea;
+  background: var(--bg-color);
   border-radius: 1.2rem;
   transform: scale(0.5);
   transition: all 0.3s ease-in-out;
