@@ -11,6 +11,5 @@ export const Portal: FC<PortalProps> = (props) => {
     children,
     elem = document.body,
   } = props;
-
   return createPortal(children, elem);
 };

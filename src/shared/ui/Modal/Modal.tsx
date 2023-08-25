@@ -2,6 +2,8 @@ import { useTheme } from 'app/providers/Theme';
 import React, {
   FC, ReactNode, useCallback, useEffect,
 } from 'react';
+import { Transition } from 'react-transition-group';
+
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
@@ -20,10 +22,6 @@ export const Modal: FC<ModalProps> = (props) => {
     isOpen,
     onClose,
   } = props;
-
-  const mods: Record<string, boolean> = {
-    [cls.opened]: isOpen,
-  };
 
   const { theme } = useTheme();
 
@@ -54,14 +52,27 @@ export const Modal: FC<ModalProps> = (props) => {
   };
 
   return (
-    <Portal>
-      <div className={classNames(cls.modal, mods, [className, theme])}>
-        <div className={classNames(cls.overlay, {})} onClick={closeHandler}>
-          <div className={classNames(cls.content)} onClick={onContentClick}>
-            {children}
+    <Transition
+      appear={isOpen}
+      in={isOpen}
+      timeout={300}
+      mountOnEnter
+      unmountOnExit
+    >
+      {(state) => (
+        <Portal>
+          <div className={classNames(cls.popup, { [cls[state]]: true }, [className, theme])}>
+            <div className={classNames(cls.overlay)} onClick={closeHandler}>
+              <div
+                className={classNames(cls.content)}
+                onClick={onContentClick}
+              >
+                {children}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </Portal>
+        </Portal>
+      )}
+    </Transition>
   );
 };

@@ -8,6 +8,7 @@
   background: var(--inverted-bg-color);
 }
 
-.sign {
-  color: var(--inverted-primary-color);
+.signinBtn {
+  position: relative;
+  z-index: 15;
 }

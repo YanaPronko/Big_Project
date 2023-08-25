@@ -1,20 +1,9 @@
-.modal {
+.popup {
   position: fixed;
   inset: 0;
   color: var(--primary-color);
   opacity: 0;
-  z-index: -1;
   transition: all 0.3s ease-in-out;
-  pointer-events: none;
-}
-
-.overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: var(--overlay-color);
 }
 
 .content {
@@ -26,12 +15,29 @@
   transition: all 0.3s ease-in-out;
 }
 
-.opened {
-  z-index: var(--modal-index);
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+}
+
+.entering,
+.entered {
   opacity: 1;
-  pointer-events: auto;
 
   .content {
     transform: scale(1);
+  }
+}
+
+.exiting,
+.exited {
+  opacity: 0;
+
+  .content {
+    transform: scale(0.5);
   }
 }
