@@ -1,0 +1,21 @@
+.input_wapper {
+  display: flex;
+  gap: 1rem;
+  color: var(--primary-color);
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary-color);
+
+  &:focus {
+    border: 1px solid var(--inverted-primary-color);
+  }
+}
+
+.label {
+  flex-shrink: 0;
+}

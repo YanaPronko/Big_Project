@@ -10,11 +10,14 @@ export enum BtnSize {
   XL = 'size_xl'
 }
 
+export type BtnType = 'button' | 'submit' | 'reset';
+
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: BtnTheme;
   square?: boolean;
   size?: BtnSize;
+  type?: BtnType;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
