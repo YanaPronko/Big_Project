@@ -1,0 +1,25 @@
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font: var(--font-l);
+  color: var(--primary-color);
+}
+
+.text {
+  font: var(--font-m);
+  color: var(--secondary-color);
+}
+
+.error {
+  .title {
+    color: var(--primary-error-color);
+  }
+
+  .text {
+    color: var(--secondary-error-color);
+  }
+}

@@ -10,5 +10,8 @@
   "sign-in": "Войти",
   "vvedite-parol": "Введите пароль>",
   "vvedite-vashe-imya": "Введите ваше имя>",
-  "voiti": "Войти"
+  "voiti": "Войти",
+  "vyiti": "Выйти",
+  "you-enter-invalid-login-or-password": "Вы ввeли неверный логин или пароль",
+  "registration-form": "Форма регистрации"
 }

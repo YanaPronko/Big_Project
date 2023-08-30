@@ -2,6 +2,11 @@
   padding: 1rem 1.5rem;
   color: var(--primary-color);
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .clear,

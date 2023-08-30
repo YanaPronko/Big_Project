@@ -93,6 +93,24 @@ export const BackgroundInvertedTheme: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline',
+    disabled: true,
+  },
+};
+
+export const DisabledDark: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline',
+    disabled: true,
+  },
+};
+
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const Square: Story = {
   args: {
     children: '<',

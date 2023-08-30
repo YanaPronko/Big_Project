@@ -10,5 +10,8 @@
   "sign-in": "Sign in",
   "voiti": "Enter",
   "vvedite-vashe-imya": "Enter your login>",
-  "vvedite-parol": "Enter your password>"
+  "vvedite-parol": "Enter your password>",
+  "vyiti": "Log out",
+  "you-enter-invalid-login-or-password": "You entered invalid login or password",
+  "registration-form": "Registration form"
 }
