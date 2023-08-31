@@ -23,9 +23,9 @@ export const LoginForm = memo(({ className, ...otherProps }: LoginFormProps) => 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  useEffect(() => {
+  useEffect(() => () => {
     dispatch(loginActions.resetError());
-  }, [dispatch]);
+  });
 
   const {
     error,

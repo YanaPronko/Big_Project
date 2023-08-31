@@ -42,5 +42,4 @@ export const InvertedDark: Story = {
     theme: 'inverted',
   },
 };
-
 InvertedDark.decorators = [ThemeDecorator(Theme.DARK)];

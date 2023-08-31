@@ -14,14 +14,19 @@ export const Normal: Story = {
   args: {},
 };
 
-Normal.decorators = [StoreDecorator({ loginForm: {} })];
+Normal.decorators = [StoreDecorator({ loginForm: { isLoading: false } })];
 
 export const WithError: Story = {
   args: {},
 };
 
 WithError.decorators = [
-  StoreDecorator({ loginForm: { error: 'Invalid password or login' } }),
+  StoreDecorator({
+    loginForm: {
+      error: 'Invalid password or login',
+      isLoading: false,
+    },
+  }),
 ];
 
 export const Loading: Story = {

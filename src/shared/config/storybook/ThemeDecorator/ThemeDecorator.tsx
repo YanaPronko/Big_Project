@@ -4,10 +4,29 @@ import { Theme } from 'app/providers/Theme/lib/ThemeContext';
 
 const ThemeDecorator = (theme: Theme): Decorator => (Story) => (
   <ThemeProvider initialTheme={theme}>
-    <div className={`${theme}`}>
+    <div className={`app ${theme}`}>
       <Story />
     </div>
   </ThemeProvider>
 );
 
 export default ThemeDecorator;
+
+// import classNames from 'classnames';
+// import { Story, StoryContext } from '@storybook/react';
+
+// import { ThemeProvider } from 'app/providers/ThemeProvider';
+
+// export const ThemeDecorator = (Story: Story, context: StoryContext) => {
+//   const {
+//     globals: { theme },
+//   } = context;
+
+//   return (
+//     <ThemeProvider>
+//       <div className={classNames('app', theme)}>
+//         <Story />
+//       </div>
+//     </ThemeProvider>
+//   );
+// };
