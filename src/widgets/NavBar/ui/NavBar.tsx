@@ -3,7 +3,6 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Transition } from 'react-transition-group';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
@@ -23,8 +22,6 @@ export const NavBar: FC<NavBarProps> = (props) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const dispatch = useDispatch();
   const { setAuthData } = userActions;
-
-  console.log(isAuthModal);
 
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
