@@ -14,14 +14,14 @@ export const Normal: Story = {
   args: {},
 };
 
-Normal.decorators = [StoreDecorator({ loginForm: { username: 'admin', password: '123' } })];
+Normal.decorators = [StoreDecorator({ loginForm: {} })];
 
 export const WithError: Story = {
   args: {},
 };
 
 WithError.decorators = [
-  StoreDecorator({ loginForm: { username: 'ggg', password: '12' } }),
+  StoreDecorator({ loginForm: { error: 'Invalid password or login' } }),
 ];
 
 export const Loading: Story = {

@@ -1,6 +1,5 @@
 {
   "1-message": "\"+1 message\"",
-  "MainPage": "MainPage",
   "my-name-is": "My name is",
   "wolf": "",
   "yana": "Yana",
@@ -13,5 +12,7 @@
   "throw-error": "Throw Error",
   "value": "value",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "main-page": "Main page",
+  "main.throw-error": "Throw error"
 }

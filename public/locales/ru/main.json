@@ -1,6 +1,5 @@
 {
   "1-message": "\"+1 сообщение\"",
-  "MainPage": "Главная страница",
   "my-name-is": "Меня зовут",
   "wolf": "",
   "yana": "Yana",
@@ -10,7 +9,9 @@
   "you-have_other": "",
   "you-have_zero": "У вас нет сообщений",
   "you-have": "У вас",
-  "throw-error": "Выбросить ошибку",
   "increment": "приращение",
-  "decrement": "уменьшение"
+  "decrement": "уменьшение",
+  "throw-error": "Выбросить ошибку",
+  "main-page": "Главная страница",
+  "main.throw-error": "Выбросить ошибку"
 }

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
+import cls from './CounterBtn.module.scss';
 
 interface CounterBtnProps {
   className?: string;
@@ -14,7 +15,9 @@ export const CounterBtn: FC<CounterBtnProps> = (props) => {
 
   return (
     <Button
+      className={cls.btn}
       size={BtnSize.M}
+      theme="outline"
       onClick={setMessages}
       {...otherProps}
     >

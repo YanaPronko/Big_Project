@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
+import cls from './BugButton.module.scss';
 
 // Тестовый компонент для отработкі ошибок
 export const BugButton = () => {
@@ -18,9 +19,7 @@ export const BugButton = () => {
   };
 
   return (
-    <Button
-      onClick={onThrowError}
-    >
+    <Button className={cls.btn} theme="outline" onClick={onThrowError}>
       {t('throw-error')}
     </Button>
   );

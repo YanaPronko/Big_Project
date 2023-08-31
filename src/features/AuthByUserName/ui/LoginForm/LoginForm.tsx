@@ -1,4 +1,6 @@
-import { memo, useCallback } from 'react';
+import {
+  memo, useCallback, useEffect, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,22 +20,25 @@ interface LoginFormProps {
 export const LoginForm = memo(({ className, ...otherProps }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    dispatch(loginActions.resetError());
+  }, [dispatch]);
 
   const {
-    username,
-    password,
     error,
     isLoading,
   } = useSelector(getLoginState);
-  const { setUsername, setPassword } = loginActions;
 
   const onChangeUsername = useCallback((value: string) => {
-    dispatch(setUsername(value));
-  }, [dispatch, setUsername]);
+    setUsername(value);
+  }, [setUsername]);
 
   const onChangePassword = useCallback((value: string) => {
-    dispatch(setPassword(value));
-  }, [dispatch, setPassword]);
+    setPassword(value);
+  }, [setPassword]);
 
   const onLoginClick = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
