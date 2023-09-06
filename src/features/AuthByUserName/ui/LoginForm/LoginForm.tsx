@@ -1,46 +1,36 @@
-import {
-  memo, useCallback, useEffect, useState,
-} from 'react';
+import { loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text } from 'shared/ui/Text/Text';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { getLoginState } from '../../model/selectors/getLoginState';
 import { getLoginError } from '../../model/selectors/getLoginError';
-
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import cls from './LoginForm.module.scss';
-import { getLoginIsLoading } from 'features/AuthByUserName/model/selectors/getLoginIsLoading';
 
 interface LoginFormProps {
   className?: string;
 }
+
+const initialAsyncReducers: ReducersList = {
+  loginForm: loginReducer,
+};
 
 const LoginForm = memo(({ className, ...otherProps }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const store = useStore() as ReduxStoreWithManager;
 
-  useEffect(() => {
-    store.reducerManager.add('loginForm', loginReducer);
-    dispatch({ type: '@INIT loginForm reducer' });
+  useDynamicLoad(initialAsyncReducers, true);
 
-    return () => {
-      dispatch(loginActions.resetError());
-      store.reducerManager.remove('loginForm');
-      dispatch({ type: '@Destroy loginForm reducer' });
-    };
-  }, [dispatch, store.reducerManager]);
-
-  const { error } = useSelector(getLoginError);
-  const { isLoading } = useSelector(getLoginIsLoading);
+  const error = useSelector(getLoginError);
+  const isLoading = useSelector(getLoginIsLoading);
 
   const onChangeUsername = useCallback((value: string) => {
     setUsername(value);

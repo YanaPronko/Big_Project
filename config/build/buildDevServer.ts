@@ -6,6 +6,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     port: options.port,
     open: true,
     hot: true,
+    // allowedHosts: ['all'],
     // Для того, чтобы после обновления был доступ к странице
     historyApiFallback: true,
   };
