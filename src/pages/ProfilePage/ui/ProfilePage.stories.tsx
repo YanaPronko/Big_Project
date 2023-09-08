@@ -5,7 +5,7 @@ import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorato
 import ProfilePage from './ProfilePage';
 
 const meta: Meta<typeof ProfilePage> = {
-  title: 'pages/MainPage',
+  title: 'pages/ProfilePage',
   component: ProfilePage,
 };
 
