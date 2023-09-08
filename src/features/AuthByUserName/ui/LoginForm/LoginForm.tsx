@@ -9,7 +9,7 @@ import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text } from 'shared/ui/Text/Text';
 import { getLoginError } from '../../model/selectors/getLoginError';
-import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import cls from './LoginForm.module.scss';
 
