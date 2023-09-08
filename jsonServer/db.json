@@ -25,5 +25,15 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Yana",
+    "lastname": "Pranko",
+    "age": "34",
+    "currency": "BYN",
+    "country": "Belarus",
+    "city": "Minsk",
+    "username": "admin",
+    "avatar": "https://www.pngwing.com/ru/free-png-ajqgm"
+
+  }
 }

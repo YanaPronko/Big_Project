@@ -1,12 +1,9 @@
 /* eslint-disable max-len */
-import { FC } from 'react';
+import { memo } from 'react';
+import { IconProps } from 'shared/const/common';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-interface AboutIconProps {
-  className?: string;
-}
-
-export const AboutIcon: FC<AboutIconProps> = (props) => {
+export const AboutIcon = memo((props: IconProps) => {
   const { className, ...otherProps } = props;
 
   return (
@@ -32,4 +29,4 @@ export const AboutIcon: FC<AboutIconProps> = (props) => {
       <path d="M16.6667 6.11111C18.2008 6.11111 19.4444 4.86746 19.4444 3.33333C19.4444 1.79921 18.2008 0.555557 16.6667 0.555557C15.1325 0.555557 13.8889 1.79921 13.8889 3.33333C13.8889 4.86746 15.1325 6.11111 16.6667 6.11111Z" />
     </svg>
   );
-};
+});

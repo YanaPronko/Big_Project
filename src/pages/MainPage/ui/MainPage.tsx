@@ -1,9 +1,9 @@
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { CounterBtn } from 'features/CounterBtn/CounterBtn';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function MainPage() {
+const MainPage = memo(() => {
   const { t } = useTranslation('main');
   const [messages, setMessages] = useState(0);
 
@@ -15,4 +15,6 @@ export default function MainPage() {
       <BugButton />
     </>
   );
-}
+});
+
+export default MainPage;

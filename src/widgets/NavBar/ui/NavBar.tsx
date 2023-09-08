@@ -1,9 +1,9 @@
 import {
-  FC, useCallback, useEffect, useState,
+  memo, useCallback, useEffect, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUserName';
@@ -15,12 +15,12 @@ interface NavBarProps {
   className?: string;
 }
 
-export const NavBar: FC<NavBarProps> = (props) => {
+export const NavBar = memo((props: NavBarProps) => {
   const { className, ...otherProps } = props;
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData);
   const [isAuthModal, setIsAuthModal] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { setAuthData } = userActions;
 
   const onShowModal = useCallback(() => {
@@ -40,10 +40,7 @@ export const NavBar: FC<NavBarProps> = (props) => {
 
   if (authData) {
     return (
-      <div
-        className={classNames(cls.navBar, {}, [className])}
-        {...otherProps}
-      >
+      <div className={classNames(cls.navBar, {}, [className])} {...otherProps}>
         <Button
           className={cls.signinBtn}
           theme="clear_inverted"
@@ -51,16 +48,16 @@ export const NavBar: FC<NavBarProps> = (props) => {
         >
           {t('vyiti')}
         </Button>
-        <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
+        <LoginModal
+          isOpen={isAuthModal}
+          onClose={() => setIsAuthModal(false)}
+        />
       </div>
     );
   }
 
   return (
-    <div
-      className={classNames(cls.navBar, {}, [className])}
-      {...otherProps}
-    >
+    <div className={classNames(cls.navBar, {}, [className])} {...otherProps}>
       <Button
         className={cls.signinBtn}
         theme="clear_inverted"
@@ -71,4 +68,4 @@ export const NavBar: FC<NavBarProps> = (props) => {
       <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
     </div>
   );
-};
+});

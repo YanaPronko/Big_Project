@@ -5,16 +5,15 @@ import { NavBar } from 'widgets/NavBar';
 import { SideBar } from 'widgets/SideBar';
 import { AppRouter } from 'app/providers/Router';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import { userActions } from 'entities/User';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import 'shared/config/i18n/i18n';
 import './styles/index.scss';
 
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
-
 export const App = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { setAuthData } = userActions;
 
   useEffect(() => {

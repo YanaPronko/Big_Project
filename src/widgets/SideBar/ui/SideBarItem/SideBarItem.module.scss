@@ -1,0 +1,16 @@
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.link {
+  margin-left: 0.5rem;
+  opacity: 1;
+  text-decoration: none;
+  transition: 0.2s opacity ease-in-out;
+}
+
+.collappsed {
+  .link {
+    opacity: 0;
+  }
+}

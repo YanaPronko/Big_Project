@@ -25,9 +25,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
         alt="Error gif"
         {...otherProps}
       />
-      <Button onClick={onReload}>
-        {t('reload-page')}
-      </Button>
+      <Button onClick={onReload}>{t('reload-page')}</Button>
     </div>
   );
 };
