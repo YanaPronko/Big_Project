@@ -35,7 +35,14 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   const tsLoader: RuleSetRule = {
     test: /\.tsx?$/,
     exclude: /node_modules/,
-    loader: 'ts-loader',
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
+      },
+    ],
   };
 
   return [fileLoader, SVGLoader, babelLoader, tsLoader, cssLoader];

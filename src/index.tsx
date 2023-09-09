@@ -5,12 +5,12 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import { App } from './app/App';
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

@@ -19,7 +19,7 @@ export const SideBarItem = memo(({ item, collappsed }: SideBarItemProps) => {
       theme="inverted"
     >
       <item.Icon className={cls.icon} />
-      <span className={cls.link}>{t(item.text)}</span>
+      <span className={cls.link}>{t(`${item.text}`)}</span>
     </AppLink>
   );
 });
