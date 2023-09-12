@@ -1,3 +1,9 @@
 {
-  "profile-page": "Profile Page"
+  "profile-page": "Profile Page",
+  "profile": "Profile",
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "save": "Save",
+  "title-error": "Error",
+  "text-error": "Try reload the page"
 }
