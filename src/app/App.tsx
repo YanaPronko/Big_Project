@@ -17,10 +17,10 @@ export const App = () => {
   const { setAuthData } = userActions;
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem(USER_LOCALSTORAGE_KEY));
+    const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
     if (user) {
-      dispatch(setAuthData(user));
+      dispatch(setAuthData(JSON.parse(user)));
     }
   }, [dispatch, setAuthData]);
 

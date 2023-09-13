@@ -38,9 +38,6 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     use: [
       {
         loader: 'ts-loader',
-        options: {
-          transpileOnly: true,
-        },
       },
     ],
   };

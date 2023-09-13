@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 import { Provider } from 'react-redux';
 import { FC, ReactNode } from 'react';
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
 import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StateSchema';

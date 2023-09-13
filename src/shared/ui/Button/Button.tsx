@@ -1,5 +1,5 @@
 import { HTMLAttributes, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export type BtnTheme = 'clear' |'clear_inverted' | 'outline' | 'background' | 'background_inverted';
@@ -25,13 +25,13 @@ export const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
-    theme,
+    theme = 'outline',
     square,
     size = BtnSize.M,
     ...otherProps
   } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.square]: square,
   };
 

@@ -7,22 +7,20 @@ export type ReducersList = {
   [name in StateSchemaKey]?: Reducer;
 };
 
-type ReducersEntryList = [StateSchemaKey, Reducer];
-
 export const useDynamicLoad = (reducers: ReducersList, removeAfterUnmount: boolean) => {
   const dispatch = useDispatch();
   const store = useStore() as ReduxStoreWithManager;
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: ReducersEntryList) => {
-      store.reducerManager.add(name, reducer);
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKey, reducer);
       dispatch({ type: `@INIT ${name} reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducers).forEach(([name, _]: ReducersEntryList) => {
-          store.reducerManager.remove(name);
+        Object.entries(reducers).forEach(([name, _]) => {
+          store.reducerManager.remove(name as StateSchemaKey);
           dispatch({ type: `@DESTROY ${name} reducer` });
         });
       }
