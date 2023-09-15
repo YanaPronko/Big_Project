@@ -6,7 +6,7 @@ import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUserName';
-import { ProfileSchema } from 'entities/Profile';
+import { ProfileSchema } from 'features/EditableProfileCard';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -38,4 +38,5 @@ export interface ThunkExtraArg {
 export interface ThunkOptionsConfig<T> {
   rejectValue: T,
   extra: ThunkExtraArg,
+  state: StateSchema,
 }

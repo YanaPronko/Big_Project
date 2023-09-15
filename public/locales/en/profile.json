@@ -3,7 +3,17 @@
   "profile-card": "Profile",
   "edit-profile": "Edit Profile",
   "first-name>": "Your first name>",
-  "lastname>": "Your last name>",
+  "lastname": "Your last name>",
   "Yana": "Yana",
-  "Pranko": "Pranko"
+  "Pranko": "Pranko",
+  "edit": "Edit",
+  "profile": "Profile",
+  "cancel": "Cancel",
+  "save": "Save",
+  "error": "Error",
+  "try-reload-the-page": "Try reload the page",
+  "age": "Age>",
+  "avatar": "Icon of avatar",
+  "username": "Username>",
+  "enter-refference-to-avatar": "Enter refference to avatar>"
 }

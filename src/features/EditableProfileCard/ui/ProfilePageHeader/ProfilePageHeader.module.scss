@@ -1,4 +1,11 @@
-.profilePAgeHeader {
+.profilePageHeader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.headerBtn {
+  display: flex;
+  gap: 1rem;
 }

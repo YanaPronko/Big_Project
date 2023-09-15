@@ -14,5 +14,7 @@
   "voiti": "Войти",
   "vyiti": "Выйти",
   "you-enter-invalid-login-or-password": "Вы ввeли неверный логин или пароль",
-  "registration-form": "Форма регистрации"
+  "registration-form": "Форма регистрации",
+  "enter-country": "Введите страну",
+  "enter-currency": "Введите валюту"
 }

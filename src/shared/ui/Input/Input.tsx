@@ -4,7 +4,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 
 interface InputProps extends HTMLInputProps{
   className?: string;
@@ -12,8 +12,9 @@ interface InputProps extends HTMLInputProps{
   label?: string;
   autofocus?: boolean;
   placeolder?: string;
-  value?: string;
+  value?: string | number;
   isOpen?: boolean;
+  readonly?: boolean;
   onChange?: (value: string) => void;
 }
 
@@ -26,6 +27,7 @@ export const Input = memo((props: InputProps) => {
     autofocus,
     name,
     label,
+    readonly,
     ...otherProps
   } = props;
 
@@ -41,8 +43,12 @@ export const Input = memo((props: InputProps) => {
     onChange?.(e.target.value);
   };
 
+  const mods = {
+    [cls.readonly]: readonly,
+  };
+
   return (
-    <div className={classNames(cls.input_wapper, {}, [className])} {...otherProps}>
+    <div className={classNames(cls.input_wapper, mods, [className])} {...otherProps}>
       {label && (
         <label
           className={cls.label}
@@ -58,6 +64,7 @@ export const Input = memo((props: InputProps) => {
         name={name}
         type={type}
         value={value}
+        readOnly={readonly}
         onChange={changeHandler}
         ref={ref}
       />

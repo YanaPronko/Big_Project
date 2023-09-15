@@ -14,5 +14,7 @@
   "vvedite-parol": "Enter your password>",
   "vyiti": "Log out",
   "you-enter-invalid-login-or-password": "You entered invalid login or password",
-  "registration-form": "Registration form"
+  "registration-form": "Registration form",
+  "enter-country": "Enter country",
+  "enter-currency": "Enter currency"
 }

@@ -38,6 +38,20 @@ export const Outline: Story = {
   },
 };
 
+export const OutlineRed: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline_red',
+  },
+};
+export const OutlineRedDark: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline_red',
+  },
+};
+OutlineRedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const OutlineDark: Story = {
   args: {
     children: 'Text',
