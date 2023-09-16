@@ -15,5 +15,11 @@
   "age": "Возраст>",
   "avatar": "Иконка аватарки",
   "username": "Имя пользователя>",
-  "enter-refference-to-avatar": "Введите ссылку на аватар>"
+  "enter-refference-to-avatar": "Введите ссылку на аватар>",
+  "err": "ошибка",
+  "no data": "Нет данных",
+  "server error": "Серверная ошибка",
+  "incorrect user data": "Неверные данные пользователя",
+  "incorrect age": "В поле 'возраст' должны быть цифры",
+  "incorrect country": "Выберите страну"
 }

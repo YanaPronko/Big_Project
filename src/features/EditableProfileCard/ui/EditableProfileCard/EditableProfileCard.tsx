@@ -1,17 +1,20 @@
-import { ProfileCard } from 'entities/Profile';
-import { getProfileError } from 'features/EditableProfileCard/model/selectors/getProfileError/getProfileError';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Text } from 'shared/ui/Text/Text';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Country } from 'entities/Country/model/types/country';
 import { Currency } from 'entities/Currency';
+import { ProfileCard } from 'entities/Profile';
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 import { profileActions } from '../../model/slice/profileSlice';
 import cls from './EditableProfileCard.module.scss';
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -24,8 +27,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
 
   const dispatch = useAppDispatch();
+  const { t } = useTranslation('profile');
 
   const onChangeFirstName = (value: string) => {
     dispatch(profileActions.updateProfile({ first: value }));
@@ -61,6 +66,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       {...otherProps}
     >
       <ProfilePageHeader />
+      {validateErrors?.length && (
+        <div className={cls.errorContainer}>
+          {validateErrors.map((err) => <Text theme="error" title={t(`${err}`)} key={err} />)}
+        </div>
+      )}
       <ProfileCard
         data={form}
         error={error}

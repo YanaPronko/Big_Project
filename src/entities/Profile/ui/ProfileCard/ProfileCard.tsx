@@ -96,7 +96,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           key={3}
           label={t('age')}
-          type="number"
+          type="text"
           readonly={readonly}
           value={data?.age}
           onChange={onChangeAge}
