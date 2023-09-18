@@ -58,6 +58,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     new webpack.DefinePlugin({
       __IS_DEV__: true,
       __API__: '',
+      __PROJECT__: 'storybook',
     }),
   );
   return config;

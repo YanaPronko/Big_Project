@@ -5,7 +5,7 @@ import webpack, { WebpackPluginInstance } from 'webpack';
 import { BuildOptions } from '../types/config';
 
 export function buildPlugins({
-  paths, isDev, analyze, apiURL,
+  paths, isDev, analyze, apiURL, project,
 }: BuildOptions): WebpackPluginInstance[] {
   return [
     // template - нужен для того, чтобы за исходник брал наш текущий html
@@ -23,6 +23,7 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiURL),
+      __PROJECT__: JSON.stringify(project),
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: analyze ? 'server' : 'disabled',

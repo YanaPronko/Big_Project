@@ -64,6 +64,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
   overrides: [
     {
@@ -71,6 +72,7 @@ module.exports = {
       rules: {
         'i18next/no-literal-string': 'off',
         'max-len': 'off',
+        'no-undef': 'off',
       },
     },
   ],
