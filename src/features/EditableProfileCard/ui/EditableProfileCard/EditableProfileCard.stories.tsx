@@ -36,7 +36,7 @@ export const PrimaryDark: Story = {
   args: {},
 };
 
-Primary.decorators = [
+PrimaryDark.decorators = [
   StoreDecorator({
     profile: {
       form: {
