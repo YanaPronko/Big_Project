@@ -4,6 +4,7 @@ import { IconProps } from 'shared/const/common';
 import { AboutIcon } from 'shared/ui/AboutIcon/AboutIcon';
 import { MainIcon } from 'shared/ui/MainIcon/MainIcon';
 import { ProfileIcon } from 'shared/ui/ProfileIcon/ProfileIcon';
+import { ArticleIcon } from 'shared/ui/ArticleIcon/ArticleIcon';
 
 export interface SideBarItemType {
   path: string;
@@ -22,6 +23,12 @@ export const SideBarItemsList: SideBarItemType[] = [
     path: RoutePaths.about,
     Icon: AboutIcon,
     text: 'About',
+  },
+  {
+    path: RoutePaths.articles,
+    Icon: ArticleIcon,
+    text: 'Articles',
+    authOnly: true,
   },
   {
     path: RoutePaths.profile,

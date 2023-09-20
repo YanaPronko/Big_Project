@@ -22,6 +22,8 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
       // [name] - дефолтное имя подставляется
       filename: '[name].[contenthash].js',
       path: paths.build,
+      // Паблик пас нужен для того, чтобы в пути не появлялось лишних вставок
+      publicPath: '/',
       clean: true,
     },
     plugins: buildPlugins(options),
