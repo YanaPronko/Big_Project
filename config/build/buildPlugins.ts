@@ -2,12 +2,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExctractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpack, { WebpackPluginInstance } from 'webpack';
+// import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildOptions } from '../types/config';
 
 export function buildPlugins({
   paths, isDev, analyze, apiURL, project,
 }: BuildOptions): WebpackPluginInstance[] {
-  return [
+  const plugins = [
     // template - нужен для того, чтобы за исходник брал наш текущий html
     // можно использоватьи просто new HtmlWebpackPlugin() - тогда сформируется
     // html по умолчанию
@@ -29,4 +30,8 @@ export function buildPlugins({
       analyzerMode: analyze ? 'server' : 'disabled',
     }),
   ];
+  // if (isDev) {
+  //   plugins.push(new ReactRefreshWebpackPlugin());
+  // }
+  return plugins;
 }

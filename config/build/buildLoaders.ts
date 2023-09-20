@@ -1,8 +1,12 @@
 import { RuleSetRule } from 'webpack';
+// import ReactRefreshTypeScript from 'react-refresh-typescript';
 import { BuildOptions } from '../types/config';
+// import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): RuleSetRule[] {
+  const { isDev } = options;
+
   const babelLoader: RuleSetRule = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
@@ -28,7 +32,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  const cssLoader: RuleSetRule = buildCssLoader(isDev);
+  const cssLoader: RuleSetRule = buildCssLoader(options);
 
   //  Если использовать JS, то нужен был бы еще babel-loader
   //  с TS отдеьлный babel-loader не нужен
@@ -38,6 +42,11 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     use: [
       {
         loader: 'ts-loader',
+        // options: {
+        //   getCustomTransformers: () => ({
+        //     before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+        //   }),
+        // },
       },
     ],
   };

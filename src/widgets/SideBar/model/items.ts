@@ -9,6 +9,7 @@ export interface SideBarItemType {
   path: string;
   Icon: MemoExoticComponent<(props: IconProps) => React.JSX.Element>;
   text: string;
+  authOnly?: boolean;
 }
 
 export const SideBarItemsList: SideBarItemType[] = [
@@ -26,5 +27,6 @@ export const SideBarItemsList: SideBarItemType[] = [
     path: RoutePaths.profile,
     Icon: ProfileIcon,
     text: 'Profile',
+    authOnly: true,
   },
 ];

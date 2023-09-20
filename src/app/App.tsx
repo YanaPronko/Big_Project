@@ -5,16 +5,18 @@ import { NavBar } from 'widgets/NavBar';
 import { SideBar } from 'widgets/SideBar';
 import { AppRouter } from 'app/providers/Router';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
-import { userActions } from 'entities/User';
+import { getUserInited, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import 'shared/config/i18n/i18n';
 import './styles/index.scss';
+import { useSelector } from 'react-redux';
 
 export const App = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
-  const { setAuthData } = userActions;
+  const { setAuthData, setInited } = userActions;
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
@@ -22,7 +24,8 @@ export const App = () => {
     if (user) {
       dispatch(setAuthData(JSON.parse(user)));
     }
-  }, [dispatch, setAuthData]);
+    dispatch(setInited(true));
+  }, [dispatch, setAuthData, setInited]);
 
   return (
     <div className={classNames('app', {}, [theme])}>
@@ -31,7 +34,7 @@ export const App = () => {
         <div className="content-page">
           <SideBar />
           <ErrorBoundary>
-            <AppRouter />
+            {inited && <AppRouter />}
           </ErrorBoundary>
         </div>
       </Suspense>
