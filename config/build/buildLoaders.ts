@@ -5,8 +5,6 @@ import { BuildOptions } from '../types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
-  const { isDev } = options;
-
   const babelLoader: RuleSetRule = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
