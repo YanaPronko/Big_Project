@@ -5,12 +5,10 @@
 }
 
 .title {
-  font: var(--font-l);
   color: var(--primary-color);
 }
 
 .text {
-  font: var(--font-m);
   color: var(--secondary-color);
 }
 
@@ -37,17 +35,41 @@
 }
 
 .xl {
-  font-size: 3rem;
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .text {
+    font: var(--font-xl);
+  }
 }
 
 .l {
-  font-size: 2rem;
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
+}
+
+.m {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
 }
 
 .s {
-  font-size: 1.6rem;
-}
+  .title {
+    font: var(--font-m);
+  }
 
-.xs {
-  font-size: 1.4rem;
+  .text {
+    font: 1.4rem;
+  }
 }

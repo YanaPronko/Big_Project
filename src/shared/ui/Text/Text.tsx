@@ -4,7 +4,7 @@ import cls from './Text.module.scss';
 
 export type TextTheme = 'primary' | 'error';
 export type TextAlign = 'left' | 'right' | 'center';
-export type TextSize = 'xl' | 'l' | 's' | 'xs';
+export type TextSize = 'xl' | 'l' | 'm' | 's';
 
 interface TextProps {
   className?: string;
@@ -17,7 +17,7 @@ interface TextProps {
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, title, text, theme = 'primary', align = 'left', size = 'l',
+    className, title, text, theme = 'primary', align = 'left', size = 'm',
     ...otherProps
   } = props;
 

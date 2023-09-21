@@ -1,11 +1,6 @@
 import { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getLoginIsLoading } from 'features/AuthByUserName/model/selectors/getLoginIsLoading/getLoginIsLoading';
-import {
-  getArtcileDetailsData,
-  getArtcileDetailsError,
-} from 'entities/Article/model/selectors/articleDetails';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
   ReducersList,
@@ -14,8 +9,20 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { CalendarIcon } from 'shared/ui/CalendarIcon/CalendarIcon';
+import { EyeIcon } from 'shared/ui/EyeIcon/EyeIcon';
+import {
+  getArtcileDetailsData,
+  getArtcileDetailsError,
+  getArtcileDetailsIsLoading,
+} from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
@@ -27,18 +34,36 @@ const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
 };
 
+const renderBlock = (block: ArticleBlock) => {
+  switch (block.type) {
+    case 'CODE': {
+      return <ArticleCodeBlockComponent block={block} className={cls.block} />;
+    }
+    case 'IMAGE': {
+      return <ArticleImageBlockComponent block={block} className={cls.block} />;
+    }
+    case 'TEXT': {
+      return <ArticleTextBlockComponent block={block} className={cls.block} />;
+    }
+    default: {
+      return null;
+    }
+  }
+};
+
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { className, id } = props;
   const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   useDynamicLoad(reducers, true);
   const error = useSelector(getArtcileDetailsError);
-  // const isLoading = useSelector(getLoginIsLoading);
-  // const data = useSelector(getArtcileDetailsData);
-  const isLoading = true;
+  const isLoading = useSelector(getArtcileDetailsIsLoading);
+  const article = useSelector(getArtcileDetailsData);
 
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   let content;
@@ -67,7 +92,21 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       />
     );
   } else {
-    content = <Text text="ARTICLE" />;
+    content = (
+      <>
+        <Avatar src={article?.img} size={200} className={cls.avatar} alt="avatar" />
+        <Text title={article?.title} text={article?.subtitle} align="center" size="xl" />
+        <div className={cls.articleInfo}>
+          <EyeIcon className={cls.icon} />
+          <Text text={String(article?.views)} />
+        </div>
+        <div className={cls.articleInfo}>
+          <CalendarIcon className={cls.icon} />
+          <Text text={article?.createdAt} />
+        </div>
+        {article?.blocks.map(renderBlock)}
+      </>
+    );
   }
 
   return (

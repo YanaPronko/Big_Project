@@ -9,3 +9,18 @@
 .avatar {
   align-self: center;
 }
+
+.articleInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 8px;
+  fill: var(--primary-color);
+}
+
+.block {
+  margin-bottom: 1.6rem;
+}

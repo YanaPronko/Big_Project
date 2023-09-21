@@ -44,3 +44,35 @@ export const ErrorTextDark: Story = {
 };
 
 ErrorText.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const TextXL: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text text text text',
+    size: 'xl',
+  },
+};
+
+export const TextL: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text text text text',
+    size: 'l',
+  },
+};
+
+export const TextM: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text text text text',
+    size: 'm',
+  },
+};
+
+export const TextS: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text text text text',
+    size: 's',
+  },
+};
