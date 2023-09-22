@@ -4,6 +4,7 @@
     "string-quotes": "single",
     "scss/at-import-partial-extension": "always",
     "custom-property-empty-line-before": "never",
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "alpha-value-notation": "number"
   }
 }

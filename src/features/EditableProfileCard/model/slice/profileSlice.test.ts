@@ -1,5 +1,6 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { fetchProfileData } from 'features/EditableProfileCard/model/services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from 'features/EditableProfileCard/model/services/updateProfileData/updateProfileData';
 import {
   profileActions,
@@ -52,6 +53,28 @@ describe('Test ProfileSlice', () => {
     ).toEqual({
       form: { age: 34 },
     });
+  });
+  test('test profileReducer pending', () => {
+    const state: DeepPartial<ProfileSchema> = {
+      isLoading: false,
+    };
+    expect(
+      profileReducer(state as ProfileSchema, fetchProfileData.pending),
+    ).toEqual({ isLoading: true });
+  });
+  test('test profileReducer fullfiled', () => {
+    const state: DeepPartial<ProfileSchema> = { isLoading: true };
+    expect(
+      profileReducer(state as ProfileSchema, fetchProfileData.fulfilled),
+    ).toEqual({ isLoading: false });
+  });
+  test('test profileReducer rejected', () => {
+    const state: DeepPartial<ProfileSchema> = {
+      isLoading: true,
+    };
+    expect(
+      profileReducer(state as ProfileSchema, fetchProfileData.rejected),
+    ).toEqual({ isLoading: false });
   });
   test('test updateProfileData extra reducer, pending status', () => {
     const state: DeepPartial<ProfileSchema> = { isLoading: false };

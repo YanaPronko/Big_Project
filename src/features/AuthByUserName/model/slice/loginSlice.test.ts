@@ -11,15 +11,17 @@ describe('loginSlice test', () => {
   });
   test('test loginReducer fullfiled', () => {
     const state: DeepPartial<LoginSchema> = {
-      isLoading: false,
+      isLoading: true,
     };
     expect(
       loginReducer(state as LoginSchema, loginByUsername.fulfilled),
-    ).toEqual({ isLoading: false });
+    ).toEqual({
+      isLoading: false,
+    });
   });
   test('test loginReducer rejected', () => {
     const state: DeepPartial<LoginSchema> = {
-      isLoading: false,
+      isLoading: true,
     };
     expect(
       loginReducer(state as LoginSchema, loginByUsername.rejected),

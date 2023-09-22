@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text } from 'shared/ui/Text/Text';
 import { ArticleIMGBlock } from '../../model/types/article';
 import cls from './ArticleImageBlockComponent.module.scss';
 
@@ -14,10 +15,13 @@ export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponen
   const { t } = useTranslation();
 
   return (
-    <div
-      className={classNames(cls.articleImageBlockComponent, {}, [className])}
-    >
-      Image Block
-    </div>
+    <>
+      <img
+        src={block.src}
+        className={classNames(cls.img, {}, [className])}
+        alt={block.title}
+      />
+      {block.title && <Text text={block.title} align="center" /> }
+    </>
   );
 });

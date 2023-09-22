@@ -1,5 +1,5 @@
-type ArticleType = 'IT' | 'Science' | 'Economics';
-type ArticleBlockType = 'CODE' | 'TEXT' | 'IMAGE';
+export type ArticleType = 'IT' | 'Science' | 'Economics';
+export type ArticleBlockType = 'CODE' | 'TEXT' | 'IMAGE';
 
 export interface ArticleBaseBlock {
   id: string;

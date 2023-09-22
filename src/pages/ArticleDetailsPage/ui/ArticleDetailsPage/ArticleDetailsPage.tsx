@@ -17,7 +17,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   if (!id) {
     return (
-      <Text title="Article not found" />
+      <Text title={t('article-not-found')} />
     );
   }
 

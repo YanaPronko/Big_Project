@@ -1,5 +1,4 @@
 import { memo, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -53,7 +52,6 @@ const renderBlock = (block: ArticleBlock) => {
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { className, id } = props;
-  const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   useDynamicLoad(reducers, true);
   const error = useSelector(getArtcileDetailsError);

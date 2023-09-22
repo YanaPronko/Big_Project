@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { CopyIcon } from 'shared/ui/CopyIcon/CopyIcon';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
@@ -13,9 +13,13 @@ interface CodeProps {
 export const Code = memo((props: CodeProps) => {
   const { className, text } = props;
 
+  const onCopy = useCallback(() => {
+    navigator.clipboard.writeText(text);
+  }, [text]);
+
   return (
     <pre className={classNames(cls.code, {}, [className])}>
-      <Button theme="outline" className={cls.copyBtn}>
+      <Button theme="outline" className={cls.copyBtn} onClick={onCopy}>
         <CopyIcon className={cls.copyIcon} />
       </Button>
       <code>
