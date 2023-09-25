@@ -2,5 +2,7 @@
   "article-detail-page": "ARTICLE DETAIL PAGE",
   "article-list-page": "ARTICLE LIST PAGE",
   "articledetail": "Article Detail",
-  "article-not-found": "Article not found"
+  "article-not-found": "Article not found",
+  "comments": "Comments",
+  "no-comments": "No comments"
 }
