@@ -9,7 +9,7 @@ import cls from './CommentCard.module.scss';
 interface CommentCardProps {
   className?: string;
   comment: Comment;
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 export const CommentCard: FC<CommentCardProps> = (props) => {

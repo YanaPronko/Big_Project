@@ -1,14 +1,15 @@
 .commentCard {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   padding: 1rem;
+  gap: 1rem;
   border: 1px solid var(--primary-color);
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  width: 30%;
+  gap: 1rem;
 }

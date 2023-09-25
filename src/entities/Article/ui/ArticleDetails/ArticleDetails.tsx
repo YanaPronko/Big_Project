@@ -36,13 +36,13 @@ const reducers: ReducersList = {
 const renderBlock = (block: ArticleBlock) => {
   switch (block.type) {
     case 'CODE': {
-      return <ArticleCodeBlockComponent block={block} className={cls.block} />;
+      return <ArticleCodeBlockComponent key={block.id} block={block} className={cls.block} />;
     }
     case 'IMAGE': {
-      return <ArticleImageBlockComponent block={block} className={cls.block} />;
+      return <ArticleImageBlockComponent key={block.id} block={block} className={cls.block} />;
     }
     case 'TEXT': {
-      return <ArticleTextBlockComponent block={block} className={cls.block} />;
+      return <ArticleTextBlockComponent key={block.id} block={block} className={cls.block} />;
     }
     default: {
       return null;
