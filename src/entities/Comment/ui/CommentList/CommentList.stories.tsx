@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/Theme/lib/ThemeContext';
 import { CommentList } from './CommentList';
 
 const meta: Meta<typeof CommentList> = {
-  title: 'shared/CommentList',
+  title: 'entities/Comment/CommentList',
   component: CommentList,
 };
 
@@ -12,11 +12,53 @@ export default meta;
 type Story = StoryObj<typeof CommentList>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    comments: [
+      {
+        id: '1',
+        text: 'hello',
+        articleId: '1',
+        user: {
+          id: '1',
+          username: 'vasya',
+        },
+      },
+      {
+        id: '2',
+        text: 'HEY',
+        articleId: '1',
+        user: {
+          id: '2',
+          username: 'Yana',
+        },
+      },
+    ],
+  },
 };
 
 export const PrimaryDark: Story = {
-  args: {},
+  args: {
+    comments: [
+      {
+        id: '1',
+        text: 'hello',
+        articleId: '1',
+        user: {
+          id: '1',
+          username: 'vasya',
+        },
+      },
+      {
+        id: '2',
+        text: 'HEY',
+        articleId: '1',
+        user: {
+          id: '2',
+          username: 'Yana',
+        },
+      },
+    ],
+  },
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -4,6 +4,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { updateProfileData } from '../../services/updateProfileData/updateProfileData';
 
 const profileData = {
+  id: '1',
   first: 'Yana',
   lastname: 'Prankonkjj,',
   age: 78,

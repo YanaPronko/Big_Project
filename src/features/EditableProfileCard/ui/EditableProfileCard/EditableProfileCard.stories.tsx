@@ -20,6 +20,7 @@ export const Primary: Story = {
 Primary.decorators = [StoreDecorator({
   profile: {
     form: {
+      id: '1',
       first: 'Yana',
       lastname: 'Prankonkjj,',
       age: 78,
@@ -29,6 +30,7 @@ Primary.decorators = [StoreDecorator({
       username: 'adminbnm,',
       avatar: IMG,
     },
+    readonly: true,
   },
 })];
 
@@ -40,6 +42,7 @@ PrimaryDark.decorators = [
   StoreDecorator({
     profile: {
       form: {
+        id: '1',
         first: 'Yana',
         lastname: 'Prankonkjj,',
         age: 78,
@@ -49,6 +52,54 @@ PrimaryDark.decorators = [
         username: 'adminbnm,',
         avatar: IMG,
       },
+      readonly: true,
+    },
+  }),
+  ThemeDecorator(Theme.DARK),
+];
+
+export const Edit: Story = {
+  args: {},
+};
+
+Edit.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        id: '1',
+        first: 'Yana',
+        lastname: 'Prankonkjj,',
+        age: 78,
+        currency: 'USD',
+        country: 'Kazakhstan',
+        city: 'Minsk',
+        username: 'adminbnm,',
+        avatar: IMG,
+      },
+      readonly: false,
+    },
+  }),
+];
+
+export const EditDark: Story = {
+  args: {},
+};
+
+EditDark.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        id: '1',
+        first: 'Yana',
+        lastname: 'Prankonkjj,',
+        age: 78,
+        currency: 'USD',
+        country: 'Kazakhstan',
+        city: 'Minsk',
+        username: 'adminbnm,',
+        avatar: IMG,
+      },
+      readonly: false,
     },
   }),
   ThemeDecorator(Theme.DARK),

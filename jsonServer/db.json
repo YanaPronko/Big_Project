@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "sdfghjkl;",
+      "id": "Q0LlPNV"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "PPPPPPPPP",
+      "id": "ZbuWWPK"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "USER COMMENT",
+      "id": "O9ZNF53"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "ddfbvmn,",
+      "id": "AkOv3J2"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "sdfghj",
+      "id": "L7S-ERf"
     }
   ],
   "users": [
@@ -118,14 +150,28 @@
       "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "2",
+      "first": "Yana",
+      "lastname": "Pranko",
+      "age": 34,
+      "currency": "BYN",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "admin213",
+      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    }
+  ]
 }

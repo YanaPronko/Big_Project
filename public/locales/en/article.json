@@ -4,5 +4,8 @@
   "articledetail": "Article Detail",
   "article-not-found": "Article not found",
   "comments": "Comments",
-  "no-comments": "No comments"
+  "no-comments": "No comments",
+  "enter-your-comment": "Enter your comment",
+  "send-comment": "Send comment",
+  "something-goes-wrong": "Something goes wrong..."
 }

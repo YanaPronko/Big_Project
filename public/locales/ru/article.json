@@ -4,5 +4,8 @@
   "articledetail": "Детали статьи",
   "article-not-found": "Статья не найдена",
   "comments": "Комментарии",
-  "no-comments": "Без комментариев"
+  "no-comments": "Без комментариев",
+  "enter-your-comment": "Введите свой комментарий",
+  "send-comment": "Отправить комментарий",
+  "something-goes-wrong": "Что-то идет не так..."
 }

@@ -6,6 +6,7 @@ import { fetchProfileData } from '../../services/fetchProfileData/fetchProfileDa
 describe('Testing athyncThunk: fetchProfileData', () => {
   test('success fetch of Profile Data', async () => {
     const profileData = {
+      id: '1',
       first: 'Yana',
       lastname: 'Prankonkjj,',
       age: 78,
@@ -17,7 +18,7 @@ describe('Testing athyncThunk: fetchProfileData', () => {
 
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: profileData }));
-    const result = await thunk.callAthyncThunk();
+    const result = await thunk.callAthyncThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -27,7 +28,7 @@ describe('Testing athyncThunk: fetchProfileData', () => {
   test('failed fetch of Profile Data', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callAthyncThunk();
+    const result = await thunk.callAthyncThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

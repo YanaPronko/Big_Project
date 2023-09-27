@@ -1,8 +1,12 @@
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 import { EditableProfileCard, profileReducer } from 'features/EditableProfileCard';
 import { fetchProfileData } from 'features/EditableProfileCard/model/services/fetchProfileData/fetchProfileData';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -11,12 +15,14 @@ const reducers: ReducersList = {
 const ProfilePage = memo(() => {
   useDynamicLoad(reducers, true);
   const dispatch = useAppDispatch();
+  const { id } = useParams<string>();
+  // const userData = useSelector(getUserAuthData);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <EditableProfileCard />

@@ -8,6 +8,7 @@ import { Button } from 'shared/ui/Button/Button';
 import { profileActions } from '../../model/slice/profileSlice';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { getEditStatus } from '../../model/selectors/getEditStatus/getEditStatus';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -21,6 +22,8 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
+
+  const canEdit = useSelector(getEditStatus);
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));
@@ -37,30 +40,33 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   return (
     <div className={classNames(cls.profilePageHeader, {}, [className])}>
       <Text className={cls.header} title={t('profile')} />
-      <div className={cls.headerBtn}>
-        {readonly ? (
-          <Button className={cls.editBtn} theme="outline" onClick={onEdit}>
-            {t('edit')}
-          </Button>
-        ) : (
-          <>
-            <Button
-              className={cls.editBtn}
-              theme="outline"
-              onClick={onCancelEdit}
-            >
-              {t('cancel')}
+
+      {canEdit && (
+        <div className={cls.headerBtn}>
+          {readonly ? (
+            <Button className={cls.editBtn} theme="outline" onClick={onEdit}>
+              {t('edit')}
             </Button>
-            <Button
-              className={cls.saveBtn}
-              theme="outline_red"
-              onClick={onSave}
-            >
-              {t('save')}
-            </Button>
-          </>
-        )}
-      </div>
+          ) : (
+            <>
+              <Button
+                className={cls.editBtn}
+                theme="outline"
+                onClick={onCancelEdit}
+              >
+                {t('cancel')}
+              </Button>
+              <Button
+                className={cls.saveBtn}
+                theme="outline_red"
+                onClick={onSave}
+              >
+                {t('save')}
+              </Button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 };

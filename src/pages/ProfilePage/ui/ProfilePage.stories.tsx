@@ -20,6 +20,7 @@ Normal.decorators = [
   StoreDecorator({
     profile: {
       form: {
+        id: '1',
         first: 'Yana',
         lastname: 'Prankonkjj,',
         age: 78,
@@ -29,6 +30,7 @@ Normal.decorators = [
         username: 'adminbnm,',
         avatar: IMG,
       },
+      readonly: true,
     },
   }),
 ];
@@ -42,6 +44,7 @@ Dark.decorators = [
   StoreDecorator({
     profile: {
       form: {
+        id: '1',
         first: 'Yana',
         lastname: 'Prankonkjj,',
         age: 78,
@@ -51,6 +54,7 @@ Dark.decorators = [
         username: 'adminbnm,',
         avatar: IMG,
       },
+      readonly: true,
     },
   }),
 ];

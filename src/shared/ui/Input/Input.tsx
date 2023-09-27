@@ -11,7 +11,7 @@ interface InputProps extends HTMLInputProps{
   type?: string;
   label?: string;
   autofocus?: boolean;
-  placeolder?: string;
+  placeholder?: string;
   value?: string | number;
   isOpen?: boolean;
   readonly?: boolean;
@@ -28,6 +28,7 @@ export const Input = memo((props: InputProps) => {
     name,
     label,
     readonly,
+    placeholder,
     ...otherProps
   } = props;
 
@@ -65,6 +66,7 @@ export const Input = memo((props: InputProps) => {
         type={type}
         value={value}
         readOnly={readonly}
+        placeholder={placeholder}
         onChange={changeHandler}
         ref={ref}
       />
