@@ -1,23 +1,12 @@
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import {
-  ReducersList,
-  useDynamicLoad,
-} from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { CalendarIcon } from 'shared/ui/CalendarIcon/CalendarIcon';
 import { EyeIcon } from 'shared/ui/EyeIcon/EyeIcon';
-import {
-  getArtcileDetailsData,
-  getArtcileDetailsError,
-  getArtcileDetailsIsLoading,
-} from '../../model/selectors/articleDetails';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { getArtcileDetailsData } from '../../model/selectors/articleDetails';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
@@ -26,12 +15,9 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  isLoading?: boolean;
+  error?: string;
 }
-
-const reducers: ReducersList = {
-  articleDetails: articleDetailsReducer,
-};
 
 const renderBlock = (block: ArticleBlock) => {
   switch (block.type) {
@@ -51,24 +37,17 @@ const renderBlock = (block: ArticleBlock) => {
 };
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-  const { className, id } = props;
-  const dispatch = useAppDispatch();
-  useDynamicLoad(reducers, true);
-  const error = useSelector(getArtcileDetailsError);
-  const isLoading = useSelector(getArtcileDetailsIsLoading);
-  const article = useSelector(getArtcileDetailsData);
+  const {
+    className, isLoading, error,
+  } = props;
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  const article = useSelector(getArtcileDetailsData);
 
   let content;
 
   if (isLoading) {
     content = (
-      <>
+      <div className={classNames(cls.articleDetails, {}, [className])}>
         <Skeleton
           className={cls.avatar}
           width={200}
@@ -79,7 +58,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <Skeleton width={600} height={24} />
         <Skeleton width="100%" height={200} />
         <Skeleton width="100%" height={200} />
-      </>
+      </div>
     );
   } else if (error) {
     content = (
@@ -91,7 +70,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      <>
+      <div className={classNames(cls.articleDetails, {}, [className])}>
         <Avatar src={article?.img} size={200} className={cls.avatar} alt="avatar" />
         <Text title={article?.title} text={article?.subtitle} align="center" size="xl" />
         <div className={cls.articleInfo}>
@@ -103,13 +82,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           <Text text={article?.createdAt} />
         </div>
         {article?.blocks.map(renderBlock)}
-      </>
+      </div>
     );
   }
 
-  return (
-    <div className={classNames(cls.articleDetails, {}, [className])}>
-      {content}
-    </div>
-  );
+  return content;
 });

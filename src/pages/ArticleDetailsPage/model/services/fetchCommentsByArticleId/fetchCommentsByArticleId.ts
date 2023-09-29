@@ -12,7 +12,7 @@ export const fetchCommentsByArticleId = createAsyncThunk<
     const { extra, rejectWithValue } = thunkApi;
 
     if (!articleId) {
-      return rejectWithValue('error');
+      return rejectWithValue('no article id');
     }
 
     try {

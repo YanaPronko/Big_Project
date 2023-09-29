@@ -18,6 +18,7 @@ describe('Test ProfileSlice', () => {
     city: 'Minsk',
     username: 'adminbnm,',
   };
+
   test('test setRedonly reducer', () => {
     const state: DeepPartial<ProfileSchema> = { readonly: false };
 
@@ -65,8 +66,12 @@ describe('Test ProfileSlice', () => {
   test('test profileReducer fullfiled', () => {
     const state: DeepPartial<ProfileSchema> = { isLoading: true };
     expect(
-      profileReducer(state as ProfileSchema, fetchProfileData.fulfilled),
-    ).toEqual({ isLoading: false });
+      profileReducer(state as ProfileSchema, fetchProfileData.fulfilled(data, '', '')),
+    ).toEqual({
+      isLoading: false,
+      data,
+      form: data,
+    });
   });
   test('test profileReducer rejected', () => {
     const state: DeepPartial<ProfileSchema> = {

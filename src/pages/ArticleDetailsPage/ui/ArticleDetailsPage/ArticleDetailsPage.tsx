@@ -10,6 +10,9 @@ import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/us
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addCommentForm';
+import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { getArtcileDetailsError, getArtcileDetailsIsLoading } from 'entities/Article/model/selectors/articleDetails';
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
@@ -21,41 +24,55 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
+  articleDetails: articleDetailsReducer,
   articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation('article');
-  const { id = '1' } = useParams<string>();
+  const { id } = useParams<string>();
   const dispatch = useAppDispatch();
 
   useDynamicLoad(reducers, true);
 
   useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
     dispatch(fetchCommentsByArticleId(id));
   });
 
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleDetailsCommentsIsLoading);
+  const isLoadingArticle = useSelector(getArtcileDetailsIsLoading);
+  const error = useSelector(getArtcileDetailsError);
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
 
   if (!id) {
-    return (
-      <Text title={t('article-not-found')} />
-    );
+    return <Text title={t('article-not-found')} />;
   }
+
+  if (isLoadingArticle) {
+    return <ArticleDetails isLoading={isLoadingArticle} error={error} />;
+  }
+
+  if (error) {
+    return <ArticleDetails isLoading={isLoadingArticle} error={error} />;
+  }
+
+  // ЧТО ЗА ОШИБКИ ОТ ESLINT?????
+  // { isLoading && (<Loader />) };
 
   return (
     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <ArticleDetails id={id} />
+      <ArticleDetails isLoading={isLoadingArticle} />
       <AddCommentForm onSendComment={onSendComment} />
       <Text title={t('comments')} className={cls.commentTitle} />
       <CommentList isLoading={isLoading} comments={comments} />
     </div>
   );
 };
+
 export default memo(ArticleDetailsPage);
