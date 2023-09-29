@@ -35,9 +35,9 @@ describe('Testing athyncThunk: addCommentForArticle', () => {
   });
 
   test('failed adding of comment for article with error', async () => {
-    const thunk = new TestAsyncThunk(addCommentForArticle, state);
+    const thunk = new TestAsyncThunk(addCommentForArticle);
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callAthyncThunk('s');
+    const result = await thunk.callAthyncThunk('');
 
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toEqual('error');
