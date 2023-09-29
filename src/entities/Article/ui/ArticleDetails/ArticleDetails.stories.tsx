@@ -96,21 +96,13 @@ export const PrimaryDark: Story = {
 PrimaryDark.decorators = [StoreDecorator({ articleDetails: { data } }), ThemeDecorator(Theme.DARK)];
 
 export const isLoading: Story = {
-  args: {},
+  args: { isLoading: true },
 };
 
-isLoading.decorators = [
-  StoreDecorator({
-    articleDetails: { isLoading: true },
-  }),
-];
+isLoading.decorators = [StoreDecorator({})];
 
 export const withError: Story = {
-  args: {},
+  args: { error: 'error' },
 };
 
-withError.decorators = [
-  StoreDecorator({
-    articleDetails: { error: 'error' },
-  }),
-];
+withError.decorators = [StoreDecorator({})];

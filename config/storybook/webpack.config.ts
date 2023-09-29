@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import path from 'path';
 import webpack, { RuleSetRule } from 'webpack';
 // import { BuildPaths } from '../types/config';
@@ -9,8 +10,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
   //   html: '',
   //   src: path.resolve(__dirname, '..', '..', 'src'),
   // };
+
   if (config.resolve) {
-    // eslint-disable-next-line no-param-reassign
     config.resolve.modules = [
       path.resolve(__dirname, '../../src'),
       'node_modules',

@@ -21,11 +21,13 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
 
   if (isLoading) {
     return (
-      <>
+      <div
+        className={classNames(cls.commentCard, {}, [className])}
+      >
         <Skeleton borderRadius="50%" width={30} height={30} />
         <Skeleton width={100} height={16} />
         <Skeleton width="100%" height={50} />
-      </>
+      </div>
     );
   }
 

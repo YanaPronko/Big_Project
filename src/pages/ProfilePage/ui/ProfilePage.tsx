@@ -5,8 +5,6 @@ import { EditableProfileCard, profileReducer } from 'features/EditableProfileCar
 import { fetchProfileData } from 'features/EditableProfileCard/model/services/fetchProfileData/fetchProfileData';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
 
 const reducers: ReducersList = {
   profile: profileReducer,

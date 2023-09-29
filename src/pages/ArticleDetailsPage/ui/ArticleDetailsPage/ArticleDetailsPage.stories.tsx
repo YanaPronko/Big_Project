@@ -2,7 +2,10 @@ import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from 'app/providers/Theme/lib/ThemeContext';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import {
+  ArticleBlockType,
+  ArticleType,
+} from 'entities/Article/model/types/article';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
@@ -93,12 +96,54 @@ export const Primary: Story = {
   args: {},
 };
 
-Primary.decorators = [StoreDecorator({
-  articleDetails: { data },
-})];
+Primary.decorators = [
+  StoreDecorator({
+    articleDetails: { data },
+    articleDetailsComments: {
+      entities: {
+        1: {
+          id: '1',
+          text: 'some comment 1',
+          articleId: '1',
+          user: { id: '1', username: 'B' },
+        },
+        2: {
+          id: '2',
+          text: 'some comment 2',
+          articleId: '1',
+          user: { id: '1', username: 'B' },
+        },
+      },
+      ids: ['1', '2'],
+
+    },
+  }),
+];
 
 export const PrimaryDark: Story = {
   args: {},
 };
 
-PrimaryDark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [
+  StoreDecorator({
+    articleDetails: { data },
+    // articleDetailsComments: {
+    //   entities: {
+    //     1: {
+    //       id: '1',
+    //       text: 'some comment 1',
+    //       articleId: '1',
+    //       user: { id: '1', username: 'B' },
+    //     },
+    //     2: {
+    //       id: '2',
+    //       text: 'some comment 2',
+    //       articleId: '1',
+    //       user: { id: '1', username: 'B' },
+    //     },
+    //   },
+    //   ids: ['1', '2'],
+    // },
+  }),
+  ThemeDecorator(Theme.DARK),
+];

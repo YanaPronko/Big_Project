@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/Theme/lib/ThemeContext';
 import { CommentCard } from './CommentCard';
+import IMG from '../../../../shared/assets/test/avatar.png';
 
 const meta: Meta<typeof CommentCard> = {
   title: 'entities/Comment/CommentCard',
@@ -20,6 +21,7 @@ export const Primary: Story = {
       user: {
         id: '1',
         username: 'vasya',
+        avatar: IMG,
       },
     },
   },
@@ -35,6 +37,7 @@ export const PrimaryDark: Story = {
         user: {
           id: '1',
           username: 'vasya',
+          avatar: IMG,
         },
       },
   },
