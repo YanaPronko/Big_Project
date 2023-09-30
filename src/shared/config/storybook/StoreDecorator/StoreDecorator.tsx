@@ -12,7 +12,7 @@ const defaultAsyncReducers = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
-  articleDetailsComment: articleDetailsCommentsReducer,
+  articleDetailsComments: articleDetailsCommentsReducer,
   addCommentForm: addCommentFormReducer,
 };
 
