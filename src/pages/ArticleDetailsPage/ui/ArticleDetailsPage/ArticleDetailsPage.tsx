@@ -73,7 +73,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <Button onClick={onBackToArticlesList}>Back to artciles list</Button>
+      <Button className={cls.btn} onClick={onBackToArticlesList}>Back to artciles list</Button>
       <ArticleDetails />
       <AddCommentForm onSendComment={onSendComment} />
       <Text title={t('comments')} className={cls.commentTitle} />

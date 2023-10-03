@@ -2,7 +2,7 @@
   .cardItem {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .views {
@@ -29,7 +29,7 @@
   .img {
     width: 100%;
     max-height: 25rem;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .footer {
@@ -43,8 +43,6 @@
   }
 
   .btn {
-    transition: 0.2s all ease-in-out;
-  
     &:hover {
       transform: scale(1.01);
     }

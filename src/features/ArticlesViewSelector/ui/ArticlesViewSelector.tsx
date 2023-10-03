@@ -1,4 +1,6 @@
 import { memo } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
+
 import { classNames } from 'shared/lib/classNames/classNames';
 import { GridIcon } from 'shared/ui/GridIcon/GridIcon';
 import { ListIcon } from 'shared/ui/ListIcon/ListIcon';
@@ -35,7 +37,7 @@ export const ArticlesViewSelector = memo((props: ArticlesViewSelectorProps) => {
       {...otherProps}
     >
       {viewTypes.map((type) => (
-        <Button theme="clear" onClick={onClick(type.view)} className={classNames('', { [cls.selected]: view === type.view })}>
+        <Button theme="clear" key={nanoid()} onClick={onClick(type.view)} className={classNames(cls.btn, { [cls.selected]: view === type.view })}>
           {type.Icon}
         </Button>
       ))}

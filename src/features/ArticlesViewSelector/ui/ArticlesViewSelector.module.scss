@@ -1,5 +1,13 @@
+.btn {
+  svg {
+    fill: var(--secondary-color);
+    fill-opacity: 0.6;
+  }
+}
+
 .selected {
   svg {
     fill: var(--primary-color);
+    fill-opacity: 1;
   }
 }

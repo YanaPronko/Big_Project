@@ -19,8 +19,8 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, view, article } = props;
-  const { t } = useTranslation();
   const navigate = useNavigate();
+  const { t } = useTranslation('article');
 
   let content;
   const types = <Text text={article.type.join(',')} className={cls.types} />;
@@ -32,7 +32,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const textBlock = article.blocks.find((block) => block.type === 'TEXT') as ArticleTextBlock;
 
   const onOpenArticle = useCallback(() => {
-    navigate(`${RoutePaths.article_details}/${article.id}`);
+    navigate(`${RoutePaths.article_details}${article.id}`);
   }, [navigate, article.id]);
 
   if (view === 'grid') {
@@ -66,9 +66,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         {title}
         {types}
         {img}
-        {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
+        {textBlock && (
+          <ArticleTextBlockComponent
+            block={textBlock}
+            className={cls.textBlock}
+          />
+        )}
         <div className={cls.footer}>
-          <Button onClick={onOpenArticle} className={cls.btn}>Read more...</Button>
+          <Button onClick={onOpenArticle} className={cls.btn}>{t('read-more')}</Button>
           {views}
         </div>
       </Card>

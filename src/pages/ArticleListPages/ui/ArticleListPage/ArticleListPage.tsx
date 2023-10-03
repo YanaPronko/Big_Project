@@ -1,6 +1,5 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleView, ArticlesList } from 'entities/Article';
 import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
@@ -24,17 +23,16 @@ const reducers: ReducersList = {
 
 const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   const { className } = props;
-  const { t } = useTranslation('article');
-  const dispatch = useAppDispatch();
   useDynamicLoad(reducers, true);
+  const dispatch = useAppDispatch();
+
+  useInitialEffect(() => {
+    dispatch(fetchArticlesList());
+  }, []);
 
   useInitialEffect(() => {
     const LSView = localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView || 'grid';
     dispatch(articlesPageActions.setView(LSView));
-  }, []);
-
-  useInitialEffect(() => {
-    dispatch(fetchArticlesList);
   }, []);
 
   const articles = useSelector(getArticles.selectAll);
@@ -53,7 +51,6 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
 
   return (
     <div className={classNames(cls.articleListPage, {}, [className])}>
-      <h1>{t('article-list-page')}</h1>
       <ArticlesViewSelector view={view} onViewClick={onChangeView} />
       <ArticlesList articles={articles} view={view} isLoading={isLoading} />
     </div>

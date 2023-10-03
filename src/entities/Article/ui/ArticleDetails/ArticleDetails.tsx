@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
@@ -22,13 +23,25 @@ interface ArticleDetailsProps {
 const renderBlock = (block: ArticleBlock) => {
   switch (block.type) {
     case 'CODE': {
-      return <ArticleCodeBlockComponent key={block.id} block={block} className={cls.block} />;
+      return <ArticleCodeBlockComponent key={nanoid()} block={block} className={cls.block} />;
     }
     case 'IMAGE': {
-      return <ArticleImageBlockComponent key={block.id} block={block} className={cls.block} />;
+      return (
+        <ArticleImageBlockComponent
+          key={nanoid()}
+          block={block}
+          className={cls.block}
+        />
+      );
     }
     case 'TEXT': {
-      return <ArticleTextBlockComponent key={block.id} block={block} className={cls.block} />;
+      return (
+        <ArticleTextBlockComponent
+          key={nanoid()}
+          block={block}
+          className={cls.block}
+        />
+      );
     }
     default: {
       return null;
@@ -53,11 +66,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           width={200}
           height={200}
           borderRadius="50%"
+          key={nanoid()}
         />
-        <Skeleton width={300} height={32} />
-        <Skeleton width={600} height={24} />
-        <Skeleton width="100%" height={200} />
-        <Skeleton width="100%" height={200} />
+        <Skeleton width={300} height={32} key={nanoid()} />
+        <Skeleton width={600} height={24} key={nanoid()} />
+        <Skeleton width="100%" height={200} key={nanoid()} />
+        <Skeleton width="100%" height={200} key={nanoid()} />
       </div>
     );
   } else if (error) {

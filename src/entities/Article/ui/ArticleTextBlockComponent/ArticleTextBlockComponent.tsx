@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
+import { nanoid } from '@reduxjs/toolkit';
 import cls from './ArticleTextBlockComponent.module.scss';
 import { ArticleTextBlock } from '../../model/types/article';
 
@@ -16,7 +17,7 @@ export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentP
     <div className={classNames(cls.articleTextBlockComponent, {}, [className])}>
       {block.title && <Text title={block.title} className={cls.title} />}
       {block.paragraphs.map((paragraph) => (
-        <Text text={paragraph} key={paragraph} className={cls.paragraph} />
+        <Text text={paragraph} key={nanoid()} className={cls.paragraph} />
       ))}
     </div>
   );

@@ -25,7 +25,7 @@ export const initialState: ArticlesPageSchema = {
 };
 
 export const articlesPageSlice = createSlice({
-  name: 'articlePage',
+  name: 'articlesPage',
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     ...initialState,
   }),
