@@ -40,7 +40,7 @@ export const NavBar = memo((props: NavBarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.navBar, {}, [className])} {...otherProps}>
+      <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
         <Button
           className={cls.signinBtn}
           theme="clear_inverted"
@@ -52,12 +52,12 @@ export const NavBar = memo((props: NavBarProps) => {
           isOpen={isAuthModal}
           onClose={() => setIsAuthModal(false)}
         />
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames(cls.navBar, {}, [className])} {...otherProps}>
+    <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
       <Button
         className={cls.signinBtn}
         theme="clear_inverted"
@@ -66,6 +66,6 @@ export const NavBar = memo((props: NavBarProps) => {
         {t('sign-in')}
       </Button>
       <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
-    </div>
+    </header>
   );
 });

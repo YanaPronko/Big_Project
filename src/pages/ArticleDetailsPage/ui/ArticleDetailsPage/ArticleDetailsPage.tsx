@@ -15,6 +15,7 @@ import { getArtcileDetailsError, getArtcileDetailsIsLoading } from 'entities/Art
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'app/config/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -72,13 +73,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   // { isLoading && (<Loader />) };
 
   return (
-    <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+    <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
       <Button className={cls.btn} onClick={onBackToArticlesList}>Back to artciles list</Button>
       <ArticleDetails />
       <AddCommentForm onSendComment={onSendComment} />
       <Text title={t('comments')} className={cls.commentTitle} />
       <CommentList isLoading={isLoading} comments={comments} />
-    </div>
+    </Page>
   );
 };
 

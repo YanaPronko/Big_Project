@@ -6,11 +6,7 @@ import { AppRoutesProps, routeConfig } from '../../../config/routeConfig';
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-    const element = (
-      <div className="page-wrapper">
-        {route.element}
-      </div>
-    );
+    const element = route.element as JSX.Element;
     return (
       <Route
         key={route.path}

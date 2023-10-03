@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-
 import { classNames } from 'shared/lib/classNames/classNames';
 import { GridIcon } from 'shared/ui/GridIcon/GridIcon';
 import { ListIcon } from 'shared/ui/ListIcon/ListIcon';

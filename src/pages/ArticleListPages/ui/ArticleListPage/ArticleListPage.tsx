@@ -8,9 +8,13 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageError } from 'widgets/PageError';
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
+import { Page } from 'shared/ui/Page/Page';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articles';
+import {
+  getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
+} from '../../model/selectors/articles';
+import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles';
 import cls from './ArticleListPage.module.scss';
 
 interface ArticleListPageProps {
@@ -27,12 +31,14 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   const dispatch = useAppDispatch();
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
+    const LSView = localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView || 'grid';
+    const limit = LSView === 'grid' ? 4 : 4;
+    dispatch(articlesPageActions.setView(LSView));
+    dispatch(articlesPageActions.setLimit(limit));
   }, []);
 
   useInitialEffect(() => {
-    const LSView = localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView || 'grid';
-    dispatch(articlesPageActions.setView(LSView));
+    dispatch(fetchArticlesList({ page: 1 }));
   }, []);
 
   const articles = useSelector(getArticles.selectAll);
@@ -45,15 +51,22 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
     localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, view);
   }, [dispatch]);
 
+  const onLoadNextArticles = useCallback(() => {
+    dispatch(fetchNextArticles());
+  }, [dispatch]);
+
   if (error) {
     return <PageError />;
   }
 
   return (
-    <div className={classNames(cls.articleListPage, {}, [className])}>
+    <Page
+      className={classNames(cls.articleListPage, {}, [className])}
+      onScrollEnd={onLoadNextArticles}
+    >
       <ArticlesViewSelector view={view} onViewClick={onChangeView} />
       <ArticlesList articles={articles} view={view} isLoading={isLoading} />
-    </div>
+    </Page>
   );
 };
 

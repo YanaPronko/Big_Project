@@ -1,4 +1,5 @@
 import { Suspense, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/Theme';
 import { NavBar } from 'widgets/NavBar';
@@ -10,7 +11,6 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import 'shared/config/i18n/i18n';
 import './styles/index.scss';
-import { useSelector } from 'react-redux';
 
 export const App = () => {
   const { theme } = useTheme();

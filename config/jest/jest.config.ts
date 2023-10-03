@@ -30,7 +30,7 @@ export default {
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
   moduleNameMapper: {
-    '\\.(s?css|less)$': 'identity-obj-proxy',
+    '\\.(s?css|less|gif|png|jpg)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
   },
   // A set of global variables that need to be available in all test environments
