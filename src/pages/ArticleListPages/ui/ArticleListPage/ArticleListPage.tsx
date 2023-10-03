@@ -9,8 +9,8 @@ import { PageError } from 'widgets/PageError';
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { Page } from 'shared/ui/Page/Page';
+import { initArticleListPage } from 'pages/ArticleListPages/model/services/initArticleListPage/initArticleListPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
 } from '../../model/selectors/articles';
@@ -27,18 +27,11 @@ const reducers: ReducersList = {
 
 const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   const { className } = props;
-  useDynamicLoad(reducers, true);
+  useDynamicLoad(reducers, false);
   const dispatch = useAppDispatch();
 
   useInitialEffect(() => {
-    const LSView = localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView || 'grid';
-    const limit = LSView === 'grid' ? 4 : 4;
-    dispatch(articlesPageActions.setView(LSView));
-    dispatch(articlesPageActions.setLimit(limit));
-  }, []);
-
-  useInitialEffect(() => {
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticleListPage());
   }, []);
 
   const articles = useSelector(getArticles.selectAll);

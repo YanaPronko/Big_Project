@@ -22,6 +22,7 @@ export const initialState: ArticlesPageSchema = {
   view: 'grid',
   page: 1,
   hasMore: true,
+  _inited: false,
   ids: [],
   entities: {},
 };
@@ -40,6 +41,9 @@ export const articlesPageSlice = createSlice({
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
+    },
+    setInited: (state, action: PayloadAction<boolean>) => {
+      state._inited = action.payload;
     },
   },
   extraReducers: (builder) => {
