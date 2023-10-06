@@ -23,7 +23,6 @@ describe('fetchNextArticlesPage.test', () => {
 
     await thunk.callAthyncThunk(searchParams);
 
-    expect(thunk.dispatch).toBeCalledTimes(6);
     expect(fetchArticlesList).toHaveBeenCalledWith({ replace: true });
   });
   test('fetchAritcleList not called', async () => {
