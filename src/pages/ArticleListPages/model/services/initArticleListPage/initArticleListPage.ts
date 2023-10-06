@@ -19,7 +19,7 @@ export const initArticleListPage = createAsyncThunk<
     const limit = LSView === 'grid' ? 9 : 4;
     dispatch(articlesPageActions.setView(LSView));
     dispatch(articlesPageActions.setLimit(limit));
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(fetchArticlesList({ replace: true }));
     dispatch(articlesPageActions.setInited(true));
   }
 });

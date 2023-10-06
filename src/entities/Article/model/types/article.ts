@@ -1,6 +1,6 @@
 import { User } from 'entities/User';
 
-export type ArticleType = 'IT' | 'Science' | 'Economics';
+export type ArticleType = 'All' | 'IT' | 'Science' | 'Economics';
 export type ArticleBlockType = 'CODE' | 'TEXT' | 'IMAGE';
 
 export interface ArticleBaseBlock {

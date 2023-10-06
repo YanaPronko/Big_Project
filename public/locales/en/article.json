@@ -8,5 +8,10 @@
   "enter-your-comment": "Enter your comment",
   "send-comment": "Send comment",
   "something-goes-wrong": "Something goes wrong...",
-  "read-more": "Read more..."
+  "read-more": "Read more...",
+  "title": "title",
+  "number-of-views": "number of views",
+  "ascending": "ascending",
+  "descending": "descending",
+  "search": "Search..."
 }

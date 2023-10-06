@@ -21,6 +21,7 @@ export const initialState: ArticlesPageSchema = {
   error: undefined,
   view: 'grid',
   page: 1,
+  limit: 9,
   hasMore: true,
   _inited: false,
   ids: [],
@@ -48,16 +49,23 @@ export const articlesPageSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state, action) => {
         state.error = undefined;
         state.isLoading = true;
+        if (action.meta.arg.replace) {
+          articlesAdapter.removeAll(state);
+        }
       })
       .addCase(
         fetchArticlesList.fulfilled,
-        (state, action: PayloadAction<Article[]>) => {
+        (state, action) => {
           state.isLoading = false;
-          articlesAdapter.addMany(state, action.payload);
-          state.hasMore = action.payload.length > 0;
+          state.hasMore = action.payload.length >= state.limit;
+          if (action.meta.arg.replace) {
+            articlesAdapter.setAll(state, action.payload);
+          } else {
+            articlesAdapter.addMany(state, action.payload);
+          }
         },
       )
       .addCase(fetchArticlesList.rejected, (state, action) => {
