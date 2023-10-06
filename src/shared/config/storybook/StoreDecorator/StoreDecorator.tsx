@@ -2,7 +2,7 @@
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentFormSlice';
+import { addCommentFormReducer } from 'features/AddCommentForm';
 import { loginReducer } from 'features/AuthByUserName';
 import { profileReducer } from 'features/EditableProfileCard';
 import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';

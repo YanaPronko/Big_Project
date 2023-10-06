@@ -3,8 +3,9 @@ import { ThunkOptionsConfig } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article/model/types/article';
 import {
   getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
-} from 'features/articlesFilters';
+} from 'features/ArticlesFilters';
 import { getArticlesPageLimit, getArticlesPageNumber } from 'pages/ArticleListPages/model/selectors/articles';
+import { addQueryParams } from 'shared/lib/addQueryParams/addQueryParams';
 
 interface FetchArticlesListArgs {
   replace?: boolean
@@ -25,6 +26,9 @@ export const fetchArticlesList = createAsyncThunk<
   const type = getArticlesType(getState());
 
   try {
+    addQueryParams({
+      sort, order, search, type,
+    });
     const response = await extra.api.get<Article[]>('/articles', {
       params: {
         _expand: 'user',
@@ -33,7 +37,7 @@ export const fetchArticlesList = createAsyncThunk<
         _order: order,
         _sort: sort,
         q: search,
-        _type: type === 'All' ? undefined : type,
+        type: type === 'All' ? undefined : type,
       },
     });
     if (!response.data) {

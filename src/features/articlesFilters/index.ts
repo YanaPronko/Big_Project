@@ -9,3 +9,5 @@ export {
   getArticlesSearch,
   getArticlesType,
 } from './model/selector/articlesFilters';
+
+export { ArticlesFilters } from './ui/ArticlesFilters/ArticlesFilters';

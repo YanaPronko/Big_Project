@@ -3,6 +3,9 @@ import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { initArticleListPage } from './initArticleListPage';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
+const searchParams = new URLSearchParams(
+  'sort=views&order=asc&search=&type=All',
+);
 
 describe('fetchNextArticlesPage.test', () => {
   test('success', async () => {
@@ -18,10 +21,10 @@ describe('fetchNextArticlesPage.test', () => {
       },
     });
 
-    await thunk.callAthyncThunk();
+    await thunk.callAthyncThunk(searchParams);
 
     expect(thunk.dispatch).toBeCalledTimes(6);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
+    expect(fetchArticlesList).toHaveBeenCalledWith({ replace: true });
   });
   test('fetchAritcleList not called', async () => {
     const thunk = new TestAsyncThunk(initArticleListPage, {
@@ -36,7 +39,7 @@ describe('fetchNextArticlesPage.test', () => {
       },
     });
 
-    await thunk.callAthyncThunk();
+    await thunk.callAthyncThunk(searchParams);
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticlesList).not.toHaveBeenCalled();
   });

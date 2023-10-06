@@ -15,13 +15,31 @@ type Story = StoryObj<typeof Card>;
 export const Primary: Story = {
   args: {
     children: <Text title="Title" text="Some text" />,
+    theme: 'normal',
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
     children: <Text title="Title" text="Some text" />,
+    theme: 'normal',
   },
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Outlined: Story = {
+  args: {
+    children: <Text title="Title" text="Some text" />,
+    theme: 'outlined',
+  },
+};
+
+export const OutlinedDark: Story = {
+  args: {
+    children: <Text title="Title" text="Some text" />,
+    theme: 'outlined',
+  },
+};
+
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
