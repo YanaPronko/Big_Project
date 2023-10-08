@@ -1,5 +1,7 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleView, ArticlesList } from 'entities/Article';
 import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
@@ -9,7 +11,9 @@ import { PageError } from 'widgets/PageError';
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { Page } from 'widgets/Page/Page';
-import { initArticleListPage } from 'pages/ArticleListPages/model/services/initArticleListPage/initArticleListPage';
+import { ArticlesFilters } from 'features/ArticlesFilters';
+import { Text } from 'shared/ui/Text/Text';
+import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
 import {
   getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
@@ -29,9 +33,11 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   const { className } = props;
   useDynamicLoad(reducers, false);
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
+  const { t } = useTranslation('article');
 
   useInitialEffect(() => {
-    dispatch(initArticleListPage());
+    dispatch(initArticleListPage(searchParams));
   }, []);
 
   const articles = useSelector(getArticles.selectAll);
@@ -52,12 +58,19 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
     return <PageError />;
   }
 
+  if (!isLoading && !articles.length) {
+    return <Text title={t('articles-not-found')} />;
+  }
+
   return (
     <Page
       className={classNames(cls.articleListPage, {}, [className])}
       onScrollEnd={onLoadNextArticles}
     >
-      <ArticlesViewSelector view={view} onViewClick={onChangeView} />
+      <div className={cls.filtersWrapper}>
+        <ArticlesFilters />
+        <ArticlesViewSelector view={view} onViewClick={onChangeView} />
+      </div>
       <ArticlesList articles={articles} view={view} isLoading={isLoading} />
     </Page>
   );

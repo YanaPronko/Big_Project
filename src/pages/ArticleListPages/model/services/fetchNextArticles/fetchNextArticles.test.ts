@@ -5,23 +5,24 @@ import { fetchNextArticles } from './fetchNextArticles';
 jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('Testing fetchNextArticles service', () => {
-  // test('success fetching', async () => {
-  //   const thunk = new TestAsyncThunk(fetchNextArticles, {
-  //     articlesPage: {
-  //       page: 2,
-  //       ids: [],
-  //       entities: {},
-  //       limit: 5,
-  //       isLoading: false,
-  //       hasMore: true,
-  //     },
-  //   });
+  test('success fetching', async () => {
+    const thunk = new TestAsyncThunk(fetchNextArticles, {
+      articlesPage: {
+        page: 2,
+        ids: [],
+        entities: {},
+        limit: 5,
+        isLoading: false,
+        hasMore: true,
+      },
+    });
 
-  //   await thunk.callAthyncThunk();
+    await thunk.callAthyncThunk();
 
-  //   expect(thunk.dispatch).toBeCalledTimes(4);
-  //   expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
-  // });
+    expect(thunk.dispatch).toBeCalledTimes(4);
+    expect(fetchArticlesList).toHaveBeenCalledWith({ replace: false });
+  });
+
   test('fetchAritcleList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticles, {
       articlesPage: {

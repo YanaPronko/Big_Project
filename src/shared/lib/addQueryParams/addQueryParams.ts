@@ -1,3 +1,9 @@
+/** Функция, которая добавляет query параметры в адресную строку
+ *
+ * @param params
+ * @returns
+ */
+
 export const getQueryParams = (params: OptionalRecord<string, string>) => {
   const queryParams = new URLSearchParams(window.location.search);
   Object.entries(params).forEach(([name, value]) => {

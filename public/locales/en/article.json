@@ -13,5 +13,7 @@
   "number-of-views": "number of views",
   "ascending": "ascending",
   "descending": "descending",
-  "search": "Search..."
+  "search": "Search...",
+  "creation date": "creation date",
+  "articles-not-found": "Articles not found"
 }

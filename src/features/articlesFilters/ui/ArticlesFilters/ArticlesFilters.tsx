@@ -10,16 +10,18 @@ import { SortOrder } from 'shared/const/types/order';
 
 // TODO Переместить selector из pages или подумать куда его
 import { articlesPageActions } from 'pages/ArticleListPages/model/slice/articlesPageSlice';
-
 import { fetchArticlesList } from 'pages/ArticleListPages/model/services/fetchArticlesList/fetchArticlesList';
+
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
-import { articlesFiltersActions, articlesFiltersReducer } from '../../model/slice/articlesFiltersSlice';
-import {
-  getArticlesOrder, getArticlesSearch, getArticlesSort,
-} from '../../model/selector/articlesFilters';
+import { ArticleType } from 'entities/Article';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
+import { articlesFiltersActions, articlesFiltersReducer } from '../../model/slice/articlesFiltersSlice';
+import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
+import {
+  getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
+} from '../../model/selector/articlesFilters';
 import cls from './ArticlesFilters.module.scss';
+import { ArticlesTypesTabs } from '../ArticlesTypesTabs/ArticlesTypesTabs';
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -31,14 +33,14 @@ const reducers: ReducersList = {
 
 export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const { className } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   useDynamicLoad(reducers, false);
   const dispatch = useAppDispatch();
 
   const order = useSelector(getArticlesOrder);
   const sort = useSelector(getArticlesSort);
   const search = useSelector(getArticlesSearch);
-  // const type = useSelector(getArticlesType);
+  const type = useSelector(getArticlesType);
 
   const fetchDataByFilters = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }));
@@ -64,6 +66,12 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
     debouncedFetchDataByFilters();
   }, [dispatch, debouncedFetchDataByFilters]);
 
+  const onChangeType = useCallback((value: ArticleType) => {
+    dispatch(articlesFiltersActions.setType(value));
+    dispatch(articlesPageActions.setPage(1));
+    fetchDataByFilters();
+  }, [dispatch, fetchDataByFilters]);
+
   return (
     <section className={classNames(cls.articlesFilters, {}, [className])}>
       <ArticleSortSelector
@@ -79,6 +87,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
           onChange={onChangeSearch}
         />
       </Card>
+      <ArticlesTypesTabs value={type} onChangeType={onChangeType} />
     </section>
   );
 });

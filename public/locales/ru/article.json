@@ -8,5 +8,12 @@
   "enter-your-comment": "Введите свой комментарий",
   "send-comment": "Отправить комментарий",
   "something-goes-wrong": "Что-то идет не так...",
-  "read-more": "Читать далее..."
+  "read-more": "Читать далее...",
+  "title": "названию",
+  "number-of-views": "количеству просмотров",
+  "ascending": "возрастанию",
+  "descending": "убыванию",
+  "search": "Поиск...",
+  "creation date": "дате создания",
+  "articles-not-found": "Статьи не найдены"
 }

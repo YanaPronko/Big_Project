@@ -3,7 +3,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { SortOrder } from 'shared/const/types/order';
-import { ArticlesSortField } from 'features/articlesFilters/model/types/articlesFiltersSchema';
+import { ArticlesSortField } from 'features/ArticlesFilters/model/types/articlesFiltersSchema';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
 import cls from './ArticleSortSelector.module.scss';
 
@@ -19,7 +19,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   const {
     className, order, sort, onChangeOrder, onChangeSort,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
 
   const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
     { value: 'asc', content: `${t('ascending')}` },
