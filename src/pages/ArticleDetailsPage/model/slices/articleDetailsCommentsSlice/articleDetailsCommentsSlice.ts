@@ -1,15 +1,15 @@
 import { PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
-import { ArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema';
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-  (state) => state?.articleDetailsComments || commentsAdapter.getInitialState(),
+  (state) => state?.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
 export const articleDetailsCommentsSlice = createSlice({

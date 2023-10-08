@@ -8,7 +8,7 @@ import { LoginSchema } from 'features/AuthByUserName';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticleListPages';
 import { UISchema } from 'features/UI';
 import { ArticlesFiltersSchema } from 'features/ArticlesFilters';
@@ -22,7 +22,7 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
   articlesFilters?: ArticlesFiltersSchema;

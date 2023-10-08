@@ -1,6 +1,6 @@
 import { Comment } from 'entities/Comment';
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
+import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/articleDetailsCommentsSchema';
 
 const entities = {

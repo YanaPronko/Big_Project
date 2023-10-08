@@ -37,7 +37,7 @@ export const fetchArticlesList = createAsyncThunk<
         _order: order,
         _sort: sort,
         q: search,
-        type: type === 'All' ? undefined : type,
+        type_like: type === 'All' ? undefined : type,
       },
     });
     if (!response.data) {

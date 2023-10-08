@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
@@ -11,6 +11,7 @@ interface ArticlesListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === 'grid' ? 9 : 3)
@@ -19,11 +20,11 @@ const getSkeletons = (view: ArticleView) => new Array(view === 'grid' ? 9 : 3)
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
   const {
-    className, articles, isLoading, view = 'grid',
+    className, articles, isLoading, view = 'grid', target,
   } = props;
 
   const renderArticles = useCallback((article: Article) => (
-    <ArticleListItem key={nanoid()} article={article} view={view} />), [view]);
+    <ArticleListItem key={nanoid()} article={article} view={view} target={target} />), [view, target]);
 
   return (
     <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>

@@ -2,7 +2,7 @@ import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticlesList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { Text } from 'shared/ui/Text/Text';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -16,11 +16,15 @@ import { Button } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'app/config/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
-import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
+import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleDetailsPageReducer } from '../../model/slices';
+import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice/articleDetailsRecommendationsSlice';
+import { getArticleDetailsRecommendationsIsLoading } from '../../model/selectors/recommendations/recomendations';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -28,7 +32,7 @@ interface ArticleDetailsPageProps {
 
 const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: ArticleDetailsPageReducer,
 };
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
@@ -43,12 +47,23 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   useInitialEffect(() => {
     dispatch(fetchArticleById(id));
     dispatch(fetchCommentsByArticleId(id));
+    dispatch(fetchArticleRecommendations());
   });
 
-  const comments = useSelector(getArticleComments.selectAll);
-  const isLoading = useSelector(getArticleDetailsCommentsIsLoading);
+  // Page
+
   const isLoadingArticle = useSelector(getArtcileDetailsIsLoading);
   const error = useSelector(getArtcileDetailsError);
+
+  // Comments
+  const comments = useSelector(getArticleComments.selectAll);
+  const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+
+  // Recomendations
+
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
+  console.log(recommendations);
+  const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading);
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
@@ -57,6 +72,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const onBackToArticlesList = useCallback(() => {
     navigate(RoutePaths.articles);
   }, [navigate]);
+
   if (!id) {
     return <Text title={t('article-not-found')} />;
   }
@@ -74,11 +90,20 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <Button className={cls.btn} onClick={onBackToArticlesList}>Back to artciles list</Button>
+      <Button className={cls.btn} onClick={onBackToArticlesList}>
+        Back to artciles list
+      </Button>
       <ArticleDetails />
       <AddCommentForm onSendComment={onSendComment} />
+      <Text title={t('recommendations')} />
+      <ArticlesList
+        articles={recommendations}
+        isLoading={recommendationsIsLoading}
+        target="_blank"
+        className={cls.recommendations}
+      />
       <Text title={t('comments')} className={cls.commentTitle} />
-      <CommentList isLoading={isLoading} comments={comments} />
+      <CommentList isLoading={commentsIsLoading} comments={comments} />
     </Page>
   );
 };
