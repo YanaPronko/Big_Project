@@ -62,7 +62,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   // Recomendations
 
   const recommendations = useSelector(getArticleRecommendations.selectAll);
-  console.log(recommendations);
   const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading);
 
   const onSendComment = useCallback((text: string) => {

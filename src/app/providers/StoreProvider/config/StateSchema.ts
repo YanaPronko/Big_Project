@@ -8,7 +8,7 @@ import { LoginSchema } from 'features/AuthByUserName';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticleListPages';
 import { UISchema } from 'features/UI';
 import { ArticlesFiltersSchema } from 'features/ArticlesFilters';
