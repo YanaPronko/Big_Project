@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  min-height: 100%;
 }
 
 .btn {
@@ -10,6 +9,9 @@
 }
 
 .recommendations {
+  display: flex;
   flex-wrap: nowrap;
   gap: 2rem;
+
+  // overflow: scroll;
 }
