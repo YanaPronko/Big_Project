@@ -10,7 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageError } from 'widgets/PageError';
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
-import { Page } from 'widgets/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import { ArticlesFilters } from 'features/ArticlesFilters';
 import { Text } from 'shared/ui/Text/Text';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';

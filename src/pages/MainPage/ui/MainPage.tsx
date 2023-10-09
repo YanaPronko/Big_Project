@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { CounterBtn } from 'features/CounterBtn/CounterBtn';
-import { Page } from 'widgets/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');

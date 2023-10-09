@@ -1,7 +1,6 @@
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   width: 100%;
   height: var(--navbar-height);
   padding: 2rem;
@@ -11,4 +10,20 @@
 .signinBtn {
   position: relative;
   z-index: 15;
+}
+
+.logoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+}
+
+.logo {
+  font: var(--font-xl);
+}
+
+.btnBlock {
+  display: flex;
+  gap: 2rem;
 }

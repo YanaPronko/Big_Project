@@ -16,5 +16,9 @@
   "search": "Search...",
   "creation date": "creation date",
   "articles-not-found": "Articles not found",
-  "recommendations": "Recommendations"
+  "recommendations": "Recommendations",
+  "back-to-artciles-list": "Back to artciles list",
+  "edit-article": "Edit article",
+  "edit-article-with-id": "Edit article with id",
+  "create-new-article": "Create new article"
 }

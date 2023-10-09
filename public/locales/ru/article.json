@@ -16,5 +16,9 @@
   "search": "Поиск...",
   "creation date": "дате создания",
   "articles-not-found": "Статьи не найдены",
-  "recommendations": "Рекоммендации"
+  "recommendations": "Рекоммендации",
+  "back-to-artciles-list": "Назад к списку статей",
+  "edit-article": "Редактировать статью",
+  "edit-article-with-id": "Редактирование статьи с id",
+  "create-new-article": "Создать новую статью"
 }

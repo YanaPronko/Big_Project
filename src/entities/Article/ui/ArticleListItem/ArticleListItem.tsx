@@ -73,9 +73,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           />
         )}
         <div className={cls.footer}>
-          <Button className={cls.btn}>
-            <AppLink to={`${RoutePaths.article_details}${article.id}`} target={target}>{t('read-more')}</AppLink>
-          </Button>
+          <AppLink
+            to={`${RoutePaths.article_details}${article.id}`}
+            target={target}
+          >
+            <Button className={cls.btn}>{t('read-more')}</Button>
+          </AppLink>
           {views}
         </div>
       </Card>

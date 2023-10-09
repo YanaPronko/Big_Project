@@ -9,6 +9,8 @@ import { Button } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUserName';
 import { getUserAuthData, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePaths } from 'app/config/routeConfig';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -40,14 +42,27 @@ export const NavBar = memo((props: NavBarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
-        <Button
-          className={cls.signinBtn}
-          theme="clear_inverted"
-          onClick={onLogOut}
-        >
-          {t('vyiti')}
-        </Button>
+      <header
+        className={classNames(cls.navBar, {}, [className])}
+        {...otherProps}
+      >
+        <div className={cls.logoBlock}>
+          <AppLink to={RoutePaths.main} theme="inverted" className={cls.logo}>
+            {t('pryweb')}
+          </AppLink>
+        </div>
+        <div className={cls.btnBlock}>
+          <AppLink to={RoutePaths.article_create} theme="inverted">
+            {t('create-article')}
+          </AppLink>
+          <Button
+            className={cls.signinBtn}
+            theme="clear_inverted"
+            onClick={onLogOut}
+          >
+            {t('vyiti')}
+          </Button>
+        </div>
         <LoginModal
           isOpen={isAuthModal}
           onClose={() => setIsAuthModal(false)}
@@ -58,6 +73,9 @@ export const NavBar = memo((props: NavBarProps) => {
 
   return (
     <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
+      <div className={cls.logoBlock}>
+        <AppLink to={RoutePaths.main} theme="inverted" className={cls.logo}>{t('pryweb')}</AppLink>
+      </div>
       <Button
         className={cls.signinBtn}
         theme="clear_inverted"

@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ArticleDetails, ArticlesList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
@@ -12,19 +12,18 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { getArtcileDetailsError, getArtcileDetailsIsLoading } from 'entities/Article/model/selectors/articleDetails';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { Button } from 'shared/ui/Button/Button';
-import { RoutePaths } from 'app/config/routeConfig';
-import { Page } from 'widgets/Page/Page';
 import { AddCommentForm } from 'features/AddCommentForm';
+import { Page } from 'widgets/Page';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageReducer } from '../../model/slices';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice/articleDetailsRecommendationsSlice';
 import { getArticleDetailsRecommendationsIsLoading } from '../../model/selectors/recommendations/recomendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -40,7 +39,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { t } = useTranslation('article');
   const { id } = useParams<string>();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useDynamicLoad(reducers, true);
 
@@ -68,10 +66,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
 
-  const onBackToArticlesList = useCallback(() => {
-    navigate(RoutePaths.articles);
-  }, [navigate]);
-
   if (!id) {
     return <Text title={t('article-not-found')} />;
   }
@@ -89,9 +83,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <Button className={cls.btn} onClick={onBackToArticlesList}>
-        Back to artciles list
-      </Button>
+      <ArticleDetailsPageHeader />
       <ArticleDetails />
       <AddCommentForm onSendComment={onSendComment} />
       <Text title={t('recommendations')} />
