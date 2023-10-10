@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { config } from 'process';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 export const $api = axios.create({
@@ -6,4 +7,11 @@ export const $api = axios.create({
   headers: {
     authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
   },
+});
+
+$api.interceptors.request.use((config) => {
+  if (config.headers) {
+    // eslint-disable-next-line no-param-reassign
+    config.headers.authorization = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
+  }
 });
