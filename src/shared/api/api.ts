@@ -10,4 +10,5 @@ $api.interceptors.request.use((config) => {
     // eslint-disable-next-line no-param-reassign
     config.headers.authorization = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
   }
+  return config;
 });
