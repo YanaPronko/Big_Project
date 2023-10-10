@@ -6,12 +6,13 @@ import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUserName';
 import { ProfileSchema } from 'features/EditableProfileCard';
-import { AddCommentFormSchema } from 'features/AddCommentForm';
+
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticleListPages';
 import { UISchema } from 'features/UI';
-import { ArticlesFiltersSchema } from 'features/ArticlesFilters';
+import { AddCommentFormSchema } from 'features/CommentForm';
+import { ArticlesFiltersSchema } from 'features/FiltersOfArticle';
 
 export interface StateSchema {
   counter: CounterSchema;

@@ -3,7 +3,7 @@ import { ThunkOptionsConfig } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article/model/types/article';
 import {
   getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
-} from 'features/ArticlesFilters';
+} from 'features/FiltersOfArticle';
 import { getArticlesPageLimit, getArticlesPageNumber } from 'pages/ArticleListPages/model/selectors/articles';
 import { addQueryParams } from 'shared/lib/addQueryParams/addQueryParams';
 

@@ -3,8 +3,8 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { SortOrder } from 'shared/const/types/order';
-import { ArticlesSortField } from 'features/ArticlesFilters/model/types/articlesFiltersSchema';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
+import { ArticlesSortField } from 'features/FiltersOfArticle/model/types/articlesFiltersSchema';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
