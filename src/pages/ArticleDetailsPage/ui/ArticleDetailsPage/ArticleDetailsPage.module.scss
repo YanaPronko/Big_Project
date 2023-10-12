@@ -1,7 +1,8 @@
 .articleDetailsPage {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  // display: flex;
+  // flex-direction: column;
+  // gap: 2rem;
+  // height: calc(100vh - var(--navbar-height));
 }
 
 .btn {
@@ -12,6 +13,6 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 2rem;
-
-  // overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: auto;
 }

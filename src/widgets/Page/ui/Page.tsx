@@ -15,11 +15,14 @@ import cls from './Page.module.scss';
 interface PageProps {
   className?: string;
   children: ReactNode;
+  isLoading?: boolean;
   onScrollEnd?: () => void;
 }
 
 export const Page = memo((props: PageProps) => {
-  const { className, children, onScrollEnd } = props;
+  const {
+    className, children, onScrollEnd, isLoading,
+  } = props;
   const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
@@ -49,7 +52,9 @@ export const Page = memo((props: PageProps) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef} className={cls.trigger} />
+      {onScrollEnd && !isLoading ? (
+        <div ref={triggerRef} className={cls.trigger} />
+      ) : null}
     </section>
   );
 });
