@@ -22,7 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   // ignorePatterns: ["**/*"],
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'path-checker-pryweb'],
   rules: {
     'react/jsx-filename-extension': [
       2,
@@ -53,6 +53,7 @@ module.exports = {
     'react/state-in-constructor': ['off', 'never'],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'path-checker-pryweb/relative-path-checker': 'error',
     'no-param-reassign': [
       'error',
       {

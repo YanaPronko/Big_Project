@@ -4,8 +4,8 @@ import { Article } from 'entities/Article/model/types/article';
 import {
   getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
 } from 'features/FiltersOfArticle';
-import { getArticlesPageLimit, getArticlesPageNumber } from 'pages/ArticleListPages/model/selectors/articles';
 import { addQueryParams } from 'shared/lib/addQueryParams/addQueryParams';
+import { getArticlesPageLimit, getArticlesPageNumber } from '../../selectors/articles';
 
 interface FetchArticlesListArgs {
   replace?: boolean

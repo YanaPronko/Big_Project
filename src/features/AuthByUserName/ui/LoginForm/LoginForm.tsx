@@ -1,4 +1,3 @@
-import { loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -8,6 +7,7 @@ import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/us
 import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text } from 'shared/ui/Text/Text';
+import { loginReducer } from '../../model/slice/loginSlice';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { loginByUsername } from '../../model/services/loginByUsername';

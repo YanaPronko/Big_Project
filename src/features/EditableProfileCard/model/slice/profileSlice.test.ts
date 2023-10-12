@@ -1,12 +1,12 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { fetchProfileData } from 'features/EditableProfileCard/model/services/fetchProfileData/fetchProfileData';
-import { updateProfileData } from 'features/EditableProfileCard/model/services/updateProfileData/updateProfileData';
 import {
   profileActions,
   profileReducer,
-} from 'features/EditableProfileCard/model/slice/profileSlice';
-import { ProfileSchema } from 'features/EditableProfileCard/model/types/profile';
+} from './profileSlice';
+import { ProfileSchema } from '../types/profile';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 
 describe('Test ProfileSlice', () => {
   const data = {

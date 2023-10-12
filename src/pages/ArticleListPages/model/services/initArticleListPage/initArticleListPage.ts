@@ -16,9 +16,11 @@ export const initArticleListPage = createAsyncThunk<
 >('articlesPage/initArticleListPage', async (searchParams, thunkApi) => {
   const { dispatch, getState } = thunkApi;
 
-  const _inited = getArticlesPageInited(getState());
-  if (!_inited) {
+  const inited = getArticlesPageInited(getState());
+  // console.log(searchParams.keys());
+  if (!inited) {
     searchParams.forEach((value, key) => {
+      console.log({ value }, { key });
       if (key) {
         // eslint-disable-next-line default-case
         switch (key) {
@@ -41,7 +43,7 @@ export const initArticleListPage = createAsyncThunk<
     const limit = LSView === 'grid' ? 9 : 4;
     dispatch(articlesPageActions.setView(LSView));
     dispatch(articlesPageActions.setLimit(limit));
-    dispatch(fetchArticlesList({ replace: true }));
+    dispatch(fetchArticlesList({}));
     dispatch(articlesPageActions.setInited(true));
   }
 });

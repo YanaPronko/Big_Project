@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { getArtcileDetailsData, getArtcileDetailsError, getArtcileDetailsIsLoading } from 'entities/Article/model/selectors/articleDetails';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { getArtcileDetailsData, getArtcileDetailsError, getArtcileDetailsIsLoading } from './articleDetails';
+import { ArticleBlockType, ArticleType } from '../types/article';
 
 describe('Getting Articles from state', () => {
   test('getting article from store', () => {

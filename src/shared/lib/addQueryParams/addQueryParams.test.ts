@@ -1,4 +1,4 @@
-import { getQueryParams } from 'shared/lib/addQueryParams/addQueryParams';
+import { getQueryParams } from './addQueryParams';
 
 describe('Tests for addQueryParams function', () => {
   afterEach(() => {

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/Theme/lib/ThemeContext';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Modal } from 'shared/ui/Modal/Modal';
+import { Modal } from './Modal';
 
 const meta: Meta<typeof Modal> = {
   title: 'shared/Modal',

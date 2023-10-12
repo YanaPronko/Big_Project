@@ -5,9 +5,9 @@ import { Text } from 'shared/ui/Text/Text';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button } from 'shared/ui/Button/Button';
-import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { RoutePaths } from 'app/config/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Article, ArticleTextBlock, ArticleView } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 

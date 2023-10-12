@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { addCommentForArticle } from './addCommentForArticle';
 
 const comment = {
   id: '1',

@@ -38,7 +38,7 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
 
   useInitialEffect(() => {
     dispatch(initArticleListPage(searchParams));
-  }, []);
+  });
 
   const articles = useSelector(getArticles.selectAll);
   const error = useSelector(getArticlesPageError);

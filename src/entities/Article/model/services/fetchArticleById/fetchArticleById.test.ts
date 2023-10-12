@@ -1,5 +1,5 @@
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { ArticleBlockType, ArticleType } from '../../types/article';
 import { fetchArticleById } from './fetchArticleById';
 
 describe('Testing athyncThunk: fetchArticleById ', () => {

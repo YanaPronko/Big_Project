@@ -1,7 +1,7 @@
 import { Comment } from 'entities/Comment';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/articleDetailsCommentsSchema';
+import { articleDetailsCommentsReducer } from '../../slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
+import { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const entities = {
   1: {
