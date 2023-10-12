@@ -1,5 +1,5 @@
 import {
-  MutableRefObject, ReactNode, UIEvent, useRef,
+  MutableRefObject, ReactNode, UIEvent, memo, useRef,
 } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -18,7 +18,7 @@ interface PageProps {
   onScrollEnd?: () => void;
 }
 
-export const Page = (props: PageProps) => {
+export const Page = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
   const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -52,4 +52,4 @@ export const Page = (props: PageProps) => {
       <div ref={triggerRef} className={cls.trigger} />
     </section>
   );
-};
+});

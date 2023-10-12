@@ -12,7 +12,7 @@ import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { Page } from 'widgets/Page/ui/Page';
 import { Text } from 'shared/ui/Text/Text';
-import { ArticlesFilters } from 'features/FiltersOfArticle';
+import { ArticlesFilters, articlesFiltersReducer } from 'features/FiltersOfArticle';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
 import {
@@ -27,6 +27,7 @@ interface ArticleListPageProps {
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
+  articlesFilters: articlesFiltersReducer,
 };
 
 const ArticleListPage: FC<ArticleListPageProps> = (props) => {

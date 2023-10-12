@@ -85,7 +85,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
       <ArticleDetailsPageHeader />
       <ArticleDetails />
-      <AddCommentForm onSendComment={onSendComment} />
       <Text title={t('recommendations')} />
       <ArticlesList
         articles={recommendations}
@@ -94,6 +93,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         className={cls.recommendations}
       />
       <Text title={t('comments')} className={cls.commentTitle} />
+      <AddCommentForm onSendComment={onSendComment} />
       <CommentList isLoading={commentsIsLoading} comments={comments} />
     </Page>
   );
