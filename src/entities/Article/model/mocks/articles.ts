@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 
-import { Article } from '../types/article';
+import { EntityState } from '@reduxjs/toolkit';
+import { Article, ArticleBlock, ArticleTextBlock, ArticleType } from '../types/article';
 
 export const articleMock: Article = {
   id: '1',

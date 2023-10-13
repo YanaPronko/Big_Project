@@ -33,11 +33,9 @@ export const globalTypes = {
   //     },
   //   },
   // };
-
 };
 
 const preview: Preview = {
-  // decorators = [ThemeDecorator]
   decorators: [
     TranslationDecorator,
     StyleDecorator,
