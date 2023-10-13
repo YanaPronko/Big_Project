@@ -66,7 +66,7 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   return (
     <Page
       className={classNames(cls.articleListPage, {}, [className])}
-      onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
+      onScrollEnd={!isLoading ? onLoadNextArticles: undefined}
     >
       <div className={cls.filtersWrapper}>
         <ArticlesFilters />
