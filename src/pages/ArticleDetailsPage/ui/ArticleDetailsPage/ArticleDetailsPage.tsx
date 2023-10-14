@@ -14,6 +14,7 @@ import { getArtcileDetailsError, getArtcileDetailsIsLoading } from 'entities/Art
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { Page } from 'widgets/Page';
 import { AddCommentForm } from 'features/CommentForm';
+import { VStack } from 'shared/ui/Stack';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -83,18 +84,20 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <ArticleDetailsPageHeader />
-      <ArticleDetails />
-      <Text title={t('recommendations')} />
-      <ArticlesList
-        articles={recommendations}
-        isLoading={recommendationsIsLoading}
-        target="_blank"
-        className={cls.recommendations}
-      />
-      <Text title={t('comments')} className={cls.commentTitle} />
-      <AddCommentForm onSendComment={onSendComment} />
-      <CommentList isLoading={commentsIsLoading} comments={comments} />
+      <VStack gap="16" align="stretch">
+        <ArticleDetailsPageHeader />
+        <ArticleDetails />
+        <Text title={t('recommendations')} />
+        <ArticlesList
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          target="_blank"
+          className={cls.recommendations}
+        />
+        <Text title={t('comments')} className={cls.commentTitle} />
+        <AddCommentForm onSendComment={onSendComment} />
+        <CommentList isLoading={commentsIsLoading} comments={comments} />
+      </VStack>
     </Page>
   );
 };

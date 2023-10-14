@@ -7,6 +7,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { CalendarIcon } from 'shared/ui/CalendarIcon/CalendarIcon';
 import { EyeIcon } from 'shared/ui/EyeIcon/EyeIcon';
+import { VStack } from 'shared/ui/Stack';
 import { getArtcileDetailsData } from '../../model/selectors/articleDetails';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
@@ -60,7 +61,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <div className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack gap="4" max className={classNames(cls.articleDetails, {}, [className])}>
         <Skeleton
           className={cls.avatar}
           width={200}
@@ -72,7 +73,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <Skeleton width={600} height={24} key={nanoid()} />
         <Skeleton width="100%" height={200} key={nanoid()} />
         <Skeleton width="100%" height={200} key={nanoid()} />
-      </div>
+      </VStack>
     );
   } else if (error) {
     content = (
@@ -84,7 +85,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      <div className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack gap="4" max className={classNames('', {}, [className])}>
         <Avatar src={article?.img} size={200} className={cls.avatar} alt="avatar" />
         <Text title={article?.title} text={article?.subtitle} align="center" size="xl" />
         <div className={cls.articleInfo}>
@@ -96,7 +97,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           <Text text={article?.createdAt} />
         </div>
         {article?.blocks.map(renderBlock)}
-      </div>
+      </VStack>
     );
   }
 
