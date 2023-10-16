@@ -69,7 +69,7 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
       className={classNames(cls.articleListPage, {}, [className])}
       onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
     >
-      <HStack justify="between">
+      <HStack justify="between" role="section">
         <ArticlesFilters />
         <ArticlesViewSelector view={view} onViewClick={onChangeView} />
       </HStack>

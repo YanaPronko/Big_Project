@@ -1,0 +1,48 @@
+.listBox {
+  position: relative;
+}
+
+.trigger {
+  padding: 1rem 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  border: 1px solid var(--primary-color);
+  background: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    stroke-opacity: 0.8;
+    fill-opacity: 0.8;
+  }
+}
+
+.label {
+  margin-right: 1rem;
+}
+
+.options {
+  position: absolute;
+  min-width: 100%;
+  z-index: 10000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px var(--listbox-bg);
+  background: var(--listbox-bg);
+
+  &.top {
+    bottom: 100%;
+  }
+}
+
+.item {
+  padding: 1rem 2rem;
+}
+
+.active {
+  background: var(--inverted-primary-color);
+}

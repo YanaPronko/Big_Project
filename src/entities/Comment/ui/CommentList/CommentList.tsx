@@ -17,7 +17,7 @@ export const CommentList = memo((props: CommentListProps) => {
   const { t } = useTranslation('article');
 
   return (
-    <VStack gap="8" className={classNames('', {}, [className])}>
+    <VStack gap="8" role="list" className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
           <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />

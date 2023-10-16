@@ -86,7 +86,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <article className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+    <article role="listitem" className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
       {content}
     </article>
   );

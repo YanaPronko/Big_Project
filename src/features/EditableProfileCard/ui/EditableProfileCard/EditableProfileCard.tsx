@@ -62,7 +62,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   };
 
   return (
-    <div
+    <section
       className={classNames(cls.editableProfileCard, {}, [className])}
       {...otherProps}
     >
@@ -85,6 +85,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         onChangeCountry={onChangeCountry}
         onChangeCurrency={onChangeCurrency}
       />
-    </div>
+    </section>
   );
 });

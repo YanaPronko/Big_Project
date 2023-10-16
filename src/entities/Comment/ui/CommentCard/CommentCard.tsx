@@ -26,6 +26,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
         max
         gap="4"
         align="start"
+        role="listitem"
         className={classNames(cls.commentCard, {}, [className])}
       >
         <Skeleton borderRadius="50%" width={30} height={30} />
@@ -40,6 +41,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
       gap="4"
       max
       align="start"
+      role="listitem"
       className={classNames(cls.commentCard, {}, [className])}
       {...otherProps}
     >

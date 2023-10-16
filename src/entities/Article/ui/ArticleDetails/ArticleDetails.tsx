@@ -85,7 +85,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      <VStack gap="8" max className={classNames('', {}, [className])}>
+      <VStack gap="8" max className={classNames('', {}, [className])} role="section">
         <Avatar src={article?.img} size={200} className={cls.avatar} alt="avatar" />
         <Text title={article?.title} text={article?.subtitle} align="center" size="xl" />
         <HStack justify="center">

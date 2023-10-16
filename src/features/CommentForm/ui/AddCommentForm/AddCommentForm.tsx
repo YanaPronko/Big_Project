@@ -48,7 +48,7 @@ const AddCommentForm = memo((props: addCommentFormProps) => {
   }
 
   return (
-    <HStack justify="between" gap="4" className={classNames(cls.addCommentForm, {}, [className])}>
+    <HStack role="form" justify="between" gap="4" className={classNames(cls.addCommentForm, {}, [className])}>
       <Input
         className={cls.input}
         placeholder={t('enter-your-comment')}

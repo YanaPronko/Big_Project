@@ -53,6 +53,13 @@ module.exports = {
     'react/state-in-constructor': ['off', 'never'],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/aria-role': [
+      2,
+      {
+        allowedInvalidRoles: ['section'],
+        ignoreNonDOM: true,
+      },
+    ],
     'path-checker-pryweb/relative-path-checker': 'error',
     'no-param-reassign': [
       'error',
