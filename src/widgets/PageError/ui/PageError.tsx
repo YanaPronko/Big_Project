@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
+import { VRevStack } from 'shared/ui/Stack';
 import cls from './PageError.module.scss';
 import img from '../assets/error.gif';
 
@@ -18,7 +19,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
   };
 
   return (
-    <div className={classNames(cls.wrapper, {}, [className])}>
+    <VRevStack justify="center" className={classNames(cls.wrapper, {}, [className])}>
       <img
         className={cls.pageError}
         src={img}
@@ -26,6 +27,6 @@ export const PageError: FC<PageErrorProps> = (props) => {
         {...otherProps}
       />
       <Button onClick={onReload}>{t('reload-page')}</Button>
-    </div>
+    </VRevStack>
   );
 };

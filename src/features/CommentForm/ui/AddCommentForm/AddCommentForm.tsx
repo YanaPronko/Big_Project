@@ -7,6 +7,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text } from 'shared/ui/Text/Text';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 import {
   getAddCommentFormError,
@@ -47,7 +48,7 @@ const AddCommentForm = memo((props: addCommentFormProps) => {
   }
 
   return (
-    <div className={classNames(cls.addCommentForm, {}, [className])}>
+    <HStack justify="between" gap="4" className={classNames(cls.addCommentForm, {}, [className])}>
       <Input
         className={cls.input}
         placeholder={t('enter-your-comment')}
@@ -60,7 +61,7 @@ const AddCommentForm = memo((props: addCommentFormProps) => {
       >
         {t('send-comment')}
       </Button>
-    </div>
+    </HStack>
   );
 });
 

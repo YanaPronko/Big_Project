@@ -27,7 +27,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     <ArticleListItem key={nanoid()} article={article} view={view} target={target} />), [view, target]);
 
   return (
-    <div className={classNames(cls.articlesList, {}, [className, cls[view]])}>
+    <div className={classNames('', {}, [className, cls[view]])}>
       {articles.length > 0 && articles.map(renderArticles)}
       {isLoading && getSkeletons(view)}
     </div>

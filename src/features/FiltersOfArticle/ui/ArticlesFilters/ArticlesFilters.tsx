@@ -26,7 +26,6 @@ interface ArticlesFiltersProps {
   className?: string;
 }
 
-
 export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const { className } = props;
   const { t } = useTranslation('article');

@@ -85,7 +85,7 @@ export const DirectionRow: Story = {
 export const DirectionColumn: Story = {
   args: {
     direction: 'column',
-    gap: "8",
+    gap: '8',
   },
 };
 

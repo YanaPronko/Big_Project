@@ -1,9 +1,5 @@
 .commentCard {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   padding: 1rem;
-  gap: 1rem;
   border: 1px solid var(--primary-color);
 }
 
@@ -11,5 +7,5 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }

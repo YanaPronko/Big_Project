@@ -4,10 +4,6 @@
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
   width: calc(100% - var(--sidebar-width));
   padding-top: 1rem;
 }

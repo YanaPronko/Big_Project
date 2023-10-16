@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/Theme/lib/ThemeContext';
-import ArticleListPage from './ArticleListPage';
 import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import ArticleListPage from './ArticleListPage';
 
 // const entities = entitiesMock;
 const ids = ['1', '2'];
@@ -44,7 +44,7 @@ const meta: Meta<typeof ArticleListPage> = {
               },
             ],
           },
-        2: {
+          2: {
             id: '1',
             title: 'Javascript news',
             subtitle: 'Что нового в JS за 2022 год?',

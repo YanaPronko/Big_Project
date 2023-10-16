@@ -5,6 +5,7 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 
@@ -21,18 +22,24 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
 
   if (isLoading) {
     return (
-      <div
+      <VStack
+        max
+        gap="4"
+        align="start"
         className={classNames(cls.commentCard, {}, [className])}
       >
         <Skeleton borderRadius="50%" width={30} height={30} />
         <Skeleton width={100} height={16} />
         <Skeleton width="100%" height={50} />
-      </div>
+      </VStack>
     );
   }
 
   return (
-    <div
+    <VStack
+      gap="4"
+      max
+      align="start"
       className={classNames(cls.commentCard, {}, [className])}
       {...otherProps}
     >
@@ -46,6 +53,6 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
         <Text title={comment.user.username} />
       </AppLink>
       <Text text={comment.text} />
-    </div>
+    </VStack>
   );
 };

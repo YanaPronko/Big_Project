@@ -13,6 +13,7 @@ import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { Page } from 'widgets/Page/ui/Page';
 import { Text } from 'shared/ui/Text/Text';
 import { ArticlesFilters, articlesFiltersReducer } from 'features/FiltersOfArticle';
+import { HStack } from 'shared/ui/Stack';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
 import {
@@ -66,12 +67,12 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   return (
     <Page
       className={classNames(cls.articleListPage, {}, [className])}
-      onScrollEnd={!isLoading ? onLoadNextArticles: undefined}
+      onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
     >
-      <div className={cls.filtersWrapper}>
+      <HStack justify="between">
         <ArticlesFilters />
         <ArticlesViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <ArticlesList articles={articles} view={view} isLoading={isLoading} />
     </Page>
   );

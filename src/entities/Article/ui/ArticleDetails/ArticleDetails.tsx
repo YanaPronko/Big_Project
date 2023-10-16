@@ -7,7 +7,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { CalendarIcon } from 'shared/ui/CalendarIcon/CalendarIcon';
 import { EyeIcon } from 'shared/ui/EyeIcon/EyeIcon';
-import { VStack } from 'shared/ui/Stack';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { getArtcileDetailsData } from '../../model/selectors/articleDetails';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
@@ -61,7 +61,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <VStack gap="4" max className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack gap="32" max className={classNames(cls.articleDetails, {}, [className])}>
         <Skeleton
           className={cls.avatar}
           width={200}
@@ -85,17 +85,17 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      <VStack gap="4" max className={classNames('', {}, [className])}>
+      <VStack gap="8" max className={classNames('', {}, [className])}>
         <Avatar src={article?.img} size={200} className={cls.avatar} alt="avatar" />
         <Text title={article?.title} text={article?.subtitle} align="center" size="xl" />
-        <div className={cls.articleInfo}>
+        <HStack justify="center">
           <EyeIcon className={cls.icon} />
           <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
+        </HStack>
+        <HStack justify="center">
           <CalendarIcon className={cls.icon} />
           <Text text={article?.createdAt} />
-        </div>
+        </HStack>
         {article?.blocks.map(renderBlock)}
       </VStack>
     );

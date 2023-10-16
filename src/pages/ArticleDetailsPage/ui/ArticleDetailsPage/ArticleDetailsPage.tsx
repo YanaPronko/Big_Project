@@ -83,7 +83,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   // { isLoading && (<Loader />) };
 
   return (
-    <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+    <Page className={classNames('', {}, [className])}>
       <VStack gap="16" align="stretch">
         <ArticleDetailsPageHeader />
         <ArticleDetails />

@@ -7,6 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Country } from 'entities/Country/model/types/country';
 import { Currency } from 'entities/Currency';
 import { ProfileCard } from 'entities/Profile';
+import { VStack } from 'shared/ui/Stack';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
@@ -67,9 +68,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     >
       <ProfilePageHeader />
       {validateErrors?.length && (
-        <div className={cls.errorContainer}>
+        <VStack gap="4">
           {validateErrors.map((err) => <Text theme="error" title={t(`${err}`)} key={err} />)}
-        </div>
+        </VStack>
       )}
       <ProfileCard
         data={form}

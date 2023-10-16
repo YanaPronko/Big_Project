@@ -5,12 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUserName';
 import { getUserAuthData, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/config/routeConfig';
+import { HStack } from 'shared/ui/Stack';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -46,23 +47,24 @@ export const NavBar = memo((props: NavBarProps) => {
         className={classNames(cls.navBar, {}, [className])}
         {...otherProps}
       >
-        <div className={cls.logoBlock}>
-          <AppLink to={RoutePaths.main} theme="inverted" className={cls.logo}>
+        <HStack justify="center" className={cls.logoBlock}>
+          <AppLink to={RoutePaths.main} theme="inverted" size="xl">
             {t('pryweb')}
           </AppLink>
-        </div>
-        <div className={cls.btnBlock}>
-          <AppLink to={RoutePaths.article_create} theme="inverted">
+        </HStack>
+        <HStack gap="16">
+          <AppLink to={RoutePaths.article_create} theme="inverted" size="l">
             {t('create-article')}
           </AppLink>
           <Button
             className={cls.signinBtn}
             theme="clear_inverted"
             onClick={onLogOut}
+            size={BtnSize.L}
           >
             {t('vyiti')}
           </Button>
-        </div>
+        </HStack>
         <LoginModal
           isOpen={isAuthModal}
           onClose={() => setIsAuthModal(false)}
@@ -73,13 +75,14 @@ export const NavBar = memo((props: NavBarProps) => {
 
   return (
     <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
-      <div className={cls.logoBlock}>
-        <AppLink to={RoutePaths.main} theme="inverted" className={cls.logo}>{t('pryweb')}</AppLink>
-      </div>
+      <HStack justify="center" className={cls.logoBlock}>
+        <AppLink to={RoutePaths.main} theme="inverted" size="xl">{t('pryweb')}</AppLink>
+      </HStack>
       <Button
         className={cls.signinBtn}
         theme="clear_inverted"
         onClick={onShowModal}
+        size={BtnSize.L}
       >
         {t('sign-in')}
       </Button>

@@ -25,6 +25,7 @@ export const SideBarItem = memo(({ item, collappsed }: SideBarItemProps) => {
       className={classNames('', { [cls.collappsed]: collappsed }, [])}
       to={item.path}
       theme="inverted"
+      size="l"
     >
       <item.Icon className={cls.icon} />
       <span className={cls.link}>{t(`${item.text}`)}</span>
