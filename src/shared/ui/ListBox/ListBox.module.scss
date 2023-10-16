@@ -34,8 +34,24 @@
   box-shadow: 4px 4px 8px var(--listbox-bg);
   background: var(--listbox-bg);
 
-  &.top {
+  &.topR {
     bottom: 100%;
+    left: 0;
+  }
+
+  &.topL {
+    bottom: 100%;
+    right: 0;
+  }
+
+  &.bottomL {
+    top: 100%;
+    right: 0;
+  }
+
+  &.bottomR {
+    top: 100%;
+    left: 0;
   }
 }
 

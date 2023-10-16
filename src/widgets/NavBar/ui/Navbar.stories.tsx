@@ -23,3 +23,36 @@ export const Dark: Story = {
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+
+export const NormalAuth: Story = {
+  args: {},
+};
+
+NormalAuth.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        avatar: 'https://avatars.githubusercontent.com/u/11681863311111111',
+        id: '1',
+        username: 'LEV',
+      },
+    },
+  }),
+];
+
+export const DarkAuth: Story = {
+  args: {},
+};
+
+DarkAuth.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    user: {
+      authData: {
+        avatar: 'https://avatars.githubusercontent.com/u/11681863311111111',
+        id: '1',
+        username: 'LEV',
+      },
+    },
+  }),
+];

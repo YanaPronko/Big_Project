@@ -40,7 +40,7 @@ export const CountrySelect = memo(({
       defaultVal="Belarus"
       onChange={onChangeHandler}
       readonly={readonly}
-      direction="top"
+      direction="topR"
     />
   );
 });

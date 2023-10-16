@@ -54,7 +54,7 @@ export const TopDirection: Story = {
   args: {
     defaultVal: 'BYN',
     selectedVal: 'UAN',
-    direction: 'top',
+    direction: 'topR',
   },
   decorators: [
     (Story) => (

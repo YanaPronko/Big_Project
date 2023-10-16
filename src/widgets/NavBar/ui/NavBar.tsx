@@ -1,5 +1,5 @@
 import {
-  memo, useCallback, useEffect, useState,
+  memo, useCallback, useEffect, useMemo, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -12,6 +12,8 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/config/routeConfig';
 import { HStack } from 'shared/ui/Stack';
+import { Dropdown, DropdownItem } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -41,6 +43,17 @@ export const NavBar = memo((props: NavBarProps) => {
     dispatch(setAuthData(undefined));
   }, [dispatch, setAuthData]);
 
+  const items: DropdownItem[] = useMemo(() => [
+    {
+      content: t('Profile'),
+      href: `${RoutePaths.profile}${authData?.id}`,
+    },
+    {
+      content: t('vyiti'),
+      onClick: onLogOut,
+    },
+  ], [t, onLogOut, authData]);
+
   if (authData) {
     return (
       <header
@@ -56,14 +69,12 @@ export const NavBar = memo((props: NavBarProps) => {
           <AppLink to={RoutePaths.article_create} theme="inverted" size="l">
             {t('create-article')}
           </AppLink>
-          <Button
-            className={cls.signinBtn}
-            theme="clear_inverted"
-            onClick={onLogOut}
-            size={BtnSize.L}
-          >
-            {t('vyiti')}
-          </Button>
+          <Dropdown
+            items={items}
+            className={cls.dropdown}
+            direction="bottomL"
+            trigger={<Avatar size={30} src={authData.avatar} alt="avatar" />}
+          />
         </HStack>
         <LoginModal
           isOpen={isAuthModal}

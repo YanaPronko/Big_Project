@@ -2,6 +2,7 @@ import { Fragment, memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DropdownDirection } from '../../types/ui';
 import { HStack } from '../Stack';
 import cls from './ListBox.module.scss';
 
@@ -10,8 +11,6 @@ type ListBoxItem = {
   content: string;
   disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
   className?: string;
@@ -26,7 +25,7 @@ interface ListBoxProps {
 
 export const ListBox = memo((props: ListBoxProps) => {
   const {
-    className, items, label, selectedVal, defaultVal, readonly, direction = 'bottom', onChange,
+    className, items, label, selectedVal, defaultVal, readonly, direction = 'bottomR', onChange,
   } = props;
 
   return (

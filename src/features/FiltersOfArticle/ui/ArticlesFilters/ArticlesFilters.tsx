@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { SortOrder } from 'shared/const/types/order';
+import { SortOrder } from 'shared/types/order';
 
 // TODO Переместить selector из pages или подумать куда его
 import { articlesPageActions } from 'pages/ArticleListPages/model/slice/articlesPageSlice';

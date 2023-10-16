@@ -1,5 +1,5 @@
 import { memo, useCallback, useMemo } from 'react';
-import { ARTICLE_TYPES } from 'shared/const/articlesTypes';
+import { ARTICLE_TYPES } from 'shared/types/articlesTypes';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';

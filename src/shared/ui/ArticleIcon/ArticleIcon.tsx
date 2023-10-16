@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { memo } from 'react';
-import { IconProps } from 'shared/const/common';
+import { IconProps } from 'shared/types/ui';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 export const ArticleIcon = memo((props: IconProps) => {
