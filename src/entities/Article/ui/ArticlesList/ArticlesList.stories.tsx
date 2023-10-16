@@ -48,6 +48,7 @@ export const ListIsLoading: Story = {
   args: {
     view: 'list',
     isLoading: true,
+    articles: [],
   },
 };
 
@@ -55,6 +56,7 @@ export const ListIsLoadingDark: Story = {
   args: {
     view: 'list',
     isLoading: true,
+    articles: [],
   },
 };
 
@@ -64,6 +66,7 @@ export const GridIsLoading: Story = {
   args: {
     view: 'grid',
     isLoading: true,
+    articles: [],
   },
 };
 
@@ -71,6 +74,7 @@ export const GridIsLoadingDark: Story = {
   args: {
     view: 'grid',
     isLoading: true,
+    articles: [],
   },
 };
 

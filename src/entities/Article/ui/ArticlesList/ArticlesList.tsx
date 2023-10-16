@@ -16,7 +16,7 @@ interface ArticlesListProps {
 
 const getSkeletons = (view: ArticleView) => new Array(view === 'grid' ? 9 : 3)
   .fill(0)
-  .map((_) => <ArticleListItemSkeleton key={nanoid()} view={view} className={cls.card} />);
+  .map((_) => <ArticleListItemSkeleton key={nanoid()} view={view} />);
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
   const {
