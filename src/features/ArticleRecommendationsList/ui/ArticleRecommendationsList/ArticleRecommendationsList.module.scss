@@ -1,0 +1,7 @@
+.recommendations {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  overflow-y: hidden;
+  overflow-x: auto;
+}

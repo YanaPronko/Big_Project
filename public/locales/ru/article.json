@@ -20,5 +20,6 @@
   "back-to-artciles-list": "Назад к списку статей",
   "edit-article": "Редактировать статью",
   "edit-article-with-id": "Редактирование статьи с id",
-  "create-new-article": "Создать новую статью"
+  "create-new-article": "Создать новую статью",
+  "failed-loading-of-recommendations": "Ошибка при загрузке рекоммендаций"
 }

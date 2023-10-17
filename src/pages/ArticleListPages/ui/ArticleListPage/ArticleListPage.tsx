@@ -1,25 +1,24 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleView, ArticlesList } from 'entities/Article';
+import { ArticleView } from 'entities/Article';
 import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { PageError } from 'widgets/PageError';
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { Page } from 'widgets/Page/ui/Page';
-import { Text } from 'shared/ui/Text/Text';
 import { ArticlesFilters, articlesFiltersReducer } from 'features/FiltersOfArticle';
 import { HStack } from 'shared/ui/Stack';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
+import { articlesPageActions, articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import {
-  getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
+  getArticlesPageView,
+  getArticlesPageIsLoading,
 } from '../../model/selectors/articles';
 import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import cls from './ArticleListPage.module.scss';
 
 interface ArticleListPageProps {
@@ -27,8 +26,8 @@ interface ArticleListPageProps {
 }
 
 const reducers: ReducersList = {
-  articlesPage: articlesPageReducer,
   articlesFilters: articlesFiltersReducer,
+  articlesPage: articlesPageReducer,
 };
 
 const ArticleListPage: FC<ArticleListPageProps> = (props) => {
@@ -36,16 +35,13 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   useDynamicLoad(reducers, false);
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
-  const { t } = useTranslation('article');
 
   useInitialEffect(() => {
     dispatch(initArticleListPage(searchParams));
   });
 
-  const articles = useSelector(getArticles.selectAll);
-  const error = useSelector(getArticlesPageError);
-  const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
+  const isLoading = useSelector(getArticlesPageIsLoading);
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
@@ -56,14 +52,6 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
     dispatch(fetchNextArticles());
   }, [dispatch]);
 
-  if (error) {
-    return <PageError />;
-  }
-
-  if (!isLoading && !articles.length) {
-    return <Text title={t('articles-not-found')} />;
-  }
-
   return (
     <Page
       className={classNames(cls.articleListPage, {}, [className])}
@@ -73,7 +61,7 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
         <ArticlesFilters />
         <ArticlesViewSelector view={view} onViewClick={onChangeView} />
       </HStack>
-      <ArticlesList articles={articles} view={view} isLoading={isLoading} />
+      <ArticleInfiniteList isLoading={isLoading} view={view} />
     </Page>
   );
 };

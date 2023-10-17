@@ -97,24 +97,22 @@ export const Primary: Story = {
 Primary.decorators = [
   StoreDecorator({
     articleDetails: { data },
-    articleDetailsPage: {
-      comments: {
-        entities: {
-          1: {
-            id: '1',
-            text: 'some comment 1',
-            articleId: '1',
-            user: { id: '1', username: 'B' },
-          },
-          2: {
-            id: '2',
-            text: 'some comment 2',
-            articleId: '1',
-            user: { id: '1', username: 'B' },
-          },
+    comments: {
+      entities: {
+        1: {
+          id: '1',
+          text: 'some comment 1',
+          articleId: '1',
+          user: { id: '1', username: 'B' },
         },
-        ids: ['1', '2'],
+        2: {
+          id: '2',
+          text: 'some comment 2',
+          articleId: '1',
+          user: { id: '1', username: 'B' },
+        },
       },
+      ids: ['1', '2'],
     },
   }),
 ];
@@ -126,24 +124,22 @@ export const PrimaryDark: Story = {
 PrimaryDark.decorators = [
   StoreDecorator({
     articleDetails: { data },
-    articleDetailsPage: {
-      comments: {
-        entities: {
-          1: {
-            id: '1',
-            text: 'some comment 1',
-            articleId: '1',
-            user: { id: '1', username: 'B' },
-          },
-          2: {
-            id: '2',
-            text: 'some comment 2',
-            articleId: '1',
-            user: { id: '1', username: 'B' },
-          },
+    comments: {
+      entities: {
+        1: {
+          id: '1',
+          text: 'some comment 1',
+          articleId: '1',
+          user: { id: '1', username: 'B' },
         },
-        ids: ['1', '2'],
+        2: {
+          id: '2',
+          text: 'some comment 2',
+          articleId: '1',
+          user: { id: '1', username: 'B' },
+        },
       },
+      ids: ['1', '2'],
     },
   }),
   ThemeDecorator(Theme.DARK),

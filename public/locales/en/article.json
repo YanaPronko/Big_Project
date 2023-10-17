@@ -20,5 +20,6 @@
   "back-to-artciles-list": "Back to artciles list",
   "edit-article": "Edit article",
   "edit-article-with-id": "Edit article with id",
-  "create-new-article": "Create new article"
+  "create-new-article": "Create new article",
+  "failed-loading-of-recommendations": "Failed loading of recommendations"
 }

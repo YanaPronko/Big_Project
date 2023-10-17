@@ -77,7 +77,7 @@ const data: Article = {
 };
 
 const meta: Meta<typeof ArticleDetails> = {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
 };
 
@@ -94,7 +94,10 @@ export const PrimaryDark: Story = {
   args: {},
 };
 
-PrimaryDark.decorators = [StoreDecorator({ articleDetails: { data } }), ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [
+  StoreDecorator({ articleDetails: { data } }),
+  ThemeDecorator(Theme.DARK),
+];
 
 export const isLoading: Story = {
   args: { isLoading: true },

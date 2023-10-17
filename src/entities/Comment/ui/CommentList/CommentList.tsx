@@ -17,13 +17,13 @@ export const CommentList = memo((props: CommentListProps) => {
   const { t } = useTranslation('article');
 
   return (
-    <VStack gap="8" role="list" className={classNames('', {}, [className])}>
+    <VStack gap="16" role="list" align="stretch" className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
           <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />
         ))
       ) : (
-        <Text text={t('no-comments')} />
+        <Text text={t('no-comments')} size="xl" />
       )}
     </VStack>
   );

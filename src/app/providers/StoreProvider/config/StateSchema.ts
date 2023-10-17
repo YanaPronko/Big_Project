@@ -8,22 +8,24 @@ import { LoginSchema } from 'features/AuthByUserName';
 import { ProfileSchema } from 'features/EditableProfileCard';
 
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticleListPages';
 import { UISchema } from 'features/UI';
 import { AddCommentFormSchema } from 'features/CommentForm';
 import { ArticlesFiltersSchema } from 'features/FiltersOfArticle';
+import { rtkApi } from 'shared/api/rtk';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   ui: UISchema;
+  rtkApi: ReturnType<typeof rtkApi.reducer>;
 
   // Асинхронные редьюсеры
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
+  comments?: ArticleDetailsCommentsSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsPage?: ArticleDetailsPageSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
   articlesFilters?: ArticlesFiltersSchema;
