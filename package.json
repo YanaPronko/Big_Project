@@ -22,7 +22,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook",
     "chromatic": "npx chromatic --project-token=chpt_f82a4d28981c10c",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
