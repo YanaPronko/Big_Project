@@ -78,23 +78,28 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
       <div className={cls.content}>
         <Input
           key={1}
+          name="firstname"
           label={t('first-name>')}
           type="text"
           autoFocus
           readonly={readonly}
           value={t(`${data?.first}`)}
           onChange={onChangeFirstName}
+          data-testid="EditableProfileCard.firstName"
         />
         <Input
           key={2}
+          name="lastname"
           label={t('lastname')}
           type="text"
           readonly={readonly}
           value={t(`${data?.lastname}`)}
           onChange={onChangeLastName}
+          data-testid="EditableProfileCard.lastName"
         />
         <Input
           key={3}
+          name="age"
           label={t('age')}
           type="text"
           readonly={readonly}
@@ -102,6 +107,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           onChange={onChangeAge}
         />
         <Input
+          name="username"
           key={4}
           label={t('username')}
           type="text"

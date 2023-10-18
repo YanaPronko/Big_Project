@@ -1,8 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -25,18 +23,12 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     className, articles, isLoading, view = 'grid', target,
   } = props;
 
-  const { t } = useTranslation('article');
-
   const renderArticles = useCallback((article: Article) => (
     <ArticleListItem key={nanoid()} article={article} view={view} target={target} />), [view, target]);
 
-  if (!isLoading && !articles.length) {
-    return <Text title={t('articles-not-found')} />;
-  }
-
   return (
     <div role="list" className={classNames('', {}, [className, cls[view]])}>
-      {articles?.length > 0 && articles.map(renderArticles)}
+      {articles.map(renderArticles)}
       {isLoading && getSkeletons(view)}
     </div>
   );

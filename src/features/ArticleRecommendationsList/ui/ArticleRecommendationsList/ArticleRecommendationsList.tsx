@@ -17,10 +17,9 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
   const { isLoading, error, data: recommendations } = useGetArticleRecommendations(4);
 
-  if (error) {
+  if (error || !recommendations) {
     return <Text title={t('failed-loading-of-recommendations')} theme="error" size="l" />;
   }
-
   return (
     <VStack
       gap="16"

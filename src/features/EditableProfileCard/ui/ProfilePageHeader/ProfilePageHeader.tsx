@@ -44,7 +44,12 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
       {canEdit && (
         <div className={cls.headerBtn}>
           {readonly ? (
-            <Button className={cls.editBtn} theme="outline" onClick={onEdit}>
+            <Button
+              className={cls.editBtn}
+              theme="outline"
+              onClick={onEdit}
+              data-testid="EditableProfileCard.EditBtn"
+            >
               {t('edit')}
             </Button>
           ) : (
@@ -53,6 +58,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                 className={cls.editBtn}
                 theme="outline"
                 onClick={onCancelEdit}
+                data-testid="EditableProfileCard.CancelBtn"
               >
                 {t('cancel')}
               </Button>
@@ -60,6 +66,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                 className={cls.saveBtn}
                 theme="outline_red"
                 onClick={onSave}
+                data-testid="EditableProfileCard.SaveBtn"
               >
                 {t('save')}
               </Button>
