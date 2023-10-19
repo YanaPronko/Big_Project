@@ -35,7 +35,9 @@
     // можно писать такой
     // import React from 'react';
     "allowSyntheticDefaultImports": true,
-    "strictBindCallApply": true
+    "strictBindCallApply": true,
+    // дает понять обработчикам(babel) что в некоторых файлах только типы, надо экспортировать со словом type
+    "isolatedModules": true,
   },
   "ts-node": {
     "compilerOptions": {

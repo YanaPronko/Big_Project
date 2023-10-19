@@ -5,7 +5,7 @@ export function useTrottle(callback: (...args: any[]) => void, delay: number) {
   const timer = useRef<ReturnType<typeof setTimeout>>();
   useEffect(() => () => timer.current && clearTimeout(timer.current), []);
 
-  return useCallback((...args) => {
+  return useCallback((...args: any[]) => {
     if (!trottleRef.current) {
       callback(...args);
       trottleRef.current = true;

@@ -2,10 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/Theme/lib/ThemeContext';
 import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { entitiesMock } from 'entities/Article/model/mocks/articles';
 import ArticleListPage from './ArticleListPage';
 
-const entities = entitiesMock;
 const ids = ['1', '2'];
 const meta: Meta<typeof ArticleListPage> = {
   title: 'pages/ArticleListPages/ArticleListPage',

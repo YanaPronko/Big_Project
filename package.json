@@ -33,7 +33,6 @@
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.16.7",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@storybook/addon-essentials": "^7.2.3",
     "@storybook/addon-interactions": "^7.2.3",
     "@storybook/addon-links": "^7.2.3",
@@ -46,8 +45,8 @@
     "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^27.4.1",
     "@types/node": "^20.3.2",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
+    "@types/react": "^18.2.30",
+    "@types/react-dom": "^18.2.14",
     "@types/react-transition-group": "^4.4.6",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.4.1",
@@ -102,26 +101,12 @@
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1"
-  },
-  "loki": {
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.app",
-        "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.app",
-        "preset": "iPhone 7"
-      }
-    }
+    "react-router-dom": "^6.2.1",
+    "redux": "^4.2.1"
   },
   "readme": "ERROR: No README data found!",
   "_id": "big-project@1.0.0"
