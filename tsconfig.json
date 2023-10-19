@@ -37,15 +37,13 @@
     "allowSyntheticDefaultImports": true,
     "strictBindCallApply": true,
     // дает понять обработчикам(babel) что в некоторых файлах только типы, надо экспортировать со словом type
-    "isolatedModules": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./config/jest/setupTests.ts",
-    "src"
-  ],
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "include": ["./config/jest/setupTests.ts", "src"]
 }
