@@ -19,5 +19,7 @@
   "enter-currency": "Введите валюту>",
   "about-page": "Страница \"О нас\"",
   "pryweb": "PRYWeb",
-  "create-article": "Создать статью"
+  "create-article": "Создать статью",
+  "admin-panel-page": "Страница панели администратора",
+  "you-havent-access": "У вас нет доступа"
 }

@@ -56,3 +56,20 @@ DarkAuth.decorators = [
     },
   }),
 ];
+
+export const AdminAuth: Story = {
+  args: {},
+};
+
+AdminAuth.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        avatar: 'https://avatars.githubusercontent.com/u/11681863311111111',
+        id: '1',
+        username: 'LEV',
+        roles: ['ADMIN'],
+      },
+    },
+  }),
+];

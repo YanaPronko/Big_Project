@@ -7,7 +7,9 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { BtnSize, Button } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUserName';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getIsAdmin, getIsManager, getUserAuthData, userActions,
+} from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/config/routeConfig';
@@ -23,7 +25,11 @@ interface NavBarProps {
 export const NavBar = memo((props: NavBarProps) => {
   const { className, ...otherProps } = props;
   const { t } = useTranslation();
+
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(getIsAdmin);
+  const isManager = useSelector(getIsManager);
+
   const [isAuthModal, setIsAuthModal] = useState(false);
   const dispatch = useAppDispatch();
   const { setAuthData } = userActions;
@@ -43,7 +49,13 @@ export const NavBar = memo((props: NavBarProps) => {
     dispatch(setAuthData(undefined));
   }, [dispatch, setAuthData]);
 
+  const isAdminPanelAvailable = isAdmin || isManager;
+
   const items: DropdownItem[] = useMemo(() => [
+    ...(isAdminPanelAvailable ? [{
+      content: 'Admin Panel',
+      href: RoutePaths.admin_panel,
+    }] : []),
     {
       content: t('Profile'),
       href: `${RoutePaths.profile}${authData?.id}`,
@@ -52,7 +64,7 @@ export const NavBar = memo((props: NavBarProps) => {
       content: t('vyiti'),
       onClick: onLogOut,
     },
-  ], [t, onLogOut, authData]);
+  ], [t, onLogOut, authData, isAdminPanelAvailable]);
 
   if (authData) {
     return (

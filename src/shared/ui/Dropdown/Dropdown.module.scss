@@ -13,8 +13,9 @@
 
 .menu {
   position: absolute;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
+  width: max-content;
   background: var(--card-bg);
   z-index: 10000;
   border-radius: 8px;
