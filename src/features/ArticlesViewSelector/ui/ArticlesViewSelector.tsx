@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { GridIcon } from 'shared/ui/GridIcon/GridIcon';
-import { ListIcon } from 'shared/ui/ListIcon/ListIcon';
+import { GridIcon } from 'shared/ui/Icons/ui/GridIcon/GridIcon';
+import { ListIcon } from 'shared/ui/Icons/ui/ListIcon/ListIcon';
 import { ArticleView } from 'entities/Article';
 import { Button } from 'shared/ui/Button/Button';
 import cls from './ArticlesViewSelector.module.scss';

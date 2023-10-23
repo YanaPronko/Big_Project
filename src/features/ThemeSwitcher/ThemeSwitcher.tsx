@@ -2,7 +2,7 @@ import { useTheme } from 'app/providers/Theme';
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
-import { ThemeIcon } from 'shared/ui/ThemeIcon/ThemeIcon';
+import { ThemeIcon } from 'shared/ui/Icons/ui/ThemeIcon/ThemeIcon';
 
 interface ThemeSwitcherProps {
   className?: string;

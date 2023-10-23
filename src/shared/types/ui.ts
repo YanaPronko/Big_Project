@@ -2,4 +2,4 @@ export interface IconProps {
   className?: string;
 }
 
-export type DropdownDirection = 'topR' | 'bottomR' | 'topL' | 'bottomL';
+export type PopupsDirection = 'topR' | 'bottomR' | 'topL' | 'bottomL';

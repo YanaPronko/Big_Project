@@ -44,7 +44,7 @@ export const ListBox = memo((props: ListBoxProps) => {
         onChange={onChange}
         disabled={readonly}
       >
-        <HListBox.Button className={cls.trigger}>
+        <HListBox.Button className={cls.btn}>
           {selectedVal ?? defaultVal}
         </HListBox.Button>
         <HListBox.Options

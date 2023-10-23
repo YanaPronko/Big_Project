@@ -3,7 +3,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
 import { AppLink } from '../../../AppLink/AppLink';
-import { DropdownDirection } from '../../../../types/ui';
+PopupsDirection
 import cls from './Dropdown.module.scss';
 import popoverCls from '../../styles/popup.module.scss';
 
@@ -17,7 +17,7 @@ export type DropdownItem = {
 interface DropdownProps {
   className?: string;
   items: DropdownItem[];
-  direction?: DropdownDirection;
+  direction?: PopupsDirection;
   trigger?: ReactNode;
 }
 
