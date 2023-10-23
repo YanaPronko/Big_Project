@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/Theme';
-import { ArticleSortSelector } from './ArticleSortSelector';
+import { Popover } from './Popover';
 
-const meta: Meta<typeof ArticleSortSelector> = {
-  title: 'features/ArticleSortSelector',
-  component: ArticleSortSelector,
+const meta: Meta<typeof Popover> = {
+  title: 'shared/Popover',
+  component: Popover,
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleSortSelector>;
+type Story = StoryObj<typeof Popover>;
 
 export const Primary: Story = {
   args: {},

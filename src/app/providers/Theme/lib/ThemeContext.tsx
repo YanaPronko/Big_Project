@@ -1,4 +1,4 @@
-import { Theme } from 'app/providers/Theme/model/const/types';
+import { Theme } from '../model/const/types';
 
 export interface ThemeContextProps {
   theme?: Theme;

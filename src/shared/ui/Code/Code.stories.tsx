@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+import { Theme } from 'app/providers/Theme';
 import { Code } from './Code';
 
 const meta: Meta<typeof Code> = {
@@ -15,7 +15,7 @@ export const Primary: Story = {
   args: {
     text: `import { Meta, StoryObj } from '@storybook/react';
             import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-            import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+            import { Theme } from 'app/providers/Theme';
             import { Code } from './Code';
 
             const meta: Meta<typeof Code> = {
@@ -45,7 +45,7 @@ export const PrimaryDark: Story = {
   args: {
     text: `import { Meta, StoryObj } from '@storybook/react';
             import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-            import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+            import { Theme } from 'app/providers/Theme';
             import { Code } from './Code';
 
             const meta: Meta<typeof Code> = {

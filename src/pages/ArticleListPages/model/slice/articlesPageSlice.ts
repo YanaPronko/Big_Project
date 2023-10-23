@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/Article/model/types/article';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../../model/types/articlesPageSchema';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -20,7 +20,6 @@ export const initialState: ArticlesPageSchema = {
   isLoading: false,
   error: undefined,
   view: 'grid',
-  page: 1,
   limit: 9,
   hasMore: true,
   _inited: false,
@@ -39,9 +38,6 @@ export const articlesPageSlice = createSlice({
     },
     setLimit: (state, action: PayloadAction<number>) => {
       state.limit = action.payload;
-    },
-    setPage: (state, action: PayloadAction<number>) => {
-      state.page = action.payload;
     },
     setInited: (state, action: PayloadAction<boolean>) => {
       state._inited = action.payload;

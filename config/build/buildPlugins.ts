@@ -2,8 +2,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExctractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpack, { WebpackPluginInstance } from 'webpack';
-// import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { BuildOptions } from '../types/config';
 
 export function buildPlugins({
@@ -31,13 +32,23 @@ export function buildPlugins({
       analyzerMode: analyze ? 'server' : 'disabled',
     }),
     new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
+      patterns: [{ from: paths.locales, to: paths.buildLocales }],
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
     }),
   ];
-  // if (isDev) {
-  //   plugins.push(new ReactRefreshWebpackPlugin());
-  // }
+  if (isDev) {
+    plugins.push(new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }));
+  }
   return plugins;
 }

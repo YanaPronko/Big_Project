@@ -2,9 +2,10 @@ import { ReactNode, memo, Fragment } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
-import { AppLink } from '../AppLink/AppLink';
-import { DropdownDirection } from '../../types/ui';
+import { AppLink } from '../../../AppLink/AppLink';
+import { DropdownDirection } from '../../../../types/ui';
 import cls from './Dropdown.module.scss';
+import popoverCls from '../../styles/popup.module.scss';
 
 export type DropdownItem = {
   content?: ReactNode;
@@ -26,16 +27,16 @@ export const Dropdown = memo((props: DropdownProps) => {
   } = props;
 
   return (
-    <Menu as="div" className={classNames(cls.dropdown, {}, [className])}>
-      <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
-      <Menu.Items className={classNames(cls.menu, {}, [cls[direction]])}>
+    <Menu as="div" className={classNames('', {}, [className, popoverCls.popup])}>
+      <Menu.Button className={cls.trigger}>{trigger}</Menu.Button>
+      <Menu.Items className={classNames(cls.menu, {}, [popoverCls[direction]])}>
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
-              className={classNames(cls.item, { [cls.active]: active }, [])}
+              className={classNames(cls.item, { [popoverCls.active]: active }, [])}
             >
               {item.content}
             </button>

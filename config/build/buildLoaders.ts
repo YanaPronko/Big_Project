@@ -3,18 +3,19 @@ import { RuleSetRule } from 'webpack';
 import { BuildOptions } from '../types/config';
 // import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
-  const babelLoader: RuleSetRule = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-      },
-    },
-  };
+  // const babelLoader: RuleSetRule = {
+  //   test: /\.(js|jsx|tsx)$/,
+  //   exclude: /node_modules/,
+  //   use: {
+  //     loader: 'babel-loader',
+  //     options: {
+  //       presets: ['@babel/preset-env'],
+  //     },
+  //   },
+  // };
 
   const SVGLoader: RuleSetRule = {
     test: /\.svg$/,
@@ -30,24 +31,35 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     ],
   };
 
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
+
   const cssLoader: RuleSetRule = buildCssLoader(options);
 
   //  Если использовать JS, то нужен был бы еще babel-loader
   //  с TS отдеьлный babel-loader не нужен
-  const tsLoader: RuleSetRule = {
-    test: /\.tsx?$/,
-    exclude: /node_modules/,
-    use: [
-      {
-        loader: 'ts-loader',
-        // options: {
-        //   getCustomTransformers: () => ({
-        //     before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
-        //   }),
-        // },
-      },
-    ],
-  };
 
-  return [fileLoader, SVGLoader, babelLoader, tsLoader, cssLoader];
+  // const tsLoader: RuleSetRule = {
+  //   test: /\.tsx?$/,
+  //   exclude: /node_modules/,
+  //   use: [
+  //     {
+  //       loader: 'ts-loader',
+  //       // options: {
+  //       //   getCustomTransformers: () => ({
+  //       //     before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+  //       //   }),
+  //       // },
+  //     },
+  //   ],
+  // };
+
+  return [
+    fileLoader,
+    SVGLoader,
+    codeBabelLoader,
+    tsxCodeBabelLoader,
+    /* babelLoader */ /* tsLoader */
+    cssLoader,
+  ];
 }

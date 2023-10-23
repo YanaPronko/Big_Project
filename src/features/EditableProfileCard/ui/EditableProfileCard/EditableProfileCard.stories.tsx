@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+import { Theme } from 'app/providers/Theme';
 import IMG from '../../../../shared/assets/test/avatar.png';
 import { EditableProfileCard } from './EditableProfileCard';
 

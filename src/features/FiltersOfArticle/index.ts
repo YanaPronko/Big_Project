@@ -8,6 +8,7 @@ export {
   getArticlesSort,
   getArticlesSearch,
   getArticlesType,
+  getArticlesPageNumber,
 } from './model/selector/articlesFilters';
 
 export { ArticlesFilters } from './ui/ArticlesFilters/ArticlesFilters';

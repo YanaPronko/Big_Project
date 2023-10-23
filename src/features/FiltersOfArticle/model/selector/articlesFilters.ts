@@ -5,3 +5,4 @@ export const getArticlesOrder = (state: StateSchema) => state.articlesFilters?.o
 export const getArticlesSort = (state: StateSchema) => state.articlesFilters?.sort ?? initialState.sort;
 export const getArticlesSearch = (state: StateSchema) => state.articlesFilters?.search ?? initialState.search;
 export const getArticlesType = (state: StateSchema) => state.articlesFilters?.type ?? initialState.type;
+export const getArticlesPageNumber = (state: StateSchema) => state.articlesFilters?.page || 1;

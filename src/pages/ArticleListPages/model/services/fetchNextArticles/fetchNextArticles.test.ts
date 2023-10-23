@@ -8,12 +8,14 @@ describe('Testing fetchNextArticles service', () => {
   test('success fetching', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticles, {
       articlesPage: {
-        page: 2,
         ids: [],
         entities: {},
         limit: 5,
         isLoading: false,
         hasMore: true,
+      },
+      articlesFilters: {
+        page: 2,
       },
     });
 
@@ -26,12 +28,14 @@ describe('Testing fetchNextArticles service', () => {
   test('fetchAritcleList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticles, {
       articlesPage: {
-        page: 2,
         ids: [],
         entities: {},
         limit: 5,
         isLoading: false,
         hasMore: false,
+      },
+      articlesFilters: {
+        page: 2,
       },
     });
 

@@ -14,7 +14,7 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/config/routeConfig';
 import { HStack } from 'shared/ui/Stack';
-import { Dropdown, DropdownItem } from 'shared/ui/Dropdown/Dropdown';
+import { Dropdown, DropdownItem } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './NavBar.module.scss';
 

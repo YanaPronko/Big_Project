@@ -2,9 +2,10 @@ import { Fragment, memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from '../../types/ui';
-import { HStack } from '../Stack';
+import { DropdownDirection } from '../../../../types/ui';
+import { HStack } from '../../../Stack';
 import cls from './ListBox.module.scss';
+import popoverCls from '../../styles/popup.module.scss';
 
 type ListBoxItem = {
   value: string,
@@ -30,11 +31,15 @@ export const ListBox = memo((props: ListBoxProps) => {
 
   return (
     <HStack>
-      {label && <label htmlFor="box" className={cls.label}>{label}</label>}
+      {label && (
+        <label htmlFor="box" className={cls.label}>
+          {label}
+        </label>
+      )}
       <HListBox
         id="box"
         as="div"
-        className={classNames(cls.listBox, {}, [className])}
+        className={classNames(cls.listBox, {}, [className, popoverCls.popup])}
         value={selectedVal}
         onChange={onChange}
         disabled={readonly}
@@ -43,7 +48,7 @@ export const ListBox = memo((props: ListBoxProps) => {
           {selectedVal ?? defaultVal}
         </HListBox.Button>
         <HListBox.Options
-          className={classNames(cls.options, {}, [cls[direction]])}
+          className={classNames(cls.options, {}, [popoverCls[direction]])}
         >
           {items?.map((item) => (
             <HListBox.Option
@@ -54,11 +59,7 @@ export const ListBox = memo((props: ListBoxProps) => {
             >
               {({ active, selected }) => (
                 <li
-                  className={classNames(
-                    cls.item,
-                    { [cls.active]: active, [cls.disabled]: item.disabled },
-                    [],
-                  )}
+                  className={classNames(cls.item, { [popoverCls.active]: active, [cls.disabled]: item.disabled }, [])}
                 >
                   {selected && '!'}
                   {item.content}

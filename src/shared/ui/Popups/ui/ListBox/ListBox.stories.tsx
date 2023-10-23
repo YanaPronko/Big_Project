@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/Theme/lib/ThemeContext';
+import { Theme } from 'app/providers/Theme';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {

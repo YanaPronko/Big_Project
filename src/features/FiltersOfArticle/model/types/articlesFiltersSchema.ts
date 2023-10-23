@@ -8,4 +8,5 @@ export interface ArticlesFiltersSchema {
   sort: ArticlesSortField;
   search: string;
   type: ArticleType;
+  page: number;
 }

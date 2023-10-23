@@ -11,13 +11,15 @@ describe('fetchNextArticlesPage.test', () => {
   test('success', async () => {
     const thunk = new TestAsyncThunk(initArticleListPage, {
       articlesPage: {
-        page: 2,
         ids: [],
         entities: {},
         limit: 5,
         isLoading: false,
         hasMore: true,
         _inited: false,
+      },
+      articlesFilters: {
+        page: 2,
       },
     });
 
@@ -29,13 +31,15 @@ describe('fetchNextArticlesPage.test', () => {
   test('fetchAritcleList not called', async () => {
     const thunk = new TestAsyncThunk(initArticleListPage, {
       articlesPage: {
-        page: 1,
         ids: [],
         entities: {},
         limit: 5,
         isLoading: false,
         hasMore: false,
         _inited: true,
+      },
+      articlesFilters: {
+        page: 1,
       },
     });
 

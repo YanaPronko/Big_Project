@@ -7,12 +7,9 @@ import { Input } from 'shared/ui/Input/Input';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { SortOrder } from 'shared/types/order';
 
-// TODO Переместить selector из pages или подумать куда его
-import { articlesPageActions } from 'pages/ArticleListPages/model/slice/articlesPageSlice';
-import { fetchArticlesList } from 'pages/ArticleListPages/model/services/fetchArticlesList/fetchArticlesList';
-
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from 'entities/Article';
+import { fetchArticlesList } from 'pages/ArticleListPages/model/services/fetchArticlesList/fetchArticlesList';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
 import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
@@ -44,25 +41,25 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
 
   const onChangeOrder = useCallback((newOrder: SortOrder) => {
     dispatch(articlesFiltersActions.setOrder(newOrder));
-    dispatch(articlesPageActions.setPage(1));
+    dispatch(articlesFiltersActions.setPage(1));
     fetchDataByFilters();
   }, [dispatch, fetchDataByFilters]);
 
   const onChangeSort = useCallback((newSort: ArticlesSortField) => {
     dispatch(articlesFiltersActions.setSort(newSort));
-    dispatch(articlesPageActions.setPage(1));
+    dispatch(articlesFiltersActions.setPage(1));
     fetchDataByFilters();
   }, [dispatch, fetchDataByFilters]);
 
   const onChangeSearch = useCallback((newSearch: string) => {
     dispatch(articlesFiltersActions.setSearch(newSearch));
-    dispatch(articlesPageActions.setPage(1));
+    dispatch(articlesFiltersActions.setPage(1));
     debouncedFetchDataByFilters();
   }, [dispatch, debouncedFetchDataByFilters]);
 
   const onChangeType = useCallback((value: ArticleType) => {
     dispatch(articlesFiltersActions.setType(value));
-    dispatch(articlesPageActions.setPage(1));
+    dispatch(articlesFiltersActions.setPage(1));
     fetchDataByFilters();
   }, [dispatch, fetchDataByFilters]);
 
