@@ -29,7 +29,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
   }
 
   return (
-    <VStack gap="16" max align="start" className={classNames('', {}, [className])}>
+    <VStack gap="16" max align="stretch" className={classNames('', {}, [className])}>
       {notifications?.map((notification) => (<NotificationItem key={nanoid()} item={notification} />))}
     </VStack>
   );

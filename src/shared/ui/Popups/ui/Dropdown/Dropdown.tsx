@@ -43,7 +43,7 @@ export const Dropdown = memo((props: DropdownProps) => {
               onClick={item.onClick}
               className={classNames(
                 cls.item,
-                { [popoverCls.active]: active },
+                { [cls.active]: active },
                 [],
               )}
             >

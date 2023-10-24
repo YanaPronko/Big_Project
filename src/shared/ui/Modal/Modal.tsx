@@ -3,8 +3,8 @@ import React, {
   FC, ReactNode, useCallback, useEffect,
 } from 'react';
 import { Transition } from 'react-transition-group';
-
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -62,13 +62,12 @@ export const Modal: FC<ModalProps> = (props) => {
       {(state) => (
         <Portal>
           <div className={classNames(cls.popup, { [cls[state]]: true }, [className, theme])}>
-            <div className={classNames(cls.overlay)} onClick={closeHandler}>
-              <div
-                className={classNames(cls.content)}
-                onClick={onContentClick}
-              >
-                {children}
-              </div>
+            <Overlay onClose={closeHandler} />
+            <div
+              className={classNames(cls.content)}
+              onClick={onContentClick}
+            >
+              {children}
             </div>
           </div>
         </Portal>

@@ -1,8 +1,7 @@
-.popup {
+.drawer {
   position: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   inset: 0;
   color: var(--primary-color);
   opacity: 0;
@@ -10,14 +9,18 @@
 }
 
 .content {
-  max-width: 60%;
+  position: fixed;
+  bottom: 0;
+  max-height: 70%;
+  min-height: 10rem;
+  width: 100%;
   padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: var(--bg-color);
-  border-radius: 1.2rem;
-  transform: scale(0.5);
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translateY(100%);
   transition: all 0.3s ease-in-out;
 }
 
@@ -26,7 +29,7 @@
   opacity: 1;
 
   .content {
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 
@@ -35,6 +38,6 @@
   opacity: 0;
 
   .content {
-    transform: scale(0.5);
+    transform: translateY(100%);
   }
 }

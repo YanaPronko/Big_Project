@@ -44,7 +44,7 @@ export const ListBox = memo((props: ListBoxProps) => {
         onChange={onChange}
         disabled={readonly}
       >
-        <HListBox.Button className={cls.btn}>
+        <HListBox.Button className={cls.btn} as="div">
           {selectedVal ?? defaultVal}
         </HListBox.Button>
         <HListBox.Options
@@ -59,7 +59,7 @@ export const ListBox = memo((props: ListBoxProps) => {
             >
               {({ active, selected }) => (
                 <li
-                  className={classNames(cls.item, { [popoverCls.active]: active, [cls.disabled]: item.disabled }, [])}
+                  className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled }, [])}
                 >
                   {selected && '!'}
                   {item.content}
