@@ -2,8 +2,8 @@ import { ReactNode, memo, Fragment } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
+import { PopupsDirection } from '../../../../types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
-PopupsDirection
 import cls from './Dropdown.module.scss';
 import popoverCls from '../../styles/popup.module.scss';
 
@@ -27,8 +27,13 @@ export const Dropdown = memo((props: DropdownProps) => {
   } = props;
 
   return (
-    <Menu as="div" className={classNames('', {}, [className, popoverCls.popup])}>
-      <Menu.Button className={cls.trigger}>{trigger}</Menu.Button>
+    <Menu
+      as="div"
+      className={classNames('', {}, [className, popoverCls.popup])}
+    >
+      <Menu.Button className={popoverCls.trigger} as="div">
+        {trigger}
+      </Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, [popoverCls[direction]])}>
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
@@ -36,14 +41,23 @@ export const Dropdown = memo((props: DropdownProps) => {
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
-              className={classNames(cls.item, { [popoverCls.active]: active }, [])}
+              className={classNames(
+                cls.item,
+                { [popoverCls.active]: active },
+                [],
+              )}
             >
               {item.content}
             </button>
           );
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={nanoid()}>
+              <Menu.Item
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+                key={nanoid()}
+              >
                 {content}
               </Menu.Item>
             );

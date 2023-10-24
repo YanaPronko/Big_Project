@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Popover as HPopover } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { PopupsDirection } from '../../../../types/ui';
@@ -17,13 +16,14 @@ export const Popover = (props: PopoverProps) => {
   const {
     className, children, direction = 'bottomR', trigger,
   } = props;
-  const { t } = useTranslation();
 
   return (
     <HPopover
       className={classNames(cls.popover, {}, [className, popoverCls.popup])}
     >
-      <HPopover.Button className={cls.trigger}>{trigger}</HPopover.Button>
+      <HPopover.Button className={popoverCls.trigger}>
+        {trigger}
+      </HPopover.Button>
       <HPopover.Panel
         className={classNames(cls.panel, {}, [popoverCls[direction]])}
       >

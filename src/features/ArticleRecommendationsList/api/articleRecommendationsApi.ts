@@ -12,7 +12,6 @@ const recommendationsApi = rtkApi.injectEndpoints({
       }),
     }),
   }),
-  overrideExisting: false,
 });
 
 export const useGetArticleRecommendations = recommendationsApi.useGetArticleRecommendationsQuery;
