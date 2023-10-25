@@ -1,9 +1,10 @@
-import { useTheme } from 'app/providers/Theme';
-import React, {
-  FC, ReactNode, useCallback, useEffect,
+import {
+  FC, ReactNode, useCallback,
 } from 'react';
 import { Transition } from 'react-transition-group';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/Theme';
+import { useKeyDown } from 'shared/lib/hooks/useKeyDown/useKeyDown';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -25,31 +26,13 @@ export const Modal: FC<ModalProps> = (props) => {
 
   const { theme } = useTheme();
 
+  useKeyDown(isOpen, onClose);
+
   const closeHandler = useCallback(() => {
     if (onClose) {
       onClose();
     }
   }, [onClose]);
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        closeHandler();
-      }
-    };
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
-    }
-    window.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isOpen, closeHandler]);
-
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
 
   return (
     <Transition
@@ -65,7 +48,6 @@ export const Modal: FC<ModalProps> = (props) => {
             <Overlay onClose={closeHandler} />
             <div
               className={classNames(cls.content)}
-              onClick={onContentClick}
             >
               {children}
             </div>

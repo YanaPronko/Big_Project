@@ -1,7 +1,8 @@
 import { ReactNode, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Transition } from 'react-transition-group';
 import { useTheme } from 'app/providers/Theme';
+import { classNames } from '../../lib/classNames/classNames';
+import { useKeyDown } from '../../lib/hooks/useKeyDown/useKeyDown';
 import { Portal } from '../Portal/Portal';
 import cls from './Drawer.module.scss';
 import { Overlay } from '../Overlay/Overlay';
@@ -19,6 +20,8 @@ export const Drawer = memo((props: DrawerProps) => {
   } = props;
   const { theme } = useTheme();
 
+  useKeyDown(isOpen, onClose);
+
   return (
     <Transition
       appear={isOpen}
@@ -29,9 +32,7 @@ export const Drawer = memo((props: DrawerProps) => {
     >
       {(state) => (
         <Portal>
-          <div
-            className={classNames(cls.drawer, { [cls[state]]: true }, [className, theme])}
-          >
+          <div className={classNames(cls.drawer, { [cls[state]]: true }, [className, theme])}>
             <Overlay onClose={onClose} />
             <div
               className={classNames(cls.content)}

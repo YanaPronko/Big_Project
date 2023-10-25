@@ -26,7 +26,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
   }, []);
 
   const trigger = (
-    <Button theme="clear" onClick={onOpenDrawer}>
+    <Button theme="clear" onClick={isMobile ? onOpenDrawer : undefined}>
       <NotificationIcon inverted />
     </Button>
   );

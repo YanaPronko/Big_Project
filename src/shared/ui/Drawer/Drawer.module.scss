@@ -6,6 +6,7 @@
   color: var(--primary-color);
   opacity: 0;
   transition: all 0.3s ease-in-out;
+  z-index: -1;
 }
 
 .content {
@@ -21,12 +22,14 @@
   overflow-y: auto;
   overflow-x: hidden;
   transform: translateY(100%);
+  z-index: 10000;
   transition: all 0.3s ease-in-out;
 }
 
 .entering,
 .entered {
   opacity: 1;
+  z-index: var(--modal-z-index);
 
   .content {
     transform: translateY(0);
@@ -36,6 +39,7 @@
 .exiting,
 .exited {
   opacity: 0;
+  z-index: -1;
 
   .content {
     transform: translateY(100%);
