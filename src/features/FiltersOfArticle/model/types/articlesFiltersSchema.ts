@@ -1,5 +1,5 @@
-import { ArticleType } from 'entities/Article';
-import { SortOrder } from 'shared/types/order';
+import { ArticleType } from '@/entities/Article';
+import { SortOrder } from '@/shared/types/order';
 
 export type ArticlesSortField = 'title' | 'views' | 'createdAt';
 

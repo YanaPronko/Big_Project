@@ -1,7 +1,7 @@
 import { ReactNode, memo, Fragment } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { PopupsDirection } from '../../../../types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
 import cls from './Dropdown.module.scss';

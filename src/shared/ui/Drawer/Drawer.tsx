@@ -1,7 +1,7 @@
 import {
-  ReactNode, memo, useCallback, useEffect,
+  ReactNode, useCallback, useEffect,
 } from 'react';
-import { useTheme } from 'app/providers/Theme';
+import { useTheme } from '@/app/providers/Theme';
 import { classNames } from '../../lib/classNames/classNames';
 import { useKeyDown } from '../../lib/hooks/useKeyDown/useKeyDown';
 import { Portal } from '../Portal/Portal';
@@ -11,27 +11,16 @@ import { AnimationProvider, useAnimationLibs } from '../../lib/ui/AnimationProvi
 
 interface DrawerProps {
   className?: string;
-  children?: ReactNode;
+  children: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
 }
 
 const height = window.innerHeight - 100;
 
-const DrawerContent = memo((props: DrawerProps) => {
+const DrawerContent = (props: DrawerProps) => {
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
-  const transition = Spring.useTransition(Overlay, {
-    from: {
-      y: '100%',
-    },
-    enter: {
-      y: 0,
-    },
-    leave: {
-      y: '100%',
-    },
-  });
 
   const {
     className, children, isOpen, onClose,
@@ -87,23 +76,15 @@ const DrawerContent = memo((props: DrawerProps) => {
     return null;
   }
 
-  const visibility = y.to((py) => (py < height ? 'visible' : 'hidden'));
+  const display = y.to((py) => (py < height ? 'block' : 'none'));
 
-  const AnimatedOverlay = Spring.animated(Overlay);
   return (
     <Portal>
-      <div
-        className={classNames(cls.drawer, { }, [className, theme])}
-      >
-        {transition((style) => (
-          <AnimatedOverlay
-            onClose={onClose}
-            style={style}
-          />
-        ))}
+      <div className={classNames(cls.drawer, {}, [className, theme])}>
+        <Overlay onClose={onClose} />
         <Spring.a.div
           className={classNames(cls.content)}
-          style={{ visibility, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+          style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
           {...bind()}
         >
           {children}
@@ -111,7 +92,7 @@ const DrawerContent = memo((props: DrawerProps) => {
       </div>
     </Portal>
   );
-});
+};
 
 const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();

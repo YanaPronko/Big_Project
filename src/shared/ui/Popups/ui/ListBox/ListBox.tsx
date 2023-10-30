@@ -1,7 +1,7 @@
 import { Fragment, memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { Listbox as HListBox } from '@headlessui/react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { PopupsDirection } from '../../../../types/ui';
 import { HStack } from '../../../Stack';
 import cls from './ListBox.module.scss';

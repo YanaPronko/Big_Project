@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

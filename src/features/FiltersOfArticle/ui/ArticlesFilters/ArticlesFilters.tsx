@@ -1,15 +1,15 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { SortOrder } from 'shared/types/order';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { SortOrder } from '@/shared/types/order';
 
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from 'entities/Article';
-import { fetchArticlesList } from 'pages/ArticleListPages/model/services/fetchArticlesList/fetchArticlesList';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { ArticleType } from '@/entities/Article';
+import { fetchArticlesList } from '@/pages/ArticleListPages/model/services/fetchArticlesList/fetchArticlesList';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
 import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';

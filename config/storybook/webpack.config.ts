@@ -16,8 +16,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
       path.resolve(__dirname, '../../src'),
       'node_modules',
     ];
+    config.resolve.alias = {
+      '@': path.resolve(__dirname, '../../src'),
+    };
   }
   config.resolve?.extensions?.push('.tsx', '.ts');
+
   if (config.module?.rules) {
     // @ts-ignore
     // eslint-disable-next-line no-param-reassign

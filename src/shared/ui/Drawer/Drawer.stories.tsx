@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/Theme';
+import { action } from '@storybook/addon-actions';
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/Theme';
 import { Drawer } from './Drawer';
 
 const meta: Meta<typeof Drawer> = {
@@ -12,11 +13,19 @@ export default meta;
 type Story = StoryObj<typeof Drawer>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    children: 'TEXT',
+    isOpen: true,
+    onClose: action('Close'),
+  },
 };
 
 export const PrimaryDark: Story = {
-  args: {},
+  args: {
+    children: 'TEXT',
+    isOpen: true,
+    onClose: action('Close'),
+  },
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

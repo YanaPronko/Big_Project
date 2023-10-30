@@ -89,6 +89,7 @@
     "stylelint": "^14.16.1",
     "stylelint-config-standard-scss": "^3.0.0",
     "ts-loader": "^9.2.6",
+    "ts-morph": "^20.0.0",
     "ts-node": "^10.5.0",
     "typescript": "^5.1.6",
     "url-loader": "^4.1.1",

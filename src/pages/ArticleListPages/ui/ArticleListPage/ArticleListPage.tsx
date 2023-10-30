@@ -1,16 +1,16 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleView } from 'entities/Article';
-import { ReducersList, useDynamicLoad } from 'shared/lib/hooks/useDynamicLoad/useDynamicLoad';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticlesViewSelector } from 'features/ArticlesViewSelector';
-import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
-import { Page } from 'widgets/Page/ui/Page';
-import { ArticlesFilters, articlesFiltersReducer } from 'features/FiltersOfArticle';
-import { HStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleView } from '@/entities/Article';
+import { ReducersList, useDynamicLoad } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticlesViewSelector } from '@/features/ArticlesViewSelector';
+import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
+import { Page } from '@/widgets/Page/ui/Page';
+import { ArticlesFilters, articlesFiltersReducer } from '@/features/FiltersOfArticle';
+import { HStack } from '@/shared/ui/Stack';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
 import { articlesPageActions, articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import {

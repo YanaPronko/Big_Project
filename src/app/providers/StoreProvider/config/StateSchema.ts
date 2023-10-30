@@ -2,18 +2,18 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUserName';
-import { ProfileSchema } from 'features/EditableProfileCard';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUserName';
+import { ProfileSchema } from '@/features/EditableProfileCard';
 
-import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
-import { ArticlesPageSchema } from 'pages/ArticleListPages';
-import { UISchema } from 'features/UI';
-import { AddCommentFormSchema } from 'features/CommentForm';
-import { ArticlesFiltersSchema } from 'features/FiltersOfArticle';
-import { rtkApi } from 'shared/api/rtk';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from '@/pages/ArticleListPages';
+import { UISchema } from '@/features/UI';
+import { AddCommentFormSchema } from '@/features/CommentForm';
+import { ArticlesFiltersSchema } from '@/features/FiltersOfArticle';
+import { rtkApi } from '@/shared/api/rtk';
 
 export interface StateSchema {
   counter: CounterSchema;

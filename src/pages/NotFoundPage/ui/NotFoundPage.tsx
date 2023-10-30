@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page/ui/Page';
 
 export default function NotFoundPage() {
   const { t } = useTranslation();

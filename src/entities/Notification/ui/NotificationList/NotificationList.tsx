@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { VStack } from 'shared/ui/Stack';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { useGetNotifications } from '../../api/notificationsApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/Theme';
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/Theme';
 import { Button } from '../../../Button/Button';
 import { Text } from '../../../Text/Text';
 import { Popover } from './Popover';
