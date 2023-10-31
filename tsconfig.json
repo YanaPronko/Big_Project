@@ -7,14 +7,14 @@
     "noImplicitAny": true,
     "module": "ESNext",
     // В какую спецификацию компилируем: для поддержки большинства браузеров
-    "target": "es5",
+    "target": "ESNext",
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"],
+      // "*": ["./src/*"],
       "@/*": ["./src/*"],
     },
     "skipLibCheck": true,
@@ -45,6 +45,6 @@
       "module": "CommonJS"
     }
   },
-  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "types": ["node", "jest", "@testing-library/jest-dom", "vite-plugin-svgr/client"],
   "include": ["./config/jest/setupTests.ts", "src"]
 }

@@ -1,6 +1,7 @@
 {
   "About": "О нас",
   "Profile": "Профиль",
+  "Articles": "Статьи",
   "Language": "English",
   "Main": "Главная",
   "Toggle": "Переключить",
@@ -21,5 +22,9 @@
   "pryweb": "PRYWeb",
   "create-article": "Создать статью",
   "admin-panel-page": "Страница панели администратора",
-  "you-havent-access": "У вас нет доступа"
+  "you-havent-access": "У вас нет доступа",
+  "leave-your-feedback": "Оставьте свой отзыв",
+  "cancel-0": "Отмена",
+  "send": "Отправить",
+  "Feedback": "Отзыв"
 }

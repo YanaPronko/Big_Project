@@ -150,3 +150,10 @@ export const SquarXL: Story = {
     size: BtnSize.XL,
   },
 };
+
+export const FullWidth: Story = {
+  args: {
+    children: '<',
+    fullWidth: true,
+  },
+};

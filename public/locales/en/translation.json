@@ -1,6 +1,7 @@
 {
   "About": "About",
   "Profile": "Profile",
+  "Articles": "Articles",
   "Language": "Russian",
   "Main": "Main",
   "Toggle": "Toggle",
@@ -21,5 +22,9 @@
   "pryweb": "PRYWeb",
   "create-article": "Create article",
   "admin-panel-page": "Admin Panel Page",
-  "you-havent-access": "You haven't access"
+  "you-havent-access": "You haven't access",
+  "leave-your-feedback": "Leave your feedback",
+  "cancel-0": "Cancel",
+  "send": "Send",
+  "Feedback": "Feedback"
 }

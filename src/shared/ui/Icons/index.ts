@@ -7,3 +7,4 @@ export { MainIcon } from './ui/MainIcon/MainIcon';
 export { ProfileIcon } from './ui/ProfileIcon/ProfileIcon';
 export { ThemeIcon } from './ui/ThemeIcon/ThemeIcon';
 export { NotificationIcon } from './ui/NotificationIcon/NotificationIcon';
+export { StarIcon } from './ui/StarIcon/StarIcon';
