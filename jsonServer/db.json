@@ -881,6 +881,48 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "articleId": "2"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "фчсвмаипрьо",
+      "id": "HlOrMl6"
+    },
+    {
+      "articleId": "10",
+      "userId": "1",
+      "rate": 2,
+      "feedback": "ошибка",
+      "id": "GqqnfCi"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "eeeeee",
+      "id": "KLcNYBG"
+    },
+    {
+      "articleId": "19",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "dgfhhn",
+      "id": "MzaxX3u"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "vcbnm",
+      "id": "wA1r7ME"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "sdfgh",
+      "id": "dzHEeLS"
     }
   ],
   "profile-ratings": [

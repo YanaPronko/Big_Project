@@ -16,19 +16,20 @@ interface RatingCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
+  rate?: number;
   onCancel?: (starNumber: number) => void;
   onAccept?: (starNumber: number, feedback?: string) => void;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
   const {
-    className, title, feedbackTitle, onCancel, onAccept,
+    className, title, feedbackTitle, rate = 0, onCancel, onAccept,
   } = props;
   const { t } = useTranslation();
   const isMobile = useDeviceDetect();
   const [feedback, setFeedback] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
 
   const onSelectStars = useCallback((selectedStarNumber: number) => {
     setStarsCount(selectedStarNumber);
@@ -51,15 +52,20 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   const modalContent = (
     <>
-      <Text title={t(`${feedbackTitle}`)} size="xl" />
-      <Input className={cls.inputSize} label={t('leave-your-feedback')} value={feedback} onChange={setFeedback} />
+      <Text title={feedbackTitle} size="xl" />
+      <Input
+        className={cls.inputSize}
+        label={t('your-feedback')}
+        value={feedback}
+        onChange={setFeedback}
+      />
     </>
   );
   return (
     <Card className={classNames(cls.ratingCard, {}, [className])}>
       <VStack gap="8" align="center">
-        <Text title={title} />
-        <StarRating size={40} onSelect={onSelectStars} />
+        <Text title={starsCount ? t('thank-you-for-feedback') : title} />
+        <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
       </VStack>
       {!isMobile && (
         <Modal isOpen={isModalOpen}>

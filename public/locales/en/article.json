@@ -21,5 +21,8 @@
   "edit-article": "Edit article",
   "edit-article-with-id": "Edit article with id",
   "create-new-article": "Create new article",
-  "failed-loading-of-recommendations": "Failed loading of recommendations"
+  "failed-loading-of-recommendations": "Failed loading of recommendations",
+  "rate-the-article": "Rate the article",
+  "leave-your-feedback-0": "Leave your feedback!",
+  "oops-failed-rate-of-article": "Oops! Failed rate of article!"
 }
