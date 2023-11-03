@@ -18,10 +18,45 @@ type Story = StoryObj<typeof ArticleRating>;
 
 export const Primary: Story = {
   args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: [{ rate: 4 }],
+      },
+    ],
+  },
 };
 
 export const PrimaryDark: Story = {
   args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: [{ rate: 4 }],
+      },
+    ],
+  },
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const WithoutRateDark: Story = {
+  args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
+    ],
+  },
+};
+
+WithoutRateDark.decorators = [ThemeDecorator(Theme.DARK)];

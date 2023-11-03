@@ -18,10 +18,46 @@ type Story = StoryObj<typeof ProfileRating>;
 
 export const Primary: Story = {
   args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/profile-ratings?userId=1&profileId=1`,
+        method: 'GET',
+        status: 200,
+        response: [{ rate: 3 }],
+      },
+    ],
+  },
 };
 
 export const PrimaryDark: Story = {
   args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/profile-ratings?userId=1&profileId=1`,
+        method: 'GET',
+        status: 200,
+        response: [{ rate: 3 }],
+      },
+    ],
+  },
+};
+
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithoutRateDark: Story = {
+  args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/profile-ratings?userId=1&profileId=1`,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
+    ],
+  },
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

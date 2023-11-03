@@ -66,7 +66,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
   return (
     <RatingCard
       className={className}
-      title={t('rate-of-profile')}
+      title={t('rate-the-profile')}
       feedbackTitle={t('leave-your-feedback-about-this-profle')}
       rate={rating}
       onCancel={onCancel}
