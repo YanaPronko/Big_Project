@@ -1,18 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ArticleRating } from '@/features/ArticleRating';
+import { ProfileRating } from '@/features/ProfileRating';
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/Theme';
 
-const meta: Meta<typeof ArticleRating> = {
-  title: 'features/ArticleRating',
-  component: ArticleRating,
+const meta: Meta<typeof ProfileRating> = {
+  title: 'features/ProfileRating',
+  component: ProfileRating,
   args: {
-    articleId: '2',
+    profileId: '1',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleRating>;
+type Story = StoryObj<typeof ProfileRating>;
 
 export const Primary: Story = {
   args: {},
