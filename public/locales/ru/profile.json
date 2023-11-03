@@ -21,5 +21,9 @@
   "server error": "Серверная ошибка",
   "incorrect user data": "Неверные данные пользователя",
   "incorrect age": "В поле 'возраст' должны быть цифры",
-  "incorrect country": "Выберите страну"
+  "incorrect country": "Выберите страну",
+  "oops-failed-rate-of-profile": "Упс! \nНеудачная ставка профиля",
+  "rate-of-profile": "Скорость профиля",
+  "leave-your-feedback-about-this-profle": "Оставьте свой отзыв об этом профиле",
+  "such-profile-hasnt-been-found": "Такой профиль не найден"
 }

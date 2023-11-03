@@ -14,7 +14,7 @@ export interface ArticleRatingProps {
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
   const { className, articleId } = props;
-  const { t } = useTranslation('article');
+  const { t } = useTranslation(['article', 'translation']);
 
   const userData = useSelector(getUserAuthData);
 
@@ -55,7 +55,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     <RatingCard
       className={className}
       title={t('rate-the-article')}
-      feedbackTitle={t('leave-your-feedback-0')}
+      feedbackTitle={t('leave-your-feedback', { ns: 'translation' })}
       rate={rating}
       onCancel={onCancel}
       onAccept={onAccept}
