@@ -21,5 +21,7 @@
   "edit-article": "Редактировать статью",
   "edit-article-with-id": "Редактирование статьи с id",
   "create-new-article": "Создать новую статью",
-  "failed-loading-of-recommendations": "Ошибка при загрузке рекоммендаций"
+  "failed-loading-of-recommendations": "Ошибка при загрузке рекоммендаций",
+  "rate-the-article": "Оцените статью",
+  "oops-failed-rate-of-article": "Упс! \nНе удалось оценить статью!"
 }

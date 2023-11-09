@@ -15,6 +15,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { articleDetailsCommentsReducer } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -54,14 +55,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return <ArticleDetails error={error} />;
   }
 
-  // // ЧТО ЗА ОШИБКИ ОТ ESLINT?????
-  // { isLoading && (<Loader />) };
-
   return (
     <Page className={classNames('', {}, [className])}>
       <VStack gap="32" align="stretch">
         <ArticleDetailsPageHeader />
         <ArticleDetails />
+        <ArticleRating articleId={id} />
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={id} />
       </VStack>

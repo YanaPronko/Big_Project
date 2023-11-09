@@ -23,8 +23,10 @@
   "create-article": "Создать статью",
   "admin-panel-page": "Страница панели администратора",
   "you-havent-access": "У вас нет доступа",
-  "leave-your-feedback": "Оставьте свой отзыв",
+  "your-feedback": "Ваш отзыв",
   "cancel-0": "Отмена",
   "send": "Отправить",
-  "Feedback": "Отзыв"
+  "Feedback": "Отзыв",
+  "thank-you-for-feedback": "Спасибо за отзыв",
+  "leave-your-feedback": "Оставьте свой отзыв"
 }

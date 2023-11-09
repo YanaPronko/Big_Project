@@ -21,5 +21,9 @@
   "server error": "Server error",
   "incorrect user data": "Incorrect user data",
   "incorrect age": "Field 'age' must contain numbers",
-  "incorrect country": "Choose country"
+  "incorrect country": "Choose country",
+  "oops-failed-rate-of-profile": "Oops! Failed rate of profile",
+  "rate-the-profile": "Rate the profile",
+  "leave-your-feedback-about-this-profle": "Leave your feedback about this profle",
+  "such-profile-hasnt-been-found": "Such profile hasn't been found"
 }

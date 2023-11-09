@@ -881,12 +881,73 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "articleId": "2"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "фчсвмаипрьо",
+      "id": "HlOrMl6"
+    },
+    {
+      "articleId": "10",
+      "userId": "1",
+      "rate": 2,
+      "feedback": "ошибка",
+      "id": "GqqnfCi"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "eeeeee",
+      "id": "KLcNYBG"
+    },
+    {
+      "articleId": "19",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "dgfhhn",
+      "id": "MzaxX3u"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "vcbnm",
+      "id": "wA1r7ME"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "sdfgh",
+      "id": "dzHEeLS"
+    },
+    {
+      "articleId": "17",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "guhijop",
+      "id": "pLkRWPx"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "rate": 2,
+      "id": "zsA7QfH"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "rate": 3,
+      "id": "kLw5unW"
     }
   ],
   "profile-ratings": [
     {
       "id": "1",
-      "rate": 4,
+      "rate": 0,
       "feedback": "Хорошая пользователь",
       "userId": "1",
       "profileId": "1"
@@ -904,6 +965,13 @@
       "userId": "1",
       "feedback": "",
       "id": "OW-kqaa"
+    },
+    {
+      "profileId": "1",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "Крутая фотка!",
+      "id": "JoKb2uJ"
     }
   ]
 }
