@@ -17,6 +17,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
       'node_modules',
     ];
     config.resolve.alias = {
+      ...config.resolve.alias,
       '@': path.resolve(__dirname, '../../src'),
     };
   }

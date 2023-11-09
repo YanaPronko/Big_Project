@@ -3,38 +3,19 @@ import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecora
 import { Theme } from '@/app/providers/Theme';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationList } from './NotificationList';
-import { Notification } from '../../model/types/notification';
 
-const mockNotifications: Notification[] = [
-  {
-    id: '1',
-    title: 'some title 1',
-    description: 'Some description 1',
-    href: 'http://localhost:3000/admin',
-  },
-  {
-    id: '2',
-    title: 'some title 2',
-    description: 'Some description 2',
-    href: 'http://localhost:3000/admin',
-  },
-  {
-    id: '3',
-    title: 'some title 3',
-    description: 'Some description 3',
-  },
-];
+import { mockNotifications } from '../../model/mocks/notifications';
 
 const meta: Meta<typeof NotificationList> = {
   title: 'entities/Notification/NotificationList',
   component: NotificationList,
-  decorators: [
-    (Story) => (
-      <div style={{ padding: '2rem', width: 'fit-content', height: '10rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <div style={{ padding: '2rem', width: 'fit-content', height: '10rem' }}>
+  //       <Story />
+  //     </div>
+  //   ),
+  // ],
 };
 
 export default meta;
