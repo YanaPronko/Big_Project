@@ -3,5 +3,7 @@ export {
 } from './ui/ArticleListPage/ArticleListPage.async';
 
 export type { ArticlesPageSchema } from './model/types/articlesPageSchema';
-export { articlesPageReducer } from './model/slice/articlesPageSlice';
+
+// TODO!!! move fetchArticlesList in features?
+
 export { fetchArticlesList } from './model/services/fetchArticlesList/fetchArticlesList';

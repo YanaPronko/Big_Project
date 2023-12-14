@@ -4,7 +4,7 @@ import {
   profileActions,
   profileReducer,
 } from './profileSlice';
-import { ProfileSchema } from '../types/profile';
+import { ProfileSchema } from '../types/profileSchema';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 

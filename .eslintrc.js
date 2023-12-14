@@ -61,7 +61,10 @@ module.exports = {
       },
     ],
     'path-checker-pryweb/relative-path-checker': ['error', {alias: '@'}],
-    'path-checker-pryweb/public-api-imports': ['error', {alias: '@'}],
+    'path-checker-pryweb/public-api-imports': ['error', {
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+    }],
     'no-param-reassign': [
       'error',
       {

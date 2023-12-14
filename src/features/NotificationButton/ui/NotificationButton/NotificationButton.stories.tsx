@@ -3,7 +3,7 @@ import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecora
 import { Theme } from '@/app/providers/Theme';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationButton } from './NotificationButton';
-import { mockNotifications } from '@/entities/Notification';
+import { mockNotifications } from '@/entities/Notification/testing';
 
 const meta: Meta<typeof NotificationButton> = {
   title: 'features/NotificationButton',

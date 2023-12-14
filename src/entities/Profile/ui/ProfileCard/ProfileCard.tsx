@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Profile } from '@/features/EditableProfileCard';
+import { Profile } from '../../model/types/profile';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { classNames } from '@/shared/lib/classNames/classNames';

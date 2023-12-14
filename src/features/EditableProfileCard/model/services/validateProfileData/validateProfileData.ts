@@ -1,4 +1,4 @@
-import { Profile, ValidateProfileErrors } from '../../types/profile';
+import { Profile, ValidateProfileErrors } from '../../types/profileSchema';
 
 export const validateProfileData = (profile?: Profile): ValidateProfileErrors[] => {
   if (!profile) {

@@ -3,11 +3,11 @@ import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article';
 import { loginReducer } from '@/features/AuthByUserName';
-import { addCommentFormReducer } from '@/features/CommentForm';
+import { addCommentFormReducer } from '@/features/CommentForm/testing';
 import { profileReducer } from '@/features/EditableProfileCard';
 import { articlesFiltersReducer } from '@/features/FiltersOfArticle';
-import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage';
-import { articlesPageReducer } from '@/pages/ArticleListPages';
+import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/testing';
+import { articlesPageReducer } from '@/pages/ArticleListPages/testing';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 
 const defaultAsyncReducers = {
