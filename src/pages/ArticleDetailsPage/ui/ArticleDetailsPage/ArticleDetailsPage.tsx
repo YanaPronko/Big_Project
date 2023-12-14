@@ -2,11 +2,16 @@ import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { ArticleDetails, articleDetailsReducer, fetchArticleById } from '@/entities/Article';
+import {
+  ArticleDetails,
+  articleDetailsReducer,
+  fetchArticleById,
+  getArtcileDetailsError,
+  getArtcileDetailsIsLoading,
+} from '@/entities/Article';
 import { Text } from '@/shared/ui/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducersList, useDynamicLoad } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
-import { getArtcileDetailsError, getArtcileDetailsIsLoading } from '@/entities/Article/model/selectors/articleDetails';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';

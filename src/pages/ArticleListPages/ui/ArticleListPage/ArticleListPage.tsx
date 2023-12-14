@@ -8,7 +8,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticlesViewSelector } from '@/features/ArticlesViewSelector';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
-import { Page } from '@/widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page';
 import { ArticlesFilters, articlesFiltersReducer } from '@/features/FiltersOfArticle';
 import { HStack } from '@/shared/ui/Stack';
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';

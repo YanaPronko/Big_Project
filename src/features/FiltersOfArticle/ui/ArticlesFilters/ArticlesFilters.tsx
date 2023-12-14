@@ -9,7 +9,7 @@ import { SortOrder } from '@/shared/types/order';
 
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from '@/entities/Article';
-import { fetchArticlesList } from '@/pages/ArticleListPages/model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '@/pages/ArticleListPages';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
 import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';

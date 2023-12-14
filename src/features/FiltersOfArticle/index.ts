@@ -1,4 +1,4 @@
-export type { ArticlesFiltersSchema } from './model/types/articlesFiltersSchema';
+export type { ArticlesFiltersSchema, ArticlesSortField } from './model/types/articlesFiltersSchema';
 export {
   articlesFiltersReducer,
   articlesFiltersActions,

@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '@/entities/Article';
 import { loginReducer } from '@/features/AuthByUserName';
 import { addCommentFormReducer } from '@/features/CommentForm';
 import { profileReducer } from '@/features/EditableProfileCard';
 import { articlesFiltersReducer } from '@/features/FiltersOfArticle';
-import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
+import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage';
 import { articlesPageReducer } from '@/pages/ArticleListPages';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 

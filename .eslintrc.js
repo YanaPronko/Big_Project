@@ -60,7 +60,8 @@ module.exports = {
         ignoreNonDOM: true,
       },
     ],
-    'path-checker-pryweb/relative-path-checker': 'error',
+    'path-checker-pryweb/relative-path-checker': ['error', {alias: '@'}],
+    'path-checker-pryweb/public-api-imports': ['error', {alias: '@'}],
     'no-param-reassign': [
       'error',
       {

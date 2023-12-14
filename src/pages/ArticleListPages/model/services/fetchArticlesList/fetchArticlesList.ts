@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkOptionsConfig } from '@/app/providers/StoreProvider';
-import { Article } from '@/entities/Article/model/types/article';
+import { Article } from '@/entities/Article';
 import {
   getArticlesOrder, getArticlesPageNumber, getArticlesSearch, getArticlesSort, getArticlesType,
 } from '@/features/FiltersOfArticle';

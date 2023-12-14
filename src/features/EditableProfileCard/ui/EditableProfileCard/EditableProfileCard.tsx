@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Text } from '@/shared/ui/Text/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Country } from '@/entities/Country/model/types/country';
+import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from '@/entities/Profile';
 import { VStack } from '@/shared/ui/Stack';
