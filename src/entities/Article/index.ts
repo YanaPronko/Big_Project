@@ -5,7 +5,7 @@ export {
   getArtcileDetailsError,
   getArtcileDetailsIsLoading,
 } from './model/selectors/articleDetails';
-export type { ArticleView } from './model/types/article';
+export type { ArticleView, ArticleType, Article } from './model/types/article';
 export { ArticlesList } from './ui/ArticlesList/ArticlesList';
 export { ArticleListItemSkeleton } from './ui/ArticleListItem/ArticleListItemSkeleton';
 export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
