@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BtnSize, Button } from '@/shared/ui/Button/Button';
+import { BtnSize, Button } from '@/shared/ui/Button';
 import cls from './CounterBtn.module.scss';
 
 interface CounterBtnProps {

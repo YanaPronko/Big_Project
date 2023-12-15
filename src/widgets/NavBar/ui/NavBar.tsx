@@ -12,8 +12,8 @@ import { LoginModal } from '@/features/AuthByUserName';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { BtnSize, Button } from '@/shared/ui/Button/Button';
+import { AppLink } from '@/shared/ui/AppLink';
+import { BtnSize, Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import cls from './NavBar.module.scss';
 

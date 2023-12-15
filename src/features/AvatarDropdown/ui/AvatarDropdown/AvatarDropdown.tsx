@@ -12,7 +12,7 @@ import {
 import { RoutePaths } from '@/app/config/routeConfig';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 
 interface AvatarDropdownProps {
   className?: string;

@@ -4,10 +4,10 @@ import { Profile } from '../../model/types/profile';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input/Input';
-import { Text } from '@/shared/ui/Text/Text';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { Text } from '@/shared/ui/Text';
+import { Loader } from '@/shared/ui/Loader';
+import { Avatar } from '@/shared/ui/Avatar';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {

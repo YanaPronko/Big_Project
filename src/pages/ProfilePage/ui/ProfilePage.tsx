@@ -11,7 +11,7 @@ import {
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
 import { ProfileRating } from '@/features/ProfileRating';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 
 const reducers: ReducersList = {
   profile: profileReducer,

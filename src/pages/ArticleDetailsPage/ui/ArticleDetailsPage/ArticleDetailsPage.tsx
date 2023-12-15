@@ -9,7 +9,7 @@ import {
   getArtcileDetailsError,
   getArtcileDetailsIsLoading,
 } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducersList, useDynamicLoad } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 import { Page } from '@/widgets/Page';

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticlesList, ArticleListItemSkeleton } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { useGetArticleRecommendations } from '../../api/articleRecommendationsApi';
 import cls from './ArticleRecommendationsList.module.scss';

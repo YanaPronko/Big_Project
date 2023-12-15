@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { PageError } from '@/widgets/PageError';
 import { ArticleView, ArticlesList } from '@/entities/Article';
 import { getArticlesPageError } from '../../model/selectors/articles';

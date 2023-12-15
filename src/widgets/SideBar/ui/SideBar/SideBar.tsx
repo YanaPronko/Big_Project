@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { BtnSize, Button } from '@/shared/ui/Button/Button';
+import { BtnSize, Button } from '@/shared/ui/Button';
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { SideBarItem } from '../SideBarItem/SideBarItem';
