@@ -1,9 +1,12 @@
 import { memo } from 'react';
+
 import { nanoid } from '@reduxjs/toolkit';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { GridIcon, ListIcon } from '@/shared/ui/Icons';
+
 import { ArticleView } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
+import { GridIcon, ListIcon } from '@/shared/ui/Icons';
+
 import cls from './ArticlesViewSelector.module.scss';
 
 interface ArticlesViewSelectorProps {

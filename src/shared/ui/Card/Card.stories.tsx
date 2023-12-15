@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/Theme';
-import { Text } from '../Text/Text';
+import { Theme } from '@/shared/const/theme';
+
 import { Card } from './Card';
+import { Text } from '../Text/Text';
 
 const meta: Meta<typeof Card> = {
   title: 'shared/Card',

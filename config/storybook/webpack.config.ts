@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import path from 'path';
+
 import webpack, { RuleSetRule } from 'webpack';
 // import { BuildPaths } from '../types/config';
 

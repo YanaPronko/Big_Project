@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { ArticleBlockType, ArticleType } from '../../types/article';
+
 import { fetchArticleById } from './fetchArticleById';
+import { ArticleBlockType, ArticleType } from '../../types/article';
 
 describe('Testing athyncThunk: fetchArticleById ', () => {
   test('success fetch of fetchArticleById ', async () => {

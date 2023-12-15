@@ -1,4 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { getArticleDetailsCommentsError, getArticleDetailsCommentsIsLoading } from './comments';
 
 describe('Testing comments selectors', () => {

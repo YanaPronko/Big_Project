@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
-import { Provider } from 'react-redux';
 import { FC, ReactNode } from 'react';
+
 import { ReducersMapObject } from '@reduxjs/toolkit';
-import { createReduxStore } from '../config/store';
+import { Provider } from 'react-redux';
+
 import { StateSchema } from '../config/StateSchema';
+import { createReduxStore } from '../config/store';
 
 interface StoreProviderProps {
   children?: ReactNode;

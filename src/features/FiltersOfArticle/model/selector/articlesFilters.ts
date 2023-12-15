@@ -1,4 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { initialState } from '../slice/articlesFiltersSlice';
 
 export const getArticlesOrder = (state: StateSchema) => state.articlesFilters?.order ?? initialState.order;

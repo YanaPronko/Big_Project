@@ -7,6 +7,7 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+
 import { AppRoutesProps } from './appRoutesPropsType';
 
 export enum AppRoutes {

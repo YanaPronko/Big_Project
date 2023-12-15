@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { ProfileCard } from './ProfileCard';
 import IMG from '../../../../shared/assets/test/avatar.png';
 

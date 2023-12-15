@@ -1,5 +1,7 @@
 import { memo, useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
+
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { CounterBtn } from '@/features/CounterBtn';
 import { Page } from '@/widgets/Page';

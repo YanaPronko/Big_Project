@@ -1,4 +1,5 @@
 import React, { MemoExoticComponent } from 'react';
+
 import { IconProps } from '@/shared/types/ui';
 
 export interface SideBarItemType {

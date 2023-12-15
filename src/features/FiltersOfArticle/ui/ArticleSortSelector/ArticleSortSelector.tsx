@@ -1,11 +1,15 @@
 import { memo, useMemo } from 'react';
+
 import { nanoid } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types/order';
 import { Select, SelectOption } from '@/shared/ui/Select';
-import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
+
 import cls from './ArticleSortSelector.module.scss';
+
+import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
 
 interface ArticleSortSelectorProps {
   className?: string;

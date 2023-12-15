@@ -1,22 +1,25 @@
 import { memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { SortOrder } from '@/shared/types/order';
 
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+
 import { ArticleType } from '@/entities/Article';
 import { fetchArticlesList } from '@/pages/ArticleListPages';
-import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
-import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
-import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types/order';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
+
+import cls from './ArticlesFilters.module.scss';
+
 import {
   getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
 } from '../../model/selector/articlesFilters';
-import cls from './ArticlesFilters.module.scss';
+import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
+import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
+import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { ArticlesTypesTabs } from '../ArticlesTypesTabs/ArticlesTypesTabs';
 
 interface ArticlesFiltersProps {

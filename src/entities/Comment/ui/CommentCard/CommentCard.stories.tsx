@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/Theme';
+import { Theme } from '@/shared/const/theme';
+
 import { CommentCard } from './CommentCard';
 import IMG from '../../../../shared/assets/test/avatar.png';
 

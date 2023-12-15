@@ -1,7 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Theme } from '@/app/providers/Theme';
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 const meta: Meta<typeof ArticleDetailsComments> = {

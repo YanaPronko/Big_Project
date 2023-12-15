@@ -1,5 +1,7 @@
 import { HTMLAttributes, memo } from 'react';
+
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+
 import cls from './Button.module.scss';
 
 export type BtnTheme = 'clear' |'clear_inverted' | 'outline' | 'background' | 'background_inverted' | 'outline_red';

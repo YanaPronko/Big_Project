@@ -1,9 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/Theme';
+
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from '../../model/types/article';
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+
 import { ArticleDetails } from './ArticleDetails';
+import { Article } from '../../model/types/article';
 
 const data: Article = {
   id: '1',

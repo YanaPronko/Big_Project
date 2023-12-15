@@ -1,9 +1,10 @@
 import type { Preview } from '@storybook/react';
-import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
-import { Theme } from '../../src/app/providers/Theme/model/const/types';
+import { Theme } from '../../src/shared/const/theme';
 
 export const globalTypes = {
   locale: {

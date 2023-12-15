@@ -2,6 +2,7 @@
 // import { StateSchema } from 'app/providers/StoreProvider';
 import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+
 import { loginByUsername } from './loginByUsername';
 
 describe('Testing athyncThunk: loginByUserName', () => {

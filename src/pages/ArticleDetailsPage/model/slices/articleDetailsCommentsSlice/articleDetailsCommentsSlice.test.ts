@@ -1,7 +1,8 @@
 import { Comment } from '@/entities/Comment';
+
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer } from '../../slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
 import { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
-import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const entities = {
   1: {

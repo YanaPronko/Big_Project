@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { Avatar } from './Avatar';
 import Img from '../../assets/test/avatar.png';
 

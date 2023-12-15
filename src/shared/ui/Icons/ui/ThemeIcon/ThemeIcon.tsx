@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import { FC } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from './ThemeIcon.module.scss';
 
 interface ThemeIconProps {

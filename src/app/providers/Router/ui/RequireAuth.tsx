@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
+
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
+
 import { AppRoutes, RoutePaths } from '@/app/config/routeConfig';
 import { UserRole, getUserAuthData, getUserRoles } from '@/entities/User';
 

@@ -1,21 +1,25 @@
 import { memo } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text } from '@/shared/ui/Text';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { classNames } from '@/shared/lib/classNames/classNames';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from '@/entities/Profile';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+
+import cls from './EditableProfileCard.module.scss';
+
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
-import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
-import { profileActions } from '../../model/slice/profileSlice';
-import cls from './EditableProfileCard.module.scss';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+import { profileActions } from '../../model/slice/profileSlice';
+import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 
 interface EditableProfileCardProps {
   className?: string;

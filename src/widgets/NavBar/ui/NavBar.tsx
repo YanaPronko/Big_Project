@@ -2,8 +2,10 @@ import {
   memo, useCallback, useEffect,
   useState,
 } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { RoutePaths } from '@/app/config/routeConfig';
 import {
   getUserAuthData,
@@ -15,6 +17,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { BtnSize, Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
+
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {

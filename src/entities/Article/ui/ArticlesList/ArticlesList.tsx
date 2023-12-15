@@ -1,10 +1,14 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+
 import { nanoid } from '@reduxjs/toolkit';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+
+import cls from './ArticlesList.module.scss';
+
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import cls from './ArticlesList.module.scss';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticlesListProps {
   className?: string;

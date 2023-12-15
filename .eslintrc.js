@@ -22,7 +22,13 @@ module.exports = {
     sourceType: 'module',
   },
   // ignorePatterns: ["**/*"],
-  plugins: ['react', '@typescript-eslint', 'i18next', 'path-checker-pryweb'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'path-checker-pryweb',
+    'unused-imports',
+  ],
   rules: {
     'react/jsx-filename-extension': [
       2,
@@ -36,6 +42,16 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -43,6 +59,35 @@ module.exports = {
     'no-shadow': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: './**.module.*',
+            group: 'internal',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     'no-underscore-dangle': 'off',
     'react/jsx-props-no-spreading': 'off',
     'i18next/no-literal-string': [
@@ -60,11 +105,18 @@ module.exports = {
         ignoreNonDOM: true,
       },
     ],
-    'path-checker-pryweb/relative-path-checker': ['error', {alias: '@'}],
-    'path-checker-pryweb/public-api-imports': ['error', {
-      alias: '@',
-      testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
-    }],
+    'path-checker-pryweb/relative-path-checker': ['error', { alias: '@' }],
+    'path-checker-pryweb/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.stories.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
     'no-param-reassign': [
       'error',
       {

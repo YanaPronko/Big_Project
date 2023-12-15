@@ -3,10 +3,12 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article, ArticleView } from '@/entities/Article';
-import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+
 import { ArticlesPageSchema } from '../../model/types/articlesPageSchema';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,

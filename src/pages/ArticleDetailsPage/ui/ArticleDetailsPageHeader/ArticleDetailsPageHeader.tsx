@@ -1,12 +1,15 @@
 import { memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
+
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button';
+
 import { RoutePaths } from '@/app/config/routeConfig';
 import { getArtcileDetailsData } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
+
 import { getEditStatus } from '../../model/selectors/articleDetailsPage/articleDetailsPage';
 
 interface ArticleDetailsPageHeaderProps {

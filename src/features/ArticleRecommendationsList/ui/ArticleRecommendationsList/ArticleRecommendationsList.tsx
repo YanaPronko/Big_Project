@@ -1,12 +1,16 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import { nanoid } from '@reduxjs/toolkit';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+
 import { ArticlesList, ArticleListItemSkeleton } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { useGetArticleRecommendations } from '../../api/articleRecommendationsApi';
+import { Text } from '@/shared/ui/Text';
+
 import cls from './ArticleRecommendationsList.module.scss';
+
+import { useGetArticleRecommendations } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
   className?: string;

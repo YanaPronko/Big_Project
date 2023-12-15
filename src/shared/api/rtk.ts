@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
 import { USER_LOCALSTORAGE_KEY } from '../const/localStorage';
 
 // initialize an empty api service that we'll inject endpoints into later as needed

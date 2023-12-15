@@ -1,10 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/Theme';
+import { Meta, StoryObj } from '@storybook/react';
+
 import { RoutePaths } from '@/app/config/routeConfig';
-import { Button } from '../../../Button/Button';
+import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+
 import { Dropdown } from './Dropdown';
+import { Button } from '../../../Button/Button';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'shared/Popups/Dropdown',

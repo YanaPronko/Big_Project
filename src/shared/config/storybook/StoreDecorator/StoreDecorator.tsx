@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { Decorator } from '@storybook/react';
+
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article';
 import { loginReducer } from '@/features/AuthByUserName';

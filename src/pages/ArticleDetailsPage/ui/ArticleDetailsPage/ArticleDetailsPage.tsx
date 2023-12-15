@@ -1,7 +1,9 @@
 import { FC, memo } from 'react';
+
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 import {
   ArticleDetails,
   articleDetailsReducer,
@@ -9,18 +11,19 @@ import {
   getArtcileDetailsError,
   getArtcileDetailsIsLoading,
 } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { ReducersList, useDynamicLoad } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
-import { Page } from '@/widgets/Page';
-import { VStack } from '@/shared/ui/Stack';
-import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
-import { articleDetailsCommentsReducer } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
 import { ArticleRating } from '@/features/ArticleRating';
+import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ReducersList, useDynamicLoad } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { Page } from '@/widgets/Page';
+
+import { articleDetailsCommentsReducer } from '../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
   className?: string;

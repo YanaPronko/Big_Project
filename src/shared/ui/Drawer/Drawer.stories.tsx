@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { Meta, StoryObj } from '@storybook/react';
+
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/Theme';
+import { Theme } from '@/shared/const/theme';
+
 import { Drawer } from './Drawer';
 
 const meta: Meta<typeof Drawer> = {

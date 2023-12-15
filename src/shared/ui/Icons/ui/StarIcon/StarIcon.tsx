@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import { memo } from 'react';
-import { IconProps } from '@/shared/types/ui';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { IconProps } from '@/shared/types/ui';
 
 export const StarIcon = memo((props: IconProps) => {
   const { className, ...otherProps } = props;
