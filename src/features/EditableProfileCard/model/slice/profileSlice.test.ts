@@ -1,14 +1,13 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
-import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
-import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema } from '../types/profileSchema';
-
 import {
   profileActions,
   profileReducer,
 } from './profileSlice';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { ProfileSchema } from '../types/profileSchema';
 
 describe('Test ProfileSlice', () => {
   const data = {

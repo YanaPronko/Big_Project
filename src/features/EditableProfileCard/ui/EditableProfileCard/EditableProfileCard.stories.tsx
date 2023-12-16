@@ -4,9 +4,8 @@ import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import IMG from '../../../../shared/assets/test/avatar.png';
-
 import { EditableProfileCard } from './EditableProfileCard';
+import IMG from '../../../../shared/assets/test/avatar.png';
 
 const meta: Meta<typeof EditableProfileCard> = {
   title: 'features/EditableProfileCard',

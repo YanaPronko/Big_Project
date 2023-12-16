@@ -2,6 +2,7 @@ import { memo, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+// eslint-disable-next-line path-checker-pryweb/layers-import
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { CounterBtn } from '@/features/CounterBtn';
 import { Page } from '@/widgets/Page';

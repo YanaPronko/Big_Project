@@ -2,8 +2,6 @@ import { Suspense, useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
-import { AppRouter } from '@/app/providers/Router';
 import { getUserInited, userActions } from '@/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -11,6 +9,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { NavBar } from '@/widgets/NavBar';
 import { SideBar } from '@/widgets/SideBar';
+
+import { ErrorBoundary } from './providers/ErrorBoundary';
+import { AppRouter } from './providers/Router';
 import '@/shared/config/i18n/i18n';
 import './styles/index.scss';
 

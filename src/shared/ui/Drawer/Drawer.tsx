@@ -2,7 +2,7 @@ import {
   ReactNode, useCallback, useEffect,
 } from 'react';
 
-import { useTheme } from '@/app/providers/Theme';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 import { classNames } from '../../lib/classNames/classNames';
 import { useKeyDown } from '../../lib/hooks/useKeyDown/useKeyDown';

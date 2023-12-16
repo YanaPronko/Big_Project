@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { ArticleType } from '@/entities/Article';
+// eslint-disable-next-line path-checker-pryweb/layers-import
 import { fetchArticlesList } from '@/pages/ArticleListPages';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

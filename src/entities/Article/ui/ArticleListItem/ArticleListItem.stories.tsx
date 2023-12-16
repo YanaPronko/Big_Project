@@ -3,9 +3,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { articleMock } from '../../model/mocks/articles';
-
 import { ArticleListItem } from './ArticleListItem';
+import { articleMock } from '../../model/mocks/articles';
 
 const meta: Meta<typeof ArticleListItem> = {
   title: 'entities/Article/ArticleListItem',

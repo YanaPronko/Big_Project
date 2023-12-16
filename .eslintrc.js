@@ -62,7 +62,7 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
+        groups: ['builtin', 'external', 'internal', ['parent', 'sibling']],
         pathGroups: [
           {
             pattern: 'react',
@@ -79,7 +79,7 @@ module.exports = {
             position: 'after',
           },
         ],
-        "pathGroupsExcludedImportTypes": ['react'],
+        pathGroupsExcludedImportTypes: ['react'],
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
@@ -105,6 +105,13 @@ module.exports = {
       },
     ],
     'path-checker-pryweb/relative-path-checker': ['error', { alias: '@' }],
+    'path-checker-pryweb/layers-import': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
     'path-checker-pryweb/public-api-imports': [
       'error',
       {

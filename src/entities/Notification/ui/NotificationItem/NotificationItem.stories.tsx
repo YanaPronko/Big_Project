@@ -4,9 +4,8 @@ import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { Notification } from '../../model/types/notification';
-
 import { NotificationItem } from './NotificationItem';
+import { Notification } from '../../model/types/notification';
 
 const mockNotification: Notification = {
   id: '1',

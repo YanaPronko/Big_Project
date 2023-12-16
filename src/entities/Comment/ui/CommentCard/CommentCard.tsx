@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { RoutePaths } from '@/app/config/routeConfig';
+import { RoutePaths } from '@/shared/const/AppRoutes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';

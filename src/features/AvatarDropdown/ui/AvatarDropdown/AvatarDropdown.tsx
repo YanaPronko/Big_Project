@@ -3,13 +3,13 @@ import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { RoutePaths } from '@/app/config/routeConfig';
 import {
   getIsAdmin,
   getIsManager,
   getUserAuthData,
   userActions,
 } from '@/entities/User';
+import { RoutePaths } from '@/shared/const/AppRoutes';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

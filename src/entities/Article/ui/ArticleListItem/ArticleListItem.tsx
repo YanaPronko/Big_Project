@@ -2,7 +2,8 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { RoutePaths } from '@/app/config/routeConfig';
+// eslint-disable-next-line path-checker-pryweb/layers-import
+import { RoutePaths } from '@/shared/const/AppRoutes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';

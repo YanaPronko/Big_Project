@@ -4,9 +4,8 @@ import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { Article } from '../../model/types/article';
-
 import { ArticleDetails } from './ArticleDetails';
+import { Article } from '../../model/types/article';
 
 const data: Article = {
   id: '1',

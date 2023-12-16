@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import IMG from '../../../../shared/assets/test/avatar.png';
-
 import { ProfileCard } from './ProfileCard';
+import IMG from '../../../../shared/assets/test/avatar.png';
 
 const meta: Meta<typeof ProfileCard> = {
   title: 'entities/ProfileCard',

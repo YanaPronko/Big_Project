@@ -1,18 +1,15 @@
 import {
-  memo, useCallback, useEffect,
-  useState,
+  memo, useCallback, useEffect, useState,
 } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { RoutePaths } from '@/app/config/routeConfig';
-import {
-  getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUserName';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
+import { RoutePaths } from '@/shared/const/AppRoutes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { BtnSize, Button } from '@/shared/ui/Button';
@@ -71,7 +68,9 @@ export const NavBar = memo((props: NavBarProps) => {
   return (
     <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
       <HStack justify="center" className={cls.logoBlock}>
-        <AppLink to={RoutePaths.main} theme="inverted" size="xl">{t('pryweb')}</AppLink>
+        <AppLink to={RoutePaths.main} theme="inverted" size="xl">
+          {t('pryweb')}
+        </AppLink>
       </HStack>
       <Button
         className={cls.signinBtn}

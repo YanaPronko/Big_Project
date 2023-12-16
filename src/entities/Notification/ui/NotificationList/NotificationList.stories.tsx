@@ -4,9 +4,8 @@ import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-import { mockNotifications } from '../../model/mocks/notifications';
-
 import { NotificationList } from './NotificationList';
+import { mockNotifications } from '../../model/mocks/notifications';
 
 const meta: Meta<typeof NotificationList> = {
   title: 'entities/Notification/NotificationList',

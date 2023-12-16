@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { RoutePaths } from '@/app/config/routeConfig';
 import { getUserAuthData } from '@/entities/User';
+import { RoutePaths } from '@/shared/const/AppRoutes';
 import { AboutIcon } from '@/shared/ui/AboutIcon';
 import { ArticleIcon, MainIcon, ProfileIcon } from '@/shared/ui/Icons';
 
