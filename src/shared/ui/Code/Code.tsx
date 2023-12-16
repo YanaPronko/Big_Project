@@ -1,10 +1,10 @@
 import { memo, useCallback } from 'react';
 
-import cls from './Code.module.scss';
-
 import { classNames } from '../../lib/classNames/classNames';
 import { Button } from '../Button/Button';
 import { CopyIcon } from '../Icons/ui/CopyIcon/CopyIcon';
+
+import cls from './Code.module.scss';
 
 interface CodeProps {
   className?: string;

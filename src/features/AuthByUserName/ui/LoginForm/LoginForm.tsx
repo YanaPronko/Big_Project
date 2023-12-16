@@ -10,12 +10,12 @@ import { BtnSize, Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './LoginForm.module.scss';
-
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import { loginReducer } from '../../model/slice/loginSlice';
+
+import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
   className?: string;

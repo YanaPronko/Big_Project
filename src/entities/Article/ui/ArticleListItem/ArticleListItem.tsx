@@ -10,10 +10,10 @@ import { Button } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './ArticleListItem.module.scss';
-
 import { Article, ArticleTextBlock, ArticleView } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
+import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
   className?: string;

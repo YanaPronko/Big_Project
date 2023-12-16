@@ -1,9 +1,9 @@
 import { memo, useState } from 'react';
 
-import cls from './StarRating.module.scss';
-
 import { classNames } from '../../lib/classNames/classNames';
 import { StarIcon } from '../Icons';
+
+import cls from './StarRating.module.scss';
 
 const stars = [1, 2, 3, 4, 5];
 

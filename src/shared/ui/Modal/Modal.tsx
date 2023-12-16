@@ -8,10 +8,10 @@ import { useTheme } from '@/app/providers/Theme';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useKeyDown } from '@/shared/lib/hooks/useKeyDown/useKeyDown';
 
-import cls from './Modal.module.scss';
-
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
+
+import cls from './Modal.module.scss';
 
 interface ModalProps {
   children?: ReactNode;

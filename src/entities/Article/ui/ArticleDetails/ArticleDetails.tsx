@@ -10,13 +10,13 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './ArticleDetails.module.scss';
-
 import { getArtcileDetailsData } from '../../model/selectors/articleDetails';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
+import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;

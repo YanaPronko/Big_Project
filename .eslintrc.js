@@ -62,7 +62,7 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal'],
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
         pathGroups: [
           {
             pattern: 'react',
@@ -71,16 +71,15 @@ module.exports = {
           },
           {
             pattern: '@/**',
-            group: 'external',
-            position: 'after',
+            group: 'internal',
           },
           {
             pattern: './**.module.*',
-            group: 'internal',
+            group: 'sibling',
             position: 'after',
           },
         ],
-        pathGroupsExcludedImportTypes: ['react'],
+        "pathGroupsExcludedImportTypes": ['react'],
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',

@@ -7,9 +7,9 @@ import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 
-import cls from './SideBarItem.module.scss';
-
 import { SideBarItemType } from '../../model/types/items';
+
+import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
   item: SideBarItemType,

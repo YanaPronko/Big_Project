@@ -6,9 +6,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 import { VRevStack } from '@/shared/ui/Stack';
 
-import cls from './PageError.module.scss';
-
 import img from '../assets/error.gif';
+
+import cls from './PageError.module.scss';
 
 interface PageErrorProps {
   className?: string;

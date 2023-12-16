@@ -6,9 +6,10 @@ import { Currency } from '@/entities/Currency';
 import { $api } from '@/shared/api/api';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
-import { EditableProfileCard } from './EditableProfileCard';
 import IMG from '../../../../shared/assets/test/avatar.png';
 import { profileReducer } from '../../model/slice/profileSlice';
+
+import { EditableProfileCard } from './EditableProfileCard';
 
 const profileMock = {
   id: '1',

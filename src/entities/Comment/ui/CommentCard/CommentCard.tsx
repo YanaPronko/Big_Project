@@ -8,9 +8,9 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './CommentCard.module.scss';
-
 import { Comment } from '../../model/types/comment';
+
+import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
   className?: string;

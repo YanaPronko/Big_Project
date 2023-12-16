@@ -1,9 +1,10 @@
 import { RuleSetRule } from 'webpack';
 
 // import ReactRefreshTypeScript from 'react-refresh-typescript';
+import { BuildOptions } from '../types/config';
+
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
-import { BuildOptions } from '../types/config';
 // import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {

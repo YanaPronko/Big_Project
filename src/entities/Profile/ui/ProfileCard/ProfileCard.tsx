@@ -10,9 +10,9 @@ import { Input } from '@/shared/ui/Input';
 import { Loader } from '@/shared/ui/Loader';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './ProfileCard.module.scss';
-
 import { Profile } from '../../model/types/profile';
+
+import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
   className?: string;

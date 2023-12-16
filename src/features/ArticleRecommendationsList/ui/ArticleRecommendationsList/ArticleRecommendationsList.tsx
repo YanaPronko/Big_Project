@@ -8,9 +8,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './ArticleRecommendationsList.module.scss';
-
 import { useGetArticleRecommendations } from '../../api/articleRecommendationsApi';
+
+import cls from './ArticleRecommendationsList.module.scss';
 
 interface ArticleRecommendationsListProps {
   className?: string;

@@ -4,11 +4,11 @@ import { nanoid } from '@reduxjs/toolkit';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from './ArticlesList.module.scss';
-
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+
+import cls from './ArticlesList.module.scss';
 
 interface ArticlesListProps {
   className?: string;

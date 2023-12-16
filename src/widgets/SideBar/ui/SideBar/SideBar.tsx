@@ -7,10 +7,10 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { BtnSize, Button } from '@/shared/ui/Button';
 
-import cls from './SideBar.module.scss';
-
 import { getSideBarItemsList } from '../../model/selectors/getSideBarItemsList';
 import { SideBarItem } from '../SideBarItem/SideBarItem';
+
+import cls from './SideBar.module.scss';
 
 interface SideBarProps {
   className?: string;

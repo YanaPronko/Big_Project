@@ -4,13 +4,13 @@ import {
 
 import { useTheme } from '@/app/providers/Theme';
 
-import cls from './Drawer.module.scss';
-
 import { classNames } from '../../lib/classNames/classNames';
 import { useKeyDown } from '../../lib/hooks/useKeyDown/useKeyDown';
 import { AnimationProvider, useAnimationLibs } from '../../lib/ui/AnimationProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
+
+import cls from './Drawer.module.scss';
 
 interface DrawerProps {
   className?: string;

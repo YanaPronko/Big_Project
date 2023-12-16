@@ -1,6 +1,7 @@
-import { loginReducer } from './loginSlice';
 import { loginByUsername } from '../services/loginByUsername';
 import { LoginSchema } from '../types/loginSchema';
+
+import { loginReducer } from './loginSlice';
 
 describe('loginSlice test', () => {
   test('test loginReducer pending', () => {

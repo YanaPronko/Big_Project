@@ -11,8 +11,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './EditableProfileCard.module.scss';
-
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -20,6 +18,8 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { profileActions } from '../../model/slice/profileSlice';
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
+
+import cls from './EditableProfileCard.module.scss';
 
 interface EditableProfileCardProps {
   className?: string;

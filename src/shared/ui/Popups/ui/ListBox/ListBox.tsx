@@ -5,11 +5,11 @@ import { nanoid } from '@reduxjs/toolkit';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from './ListBox.module.scss';
-
 import { PopupsDirection } from '../../../../types/ui';
 import { HStack } from '../../../Stack';
 import popoverCls from '../../styles/popup.module.scss';
+
+import cls from './ListBox.module.scss';
 
 type ListBoxItem = {
   value: string,

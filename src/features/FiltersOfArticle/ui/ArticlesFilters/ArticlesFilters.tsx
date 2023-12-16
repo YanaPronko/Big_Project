@@ -12,8 +12,6 @@ import { SortOrder } from '@/shared/types/order';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
 
-import cls from './ArticlesFilters.module.scss';
-
 import {
   getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
 } from '../../model/selector/articlesFilters';
@@ -21,6 +19,8 @@ import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
 import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { ArticlesTypesTabs } from '../ArticlesTypesTabs/ArticlesTypesTabs';
+
+import cls from './ArticlesFilters.module.scss';
 
 interface ArticlesFiltersProps {
   className?: string;

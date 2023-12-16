@@ -11,13 +11,13 @@ import { Input } from '@/shared/ui/Input';
 import { HStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import cls from './AddCommentForm.module.scss';
-
 import {
   getAddCommentFormError,
   getAddCommentFormText,
 } from '../../model/selectors/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
+
+import cls from './AddCommentForm.module.scss';
 
 interface addCommentFormProps {
   className?: string;

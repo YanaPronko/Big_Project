@@ -14,8 +14,6 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { HStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 
-import cls from './ArticleListPage.module.scss';
-
 import {
   getArticlesPageView,
   getArticlesPageIsLoading,
@@ -24,6 +22,8 @@ import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchN
 import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
 import { articlesPageActions, articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+
+import cls from './ArticleListPage.module.scss';
 
 interface ArticleListPageProps {
   className?: string;
