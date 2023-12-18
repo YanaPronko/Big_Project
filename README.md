@@ -168,7 +168,7 @@ For development, the project contains 2 configs:
 
 Both collectors are adapted to the main features of the application.
 
-All configuration is stored in /config
+All configuration is stored in /config and in src folder
 - /config/babel - babel
 - /config/build - webpack configuration
 - /config/jest - test environment configuration
@@ -425,7 +425,7 @@ PrimaryDark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];
 
 Оба сборщика адаптированы под основные фичи приложения.
 
-Вся конфигурация хранится в /config
+Вся конфигурация хранится в /config и в корне проекта(src)
 - /config/babel - babel
 - /config/build - конфигурация webpack
 - /config/jest - конфигурация тестовой среды
