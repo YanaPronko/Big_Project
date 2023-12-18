@@ -42,12 +42,33 @@ const gapClasses: Record<FlexGap, string> = {
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export interface FlexProps extends DivProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description Flex content
+   */
   children: ReactNode;
+  /**
+   * @description Justify content css property
+   */
   justify?: FlexJustify;
+  /**
+   * @description Align items css property
+   */
   align?: FlexAlign;
+  /**
+   * @description Flex direction css property
+   */
   direction: FlexDirection;
+  /**
+   * @description Gap between flex items
+   */
   gap?: FlexGap;
+  /**
+   * @description Flag to set width: 100%
+   */
   max?: boolean;
 }
 

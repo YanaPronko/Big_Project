@@ -44,6 +44,7 @@ interface InputProps extends HTMLInputProps {
   readonly?: boolean;
   /**
    * @description Callback to change value in input
+   * @param {string} value
    */
   onChange?: (value: string) => void;
 }

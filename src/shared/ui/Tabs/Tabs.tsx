@@ -7,14 +7,33 @@ import { Card } from '../Card/Card';
 import cls from './Tabs.module.scss';
 
 export interface TabItem {
+  /**
+   * @description The value of Tab
+   */
   value: string;
+  /**
+   * @description The content of Tab
+   */
   content: ReactNode;
 }
 
 interface TabsProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description The tabs items to display
+   */
   tabs: TabItem[];
+  /**
+   * @description The value of selected Tab
+   */
   selectedValue: string;
+  /**
+   * @description Called when a tab is clicked
+   * @param {TabItem} tab
+   */
   onTabClick: (tab: TabItem) => void;
 }
 

@@ -8,9 +8,24 @@ import cls from './StarRating.module.scss';
 const stars = [1, 2, 3, 4, 5];
 
 interface StarRatingProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description Height and width of the star
+   * @default 30
+   */
   size?: number;
+  /**
+   * @description 0 means no stars are selected
+   * @default 0
+   */
   selectedStars?: number;
+  /**
+   * @description Called when a star is selected
+   * @param {number} starsCount
+   */
   onSelect?: (starNumber: number) => void;
 }
 

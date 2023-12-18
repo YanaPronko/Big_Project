@@ -5,16 +5,40 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 
 export interface SelectOption<T extends string> {
+  /**
+   * @description The value of SelectOption
+   */
   value: T;
+  /**
+   * @description SelectOption content
+   */
   content: string;
 }
 
-interface SelectProps<T extends string>{
+interface SelectProps<T extends string> {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description List of items to render in Select
+   */
   options: SelectOption<T>[];
+  /**
+   * @description Label for the Select
+   */
   label?: string;
+  /**
+   * @description The value of items in Select
+   */
   value?: T;
+  /**
+   * @description Flag to disable Select and to add readonly class
+   */
   readonly?: boolean;
+  /**
+   * @description Callback to change value
+   */
   onChange?: (value: T) => void;
 }
 

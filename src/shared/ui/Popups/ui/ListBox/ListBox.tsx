@@ -58,6 +58,7 @@ interface ListBoxProps {
   direction?: PopupsDirection;
   /**
    * @description Callback to change value
+   * @param {string} value
    */
   onChange: (value: string) => void;
 }
