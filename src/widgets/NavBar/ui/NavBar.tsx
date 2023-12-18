@@ -9,7 +9,7 @@ import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUserName';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
-import { RoutePaths } from '@/shared/const/AppRoutes';
+import { getRouteArticleCreate, getRouteMain } from '@/shared/const/AppRoutes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { BtnSize, Button } from '@/shared/ui/Button';
@@ -46,12 +46,12 @@ export const NavBar = memo((props: NavBarProps) => {
         {...otherProps}
       >
         <HStack justify="center" className={cls.logoBlock}>
-          <AppLink to={RoutePaths.main} theme="inverted" size="xl">
+          <AppLink to={getRouteMain()} theme="inverted" size="xl">
             {t('pryweb')}
           </AppLink>
         </HStack>
         <HStack gap="16">
-          <AppLink to={RoutePaths.article_create} theme="inverted" size="l">
+          <AppLink to={getRouteArticleCreate()} theme="inverted" size="l">
             {t('create-article')}
           </AppLink>
           <NotificationButton />
@@ -68,7 +68,7 @@ export const NavBar = memo((props: NavBarProps) => {
   return (
     <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
       <HStack justify="center" className={cls.logoBlock}>
-        <AppLink to={RoutePaths.main} theme="inverted" size="xl">
+        <AppLink to={getRouteMain()} theme="inverted" size="xl">
           {t('pryweb')}
         </AppLink>
       </HStack>

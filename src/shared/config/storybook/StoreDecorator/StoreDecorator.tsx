@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { Decorator } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
@@ -11,7 +10,7 @@ import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/testin
 import { articlesPageReducer } from '@/pages/ArticleListPages/testing';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
 
-const defaultAsyncReducers = {
+const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,

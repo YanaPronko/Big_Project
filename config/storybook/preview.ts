@@ -1,8 +1,8 @@
+import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { Theme } from '../../src/shared/const/theme';
 
@@ -19,28 +19,34 @@ export const globalTypes = {
       showName: true,
     },
   },
-  //   theme: {
-  //     name: 'Theme',
-  //     description: 'Global theme for components',
-  //     toolbar: {
-  //       // https://5a375b97f4b14f0020b0cda3-wbeulgbetj.chromatic.com/?path=/story/basics-icon--labels
-  //       icon: 'circlehollow',
-  //       items: [
-  //         { value: 'app_light', title: 'Light' },
-  //         { value: 'app_dark', title: 'Dark' },
-  //       ],
-  //       showName: true,
-  //       dynamicTitle: true,
-  //     },
-  //   },
-  // };
+  theme: {
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      // The label to show for this toolbar item
+      title: 'Theme',
+      icon: 'circlehollow',
+      // Array of plain string values or MenuItem shape (see below)
+      items: ['light', 'dark', 'orange'],
+      // Change title based on selected value
+      dynamicTitle: true,
+    },
+  },
 };
 
 const preview: Preview = {
   decorators: [
     TranslationDecorator,
     StyleDecorator,
-    ThemeDecorator(Theme.LIGHT),
+    // @ts-ignore
+    withThemeByClassName({
+      themes: {
+        light: `app ${Theme.LIGHT}`,
+        dark: `app ${Theme.DARK}`,
+        orange: `app ${Theme.ORANGE}`,
+      },
+      defaultTheme: 'light',
+    }),
     RouterDecorator,
   ],
   parameters: {
@@ -51,6 +57,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    layout: 'fullscreen',
   },
 };
 

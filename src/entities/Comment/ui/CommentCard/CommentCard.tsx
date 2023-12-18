@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { RoutePaths } from '@/shared/const/AppRoutes';
+import { getRouteProfile } from '@/shared/const/AppRoutes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -49,7 +49,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
       {...otherProps}
     >
       <AppLink
-        to={`${RoutePaths.profile}${comment.user.id}`}
+        to={getRouteProfile(comment.user.id)}
         className={cls.header}
       >
         {comment.user.avatar && (

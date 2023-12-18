@@ -1,11 +1,10 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { RoutePaths } from '@/shared/const/AppRoutes';
-import { Theme } from '@/shared/const/theme';
-
 import { Dropdown } from './Dropdown';
+import ThemeDecorator from '../../../../config/storybook/ThemeDecorator/ThemeDecorator';
+import { getRouteProfile } from '../../../../const/AppRoutes';
+import { Theme } from '../../../../const/theme';
 import { Button } from '../../../Button/Button';
 
 const meta: Meta<typeof Dropdown> = {
@@ -22,7 +21,7 @@ const meta: Meta<typeof Dropdown> = {
     items: [
       {
         content: 'Profile',
-        href: `${RoutePaths.profile}1`,
+        href: getRouteProfile('1'),
       },
       {
         content: 'Log out',

@@ -9,7 +9,7 @@ import {
   getUserAuthData,
   userActions,
 } from '@/entities/User';
-import { RoutePaths } from '@/shared/const/AppRoutes';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/AppRoutes';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -41,12 +41,12 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     ...(isAdminPanelAvailable ? [
       {
         content: 'Admin Panel',
-        href: RoutePaths.admin_panel,
+        href: getRouteAdmin(),
       },
     ] : []),
     {
       content: t('Profile'),
-      href: `${RoutePaths.profile}${authData?.id}`,
+      href: getRouteProfile(authData ? authData.id : ''),
     },
     {
       content: t('vyiti'),

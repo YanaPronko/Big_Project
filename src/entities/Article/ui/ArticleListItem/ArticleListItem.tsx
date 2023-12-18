@@ -2,8 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-// eslint-disable-next-line path-checker-pryweb/layers-import
-import { RoutePaths } from '@/shared/const/AppRoutes';
+import { getRouteArticleDetails } from '@/shared/const/AppRoutes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -40,7 +39,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   if (view === 'grid') {
     content = (
-      <AppLink to={`${RoutePaths.article_details}${article.id}`} target={target}>
+      <AppLink to={getRouteArticleDetails(article.id)} target={target}>
         <Card className={cls.cardItem}>
           <div className={cls.imageWrapper}>
             {img}
@@ -79,7 +78,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         )}
         <div className={cls.footer}>
           <AppLink
-            to={`${RoutePaths.article_details}${article.id}`}
+            to={getRouteArticleDetails(article.id)}
             target={target}
           >
             <Button className={cls.btn}>{t('read-more')}</Button>
