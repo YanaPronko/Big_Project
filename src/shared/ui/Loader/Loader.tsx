@@ -4,6 +4,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import './Loader.scss';
 
 interface LoaderProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
 }
 

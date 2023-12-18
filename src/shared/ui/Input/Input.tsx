@@ -8,15 +8,43 @@ import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 
-interface InputProps extends HTMLInputProps{
+interface InputProps extends HTMLInputProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description type of input.
+   * @default type="text"
+   */
   type?: string;
+  /**
+   * @description label for input.
+   */
   label?: string;
+  /**
+   * @description Flag to make input with/without autofocus.
+   */
   autofocus?: boolean;
+  /**
+   * @description placeholder for input.
+   */
   placeholder?: string;
+  /**
+   * @description The value in Input
+   */
   value?: string | number;
+  /**
+   * @description Flag to make parent element opened/closed.
+   */
   isOpen?: boolean;
+  /**
+   * @description Flag to disable Input and to add readonly class
+   */
   readonly?: boolean;
+  /**
+   * @description Callback to change value in input
+   */
   onChange?: (value: string) => void;
 }
 

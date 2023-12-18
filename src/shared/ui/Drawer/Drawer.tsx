@@ -13,9 +13,21 @@ import { Portal } from '../Portal/Portal';
 import cls from './Drawer.module.scss';
 
 interface DrawerProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description Drawer content
+   */
   children: ReactNode;
+  /**
+   * @description Flag to make drawer open (appeared).
+   */
   isOpen?: boolean;
+  /**
+   * @description Callback to close drawer
+   */
   onClose?: () => void;
 }
 

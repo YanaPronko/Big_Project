@@ -6,6 +6,11 @@ import { IconProps } from '@/shared/types/ui';
 
 import cls from './NorificationIcon.module.scss';
 
+/**
+ * @description
+ * it's wrapper for svg icon
+ */
+
 export const NotificationIcon = memo((props: IconProps) => {
   const { className, inverted, ...otherProps } = props;
 

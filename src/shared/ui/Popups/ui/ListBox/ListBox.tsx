@@ -12,19 +12,53 @@ import popoverCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 
 type ListBoxItem = {
-  value: string,
+  /**
+   * @description The value of ListBoxItem
+   */
+  value: string;
+  /**
+   * @description ListBoxItem content
+   */
   content: string;
+  /**
+   * @description Flag to disable ListBoxItem
+   */
   disabled?: boolean;
-}
+};
 
 interface ListBoxProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description List of items to render in ListBox
+   */
   items?: ListBoxItem[];
+  /**
+   * @description label for wrapper of ListBox.
+   */
   label?: string;
+  /**
+   * @description Flag to selected option.
+   */
   selectedVal?: string;
+  /**
+   * @description The selected value by default in ListBox
+   */
   defaultVal?: string;
+  /**
+   * @description Flag to disable listbox.
+   */
   readonly?: boolean;
+  /**
+   * @description Direction of dropdown
+   * @default 'bottomR'
+   */
   direction?: PopupsDirection;
+  /**
+   * @description Callback to change value
+   */
   onChange: (value: string) => void;
 }
 

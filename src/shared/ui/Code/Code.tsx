@@ -7,9 +7,14 @@ import { CopyIcon } from '../Icons/ui/CopyIcon/CopyIcon';
 import cls from './Code.module.scss';
 
 interface CodeProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description Code content
+   */
   text: string;
-
 }
 
 export const Code = memo((props: CodeProps) => {

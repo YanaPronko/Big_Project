@@ -4,6 +4,11 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { IconProps } from '@/shared/types/ui';
 
+/**
+ * @description
+ * it's wrapper for svg icon
+ */
+
 export const StarIcon = memo((props: IconProps) => {
   const { className, ...otherProps } = props;
 

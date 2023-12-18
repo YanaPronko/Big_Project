@@ -11,7 +11,17 @@ type AppLinkSize = 'xl' | 'l' | 'm' | 's'
 
 interface AppLinkProps extends LinkProps {
   className?: string;
+
+  /**
+   * @description AppLink theme. Responsible for AppLink's color.
+   * @default 'primary'
+   */
   theme?: AppLinkTheme;
+
+  /**
+   * @description AppLink size. Responsible for AppLink's size.
+   * @default "m"
+   */
   size?: AppLinkSize;
 }
 

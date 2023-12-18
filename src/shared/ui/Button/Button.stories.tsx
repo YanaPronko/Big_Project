@@ -59,14 +59,7 @@ export const OutlineDark: Story = {
     children: 'Text',
     theme: 'outline',
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    // (Story) => (
-    //   <div className={`app ${Theme.DARK}`}>
-    //     <Story />
-    //   </div>
-    // ),
-  ],
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const OutlineSizeM: Story = {
@@ -92,8 +85,6 @@ export const OutlineSizeXL: Story = {
     size: BtnSize.XL,
   },
 };
-
-// OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const BackgroundTheme: Story = {
   args: {

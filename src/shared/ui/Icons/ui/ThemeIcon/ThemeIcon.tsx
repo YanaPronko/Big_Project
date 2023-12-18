@@ -5,6 +5,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './ThemeIcon.module.scss';
 
+/**
+ * @description
+ * it's wrapper for svg icon
+ */
+
 interface ThemeIconProps {
   className?: string;
 }

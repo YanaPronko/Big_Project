@@ -5,7 +5,13 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Overlay.module.scss';
 
 interface OverlayProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description Callback to close overlay and parent element
+   */
   onClose?: () => void;
 }
 

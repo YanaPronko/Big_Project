@@ -12,16 +12,41 @@ import popoverCls from '../../styles/popup.module.scss';
 import cls from './Dropdown.module.scss';
 
 export type DropdownItem = {
+  /**
+   * @description DropdownItem content
+   */
   content?: ReactNode;
+  /**
+   * @description Flag to disable DropdownItem
+   */
   disabled?: boolean;
+  /**
+   * @description href for link if DropdownItem is a link
+   */
   href?: string;
+  /**
+   * @description Callback to onClick attribute if DropdownItem is a button
+   */
   onClick?: () => void;
-}
+};
 
 interface DropdownProps {
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description List of items to render in dropdown
+   */
   items: DropdownItem[];
+  /**
+   * @description Direction of dropdown
+   * @default 'bottomR'
+   */
   direction?: PopupsDirection;
+  /**
+   * @description Children of trigger Button component
+   */
   trigger?: ReactNode;
 }
 

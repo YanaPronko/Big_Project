@@ -15,12 +15,38 @@ export enum BtnSize {
 export type BtnType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  /**
+   * @description additional class.
+   */
   className?: string;
+
+  /**
+   * @description Button theme. Responsible for button's color and border.
+   * @default "outline"
+   */
   theme?: BtnTheme;
+
+  /**
+   * @description Flag to make button squared.
+   */
   square?: boolean;
+  /**
+   * @description Button size. Responsible for button's text size.
+   * @default BtnSize.M
+   */
   size?: BtnSize;
+  /**
+   * @description Responsible for button's type.
+   * @default type="button"
+   */
   type?: BtnType;
+  /**
+   * @description Flag to disable button.
+   */
   disabled?: boolean;
+  /**
+   * @description Flag to make button's width 100%.
+   */
   fullWidth?: boolean;
 }
 

@@ -14,10 +14,22 @@ import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
+  /**
+   * @description Moadal content
+   */
   children?: ReactNode;
+  /**
+   * @description additional class.
+   */
   className?: string;
+  /**
+   * @description Flag to show/hide modal
+   */
   isOpen?: boolean;
-  onClose?: ()=> void
+  /**
+   * @description Callback to close modal
+   */
+  onClose?: () => void;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
