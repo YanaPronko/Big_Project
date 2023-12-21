@@ -16,7 +16,7 @@ export const NotificationIcon = memo((props: IconProps) => {
 
   return (
     <svg
-      className={classNames('', { [cls.inverted]: inverted }, [className])}
+      className={classNames(inverted ? cls.inverted : cls.icon, {}, [className])}
       width="20"
       height="20"
       viewBox="0 0 20 20"

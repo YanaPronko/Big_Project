@@ -4,13 +4,15 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { IconProps } from '@/shared/types/ui';
 
+import cls from './StarIcon.module.scss';
+
 /**
  * @description
  * it's wrapper for svg icon
  */
 
 export const StarIcon = memo((props: IconProps) => {
-  const { className, ...otherProps } = props;
+  const { className, inverted, ...otherProps } = props;
 
   return (
     <svg
@@ -19,7 +21,7 @@ export const StarIcon = memo((props: IconProps) => {
       viewBox="0 0 24 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={classNames('', {}, [className])}
+      className={classNames(inverted ? cls.inverted : cls.icon, {}, [className])}
       {...otherProps}
     >
       <path

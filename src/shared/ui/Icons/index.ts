@@ -9,3 +9,4 @@ export { EyeIcon } from './ui/EyeIcon/EyeIcon';
 export { CopyIcon } from './ui/CopyIcon/CopyIcon';
 export { CalendarIcon } from './ui/CalendarIcon/CalendarIcon';
 export { ArticleIcon } from './ui/ArticleIcon/ArticleIcon';
+export { UserIcon } from './ui/UserIcon/UserIcon';
