@@ -1,8 +1,10 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
+import { ReactRenderer } from '@storybook/react';
 
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+// import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { Theme } from '../../src/shared/const/theme';
 
@@ -38,8 +40,8 @@ const preview: Preview = {
   decorators: [
     TranslationDecorator,
     StyleDecorator,
-    // @ts-ignore
-    withThemeByClassName({
+    // ThemeDecorator(Theme.LIGHT),
+    withThemeByClassName<ReactRenderer>({
       themes: {
         light: `app ${Theme.LIGHT}`,
         dark: `app ${Theme.DARK}`,
@@ -57,7 +59,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    layout: 'fullscreen',
+    // layout: 'fullscreen',
   },
 };
 

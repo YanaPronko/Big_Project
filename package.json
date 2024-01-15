@@ -15,7 +15,7 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "test:unit": "jest --config ./config/jest/jest.config.ts --coverage",
+    "test:unit": "jest --config ./config/jest/jest.config.ts  --findRelatedTests  --coverage",
     "chromatic": "npx chromatic --project-token=chpt_f82a4d28981c10c",
     "analyze:dev": "npm run build:dev --env analyze=true",
     "analyze:prod": "npm run build:prod --env analyze=true",
@@ -26,7 +26,10 @@
     "postinstall": "rimraf ./node_modules/.cache"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint",
+    "**/*.{ts,tsx}": [
+      "eslint",
+      "npm run test:unit"
+    ],
     "**/*.scss": "npx stylelint"
   },
   "keywords": [],
