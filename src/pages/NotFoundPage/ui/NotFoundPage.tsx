@@ -6,7 +6,7 @@ export default function NotFoundPage() {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page data-testid="NotFoundPage">
       <h1>{t('page-not-found')}</h1>
     </Page>
   );

@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { UIActions, getUIScrollPosition } from '@/features/UI';
+import { TestProps } from '@/shared/const/testProps';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
@@ -15,7 +16,7 @@ import { useTrottle } from '@/shared/lib/hooks/useTrottle/useTrottle';
 
 import cls from './Page.module.scss';
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string;
   children: ReactNode;
   isLoading?: boolean;
@@ -53,6 +54,7 @@ export const Page = memo((props: PageProps) => {
       ref={wrapperRef}
       className={classNames(cls.page, {}, [className])}
       onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd && !isLoading ? <div ref={triggerRef} className={cls.trigger} /> : null}

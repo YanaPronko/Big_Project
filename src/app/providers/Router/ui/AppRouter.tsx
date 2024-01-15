@@ -27,20 +27,4 @@ export const AppRouter = memo(() => {
       </Routes>
     </Suspense>
   );
-
-  // <Suspense fallback={<PageLoader />}>
-  //   <Routes>
-  //     {Object.values(routeConfig).map(({ path, element, authOnly }) => (
-  //       <Route
-  //         key={path}
-  //         path={path}
-  //         element={(
-  //           <div className="page-wrapper">
-  //             {authOnly ? <RequireAuth>{element}</RequireAuth> : {element}}
-  //           </div>
-  //         )}
-  //       />
-  //     ))}
-  //   </Routes>
-  // </Suspense>
 });

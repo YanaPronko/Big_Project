@@ -12,7 +12,7 @@ const MainPage = memo(() => {
   const [messages, setMessages] = useState(0);
 
   return (
-    <Page>
+    <Page data-testid="MainPage">
       <h1>{t('main-page')}</h1>
       <h2>{t('you-have', { count: messages })}</h2>
       <CounterBtn setMessages={() => setMessages(messages + 1)} />
