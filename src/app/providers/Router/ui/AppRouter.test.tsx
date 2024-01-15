@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 
 import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/AppRoutes';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
@@ -38,8 +38,9 @@ describe('Router tests', () => {
         },
       },
     });
-    const page = await screen.findByTestId('ProfilePage');
-    expect(page).toBeInTheDocument();
+    screen.debug();
+    await waitFor(() => expect(screen.getByTestId('ProfilePage')).toBeInTheDocument());
+    screen.debug();
   });
   test('Authorised user without the required role should be redirected to Forbidden Page', async () => {
     componentRender(<AppRouter />, {
