@@ -1,4 +1,5 @@
-import { screen /* waitFor */ } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 
 import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/AppRoutes';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
@@ -28,18 +29,24 @@ describe('Router tests', () => {
     const page = await screen.findByTestId('MainPage');
     expect(page).toBeInTheDocument();
   });
-  // test('Authorised user get access to Profile Page', async () => {
-  //   componentRender(<AppRouter />, {
-  //     route: getRouteProfile('1'),
-  //     initialState: {
-  //       user: {
-  //         authData: {},
-  //         _inited: true,
-  //       },
-  //     },
-  //   });
-  //   await waitFor(() => expect(screen.getByTestId('ProfilePage')).toBeInTheDocument());
-  // });
+  test('Authorised user get access to Profile Page', async () => {
+    act(() => {
+      componentRender(<AppRouter />, {
+        route: getRouteProfile('1'),
+        initialState: {
+          user: {
+            authData: {},
+            _inited: true,
+          },
+        },
+      });
+    });
+
+    await waitFor(async () => {
+      const page = await screen.findByTestId('ProfilePage');
+      expect(page).toBeInTheDocument();
+    }, { timeout: 5000 });
+  });
   test('Authorised user without the required role should be redirected to Forbidden Page', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),

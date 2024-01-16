@@ -116,7 +116,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@react-spring/web": "^9.7.3",
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^1.9.0",
     "@svgr/webpack": "^6.2.1",
     "@use-gesture/react": "^10.3.0",
     "axios": "^0.26.1",
@@ -127,9 +127,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.15.5",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1",
-    "redux": "^4.2.1"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.2.1"
   },
   "readme": "ERROR: No README data found!",
   "_id": "big-project@1.0.0"

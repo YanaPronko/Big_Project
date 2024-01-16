@@ -29,6 +29,8 @@ export default {
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  // The paths to modules that run some code to configure or set up the testing environment before each test
+  setupFiles: ['<rootDir>/config/jest/beforeMocks.ts'],
   moduleNameMapper: {
     '\\.(s?css|less|gif|jpg)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
