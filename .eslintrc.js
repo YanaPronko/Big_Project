@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
     node: true,
+    'cypress/globals': true,
   },
   root: true,
   extends: [
@@ -11,6 +12,7 @@ module.exports = {
     'airbnb',
     'plugin:react-hooks/recommended',
     'plugin:i18next/recommended',
+    'plugin:cypress/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -28,6 +30,7 @@ module.exports = {
     'i18next',
     'path-checker-pryweb',
     'unused-imports',
+    'cypress',
   ],
   rules: {
     'react/jsx-filename-extension': [
@@ -135,6 +138,7 @@ module.exports = {
     __IS_DEV__: true,
     __API__: true,
     __PROJECT__: true,
+    cypress: true,
   },
   overrides: [
     {

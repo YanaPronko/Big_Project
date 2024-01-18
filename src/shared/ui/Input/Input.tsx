@@ -80,12 +80,9 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div className={classNames(cls.input_wapper, mods, [className])} {...otherProps}>
+    <div className={classNames(cls.input_wapper, mods, [className])}>
       {label && (
-        <label
-          className={cls.label}
-          htmlFor={name}
-        >
+        <label className={cls.label} htmlFor={name}>
           {label}
         </label>
       )}
@@ -100,6 +97,7 @@ export const Input = memo((props: InputProps) => {
         placeholder={placeholder}
         onChange={changeHandler}
         ref={ref}
+        {...otherProps}
       />
     </div>
   );

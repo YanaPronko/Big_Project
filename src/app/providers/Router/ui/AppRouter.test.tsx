@@ -45,7 +45,7 @@ describe('Router tests', () => {
     await waitFor(async () => {
       const page = await screen.findByTestId('ProfilePage');
       expect(page).toBeInTheDocument();
-    }, { timeout: 5000 });
+    });
   });
   test('Authorised user without the required role should be redirected to Forbidden Page', async () => {
     componentRender(<AppRouter />, {

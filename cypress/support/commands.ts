@@ -1,7 +1,7 @@
-import type {} from 'cypress';
+import * as common from './commands/common';
+
 // -- This is a parent command --
-// eslint-disable-next-line no-undef
-// Cypress.Commands.add('login', (email, password) => { });
+Cypress.Commands.addAll(common);
 
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
@@ -12,15 +12,5 @@ import type {} from 'cypress';
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
-declare global {
-  namespace Cypress {
-    interface Chainable {
-      login(email: string, password: string): Chainable<void>
-      // drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-      // dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-      // visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-    }
-  }
-}
 
 export { };

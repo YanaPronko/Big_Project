@@ -58,6 +58,7 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
 
   return (
     <Page
+      data-testid="ArticleListPage"
       className={classNames(cls.articleListPage, {}, [className])}
       onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
     >

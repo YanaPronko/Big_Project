@@ -45,7 +45,7 @@
       "module": "CommonJS"
     }
   },
-  "types": ["node", "jest", "@testing-library/jest-dom", "vite-plugin-svgr/client"],
+  "types": ["node", "jest", "cypress","@testing-library/jest-dom", "vite-plugin-svgr/client"],
   "include": ["./config/jest/setupTests.ts", "src"],
   // "exclude": ["cypress.config.ts", "cypress", "node_modules"]
 }
