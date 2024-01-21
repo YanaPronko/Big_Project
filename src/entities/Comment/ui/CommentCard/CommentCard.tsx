@@ -26,6 +26,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
   if (isLoading) {
     return (
       <VStack
+        data-testid="CommentCard.Loading"
         max
         gap="4"
         align="start"
@@ -41,6 +42,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
 
   return (
     <VStack
+      data-testid="CommentCard.Content"
       gap="4"
       max
       align="start"
@@ -48,10 +50,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
       className={classNames(cls.commentCard, {}, [className])}
       {...otherProps}
     >
-      <AppLink
-        to={getRouteProfile(comment.user.id)}
-        className={cls.header}
-      >
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar && (
           <Avatar src={comment.user.avatar} size={30} alt="user's avatar" />
         )}

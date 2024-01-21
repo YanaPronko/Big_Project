@@ -64,7 +64,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <VStack gap="32" max className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack
+        data-testid="ArticleDetails.Loading"
+        gap="32"
+        max
+        className={classNames(cls.articleDetails, {}, [className])}
+      >
         <Skeleton
           className={cls.avatar}
           width={200}
@@ -88,9 +93,25 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      <VStack gap="8" max className={classNames('', {}, [className])} role="section">
-        <Avatar src={article?.img} size={200} className={cls.avatar} alt="avatar" />
-        <Text title={article?.title} text={article?.subtitle} align="center" size="xl" />
+      <VStack
+        data-testid="ArticleDetails.Content"
+        gap="8"
+        max
+        className={classNames('', {}, [className])}
+        role="section"
+      >
+        <Avatar
+          src={article?.img}
+          size={200}
+          className={cls.avatar}
+          alt="avatar"
+        />
+        <Text
+          title={article?.title}
+          text={article?.subtitle}
+          align="center"
+          size="xl"
+        />
         <HStack justify="center">
           <EyeIcon className={cls.icon} />
           <Text text={String(article?.views)} />

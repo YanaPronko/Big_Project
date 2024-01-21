@@ -27,11 +27,24 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     className, articles, isLoading, view = 'grid', target,
   } = props;
 
-  const renderArticles = useCallback((article: Article) => (
-    <ArticleListItem key={nanoid()} article={article} view={view} target={target} />), [view, target]);
+  const renderArticles = useCallback(
+    (article: Article) => (
+      <ArticleListItem
+        key={nanoid()}
+        article={article}
+        view={view}
+        target={target}
+      />
+    ),
+    [view, target],
+  );
 
   return (
-    <div role="list" className={classNames('', {}, [className, cls[view]])}>
+    <div
+      data-testid="ArticleList"
+      role="list"
+      className={classNames('', {}, [className, cls[view]])}
+    >
       {articles.map(renderArticles)}
       {isLoading && getSkeletons(view)}
     </div>

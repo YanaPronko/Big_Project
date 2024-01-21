@@ -94,7 +94,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           />
         )}
         <div className={cls.footer}>
-          <AppLink to={getRouteArticleDetails(article.id)} target={target}>
+          <AppLink
+            to={getRouteArticleDetails(article.id)}
+            target={target}
+          >
             <Button className={cls.btn}>{t('read-more')}</Button>
           </AppLink>
           {views}
@@ -104,7 +107,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <article role="listitem" className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+    <article
+      data-testid="ArticleListItem"
+      role="listitem"
+      className={classNames(cls.articleListItem, {}, [className, cls[view]])}
+    >
       {content}
     </article>
   );

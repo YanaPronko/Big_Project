@@ -13,6 +13,8 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:i18next/recommended',
     'plugin:cypress/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -33,6 +35,7 @@ module.exports = {
     'cypress',
   ],
   rules: {
+    '@typescript-eslint/no-namespace': ['error', { allowDeclarations: true }],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },

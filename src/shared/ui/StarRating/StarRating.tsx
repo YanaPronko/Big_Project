@@ -65,6 +65,8 @@ export const StarRating = memo((props: StarRatingProps) => {
             className,
             currentStarCount >= starNumber ? cls.hovered : cls.normal,
           ])}
+          data-testid={`StarRating.${starNumber}`}
+          data-selected={currentStarCount >= starNumber}
           width={size}
           height={size}
           key={starNumber}
