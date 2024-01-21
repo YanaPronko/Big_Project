@@ -30,7 +30,7 @@ module.exports = {
     'i18next',
     'path-checker-pryweb',
     'unused-imports',
-    'cypress',
+    'cypress'
   ],
   rules: {
     'react/jsx-filename-extension': [

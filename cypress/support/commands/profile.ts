@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 export const updateProfile = (firstName: string = 'newUser', lastName: string = 'newLastname') => {
   cy.getByTestId('EditableProfileCard.EditBtn').click();
   cy.getByTestId('EditableProfileCard.firstName').clear().type(firstName);
