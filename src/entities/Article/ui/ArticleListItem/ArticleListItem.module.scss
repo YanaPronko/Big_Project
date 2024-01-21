@@ -2,7 +2,7 @@
   .cardItem {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: torem(20);
   }
 
   .views {
@@ -15,7 +15,7 @@
   }
 
   .username {
-    margin-left: 0.8rem;
+    margin-left: torem(8);
   }
 
   .date {
@@ -23,12 +23,12 @@
   }
 
   .title {
-    margin-top: 8px;
+    margin-top: torem(8);
   }
 
   .img {
     width: 100%;
-    max-height: 25rem;
+    max-height: torem(250);
     object-fit: contain;
   }
 
@@ -38,7 +38,7 @@
   }
 
   .textBlock {
-    max-height: 20.5rem;
+    max-height: torem(205);
     overflow: hidden;
   }
 
@@ -53,8 +53,8 @@
   .cardItem {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 23rem;
+    gap: torem(10);
+    max-width: torem(230);
     transition: 0.2s all ease-in-out;
     cursor: pointer;
 
@@ -78,13 +78,13 @@
 
   .imageWrapper {
     position: relative;
-    width: 20rem;
-    height: 20rem;
+    width: torem(200);
+    height: torem(200);
   }
 
   .img {
-    width: 20rem;
-    height: 20rem;
+    width: torem(200);
+    height: torem(200);
   }
 
   .infoWrapper {
@@ -94,14 +94,14 @@
   }
 
   .types p {
-    width: 11.5rem;
+    width: torem(115);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .title h3 {
-    width: 20rem;
+    width: torem(200);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

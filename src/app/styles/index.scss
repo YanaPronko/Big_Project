@@ -1,12 +1,12 @@
+// @use 'sass:math';
 @import './reset.scss';
-@import './variables/global.scss';
+
+// @import './functions/functions.scss';
+
+// @import './variables/global.scss';
 @import './themes/normal.scss';
 @import './themes/dark.scss';
 @import './themes/orange.scss';
-
-html {
-  font-size: 10px;
-}
 
 body {
   font: var(--font-m);
@@ -24,16 +24,16 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 12px;               /* ширина scrollbar */
+  width: 12px; /* ширина scrollbar */
   height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);        /* цвет дорожки */
+  background: var(--card-bg); /* цвет дорожки */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--inverted-primary-color);    /* цвет плашки */
-  border-radius: 20px;       /* закругления плашки */
-  border: 2px solid var(--primary-color);  /* padding вокруг плашки */
+  background-color: var(--inverted-primary-color); /* цвет плашки */
+  border-radius: torem(20); /* закругления плашки */
+  border: 2px solid var(--primary-color); /* padding вокруг плашки */
 }

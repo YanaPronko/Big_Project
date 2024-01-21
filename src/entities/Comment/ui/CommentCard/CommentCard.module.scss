@@ -1,5 +1,5 @@
 .commentCard {
-  padding: 1rem;
+  padding: torem(10);
   border: 1px solid var(--primary-color);
 }
 
@@ -7,5 +7,5 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
+  gap: torem(20);
 }

@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border: 2px solid var(--inverted-bg-color);
+  gap: torem(10);
+  padding: torem(10);
+  border: torem(2) solid var(--inverted-bg-color);
 }
 
 .content {
@@ -13,7 +13,7 @@
   flex-direction: column;
   align-self: flex-start;
   width: 100%;
-  gap: 1rem;
+  gap: torem(10);
 }
 
 .avatar {

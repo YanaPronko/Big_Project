@@ -11,12 +11,12 @@
 
 .content {
   max-width: 70%;
-  padding: 2rem;
+  padding: torem(20);
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--bg-color);
-  border-radius: 1.2rem;
+  border-radius: torem(12);
   transform: scale(0.5);
   transition: all 0.3s ease-in-out;
 }

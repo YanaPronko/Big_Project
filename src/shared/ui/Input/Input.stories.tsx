@@ -12,7 +12,6 @@ type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = {
   args: {
-    children: 'Text',
     type: 'text',
     autoFocus: true,
     label: 'Введите что-то',
@@ -23,7 +22,6 @@ export const Primary: Story = {
 
 export const PrimaryAutofocus: Story = {
   args: {
-    children: 'Text',
     type: 'text',
     autoFocus: true,
     label: 'Введите что-то',

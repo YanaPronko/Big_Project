@@ -1,0 +1,14 @@
+/* stylelint-disable at-rule-empty-line-before */
+@use 'sass:math';
+
+@function torem($num1, $num2: 16) {
+  $rez: math.div($num1, $num2) + rem;
+  @return $rez;
+}
+
+@function toem($num1, $num2: 16) {
+  $rez: math.div($num1, $num2) + em;
+  @return $rez;
+}
+
+$testvariable: #000;

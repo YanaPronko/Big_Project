@@ -3,7 +3,7 @@
 }
 
 .btn {
-  padding: 1rem 1.5rem;
+  padding: torem(10) torem(15);
   color: var(--primary-color);
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
@@ -23,15 +23,15 @@
 }
 
 .label {
-  margin-right: 1rem;
+  margin-right: torem(1);
 }
 
 .options {
   position: absolute;
   min-width: 100%;
   z-index: 10000;
-  border-radius: 8px;
-  box-shadow: 4px 4px 8px var(--listbox-bg);
+  border-radius: torem(8);
+  box-shadow: torem(4) torem(4) torem(8) var(--listbox-bg);
   background: var(--listbox-bg);
 
   &.topR {
@@ -56,7 +56,7 @@
 }
 
 .item {
-  padding: 1rem 2rem;
+  padding: torem(10) torem(20);
 }
 
 .active {

@@ -20,10 +20,10 @@
   // max-height: 70%;
   // min-height: 10rem;
   // width: 100%;
-  padding: 2rem;
+  padding: torem(20);
   background: var(--bg-color);
-  border-top-left-radius: 1.2rem;
-  border-top-right-radius: 1.2rem;
+  border-top-left-radius: torem(12);
+  border-top-right-radius: torem(12);
   touch-action: none;
 
   // overflow-y: auto;

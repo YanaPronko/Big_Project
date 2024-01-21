@@ -1,7 +1,7 @@
 @charset "UTF-8";
-
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -24,7 +24,7 @@ li {
 
 :root {
   /* stylelint-disable-next-line value-keyword-case */
-  --font-family-main: Consolas, 'Times New Roman', serif;
+  --font-family-main: Consolas, "Times New Roman", serif;
   --font-size-s: 1.4rem;
   --font-line-s: 2rem;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
@@ -110,8 +110,8 @@ body {
 }
 
 .content-page {
-  display: box;
-  display: flexbox;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 

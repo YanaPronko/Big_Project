@@ -1,7 +1,7 @@
 .textWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: torem(10);
 }
 
 .title {
@@ -36,7 +36,7 @@
 
 .xl {
   .title {
-    font-size: 3.5rem;
+    font-size: torem(35);
   }
 
   .text {
