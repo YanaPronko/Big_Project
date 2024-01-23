@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "first": "test",
+  "lastname": "User",
+  "age": 35,
+  "currency": "BYN",
+  "country": "Russia",
+  "city": "Minsk",
+  "username": "testuser",
+  "avatar": "https://avatars.githubusercontent.com/u/11681863311111111"
+}

@@ -5,6 +5,8 @@ import { Theme } from '@/shared/const/theme';
 
 import { AppImage } from './AppImage';
 
+// TODO make story
+
 const meta: Meta<typeof AppImage> = {
   title: 'shared/AppImage',
   component: AppImage,
