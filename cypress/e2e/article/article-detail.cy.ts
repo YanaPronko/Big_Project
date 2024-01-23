@@ -35,4 +35,18 @@ describe('User visit Article detail page spec', () => {
     cy.setRate(rate, 'Test feedback');
     cy.get('[data-selected=true]').should('have.length', rate);
   });
+  // Example of skipping
+  it.skip('Skip test', () => {
+    cy.getByTestId('asssst').should('exist');
+  });
+
+  // Example with fixtures
+  it('User can leave a star and a feedback with fixture', () => {
+    const rate = 4;
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+    cy.getByTestId('ArticleDetails.Content').should('exist');
+    cy.getByTestId('RatingCard').scrollIntoView();
+    cy.setRate(rate, 'Test feedback');
+    cy.get('[data-selected=true]').should('have.length', rate);
+  });
 });
