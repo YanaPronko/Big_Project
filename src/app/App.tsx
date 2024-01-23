@@ -1,19 +1,19 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect } from "react";
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
-import { getUserInited, userActions } from '@/entities/User';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { NavBar } from '@/widgets/NavBar';
-import { SideBar } from '@/widgets/SideBar';
+import { getUserInited, userActions } from "@/entities/User";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+import { NavBar } from "@/widgets/NavBar";
+import { SideBar } from "@/widgets/SideBar";
 
-import { ErrorBoundary } from './providers/ErrorBoundary';
-import { AppRouter } from './providers/Router';
-import '@/shared/config/i18n/i18n';
-import './styles/index.scss';
+import { ErrorBoundary } from "./providers/ErrorBoundary";
+import { AppRouter } from "./providers/Router";
+import "@/shared/config/i18n/i18n";
+import "./styles/index.scss";
 
 export const App = () => {
   const { theme } = useTheme();
@@ -31,14 +31,12 @@ export const App = () => {
   }, [dispatch, setAuthData, setInited]);
 
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={classNames("app", {}, [theme])}>
       <Suspense fallback={<div>Loading...</div>}>
         <NavBar />
         <div className="content-page">
           <SideBar />
-          <ErrorBoundary>
-            {inited && <AppRouter />}
-          </ErrorBoundary>
+          <ErrorBoundary>{inited && <AppRouter />}</ErrorBoundary>
         </div>
       </Suspense>
     </div>
