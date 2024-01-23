@@ -1,27 +1,30 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
-import { ArticleType } from '@/entities/Article';
+import { ArticleType } from "@/entities/Article";
 // eslint-disable-next-line path-checker-pryweb/layers-import
-import { fetchArticlesList } from '@/pages/ArticleListPages';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from '@/shared/types/order';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { fetchArticlesList } from "@/pages/ArticleListPages";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
+import { SortOrder } from "@/shared/types/order";
+import { Card } from "@/shared/ui/Card";
+import { Input } from "@/shared/ui/Input";
 
 import {
-  getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType,
-} from '../../model/selector/articlesFilters';
-import { articlesFiltersActions } from '../../model/slice/articlesFiltersSlice';
-import { ArticlesSortField } from '../../model/types/articlesFiltersSchema';
-import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
-import { ArticlesTypesTabs } from '../ArticlesTypesTabs/ArticlesTypesTabs';
+  getArticlesOrder,
+  getArticlesSearch,
+  getArticlesSort,
+  getArticlesType,
+} from "../../model/selector/articlesFilters";
+import { articlesFiltersActions } from "../../model/slice/articlesFiltersSlice";
+import { ArticlesSortField } from "../../model/types/articlesFiltersSchema";
+import { ArticleSortSelector } from "../ArticleSortSelector/ArticleSortSelector";
+import { ArticlesTypesTabs } from "../ArticlesTypesTabs/ArticlesTypesTabs";
 
-import cls from './ArticlesFilters.module.scss';
+import cls from "./ArticlesFilters.module.scss";
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -29,7 +32,7 @@ interface ArticlesFiltersProps {
 
 export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const { className } = props;
-  const { t } = useTranslation('article');
+  const { t } = useTranslation("article");
   const dispatch = useAppDispatch();
 
   const order = useSelector(getArticlesOrder);
@@ -43,29 +46,41 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
 
   const debouncedFetchDataByFilters = useDebounce(fetchDataByFilters, 500);
 
-  const onChangeOrder = useCallback((newOrder: SortOrder) => {
-    dispatch(articlesFiltersActions.setOrder(newOrder));
-    dispatch(articlesFiltersActions.setPage(1));
-    fetchDataByFilters();
-  }, [dispatch, fetchDataByFilters]);
+  const onChangeOrder = useCallback(
+    (newOrder: SortOrder) => {
+      dispatch(articlesFiltersActions.setOrder(newOrder));
+      dispatch(articlesFiltersActions.setPage(1));
+      fetchDataByFilters();
+    },
+    [dispatch, fetchDataByFilters],
+  );
 
-  const onChangeSort = useCallback((newSort: ArticlesSortField) => {
-    dispatch(articlesFiltersActions.setSort(newSort));
-    dispatch(articlesFiltersActions.setPage(1));
-    fetchDataByFilters();
-  }, [dispatch, fetchDataByFilters]);
+  const onChangeSort = useCallback(
+    (newSort: ArticlesSortField) => {
+      dispatch(articlesFiltersActions.setSort(newSort));
+      dispatch(articlesFiltersActions.setPage(1));
+      fetchDataByFilters();
+    },
+    [dispatch, fetchDataByFilters],
+  );
 
-  const onChangeSearch = useCallback((newSearch: string) => {
-    dispatch(articlesFiltersActions.setSearch(newSearch));
-    dispatch(articlesFiltersActions.setPage(1));
-    debouncedFetchDataByFilters();
-  }, [dispatch, debouncedFetchDataByFilters]);
+  const onChangeSearch = useCallback(
+    (newSearch: string) => {
+      dispatch(articlesFiltersActions.setSearch(newSearch));
+      dispatch(articlesFiltersActions.setPage(1));
+      debouncedFetchDataByFilters();
+    },
+    [dispatch, debouncedFetchDataByFilters],
+  );
 
-  const onChangeType = useCallback((value: ArticleType) => {
-    dispatch(articlesFiltersActions.setType(value));
-    dispatch(articlesFiltersActions.setPage(1));
-    fetchDataByFilters();
-  }, [dispatch, fetchDataByFilters]);
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlesFiltersActions.setType(value));
+      dispatch(articlesFiltersActions.setPage(1));
+      fetchDataByFilters();
+    },
+    [dispatch, fetchDataByFilters],
+  );
 
   return (
     <section className={classNames(cls.articlesFilters, {}, [className])}>
@@ -77,7 +92,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
       />
       <Card className={cls.search}>
         <Input
-          placeholder={t('search')}
+          placeholder={t("search")}
           value={search}
           onChange={onChangeSearch}
         />

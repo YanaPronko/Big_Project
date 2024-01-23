@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-import { BtnSize, Button } from '@/shared/ui/Button';
+import { BtnSize, Button } from "@/shared/ui/Button";
 
-import cls from './CounterBtn.module.scss';
+import cls from "./CounterBtn.module.scss";
 
 interface CounterBtnProps {
   className?: string;
@@ -14,7 +14,7 @@ interface CounterBtnProps {
 export const CounterBtn: FC<CounterBtnProps> = (props) => {
   const { setMessages, ...otherProps } = props;
 
-  const { t } = useTranslation('main');
+  const { t } = useTranslation("main");
 
   return (
     <Button
@@ -24,7 +24,7 @@ export const CounterBtn: FC<CounterBtnProps> = (props) => {
       onClick={setMessages}
       {...otherProps}
     >
-      {t('1-message')}
+      {t("1-message")}
     </Button>
   );
 };

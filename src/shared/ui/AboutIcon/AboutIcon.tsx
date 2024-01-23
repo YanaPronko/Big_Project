@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { IconProps } from '@/shared/types/ui';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { IconProps } from "@/shared/types/ui";
 
 /**
  * @description
@@ -18,7 +18,7 @@ export const AboutIcon = memo((props: IconProps) => {
       height="20"
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       {...otherProps}
     >
       <path d="M8.33333 6.66667H13.3333V7.77778H8.33333V6.66667Z" />

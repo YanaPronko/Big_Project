@@ -1,10 +1,10 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { Page } from '@/widgets/Page';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text } from "@/shared/ui/Text";
+import { Page } from "@/widgets/Page";
 
 interface AdminPanelPageProps {
   className?: string;
@@ -16,10 +16,10 @@ const AdminPanelPage = memo((props: AdminPanelPageProps) => {
 
   return (
     <Page
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       data-testid="AdminPanelPage"
     >
-      <Text title={t('admin-panel-page')} size="xl" />
+      <Text title={t("admin-panel-page")} size="xl" />
     </Page>
   );
 });

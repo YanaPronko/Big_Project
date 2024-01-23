@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { IconProps } from '@/shared/types/ui';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { IconProps } from "@/shared/types/ui";
 
-import cls from './UserIcon.module.scss';
+import cls from "./UserIcon.module.scss";
 
 /**
  * @description

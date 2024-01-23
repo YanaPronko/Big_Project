@@ -1,9 +1,9 @@
-import { memo, useState } from 'react';
+import { memo, useState } from "react";
 
-import { classNames } from '../../lib/classNames/classNames';
-import { StarIcon } from '../Icons';
+import { classNames } from "../../lib/classNames/classNames";
+import { StarIcon } from "../Icons";
 
-import cls from './StarRating.module.scss';
+import cls from "./StarRating.module.scss";
 
 const stars = [1, 2, 3, 4, 5];
 
@@ -30,9 +30,7 @@ interface StarRatingProps {
 }
 
 export const StarRating = memo((props: StarRatingProps) => {
-  const {
-    className, size = 30, selectedStars = 0, onSelect,
-  } = props;
+  const { className, size = 30, selectedStars = 0, onSelect } = props;
 
   const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));

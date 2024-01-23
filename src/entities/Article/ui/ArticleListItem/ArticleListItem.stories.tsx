@@ -1,13 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { ArticleListItem } from './ArticleListItem';
-import { articleMock } from '../../model/mocks/articles';
+import { ArticleListItem } from "./ArticleListItem";
+import { articleMock } from "../../model/mocks/articles";
 
 const meta: Meta<typeof ArticleListItem> = {
-  title: 'entities/Article/ArticleListItem',
+  title: "entities/Article/ArticleListItem",
   component: ArticleListItem,
 };
 
@@ -17,14 +17,14 @@ type Story = StoryObj<typeof ArticleListItem>;
 export const Grid: Story = {
   args: {
     article: articleMock,
-    view: 'grid',
+    view: "grid",
   },
 };
 
 export const GridDark: Story = {
   args: {
     article: articleMock,
-    view: 'grid',
+    view: "grid",
   },
 };
 
@@ -33,14 +33,14 @@ GridDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const List: Story = {
   args: {
     article: articleMock,
-    view: 'list',
+    view: "list",
   },
 };
 
 export const ListDark: Story = {
   args: {
     article: articleMock,
-    view: 'list',
+    view: "list",
   },
 };
 

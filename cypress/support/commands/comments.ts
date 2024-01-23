@@ -1,6 +1,6 @@
 export const addComment = (comment: string) => {
-  cy.getByTestId('AddCommentForm.Input').type(comment);
-  cy.getByTestId('AddCommentForm.SendBtn').click();
+  cy.getByTestId("AddCommentForm.Input").type(comment);
+  cy.getByTestId("AddCommentForm.SendBtn").click();
 };
 
 declare global {

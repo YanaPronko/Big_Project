@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import { Input } from './Input';
+import { Input } from "./Input";
 
 const meta: Meta<typeof Input> = {
-  title: 'shared/Input',
+  title: "shared/Input",
   component: Input,
 };
 
@@ -12,21 +12,21 @@ type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = {
   args: {
-    type: 'text',
+    type: "text",
     autoFocus: true,
-    label: 'Введите что-то',
-    value: 'SSSS',
-    name: 'input',
+    label: "Введите что-то",
+    value: "SSSS",
+    name: "input",
   },
 };
 
 export const PrimaryAutofocus: Story = {
   args: {
-    type: 'text',
+    type: "text",
     autoFocus: true,
-    label: 'Введите что-то',
-    value: 'SSSS',
-    name: 'input',
+    label: "Введите что-то",
+    value: "SSSS",
+    name: "input",
     autofocus: true,
   },
 };

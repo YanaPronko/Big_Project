@@ -1,9 +1,12 @@
 import {
-  ImgHTMLAttributes, ReactElement, useLayoutEffect, useState,
-} from 'react';
+  ImgHTMLAttributes,
+  ReactElement,
+  useLayoutEffect,
+  useState,
+} from "react";
 
-import { typedMemo } from '@/shared/const/typedMemo';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { typedMemo } from "@/shared/const/typedMemo";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
@@ -15,7 +18,7 @@ export const AppImage = typedMemo((props: AppImageProps) => {
   const {
     className,
     src,
-    alt = 'image',
+    alt = "image",
     fallback,
     errorFallback,
     ...otherProps
@@ -26,7 +29,7 @@ export const AppImage = typedMemo((props: AppImageProps) => {
 
   useLayoutEffect(() => {
     const img = new Image();
-    img.src = src ?? '';
+    img.src = src ?? "";
     img.onload = () => {
       setIsLoading(false);
     };
@@ -46,7 +49,7 @@ export const AppImage = typedMemo((props: AppImageProps) => {
 
   return (
     <img
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       src={src}
       alt={alt}
       {...otherProps}

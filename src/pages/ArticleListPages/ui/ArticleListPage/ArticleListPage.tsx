@@ -1,29 +1,38 @@
-import { FC, memo, useCallback } from 'react';
+import { FC, memo, useCallback } from "react";
 
-import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
-import { ArticleView } from '@/entities/Article';
-import { ArticlesViewSelector } from '@/features/ArticlesViewSelector';
-import { ArticlesFilters, articlesFiltersReducer } from '@/features/FiltersOfArticle';
-import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ReducersList, useDynamicLoad } from '@/shared/lib/hooks/useDynamicLoad/useDynamicLoad';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack } from '@/shared/ui/Stack';
-import { Page } from '@/widgets/Page';
+import { ArticleView } from "@/entities/Article";
+import { ArticlesViewSelector } from "@/features/ArticlesViewSelector";
+import {
+  ArticlesFilters,
+  articlesFiltersReducer,
+} from "@/features/FiltersOfArticle";
+import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from "@/shared/const/localStorage";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {
+  ReducersList,
+  useDynamicLoad,
+} from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { HStack } from "@/shared/ui/Stack";
+import { Page } from "@/widgets/Page";
 
 import {
   getArticlesPageView,
   getArticlesPageIsLoading,
-} from '../../model/selectors/articles';
-import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles';
-import { initArticleListPage } from '../../model/services/initArticleListPage/initArticleListPage';
-import { articlesPageActions, articlesPageReducer } from '../../model/slice/articlesPageSlice';
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+} from "../../model/selectors/articles";
+import { fetchNextArticles } from "../../model/services/fetchNextArticles/fetchNextArticles";
+import { initArticleListPage } from "../../model/services/initArticleListPage/initArticleListPage";
+import {
+  articlesPageActions,
+  articlesPageReducer,
+} from "../../model/slice/articlesPageSlice";
+import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
 
-import cls from './ArticleListPage.module.scss';
+import cls from "./ArticleListPage.module.scss";
 
 interface ArticleListPageProps {
   className?: string;
@@ -47,10 +56,13 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
   const view = useSelector(getArticlesPageView);
   const isLoading = useSelector(getArticlesPageIsLoading);
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view));
-    localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, view);
-  }, [dispatch]);
+  const onChangeView = useCallback(
+    (view: ArticleView) => {
+      dispatch(articlesPageActions.setView(view));
+      localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, view);
+    },
+    [dispatch],
+  );
 
   const onLoadNextArticles = useCallback(() => {
     dispatch(fetchNextArticles());

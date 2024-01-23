@@ -1,20 +1,23 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { ArticleType } from '@/entities/Article';
-import { SortOrder } from '@/shared/types/order';
+import { ArticleType } from "@/entities/Article";
+import { SortOrder } from "@/shared/types/order";
 
-import { ArticlesFiltersSchema, ArticlesSortField } from '../types/articlesFiltersSchema';
+import {
+  ArticlesFiltersSchema,
+  ArticlesSortField,
+} from "../types/articlesFiltersSchema";
 
 export const initialState: ArticlesFiltersSchema = {
-  order: 'asc',
-  sort: 'views',
-  search: '',
-  type: 'All',
+  order: "asc",
+  sort: "views",
+  search: "",
+  type: "All",
   page: 1,
 };
 
 export const articlesFiltersSlice = createSlice({
-  name: 'articlesFilters',
+  name: "articlesFilters",
   initialState,
   reducers: {
     setPage: (state, action: PayloadAction<number>) => {

@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { IconProps } from '@/shared/types/ui';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { IconProps } from "@/shared/types/ui";
 
 /**
  * @description
@@ -18,7 +18,7 @@ export const CopyIcon = memo((props: IconProps) => {
       height="22"
       viewBox="0 0 22 22"
       xmlns="http://www.w3.org/2000/svg"
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       fill="none"
       {...otherProps}
     >

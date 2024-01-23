@@ -1,20 +1,20 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback, useMemo } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 import {
   getIsAdmin,
   getIsManager,
   getUserAuthData,
   userActions,
-} from '@/entities/User';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/AppRoutes';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown, DropdownItem } from '@/shared/ui/Popups';
+} from "@/entities/User";
+import { getRouteAdmin, getRouteProfile } from "@/shared/const/AppRoutes";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Avatar } from "@/shared/ui/Avatar";
+import { Dropdown, DropdownItem } from "@/shared/ui/Popups";
 
 interface AvatarDropdownProps {
   className?: string;
@@ -37,22 +37,27 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     dispatch(setAuthData(undefined));
   }, [dispatch, setAuthData]);
 
-  const items: DropdownItem[] = useMemo(() => [
-    ...(isAdminPanelAvailable ? [
+  const items: DropdownItem[] = useMemo(
+    () => [
+      ...(isAdminPanelAvailable
+        ? [
+            {
+              content: "Admin Panel",
+              href: getRouteAdmin(),
+            },
+          ]
+        : []),
       {
-        content: 'Admin Panel',
-        href: getRouteAdmin(),
+        content: t("Profile"),
+        href: getRouteProfile(authData ? authData.id : ""),
       },
-    ] : []),
-    {
-      content: t('Profile'),
-      href: getRouteProfile(authData ? authData.id : ''),
-    },
-    {
-      content: t('vyiti'),
-      onClick: onLogOut,
-    },
-  ], [t, onLogOut, authData, isAdminPanelAvailable]);
+      {
+        content: t("vyiti"),
+        onClick: onLogOut,
+      },
+    ],
+    [t, onLogOut, authData, isAdminPanelAvailable],
+  );
 
   if (!authData) {
     return null;
@@ -60,10 +65,12 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   return (
     <Dropdown
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       items={items}
       direction="bottomL"
-      trigger={<Avatar size={30} src={authData.avatar} alt="avatar" fallbackInverted />}
+      trigger={
+        <Avatar size={30} src={authData.avatar} alt="avatar" fallbackInverted />
+      }
     />
   );
 });

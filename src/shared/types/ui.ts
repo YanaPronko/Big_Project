@@ -3,4 +3,4 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
   inverted?: boolean;
 }
 
-export type PopupsDirection = 'topR' | 'bottomR' | 'topL' | 'bottomL';
+export type PopupsDirection = "topR" | "bottomR" | "topL" | "bottomL";

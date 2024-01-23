@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { AppImage } from './AppImage';
+import { AppImage } from "./AppImage";
 
 // TODO make story
 
 const meta: Meta<typeof AppImage> = {
-  title: 'shared/AppImage',
+  title: "shared/AppImage",
   component: AppImage,
 };
 

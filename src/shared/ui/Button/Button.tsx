@@ -1,18 +1,24 @@
-import { HTMLAttributes, memo } from 'react';
+import { HTMLAttributes, memo } from "react";
 
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 
-import cls from './Button.module.scss';
+import cls from "./Button.module.scss";
 
-export type BtnTheme = 'clear' |'clear_inverted' | 'outline' | 'background' | 'background_inverted' | 'outline_red';
+export type BtnTheme =
+  | "clear"
+  | "clear_inverted"
+  | "outline"
+  | "background"
+  | "background_inverted"
+  | "outline_red";
 
 export enum BtnSize {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl'
+  M = "size_m",
+  L = "size_l",
+  XL = "size_xl",
 }
 
-export type BtnType = 'button' | 'submit' | 'reset';
+export type BtnType = "button" | "submit" | "reset";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   /**
@@ -54,7 +60,7 @@ export const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
-    theme = 'outline',
+    theme = "outline",
     square,
     size = BtnSize.M,
     fullWidth,

@@ -1,6 +1,6 @@
-import React, { MemoExoticComponent } from 'react';
+import React, { MemoExoticComponent } from "react";
 
-import { IconProps } from '@/shared/types/ui';
+import { IconProps } from "@/shared/types/ui";
 
 export interface SideBarItemType {
   path: string;

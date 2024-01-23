@@ -1,22 +1,22 @@
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import { TestAsyncThunk } from "@/shared/lib/tests/testAsyncThunk/testAsyncThunk";
 
-import { updateProfileData } from '../../services/updateProfileData/updateProfileData';
+import { updateProfileData } from "../../services/updateProfileData/updateProfileData";
 
 const profileData = {
-  id: '1',
-  first: 'Yana',
-  lastname: 'Prankonkjj,',
+  id: "1",
+  first: "Yana",
+  lastname: "Prankonkjj,",
   age: 78,
-  currency: 'USD' as Currency,
-  country: 'Kazakhstan' as Country,
-  city: 'Minsk',
-  username: 'adminbnm,',
+  currency: "USD" as Currency,
+  country: "Kazakhstan" as Country,
+  city: "Minsk",
+  username: "adminbnm,",
 };
 
-describe('Testing athyncThunk: updateProfileData', () => {
-  test('success update of Profile Data', async () => {
+describe("Testing athyncThunk: updateProfileData", () => {
+  test("success update of Profile Data", async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
         form: profileData,
@@ -26,7 +26,7 @@ describe('Testing athyncThunk: updateProfileData', () => {
     const result = await thunk.callAthyncThunk();
 
     expect(thunk.api.put).toHaveBeenCalled();
-    expect(result.meta.requestStatus).toBe('fulfilled');
+    expect(result.meta.requestStatus).toBe("fulfilled");
     expect(result.payload).toEqual(profileData);
   });
 

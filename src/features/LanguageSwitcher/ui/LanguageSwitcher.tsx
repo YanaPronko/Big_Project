@@ -1,11 +1,11 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button } from "@/shared/ui/Button";
 
-import cls from './LanguageSwitcher.module.scss';
+import cls from "./LanguageSwitcher.module.scss";
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -18,7 +18,7 @@ export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
+    i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
   };
 
   return (
@@ -28,7 +28,7 @@ export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
       onClick={toggleLang}
       {...otherProps}
     >
-      {short ? t('ShortLng') : t('Language')}
+      {short ? t("ShortLng") : t("Language")}
     </Button>
   );
 });

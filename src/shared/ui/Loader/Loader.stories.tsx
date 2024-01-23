@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { Loader } from './Loader';
+import { Loader } from "./Loader";
 
 const meta: Meta<typeof Loader> = {
-  title: 'shared/Loader',
+  title: "shared/Loader",
   component: Loader,
 };
 

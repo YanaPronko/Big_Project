@@ -1,4 +1,4 @@
-import { PluginItem } from '@babel/core';
+import { PluginItem } from "@babel/core";
 
 // eslint-disable-next-line func-names
 export default function (): PluginItem {

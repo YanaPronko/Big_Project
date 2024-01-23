@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { IconProps } from '@/shared/types/ui';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { IconProps } from "@/shared/types/ui";
 
 /**
  * @description
@@ -14,7 +14,7 @@ export const MainIcon = memo((props: IconProps) => {
 
   return (
     <svg
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       width="20"
       height="20"
       viewBox="0 0 20 20"

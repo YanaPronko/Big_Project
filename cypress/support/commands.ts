@@ -1,8 +1,8 @@
-import * as articleCommands from './commands/article';
-import * as commentsCommands from './commands/comments';
-import * as common from './commands/common';
-import * as profileCommands from './commands/profile';
-import * as ratingCommands from './commands/rating';
+import * as articleCommands from "./commands/article";
+import * as commentsCommands from "./commands/comments";
+import * as common from "./commands/common";
+import * as profileCommands from "./commands/profile";
+import * as ratingCommands from "./commands/rating";
 
 // -- This is a parent command --
 Cypress.Commands.addAll(common);

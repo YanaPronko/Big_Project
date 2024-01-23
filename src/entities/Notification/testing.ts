@@ -1,1 +1,1 @@
-export { mockNotifications } from './model/mocks/notifications';
+export { mockNotifications } from "./model/mocks/notifications";

@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
-import ArticleEditPage from './ArticleEditPage';
+import ArticleEditPage from "./ArticleEditPage";
 
 const meta: Meta<typeof ArticleEditPage> = {
-  title: 'pages/ArticleEditPage',
+  title: "pages/ArticleEditPage",
   component: ArticleEditPage,
   decorators: [StoreDecorator({})],
 };
@@ -17,8 +17,8 @@ export const CreatePage: Story = {
   args: {},
   parameters: {
     router: {
-      path: '/articles/new',
-      route: '/articles/new',
+      path: "/articles/new",
+      route: "/articles/new",
     },
   },
 };
@@ -27,8 +27,8 @@ export const EditPage: Story = {
   args: {},
   parameters: {
     router: {
-      path: '/articles/:id/edit',
-      route: '/articles/1/edit',
+      path: "/articles/:id/edit",
+      route: "/articles/1/edit",
     },
   },
 };

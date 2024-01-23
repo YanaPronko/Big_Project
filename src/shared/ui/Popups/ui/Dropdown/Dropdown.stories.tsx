@@ -1,18 +1,18 @@
-import { action } from '@storybook/addon-actions';
-import { Meta, StoryObj } from '@storybook/react';
+import { action } from "@storybook/addon-actions";
+import { Meta, StoryObj } from "@storybook/react";
 
-import { Dropdown } from './Dropdown';
-import ThemeDecorator from '../../../../config/storybook/ThemeDecorator/ThemeDecorator';
-import { getRouteProfile } from '../../../../const/AppRoutes';
-import { Theme } from '../../../../const/theme';
-import { Button } from '../../../Button/Button';
+import { Dropdown } from "./Dropdown";
+import ThemeDecorator from "../../../../config/storybook/ThemeDecorator/ThemeDecorator";
+import { getRouteProfile } from "../../../../const/AppRoutes";
+import { Theme } from "../../../../const/theme";
+import { Button } from "../../../Button/Button";
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'shared/Popups/Dropdown',
+  title: "shared/Popups/Dropdown",
   component: Dropdown,
   decorators: [
     (Story) => (
-      <div style={{ padding: '12rem', width: 'fit-content' }}>
+      <div style={{ padding: "12rem", width: "fit-content" }}>
         <Story />
       </div>
     ),
@@ -20,12 +20,12 @@ const meta: Meta<typeof Dropdown> = {
   args: {
     items: [
       {
-        content: 'Profile',
-        href: getRouteProfile('1'),
+        content: "Profile",
+        href: getRouteProfile("1"),
       },
       {
-        content: 'Log out',
-        onClick: action('onLogOut'),
+        content: "Log out",
+        onClick: action("onLogOut"),
       },
     ],
     trigger: <Button>More</Button>,
@@ -49,18 +49,18 @@ PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const BottomLeft: Story = {
   args: {
-    direction: 'bottomL',
+    direction: "bottomL",
   },
 };
 
 export const TopLeft: Story = {
   args: {
-    direction: 'topL',
+    direction: "topL",
   },
 };
 
 export const TopRight: Story = {
   args: {
-    direction: 'topR',
+    direction: "topR",
   },
 };

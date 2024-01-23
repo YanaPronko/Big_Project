@@ -1,13 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { CommentCard } from './CommentCard';
-import IMG from '../../../../shared/assets/test/avatar.png';
+import { CommentCard } from "./CommentCard";
+import IMG from "../../../../shared/assets/test/avatar.png";
 
 const meta: Meta<typeof CommentCard> = {
-  title: 'entities/Comment/CommentCard',
+  title: "entities/Comment/CommentCard",
   component: CommentCard,
 };
 
@@ -17,12 +17,12 @@ type Story = StoryObj<typeof CommentCard>;
 export const Primary: Story = {
   args: {
     comment: {
-      id: '1',
-      text: 'hello',
-      articleId: '1',
+      id: "1",
+      text: "hello",
+      articleId: "1",
       user: {
-        id: '1',
-        username: 'vasya',
+        id: "1",
+        username: "vasya",
         avatar: IMG,
       },
     },
@@ -31,17 +31,16 @@ export const Primary: Story = {
 
 export const PrimaryDark: Story = {
   args: {
-    comment:
-      {
-        id: '1',
-        text: 'hello',
-        articleId: '1',
-        user: {
-          id: '1',
-          username: 'vasya',
-          avatar: IMG,
-        },
+    comment: {
+      id: "1",
+      text: "hello",
+      articleId: "1",
+      user: {
+        id: "1",
+        username: "vasya",
+        avatar: IMG,
       },
+    },
   },
 };
 

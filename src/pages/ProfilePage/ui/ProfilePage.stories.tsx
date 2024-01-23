@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import ProfilePage from './ProfilePage';
-import IMG from '../../../shared/assets/test/avatar.png';
+import ProfilePage from "./ProfilePage";
+import IMG from "../../../shared/assets/test/avatar.png";
 
 const meta: Meta<typeof ProfilePage> = {
-  title: 'pages/ProfilePage',
+  title: "pages/ProfilePage",
   component: ProfilePage,
 };
 
@@ -22,14 +22,14 @@ Normal.decorators = [
   StoreDecorator({
     profile: {
       form: {
-        id: '1',
-        first: 'Yana',
-        lastname: 'Prankonkjj,',
+        id: "1",
+        first: "Yana",
+        lastname: "Prankonkjj,",
         age: 78,
-        currency: 'USD',
-        country: 'Kazakhstan',
-        city: 'Minsk',
-        username: 'adminbnm,',
+        currency: "USD",
+        country: "Kazakhstan",
+        city: "Minsk",
+        username: "adminbnm,",
         avatar: IMG,
       },
       readonly: true,
@@ -46,14 +46,14 @@ Dark.decorators = [
   StoreDecorator({
     profile: {
       form: {
-        id: '1',
-        first: 'Yana',
-        lastname: 'Prankonkjj,',
+        id: "1",
+        first: "Yana",
+        lastname: "Prankonkjj,",
         age: 78,
-        currency: 'USD',
-        country: 'Kazakhstan',
-        city: 'Minsk',
-        username: 'adminbnm,',
+        currency: "USD",
+        country: "Kazakhstan",
+        city: "Minsk",
+        username: "adminbnm,",
         avatar: IMG,
       },
       readonly: true,

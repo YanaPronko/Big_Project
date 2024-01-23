@@ -1,18 +1,18 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-import { Country, CountrySelect } from '@/entities/Country';
-import { Currency, CurrencySelect } from '@/entities/Currency';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
-import { Text } from '@/shared/ui/Text';
+import { Country, CountrySelect } from "@/entities/Country";
+import { Currency, CurrencySelect } from "@/entities/Currency";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Avatar } from "@/shared/ui/Avatar";
+import { Input } from "@/shared/ui/Input";
+import { Loader } from "@/shared/ui/Loader";
+import { Text } from "@/shared/ui/Text";
 
-import { Profile } from '../../model/types/profile';
+import { Profile } from "../../model/types/profile";
 
-import cls from './ProfileCard.module.scss';
+import cls from "./ProfileCard.module.scss";
 
 interface ProfileCardProps {
   className?: string;
@@ -31,7 +31,11 @@ interface ProfileCardProps {
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
   const {
-    className, data, isLoading, error, readonly,
+    className,
+    data,
+    isLoading,
+    error,
+    readonly,
     onChangeFirstName,
     onChangeLastName,
     onChangeAge,
@@ -41,7 +45,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     onChangeCurrency,
     ...otherProps
   } = props;
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation("profile");
 
   if (isLoading) {
     return (
@@ -60,8 +64,13 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         className={classNames(cls.profileCard, {}, [className])}
         {...otherProps}
       >
-        <Text title={t('error')} align="center" theme="error" />
-        <Text text={t('try-reload-the-page')} align="center" size="l" theme="error" />
+        <Text title={t("error")} align="center" theme="error" />
+        <Text
+          text={t("try-reload-the-page")}
+          align="center"
+          size="l"
+          theme="error"
+        />
       </div>
     );
   }
@@ -75,7 +84,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Avatar
           className={cls.avatar}
           src={data.avatar}
-          alt={t('avatar')}
+          alt={t("avatar")}
           size={100}
         />
       )}
@@ -83,7 +92,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           key={1}
           name="firstname"
-          label={t('first-name>')}
+          label={t("first-name>")}
           type="text"
           autoFocus
           readonly={readonly}
@@ -94,7 +103,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           key={2}
           name="lastname"
-          label={t('lastname')}
+          label={t("lastname")}
           type="text"
           readonly={readonly}
           value={t(`${data?.lastname}`)}
@@ -104,7 +113,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           key={3}
           name="age"
-          label={t('age')}
+          label={t("age")}
           type="text"
           readonly={readonly}
           value={data?.age}
@@ -113,7 +122,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           name="username"
           key={4}
-          label={t('username')}
+          label={t("username")}
           type="text"
           readonly={readonly}
           value={data?.username}
@@ -122,7 +131,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           key={5}
           className={cls.ref}
-          label={t('enter-refference-to-avatar')}
+          label={t("enter-refference-to-avatar")}
           type="text"
           readonly={readonly}
           value={data?.avatar}

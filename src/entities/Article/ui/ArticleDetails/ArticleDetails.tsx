@@ -1,22 +1,22 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { nanoid } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
+import { nanoid } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar';
-import { CalendarIcon, EyeIcon } from '@/shared/ui/Icons';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Avatar } from "@/shared/ui/Avatar";
+import { CalendarIcon, EyeIcon } from "@/shared/ui/Icons";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { HStack, VStack } from "@/shared/ui/Stack";
+import { Text } from "@/shared/ui/Text";
 
-import { getArtcileDetailsData } from '../../model/selectors/articleDetails';
-import { ArticleBlock } from '../../model/types/article';
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { getArtcileDetailsData } from "../../model/selectors/articleDetails";
+import { ArticleBlock } from "../../model/types/article";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
-import cls from './ArticleDetails.module.scss';
+import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -26,10 +26,16 @@ interface ArticleDetailsProps {
 
 const renderBlock = (block: ArticleBlock) => {
   switch (block.type) {
-    case 'CODE': {
-      return <ArticleCodeBlockComponent key={nanoid()} block={block} className={cls.block} />;
+    case "CODE": {
+      return (
+        <ArticleCodeBlockComponent
+          key={nanoid()}
+          block={block}
+          className={cls.block}
+        />
+      );
     }
-    case 'IMAGE': {
+    case "IMAGE": {
       return (
         <ArticleImageBlockComponent
           key={nanoid()}
@@ -38,7 +44,7 @@ const renderBlock = (block: ArticleBlock) => {
         />
       );
     }
-    case 'TEXT': {
+    case "TEXT": {
       return (
         <ArticleTextBlockComponent
           key={nanoid()}
@@ -54,9 +60,7 @@ const renderBlock = (block: ArticleBlock) => {
 };
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-  const {
-    className, isLoading, error,
-  } = props;
+  const { className, isLoading, error } = props;
 
   const article = useSelector(getArtcileDetailsData);
 
@@ -97,7 +101,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         data-testid="ArticleDetails.Content"
         gap="8"
         max
-        className={classNames('', {}, [className])}
+        className={classNames("", {}, [className])}
         role="section"
       >
         <Avatar

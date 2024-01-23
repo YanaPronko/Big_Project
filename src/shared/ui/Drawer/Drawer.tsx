@@ -1,16 +1,17 @@
+import { ReactNode, useCallback, useEffect } from "react";
+
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+
+import { classNames } from "../../lib/classNames/classNames";
+import { useKeyDown } from "../../lib/hooks/useKeyDown/useKeyDown";
 import {
-  ReactNode, useCallback, useEffect,
-} from 'react';
+  AnimationProvider,
+  useAnimationLibs,
+} from "../../lib/ui/AnimationProvider";
+import { Overlay } from "../Overlay/Overlay";
+import { Portal } from "../Portal/Portal";
 
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-
-import { classNames } from '../../lib/classNames/classNames';
-import { useKeyDown } from '../../lib/hooks/useKeyDown/useKeyDown';
-import { AnimationProvider, useAnimationLibs } from '../../lib/ui/AnimationProvider';
-import { Overlay } from '../Overlay/Overlay';
-import { Portal } from '../Portal/Portal';
-
-import cls from './Drawer.module.scss';
+import cls from "./Drawer.module.scss";
 
 interface DrawerProps {
   /**
@@ -37,9 +38,7 @@ const DrawerContent = (props: DrawerProps) => {
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
-  const {
-    className, children, isOpen, onClose,
-  } = props;
+  const { className, children, isOpen, onClose } = props;
   const { theme } = useTheme();
 
   useKeyDown(isOpen, onClose);
@@ -65,7 +64,11 @@ const DrawerContent = (props: DrawerProps) => {
 
   const bind = Gesture.useDrag(
     ({
-      last, velocity: [, vy], direction: [, dy], movement: [, my], cancel,
+      last,
+      velocity: [, vy],
+      direction: [, dy],
+      movement: [, my],
+      cancel,
     }) => {
       if (my < -70) cancel();
 
@@ -91,7 +94,7 @@ const DrawerContent = (props: DrawerProps) => {
     return null;
   }
 
-  const display = y.to((py) => (py < height ? 'block' : 'none'));
+  const display = y.to((py) => (py < height ? "block" : "none"));
 
   return (
     <Portal>

@@ -1,7 +1,7 @@
-import { User } from '@/entities/User';
+import { User } from "@/entities/User";
 
-export type ArticleType = 'All' | 'IT' | 'Science' | 'Economics';
-export type ArticleBlockType = 'CODE' | 'TEXT' | 'IMAGE';
+export type ArticleType = "All" | "IT" | "Science" | "Economics";
+export type ArticleBlockType = "CODE" | "TEXT" | "IMAGE";
 
 export interface ArticleBaseBlock {
   id: string;
@@ -9,17 +9,17 @@ export interface ArticleBaseBlock {
 }
 
 export interface ArticleBlockCode extends ArticleBaseBlock {
-  type: 'CODE';
+  type: "CODE";
   code: string;
 }
 export interface ArticleIMGBlock extends ArticleBaseBlock {
-  type: 'IMAGE';
+  type: "IMAGE";
   src: string;
   title: string;
 }
 
 export interface ArticleTextBlock extends ArticleBaseBlock {
-  type: 'TEXT';
+  type: "TEXT";
   paragraphs: string[];
   title?: string;
 }
@@ -41,4 +41,4 @@ export interface Article {
   blocks: ArticleBlock[];
 }
 
-export type ArticleView = 'grid' | 'list';
+export type ArticleView = "grid" | "list";

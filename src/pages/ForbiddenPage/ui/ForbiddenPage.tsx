@@ -1,10 +1,10 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { Page } from '@/widgets/Page';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text } from "@/shared/ui/Text";
+import { Page } from "@/widgets/Page";
 
 interface ForbiddenPageProps {
   className?: string;
@@ -16,10 +16,10 @@ export const ForbiddenPage = memo((props: ForbiddenPageProps) => {
 
   return (
     <Page
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       data-testid="ForbiddenPage"
     >
-      <Text title={t('you-havent-access')} size="xl" />
+      <Text title={t("you-havent-access")} size="xl" />
     </Page>
   );
 });

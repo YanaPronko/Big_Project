@@ -1,14 +1,17 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
-import { RatingCard } from '@/entities/Rating';
-import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text } from '@/shared/ui/Text';
+import { RatingCard } from "@/entities/Rating";
+import { getUserAuthData } from "@/entities/User";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Text } from "@/shared/ui/Text";
 
-import { useArticleRate, useGetArticleRating } from '../../api/articleRatingApi';
+import {
+  useArticleRate,
+  useGetArticleRating,
+} from "../../api/articleRatingApi";
 
 export interface ArticleRatingProps {
   className?: string;
@@ -17,26 +20,41 @@ export interface ArticleRatingProps {
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
   const { className, articleId } = props;
-  const { t } = useTranslation(['article', 'translation']);
+  const { t } = useTranslation(["article", "translation"]);
 
   const userData = useSelector(getUserAuthData);
 
-  const { data, isLoading } = useGetArticleRating({ articleId, userId: userData?.id ?? '' });
+  const { data, isLoading } = useGetArticleRating({
+    articleId,
+    userId: userData?.id ?? "",
+  });
   const [rateArticle, { error }] = useArticleRate();
 
-  const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
-    rateArticle({
-      articleId, userId: userData?.id ?? '', rate: starsCount, feedback,
-    });
-  }, [articleId, rateArticle, userData?.id]);
+  const handleRateArticle = useCallback(
+    (starsCount: number, feedback?: string) => {
+      rateArticle({
+        articleId,
+        userId: userData?.id ?? "",
+        rate: starsCount,
+        feedback,
+      });
+    },
+    [articleId, rateArticle, userData?.id],
+  );
 
-  const onCancel = useCallback((starsCount: number) => {
-    handleRateArticle(starsCount);
-  }, [handleRateArticle]);
+  const onCancel = useCallback(
+    (starsCount: number) => {
+      handleRateArticle(starsCount);
+    },
+    [handleRateArticle],
+  );
 
-  const onAccept = useCallback((starsCount: number, feedback?: string) => {
-    handleRateArticle(starsCount, feedback);
-  }, [handleRateArticle]);
+  const onAccept = useCallback(
+    (starsCount: number, feedback?: string) => {
+      handleRateArticle(starsCount, feedback);
+    },
+    [handleRateArticle],
+  );
 
   if (isLoading) {
     return <Skeleton width="100%" height={120} />;
@@ -46,7 +64,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     return (
       <Text
         theme="error"
-        text={t('oops-failed-rate-of-article')}
+        text={t("oops-failed-rate-of-article")}
         align="center"
         size="l"
       />
@@ -57,8 +75,8 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   return (
     <RatingCard
       className={className}
-      title={t('rate-the-article')}
-      feedbackTitle={t('leave-your-feedback', { ns: 'translation' })}
+      title={t("rate-the-article")}
+      feedbackTitle={t("leave-your-feedback", { ns: "translation" })}
       rate={rating}
       onCancel={onCancel}
       onAccept={onAccept}

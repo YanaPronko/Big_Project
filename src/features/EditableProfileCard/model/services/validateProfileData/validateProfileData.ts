@@ -1,25 +1,25 @@
-import { Profile } from '@/entities/Profile';
+import { Profile } from "@/entities/Profile";
 
-import { ValidateProfileErrors } from '../../types/profileSchema';
+import { ValidateProfileErrors } from "../../types/profileSchema";
 
-export const validateProfileData = (profile?: Profile): ValidateProfileErrors[] => {
+export const validateProfileData = (
+  profile?: Profile,
+): ValidateProfileErrors[] => {
   if (!profile) {
-    return ['no data'];
+    return ["no data"];
   }
 
-  const {
-    first, lastname, age, country,
-  } = profile;
+  const { first, lastname, age, country } = profile;
 
   const validateErrors: ValidateProfileErrors[] = [];
   if (!first || !lastname) {
-    validateErrors.push('incorrect user data');
+    validateErrors.push("incorrect user data");
   }
   if (!age || !Number.isInteger(age)) {
-    validateErrors.push('incorrect age');
+    validateErrors.push("incorrect age");
   }
   if (!country) {
-    validateErrors.push('incorrect country');
+    validateErrors.push("incorrect country");
   }
   return validateErrors;
 };

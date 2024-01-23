@@ -1,11 +1,11 @@
-import { DeepPartial } from '@reduxjs/toolkit';
+import { DeepPartial } from "@reduxjs/toolkit";
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from "@/app/providers/StoreProvider";
 
-import { getLoginIsLoading } from './getLoginIsLoading';
+import { getLoginIsLoading } from "./getLoginIsLoading";
 
-describe('Getting isLoading status', () => {
-  test('Getting isLoading', () => {
+describe("Getting isLoading status", () => {
+  test("Getting isLoading", () => {
     const state: DeepPartial<StateSchema> = {
       loginForm: {
         isLoading: false,
@@ -14,7 +14,7 @@ describe('Getting isLoading status', () => {
     expect(getLoginIsLoading(state as StateSchema)).toBe(false);
   });
 
-  test('Check work without state', () => {
+  test("Check work without state", () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getLoginIsLoading(state as StateSchema)).toEqual(false);
   });

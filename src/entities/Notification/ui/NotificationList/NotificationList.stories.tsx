@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { NotificationList } from './NotificationList';
-import { mockNotifications } from '../../model/mocks/notifications';
+import { NotificationList } from "./NotificationList";
+import { mockNotifications } from "../../model/mocks/notifications";
 
 const meta: Meta<typeof NotificationList> = {
-  title: 'entities/Notification/NotificationList',
+  title: "entities/Notification/NotificationList",
   component: NotificationList,
   // decorators: [
   //   (Story) => (
@@ -28,7 +28,7 @@ export const Primary: Story = {
     mockData: [
       {
         url: `${__API__}/notifications`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: [...mockNotifications],
       },
@@ -44,7 +44,7 @@ export const PrimaryDark: Story = {
     mockData: [
       {
         url: `${__API__}/notifications`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: [...mockNotifications],
       },

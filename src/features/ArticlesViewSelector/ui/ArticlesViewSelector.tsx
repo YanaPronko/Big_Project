@@ -1,13 +1,13 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { nanoid } from '@reduxjs/toolkit';
+import { nanoid } from "@reduxjs/toolkit";
 
-import { ArticleView } from '@/entities/Article';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button';
-import { GridIcon, ListIcon } from '@/shared/ui/Icons';
+import { ArticleView } from "@/entities/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button } from "@/shared/ui/Button";
+import { GridIcon, ListIcon } from "@/shared/ui/Icons";
 
-import cls from './ArticlesViewSelector.module.scss';
+import cls from "./ArticlesViewSelector.module.scss";
 
 interface ArticlesViewSelectorProps {
   className?: string;
@@ -21,14 +21,12 @@ interface viewTypesInterface {
 }
 
 const viewTypes: viewTypesInterface[] = [
-  { view: 'grid', Icon: <GridIcon /> },
-  { view: 'list', Icon: <ListIcon /> },
+  { view: "grid", Icon: <GridIcon /> },
+  { view: "list", Icon: <ListIcon /> },
 ];
 
 export const ArticlesViewSelector = memo((props: ArticlesViewSelectorProps) => {
-  const {
-    className, view, onViewClick, ...otherProps
-  } = props;
+  const { className, view, onViewClick, ...otherProps } = props;
 
   const onClick = (newView: ArticleView) => () => onViewClick?.(newView);
 
@@ -38,7 +36,14 @@ export const ArticlesViewSelector = memo((props: ArticlesViewSelectorProps) => {
       {...otherProps}
     >
       {viewTypes.map((type) => (
-        <Button theme="clear" key={nanoid()} onClick={onClick(type.view)} className={classNames(cls.btn, { [cls.selected]: view === type.view })}>
+        <Button
+          theme="clear"
+          key={nanoid()}
+          onClick={onClick(type.view)}
+          className={classNames(cls.btn, {
+            [cls.selected]: view === type.view,
+          })}
+        >
           {type.Icon}
         </Button>
       ))}

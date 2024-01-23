@@ -1,9 +1,9 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Button } from '@/shared/ui/Button';
-import { ThemeIcon } from '@/shared/ui/Icons';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+import { Button } from "@/shared/ui/Button";
+import { ThemeIcon } from "@/shared/ui/Icons";
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -15,7 +15,7 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
 
   return (
     <Button
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       theme="clear"
       onClick={toggleTheme}
       {...otherProps}

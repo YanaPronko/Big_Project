@@ -1,10 +1,14 @@
-import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from "@reduxjs/toolkit";
 
-import { getArtcileDetailsData } from '@/entities/Article';
-import { getUserAuthData } from '@/entities/User';
+import { getArtcileDetailsData } from "@/entities/Article";
+import { getUserAuthData } from "@/entities/User";
 
-export const getEditStatus = createSelector(getArtcileDetailsData, getUserAuthData, (article, user) => {
-  if (!article?.id || !user?.id) return false;
+export const getEditStatus = createSelector(
+  getArtcileDetailsData,
+  getUserAuthData,
+  (article, user) => {
+    if (!article?.id || !user?.id) return false;
 
-  return article.user.id === user.id;
-});
+    return article.user.id === user.id;
+  },
+);

@@ -1,9 +1,10 @@
-import { Decorator, StoryContext, StoryFn } from '@storybook/react';
-import {
-  BrowserRouter, MemoryRouter, Route, Routes,
-} from 'react-router-dom';
+import { Decorator, StoryContext, StoryFn } from "@storybook/react";
+import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
 
-export const RouterDecorator: Decorator = (Story: StoryFn, { parameters: { router } }: StoryContext) => {
+export const RouterDecorator: Decorator = (
+  Story: StoryFn,
+  { parameters: { router } }: StoryContext,
+) => {
   if (!router) {
     return (
       <BrowserRouter>

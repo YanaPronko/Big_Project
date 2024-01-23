@@ -1,17 +1,17 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { ThunkOptionsConfig } from '@/app/providers/StoreProvider';
-import { Profile } from '@/entities/Profile';
+import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
+import { Profile } from "@/entities/Profile";
 
-import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
-import { ValidateProfileErrors } from '../../types/profileSchema';
-import { validateProfileData } from '../validateProfileData/validateProfileData';
+import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
+import { ValidateProfileErrors } from "../../types/profileSchema";
+import { validateProfileData } from "../validateProfileData/validateProfileData";
 
 export const updateProfileData = createAsyncThunk<
   Profile,
   void,
   ThunkOptionsConfig<ValidateProfileErrors[]>
->('profile/updateProfileData', async (_, thunkApi) => {
+>("profile/updateProfileData", async (_, thunkApi) => {
   const { extra, rejectWithValue, getState } = thunkApi;
 
   const formData = getProfileForm(getState());
@@ -32,6 +32,6 @@ export const updateProfileData = createAsyncThunk<
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log(e);
-    return rejectWithValue(['server error']);
+    return rejectWithValue(["server error"]);
   }
 });

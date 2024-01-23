@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { Skeleton } from './Skeleton';
+import { Skeleton } from "./Skeleton";
 
 const meta: Meta<typeof Skeleton> = {
-  title: 'shared/Skeleton',
+  title: "shared/Skeleton",
   component: Skeleton,
 };
 
@@ -15,14 +15,14 @@ type Story = StoryObj<typeof Skeleton>;
 
 export const Primary: Story = {
   args: {
-    width: '100%',
+    width: "100%",
     height: 200,
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    width: '100%',
+    width: "100%",
     height: 200,
   },
 };
@@ -33,7 +33,7 @@ export const Circle: Story = {
   args: {
     width: 100,
     height: 100,
-    borderRadius: '50%',
+    borderRadius: "50%",
   },
 };
 
@@ -41,7 +41,7 @@ export const CircleDark: Story = {
   args: {
     width: 100,
     height: 100,
-    borderRadius: '50%',
+    borderRadius: "50%",
   },
 };
 

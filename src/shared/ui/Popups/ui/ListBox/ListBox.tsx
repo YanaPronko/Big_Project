@@ -1,15 +1,15 @@
-import { Fragment, memo } from 'react';
+import { Fragment, memo } from "react";
 
-import { Listbox as HListBox } from '@headlessui/react';
-import { nanoid } from '@reduxjs/toolkit';
+import { Listbox as HListBox } from "@headlessui/react";
+import { nanoid } from "@reduxjs/toolkit";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { PopupsDirection } from '../../../../types/ui';
-import { HStack } from '../../../Stack';
-import popoverCls from '../../styles/popup.module.scss';
+import { PopupsDirection } from "../../../../types/ui";
+import { HStack } from "../../../Stack";
+import popoverCls from "../../styles/popup.module.scss";
 
-import cls from './ListBox.module.scss';
+import cls from "./ListBox.module.scss";
 
 type ListBoxItem = {
   /**
@@ -65,7 +65,14 @@ interface ListBoxProps {
 
 export const ListBox = memo((props: ListBoxProps) => {
   const {
-    className, items, label, selectedVal, defaultVal, readonly, direction = 'bottomR', onChange,
+    className,
+    items,
+    label,
+    selectedVal,
+    defaultVal,
+    readonly,
+    direction = "bottomR",
+    onChange,
   } = props;
 
   return (
@@ -98,9 +105,13 @@ export const ListBox = memo((props: ListBoxProps) => {
             >
               {({ active, selected }) => (
                 <li
-                  className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled }, [])}
+                  className={classNames(
+                    cls.item,
+                    { [cls.active]: active, [cls.disabled]: item.disabled },
+                    [],
+                  )}
                 >
-                  {selected && '!'}
+                  {selected && "!"}
                   {item.content}
                 </li>
               )}
