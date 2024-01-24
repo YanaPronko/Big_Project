@@ -1,29 +1,27 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { ThunkOptionsConfig } from '@/app/providers/StoreProvider';
-import { getArtcileDetailsData } from '@/entities/Article';
-import { Comment } from '@/entities/Comment';
-import { getUserAuthData } from '@/entities/User';
+import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
+import { getArtcileDetailsData } from "@/entities/Article";
+import { Comment } from "@/entities/Comment";
+import { getUserAuthData } from "@/entities/User";
 
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from "../fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 export const addCommentForArticle = createAsyncThunk<
   Comment,
   string,
   ThunkOptionsConfig<string>
->('articleDetails/addCommentForArticle', async (text, thunkAPI) => {
-  const {
-    dispatch, extra, rejectWithValue, getState,
-  } = thunkAPI;
+>("articleDetails/addCommentForArticle", async (text, thunkAPI) => {
+  const { dispatch, extra, rejectWithValue, getState } = thunkAPI;
   try {
     const userData = getUserAuthData(getState());
     const article = getArtcileDetailsData(getState());
 
     if (!userData || !text || !article) {
-      return rejectWithValue('no data');
+      return rejectWithValue("no data");
     }
 
-    const response = await extra.api.post<Comment>('/comments', {
+    const response = await extra.api.post<Comment>("/comments", {
       userId: userData?.id,
       articleId: article?.id,
       text,
@@ -35,6 +33,6 @@ export const addCommentForArticle = createAsyncThunk<
     dispatch(fetchCommentsByArticleId(article.id));
     return response.data;
   } catch (e) {
-    return rejectWithValue('error');
+    return rejectWithValue("error");
   }
 });

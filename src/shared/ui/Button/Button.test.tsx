@@ -1,14 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-import { Button } from './Button';
+import { Button } from "./Button";
 
-describe('TEST FOR BUTTON', () => {
-  test('First test', () => {
+describe("TEST FOR BUTTON", () => {
+  test("First test", () => {
     render(<Button>Test</Button>);
-    expect(screen.getByText('Test')).toBeInTheDocument();
+    expect(screen.getByText("Test")).toBeInTheDocument();
   });
-  test('Have class', () => {
+  test("Have class", () => {
     render(<Button theme="clear">Test</Button>);
-    expect(screen.getByText('Test')).toHaveClass('clear');
+    expect(screen.getByText("Test")).toHaveClass("clear");
   });
 });

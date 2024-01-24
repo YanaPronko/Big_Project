@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import { loginByUsername } from '../services/loginByUsername';
-import { LoginSchema } from '../types/loginSchema';
+import { loginByUsername } from "../services/loginByUsername";
+import { LoginSchema } from "../types/loginSchema";
 
 export const initialState: LoginSchema = {
   isLoading: false,
 };
 
 export const loginSlice = createSlice({
-  name: 'login',
+  name: "login",
   initialState,
   reducers: {},
   extraReducers: (builder) => {

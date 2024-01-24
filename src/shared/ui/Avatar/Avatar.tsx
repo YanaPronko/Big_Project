@@ -1,12 +1,12 @@
-import { CSSProperties, memo, useMemo } from 'react';
+import { CSSProperties, memo, useMemo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { AppImage } from '../AppImage';
-import { UserIcon } from '../Icons';
-import { Skeleton } from '../Skeleton';
+import { AppImage } from "../AppImage";
+import { UserIcon } from "../Icons";
+import { Skeleton } from "../Skeleton";
 
-import cls from './Avatar.module.scss';
+import cls from "./Avatar.module.scss";
 
 interface AvatarProps {
   /**
@@ -35,7 +35,12 @@ interface AvatarProps {
 
 export const Avatar = memo((props: AvatarProps) => {
   const {
-    className, src, alt, size = 150, fallbackInverted, ...otherProps
+    className,
+    src,
+    alt,
+    size = 150,
+    fallbackInverted,
+    ...otherProps
   } = props;
 
   const styles = useMemo<CSSProperties>(

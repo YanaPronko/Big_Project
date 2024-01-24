@@ -1,10 +1,10 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback } from "react";
 
-import { classNames } from '../../lib/classNames/classNames';
-import { Button } from '../Button/Button';
-import { CopyIcon } from '../Icons/ui/CopyIcon/CopyIcon';
+import { classNames } from "../../lib/classNames/classNames";
+import { Button } from "../Button/Button";
+import { CopyIcon } from "../Icons/ui/CopyIcon/CopyIcon";
 
-import cls from './Code.module.scss';
+import cls from "./Code.module.scss";
 
 interface CodeProps {
   /**
@@ -29,9 +29,7 @@ export const Code = memo((props: CodeProps) => {
       <Button theme="outline" className={cls.copyBtn} onClick={onCopy}>
         <CopyIcon className={cls.copyIcon} />
       </Button>
-      <code>
-        {text}
-      </code>
+      <code>{text}</code>
     </pre>
   );
 });

@@ -1,13 +1,13 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import cls from './Flex.module.scss';
+import cls from "./Flex.module.scss";
 
-type FlexJustify = 'start' | 'end' | 'between' | 'center' | 'around' | 'evenly';
-type FlexAlign = 'start' | 'end' | 'stretch' | 'center';
-type FlexDirection = 'row' | 'column' | 'columnRev' | 'rowRev';
-type FlexGap = '4' | '8' | '16' | '32';
+type FlexJustify = "start" | "end" | "between" | "center" | "around" | "evenly";
+type FlexAlign = "start" | "end" | "stretch" | "center";
+type FlexDirection = "row" | "column" | "columnRev" | "rowRev";
+type FlexGap = "4" | "8" | "16" | "32";
 
 const alignClasses: Record<FlexAlign, string> = {
   start: cls.alignStart,
@@ -39,7 +39,10 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32,
 };
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 export interface FlexProps extends DivProps {
   /**
@@ -76,11 +79,12 @@ export const Flex = (props: FlexProps) => {
   const {
     className,
     children,
-    justify = 'start',
-    align = 'center',
-    direction = 'row',
+    justify = "start",
+    align = "center",
+    direction = "row",
     gap,
     max,
+    ...otherProps
   } = props;
 
   const classes = [
@@ -96,7 +100,7 @@ export const Flex = (props: FlexProps) => {
   };
 
   return (
-    <div className={classNames(cls.flex, mods, classes)}>
+    <div className={classNames(cls.flex, mods, classes)} {...otherProps}>
       {children}
     </div>
   );

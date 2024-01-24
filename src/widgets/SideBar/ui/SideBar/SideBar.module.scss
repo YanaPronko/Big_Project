@@ -7,7 +7,7 @@
   flex-shrink: 0;
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
-  padding: 0.5rem;
+  padding: torem(5);
   background-color: var(--inverted-bg-color);
   transition: all 0.3s ease-in-out;
 }
@@ -21,14 +21,14 @@
 
 .collapseBtn {
   position: absolute;
-  right: -3.2rem;
+  right: torem(-32);
   bottom: 0;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: torem(10);
 }
 
 .color_inverted {

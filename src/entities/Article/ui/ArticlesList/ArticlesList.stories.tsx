@@ -1,13 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { ArticlesList } from './ArticlesList';
-import { articlesMock } from '../../model/mocks/articles';
+import { ArticlesList } from "./ArticlesList";
+import { articlesMock } from "../../model/mocks/articles";
 
 const meta: Meta<typeof ArticlesList> = {
-  title: 'entities/Article/ArticlesList',
+  title: "entities/Article/ArticlesList",
   component: ArticlesList,
 };
 
@@ -17,14 +17,14 @@ type Story = StoryObj<typeof ArticlesList>;
 export const Grid: Story = {
   args: {
     articles: articlesMock,
-    view: 'grid',
+    view: "grid",
   },
 };
 
 export const GridDark: Story = {
   args: {
     articles: articlesMock,
-    view: 'grid',
+    view: "grid",
   },
 };
 
@@ -33,14 +33,14 @@ GridDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const List: Story = {
   args: {
     articles: articlesMock,
-    view: 'list',
+    view: "list",
   },
 };
 
 export const ListDark: Story = {
   args: {
     articles: articlesMock,
-    view: 'list',
+    view: "list",
   },
 };
 
@@ -48,7 +48,7 @@ ListDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const ListIsLoading: Story = {
   args: {
-    view: 'list',
+    view: "list",
     isLoading: true,
     articles: [],
   },
@@ -56,7 +56,7 @@ export const ListIsLoading: Story = {
 
 export const ListIsLoadingDark: Story = {
   args: {
-    view: 'list',
+    view: "list",
     isLoading: true,
     articles: [],
   },
@@ -66,7 +66,7 @@ ListIsLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const GridIsLoading: Story = {
   args: {
-    view: 'grid',
+    view: "grid",
     isLoading: true,
     articles: [],
   },
@@ -74,7 +74,7 @@ export const GridIsLoading: Story = {
 
 export const GridIsLoadingDark: Story = {
   args: {
-    view: 'grid',
+    view: "grid",
     isLoading: true,
     articles: [],
   },

@@ -1,23 +1,27 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { ThunkOptionsConfig } from '@/app/providers/StoreProvider';
-import { Article } from '@/entities/Article';
+import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
+import { Article } from "@/entities/Article";
 import {
-  getArticlesOrder, getArticlesPageNumber, getArticlesSearch, getArticlesSort, getArticlesType,
-} from '@/features/FiltersOfArticle';
-import { addQueryParams } from '@/shared/lib/addQueryParams/addQueryParams';
+  getArticlesOrder,
+  getArticlesPageNumber,
+  getArticlesSearch,
+  getArticlesSort,
+  getArticlesType,
+} from "@/features/FiltersOfArticle";
+import { addQueryParams } from "@/shared/lib/addQueryParams/addQueryParams";
 
-import { getArticlesPageLimit } from '../../selectors/articles';
+import { getArticlesPageLimit } from "../../selectors/articles";
 
 interface FetchArticlesListArgs {
-  replace?: boolean
+  replace?: boolean;
 }
 
 export const fetchArticlesList = createAsyncThunk<
   Article[],
   FetchArticlesListArgs,
   ThunkOptionsConfig<string>
->('articlesPage/fetchArticlesList', async (args, thunkApi) => {
+>("articlesPage/fetchArticlesList", async (args, thunkApi) => {
   const { extra, rejectWithValue, getState } = thunkApi;
 
   const limit = getArticlesPageLimit(getState());
@@ -29,17 +33,20 @@ export const fetchArticlesList = createAsyncThunk<
 
   try {
     addQueryParams({
-      sort, order, search, type,
+      sort,
+      order,
+      search,
+      type,
     });
-    const response = await extra.api.get<Article[]>('/articles', {
+    const response = await extra.api.get<Article[]>("/articles", {
       params: {
-        _expand: 'user',
+        _expand: "user",
         _page: page,
         _limit: limit,
         _order: order,
         _sort: sort,
         q: search,
-        type_like: type === 'All' ? undefined : type,
+        type_like: type === "All" ? undefined : type,
       },
     });
     if (!response.data) {
@@ -47,6 +54,6 @@ export const fetchArticlesList = createAsyncThunk<
     }
     return response.data;
   } catch (e) {
-    return rejectWithValue('error');
+    return rejectWithValue("error");
   }
 });

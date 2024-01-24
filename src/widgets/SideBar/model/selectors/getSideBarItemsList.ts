@@ -1,28 +1,28 @@
-import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from "@reduxjs/toolkit";
 
-import { getUserAuthData } from '@/entities/User';
+import { getUserAuthData } from "@/entities/User";
 import {
   getRouteAbout,
   getRouteArticles,
   getRouteMain,
   getRouteProfile,
-} from '@/shared/const/AppRoutes';
-import { AboutIcon } from '@/shared/ui/AboutIcon';
-import { ArticleIcon, MainIcon, ProfileIcon } from '@/shared/ui/Icons';
+} from "@/shared/const/AppRoutes";
+import { AboutIcon } from "@/shared/ui/AboutIcon";
+import { ArticleIcon, MainIcon, ProfileIcon } from "@/shared/ui/Icons";
 
-import { SideBarItemType } from '../types/items';
+import { SideBarItemType } from "../types/items";
 
 export const getSideBarItemsList = createSelector(getUserAuthData, (data) => {
   const list: SideBarItemType[] = [
     {
       path: getRouteMain(),
       Icon: MainIcon,
-      text: 'Main',
+      text: "Main",
     },
     {
       path: getRouteAbout(),
       Icon: AboutIcon,
-      text: 'About',
+      text: "About",
     },
   ];
 
@@ -31,13 +31,13 @@ export const getSideBarItemsList = createSelector(getUserAuthData, (data) => {
       {
         path: getRouteArticles(),
         Icon: ArticleIcon,
-        text: 'Articles',
+        text: "Articles",
         authOnly: true,
       },
       {
         path: getRouteProfile(data.id),
         Icon: ProfileIcon,
-        text: 'Profile',
+        text: "Profile",
         authOnly: true,
       },
     );

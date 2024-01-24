@@ -18,39 +18,39 @@ export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   // The root directory that Jest should scan for tests and modules within
-  rootDir: '../../',
-  testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['\\\\node_modules\\\\'],
+  rootDir: "../../",
+  testEnvironment: "jsdom",
+  testPathIgnorePatterns: ["\\\\node_modules\\\\"],
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ['node_modules', '<rootDir>/src'],
+  moduleDirectories: ["node_modules", "<rootDir>/src"],
   // modulePaths: ["<rootDir>src"],
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
   // The glob patterns Jest uses to detect test files
-  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['<rootDir>/config/jest/beforeMocks.ts'],
+  setupFiles: ["<rootDir>/config/jest/beforeMocks.ts"],
   moduleNameMapper: {
-    '\\.(s?css|less|gif|jpg)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      path.resolve(__dirname, 'jestAssetMockFile'),
-    '^@/(.*)$': '<rootDir>/src/$1',
+    "\\.(s?css|less|gif|jpg)$": "identity-obj-proxy",
+    "\\.svg": path.resolve(__dirname, "jestEmptyComponent"),
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      path.resolve(__dirname, "jestAssetMockFile"),
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
   // A set of global variables that need to be available in all test environments
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    __PROJECT__: 'jest',
+    __PROJECT__: "jest",
   },
   reporters: [
-    'default',
+    "default",
     [
-      'jest-html-reporters',
+      "jest-html-reporters",
       {
-        publicPath: '<rootDir>/reports/unit',
-        filename: 'report.html',
+        publicPath: "<rootDir>/reports/unit",
+        filename: "report.html",
         openReport: true,
         inlineSource: true,
       },

@@ -1,19 +1,19 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from "react";
 
 export const useDeviceDetect = () => {
-  const mediaQuery = window.matchMedia('(pointer: coarse)');
+  const mediaQuery = window.matchMedia("(pointer: coarse)");
   const getIsMobile = () => mediaQuery.matches;
   const [isMobile, setIsMobile] = useState(getIsMobile);
 
   useLayoutEffect(() => {
     const handler = () => setIsMobile(getIsMobile);
 
-    mediaQuery.addEventListener('change', handler);
+    mediaQuery.addEventListener("change", handler);
 
     return () => {
-      mediaQuery.removeEventListener('change', handler);
+      mediaQuery.removeEventListener("change", handler);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return isMobile;
 };

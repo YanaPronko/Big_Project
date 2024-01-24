@@ -1,7 +1,7 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import './Loader.scss';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import "./Loader.scss";
 
 interface LoaderProps {
   /**
@@ -15,7 +15,7 @@ export const Loader = memo((props: LoaderProps) => {
 
   return (
     <div
-      className={classNames('lds-ellipsis', {}, [className])}
+      className={classNames("lds-ellipsis", {}, [className])}
       {...otherProps}
     >
       <div />

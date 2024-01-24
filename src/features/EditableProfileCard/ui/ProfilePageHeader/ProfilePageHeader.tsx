@@ -1,19 +1,19 @@
-import { useCallback } from 'react';
+import { useCallback } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button } from '@/shared/ui/Button';
-import { Text } from '@/shared/ui/Text';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button } from "@/shared/ui/Button";
+import { Text } from "@/shared/ui/Text";
 
-import { getEditStatus } from '../../model/selectors/getEditStatus/getEditStatus';
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { profileActions } from '../../model/slice/profileSlice';
+import { getEditStatus } from "../../model/selectors/getEditStatus/getEditStatus";
+import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
+import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
+import { profileActions } from "../../model/slice/profileSlice";
 
-import cls from './ProfilePageHeader.module.scss';
+import cls from "./ProfilePageHeader.module.scss";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -22,7 +22,7 @@ interface ProfilePageHeaderProps {
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   const { className } = props;
 
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation("profile");
 
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
@@ -43,7 +43,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 
   return (
     <div className={classNames(cls.profilePageHeader, {}, [className])}>
-      <Text className={cls.header} title={t('profile')} />
+      <Text className={cls.header} title={t("profile")} />
 
       {canEdit && (
         <div className={cls.headerBtn}>
@@ -54,7 +54,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
               onClick={onEdit}
               data-testid="EditableProfileCard.EditBtn"
             >
-              {t('edit')}
+              {t("edit")}
             </Button>
           ) : (
             <>
@@ -64,7 +64,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                 onClick={onCancelEdit}
                 data-testid="EditableProfileCard.CancelBtn"
               >
-                {t('cancel')}
+                {t("cancel")}
               </Button>
               <Button
                 className={cls.saveBtn}
@@ -72,7 +72,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                 onClick={onSave}
                 data-testid="EditableProfileCard.SaveBtn"
               >
-                {t('save')}
+                {t("save")}
               </Button>
             </>
           )}

@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { Overlay } from './Overlay';
+import { Overlay } from "./Overlay";
 
 const meta: Meta<typeof Overlay> = {
-  title: 'shared/Overlay',
+  title: "shared/Overlay",
   component: Overlay,
 };
 

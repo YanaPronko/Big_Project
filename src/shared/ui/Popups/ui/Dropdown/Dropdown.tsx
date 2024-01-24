@@ -1,15 +1,15 @@
-import { ReactNode, memo, Fragment } from 'react';
+import { ReactNode, memo, Fragment } from "react";
 
-import { Menu } from '@headlessui/react';
-import { nanoid } from '@reduxjs/toolkit';
+import { Menu } from "@headlessui/react";
+import { nanoid } from "@reduxjs/toolkit";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { PopupsDirection } from '../../../../types/ui';
-import { AppLink } from '../../../AppLink/AppLink';
-import popoverCls from '../../styles/popup.module.scss';
+import { PopupsDirection } from "../../../../types/ui";
+import { AppLink } from "../../../AppLink/AppLink";
+import popoverCls from "../../styles/popup.module.scss";
 
-import cls from './Dropdown.module.scss';
+import cls from "./Dropdown.module.scss";
 
 export type DropdownItem = {
   /**
@@ -51,14 +51,12 @@ interface DropdownProps {
 }
 
 export const Dropdown = memo((props: DropdownProps) => {
-  const {
-    className, items, direction = 'bottomR', trigger,
-  } = props;
+  const { className, items, direction = "bottomR", trigger } = props;
 
   return (
     <Menu
       as="div"
-      className={classNames('', {}, [className, popoverCls.popup])}
+      className={classNames("", {}, [className, popoverCls.popup])}
     >
       <Menu.Button className={popoverCls.trigger} as="div">
         {trigger}
@@ -70,11 +68,7 @@ export const Dropdown = memo((props: DropdownProps) => {
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
-              className={classNames(
-                cls.item,
-                { [cls.active]: active },
-                [],
-              )}
+              className={classNames(cls.item, { [cls.active]: active }, [])}
             >
               {item.content}
             </button>

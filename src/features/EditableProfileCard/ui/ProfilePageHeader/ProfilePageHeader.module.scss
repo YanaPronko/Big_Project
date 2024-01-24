@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: torem(10);
 }
 
 .headerBtn {
   display: flex;
-  gap: 1rem;
+  gap: torem(10);
 }

@@ -1,20 +1,20 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import cls from './Text.module.scss';
+import cls from "./Text.module.scss";
 
-export type TextTheme = 'primary' | 'error';
-export type TextAlign = 'left' | 'right' | 'center';
-export type TextSize = 'xl' | 'l' | 'm' | 's';
+export type TextTheme = "primary" | "error";
+export type TextAlign = "left" | "right" | "center";
+export type TextSize = "xl" | "l" | "m" | "s";
 
-type HeaderTagType = 'h1' | 'h2' | 'h3' | 'h4';
+type HeaderTagType = "h1" | "h2" | "h3" | "h4";
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
-  xl: 'h1',
-  l: 'h2',
-  m: 'h3',
-  s: 'h4',
+  xl: "h1",
+  l: "h2",
+  m: "h3",
+  s: "h4",
 };
 
 interface TextProps {
@@ -48,7 +48,12 @@ interface TextProps {
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, title, text, theme = 'primary', align = 'left', size = 'm',
+    className,
+    title,
+    text,
+    theme = "primary",
+    align = "left",
+    size = "m",
     ...otherProps
   } = props;
 
@@ -56,7 +61,12 @@ export const Text = memo((props: TextProps) => {
 
   return (
     <div
-      className={classNames(cls.textWrapper, {}, [className, cls[theme], cls[align], cls[size]])}
+      className={classNames(cls.textWrapper, {}, [
+        className,
+        cls[theme],
+        cls[align],
+        cls[size],
+      ])}
       {...otherProps}
     >
       {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}

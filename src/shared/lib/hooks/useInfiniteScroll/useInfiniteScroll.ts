@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import { MutableRefObject, useEffect } from "react";
 
 interface useInfiniteScrollOptions {
   callback?: () => void;
@@ -19,7 +19,7 @@ export const useInfiniteScroll = ({
     if (callback) {
       const options = {
         root: wrappElem,
-        rootMargin: '20px',
+        rootMargin: "20px",
         threshold: 1.0,
       };
 

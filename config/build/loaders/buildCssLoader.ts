@@ -27,7 +27,16 @@ export function buildCssLoader(options: BuildOptions): RuleSetRule {
         },
       },
       // Compiles Sass to CSS
-      'sass-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          additionalData: `
+          @use 'sass:math';
+          @import '@/app/styles/variables/global.scss';
+          `,
+        },
+      },
+      // 'sass-loader',
     ],
   };
 }

@@ -1,58 +1,58 @@
-import { Comment } from '@/entities/Comment';
+import { Comment } from "@/entities/Comment";
 
-import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsCommentsReducer } from '../../slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice';
-import { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
+import { fetchCommentsByArticleId } from "../../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { articleDetailsCommentsReducer } from "../../slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
+import { ArticleDetailsCommentsSchema } from "../../types/articleDetailsCommentsSchema";
 
 const entities = {
   1: {
-    id: '1',
-    text: 'some comment',
+    id: "1",
+    text: "some comment",
     user: {
-      avatar: 'https://avatars.githubusercontent.com/u/116818633',
-      id: '1',
-      username: 'admin',
+      avatar: "https://avatars.githubusercontent.com/u/116818633",
+      id: "1",
+      username: "admin",
     },
-    articleId: '1',
+    articleId: "1",
   },
   2: {
-    id: '2',
-    text: 'some comment',
+    id: "2",
+    text: "some comment",
     user: {
-      avatar: 'https://avatars.githubusercontent.com/u/116818633',
-      id: '1',
-      username: 'admin',
+      avatar: "https://avatars.githubusercontent.com/u/116818633",
+      id: "1",
+      username: "admin",
     },
-    articleId: '1',
+    articleId: "1",
   },
 };
-const ids = ['1', '2'];
+const ids = ["1", "2"];
 
 const comment: Comment[] = [
   {
-    id: '1',
-    text: 'some comment',
+    id: "1",
+    text: "some comment",
     user: {
-      avatar: 'https://avatars.githubusercontent.com/u/116818633',
-      id: '1',
-      username: 'admin',
+      avatar: "https://avatars.githubusercontent.com/u/116818633",
+      id: "1",
+      username: "admin",
     },
-    articleId: '1',
+    articleId: "1",
   },
   {
-    id: '2',
-    text: 'some comment',
+    id: "2",
+    text: "some comment",
     user: {
-      avatar: 'https://avatars.githubusercontent.com/u/116818633',
-      id: '1',
-      username: 'admin',
+      avatar: "https://avatars.githubusercontent.com/u/116818633",
+      id: "1",
+      username: "admin",
     },
-    articleId: '1',
+    articleId: "1",
   },
 ];
 
-describe('Test articleDetailsCommentsSlice', () => {
-  test('test fetchCommentsByArticleId pending', () => {
+describe("Test articleDetailsCommentsSlice", () => {
+  test("test fetchCommentsByArticleId pending", () => {
     const state: DeepPartial<ArticleDetailsCommentsSchema> = {
       isLoading: false,
       error: undefined,
@@ -67,7 +67,7 @@ describe('Test articleDetailsCommentsSlice', () => {
       error: undefined,
     });
   });
-  test('test fetchCommentsByArticleId fullfiled', () => {
+  test("test fetchCommentsByArticleId fullfiled", () => {
     const state: DeepPartial<ArticleDetailsCommentsSchema> = {
       isLoading: true,
       error: undefined,
@@ -75,7 +75,7 @@ describe('Test articleDetailsCommentsSlice', () => {
     expect(
       articleDetailsCommentsReducer(
         state as ArticleDetailsCommentsSchema,
-        fetchCommentsByArticleId.fulfilled(comment, '', ''),
+        fetchCommentsByArticleId.fulfilled(comment, "", ""),
       ),
     ).toEqual({
       isLoading: false,
@@ -84,7 +84,7 @@ describe('Test articleDetailsCommentsSlice', () => {
       ids,
     });
   });
-  test('test fetchCommentsByArticleId rejected', () => {
+  test("test fetchCommentsByArticleId rejected", () => {
     const state: DeepPartial<ArticleDetailsCommentsSchema> = {
       isLoading: true,
     };

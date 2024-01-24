@@ -1,16 +1,16 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import ArticleRating from './ArticleRating';
+import ArticleRating from "./ArticleRating";
 
 const meta: Meta<typeof ArticleRating> = {
-  title: 'features/ArticleRating',
+  title: "features/ArticleRating",
   component: ArticleRating,
   args: {
-    articleId: '2',
+    articleId: "2",
   },
   decorators: [StoreDecorator({})],
 };
@@ -24,7 +24,7 @@ export const Primary: Story = {
     mockData: [
       {
         url: `${__API__}/article-ratings?userId=1&articleId=1`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: [{ rate: 4 }],
       },
@@ -38,7 +38,7 @@ export const PrimaryDark: Story = {
     mockData: [
       {
         url: `${__API__}/article-ratings?userId=1&articleId=1`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: [{ rate: 4 }],
       },
@@ -53,7 +53,7 @@ export const WithoutRateDark: Story = {
     mockData: [
       {
         url: `${__API__}/article-ratings?userId=1&articleId=1`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: [],
       },

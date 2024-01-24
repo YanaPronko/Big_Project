@@ -1,6 +1,6 @@
 export type Country =
-  | 'Armenia'
-  | 'Belarus'
-  | 'Kazakhstan'
-  | 'Russia'
-  | 'Ukraine';
+  | "Armenia"
+  | "Belarus"
+  | "Kazakhstan"
+  | "Russia"
+  | "Ukraine";

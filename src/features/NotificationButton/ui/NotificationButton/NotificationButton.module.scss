@@ -1,6 +1,6 @@
 .notifications {
-  min-height: 15rem;
-  max-height: 30rem;
-  width: 50rem;
+  min-height: torem(15);
+  max-height: torem(30);
+  width: torem(50);
   overflow-y: auto;
 }

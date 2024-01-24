@@ -1,14 +1,17 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
-import { RatingCard } from '@/entities/Rating';
-import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text } from '@/shared/ui/Text';
+import { RatingCard } from "@/entities/Rating";
+import { getUserAuthData } from "@/entities/User";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Text } from "@/shared/ui/Text";
 
-import { useGetProfileRating, useProfileRate } from '../../api/profileRatingApi';
+import {
+  useGetProfileRating,
+  useProfileRate,
+} from "../../api/profileRatingApi";
 
 export interface ProfileRatingProps {
   className?: string;
@@ -17,13 +20,13 @@ export interface ProfileRatingProps {
 
 const ProfileRating = memo((props: ProfileRatingProps) => {
   const { className, profileId } = props;
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation("profile");
 
   const userData = useSelector(getUserAuthData);
 
   const { data, isLoading } = useGetProfileRating({
     profileId,
-    userId: userData?.id ?? '',
+    userId: userData?.id ?? "",
   });
   const [rateProfile, { error }] = useProfileRate();
 
@@ -31,7 +34,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     (starsCount: number, feedback?: string) => {
       rateProfile({
         profileId,
-        userId: userData?.id ?? '',
+        userId: userData?.id ?? "",
         rate: starsCount,
         feedback,
       });
@@ -39,9 +42,12 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     [profileId, rateProfile, userData?.id],
   );
 
-  const onCancel = useCallback((starsCount: number) => {
-    handleRateArticle(starsCount);
-  }, [handleRateArticle]);
+  const onCancel = useCallback(
+    (starsCount: number) => {
+      handleRateArticle(starsCount);
+    },
+    [handleRateArticle],
+  );
 
   const onAccept = useCallback(
     (starsCount: number, feedback?: string) => {
@@ -58,7 +64,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     return (
       <Text
         theme="error"
-        text={t('oops-failed-rate-of-profile')}
+        text={t("oops-failed-rate-of-profile")}
         align="center"
         size="l"
       />
@@ -69,8 +75,8 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
   return (
     <RatingCard
       className={className}
-      title={t('rate-the-profile')}
-      feedbackTitle={t('leave-your-feedback-about-this-profle')}
+      title={t("rate-the-profile")}
+      feedbackTitle={t("leave-your-feedback-about-this-profle")}
       rate={rating}
       onCancel={onCancel}
       onAccept={onAccept}

@@ -1,17 +1,15 @@
-import {
-  FC, ReactNode, useCallback,
-} from 'react';
+import { FC, ReactNode, useCallback } from "react";
 
-import { Transition } from 'react-transition-group';
+import { Transition } from "react-transition-group";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useKeyDown } from '@/shared/lib/hooks/useKeyDown/useKeyDown';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useKeyDown } from "@/shared/lib/hooks/useKeyDown/useKeyDown";
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
-import { Overlay } from '../Overlay/Overlay';
-import { Portal } from '../Portal/Portal';
+import { Overlay } from "../Overlay/Overlay";
+import { Portal } from "../Portal/Portal";
 
-import cls from './Modal.module.scss';
+import cls from "./Modal.module.scss";
 
 interface ModalProps {
   /**
@@ -33,12 +31,7 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-  const {
-    children,
-    className,
-    isOpen,
-    onClose,
-  } = props;
+  const { children, className, isOpen, onClose } = props;
 
   const { theme } = useTheme();
 
@@ -60,13 +53,14 @@ export const Modal: FC<ModalProps> = (props) => {
     >
       {(state) => (
         <Portal>
-          <div className={classNames(cls.popup, { [cls[state]]: true }, [className, theme])}>
+          <div
+            className={classNames(cls.popup, { [cls[state]]: true }, [
+              className,
+              theme,
+            ])}
+          >
             <Overlay onClose={closeHandler} />
-            <div
-              className={classNames(cls.content)}
-            >
-              {children}
-            </div>
+            <div className={classNames(cls.content)}>{children}</div>
           </div>
         </Portal>
       )}

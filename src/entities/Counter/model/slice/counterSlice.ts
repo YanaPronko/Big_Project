@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import { CounterSchema } from '../types/CounterSchema';
+import { CounterSchema } from "../types/CounterSchema";
 
 const initialState: CounterSchema = {
   value: 0,
 };
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState,
   reducers: {
     incr: (state) => {
@@ -19,5 +19,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { actions: { incr, decr } } = counterSlice;
+export const {
+  actions: { incr, decr },
+} = counterSlice;
 export const { reducer: counterReducer } = counterSlice;

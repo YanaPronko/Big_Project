@@ -1,19 +1,19 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
-import { getUserAuthData } from '@/entities/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
+import { getUserAuthData } from "@/entities/User";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLink } from "@/shared/ui/AppLink";
 
-import { SideBarItemType } from '../../model/types/items';
+import { SideBarItemType } from "../../model/types/items";
 
-import cls from './SideBarItem.module.scss';
+import cls from "./SideBarItem.module.scss";
 
 interface SideBarItemProps {
-  item: SideBarItemType,
-  collappsed: boolean,
+  item: SideBarItemType;
+  collappsed: boolean;
 }
 
 export const SideBarItem = memo(({ item, collappsed }: SideBarItemProps) => {
@@ -26,7 +26,7 @@ export const SideBarItem = memo(({ item, collappsed }: SideBarItemProps) => {
 
   return (
     <AppLink
-      className={classNames('', { [cls.collappsed]: collappsed }, [])}
+      className={classNames("", { [cls.collappsed]: collappsed }, [])}
       to={item.path}
       theme="inverted"
       size="l"

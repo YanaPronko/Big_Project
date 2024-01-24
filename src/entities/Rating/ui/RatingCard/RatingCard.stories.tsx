@@ -1,18 +1,18 @@
-import { action } from '@storybook/addon-actions';
-import { Meta, StoryObj } from '@storybook/react';
+import { action } from "@storybook/addon-actions";
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { RatingCard } from './RatingCard';
+import { RatingCard } from "./RatingCard";
 
 const meta: Meta<typeof RatingCard> = {
-  title: 'entities/Rating/RatingCard',
+  title: "entities/Rating/RatingCard",
   component: RatingCard,
   args: {
-    title: 'Article Rating',
-    onAccept: action('onAccept'),
-    onCancel: action('onCancel'),
+    title: "Article Rating",
+    onAccept: action("onAccept"),
+    onCancel: action("onCancel"),
   },
 };
 
@@ -31,6 +31,6 @@ PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithFeedback: Story = {
   args: {
-    feedbackTitle: 'Feedback',
+    feedbackTitle: "Feedback",
   },
 };

@@ -1,10 +1,10 @@
-import { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, useMemo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { typedMemo } from '../../const/typedMemo';
+import { typedMemo } from "../../const/typedMemo";
 
-import cls from './Select.module.scss';
+import cls from "./Select.module.scss";
 
 export interface SelectOption<T extends string> {
   /**
@@ -46,15 +46,22 @@ interface SelectProps<T extends string> {
 
 export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   const {
-    className, label, options, value, readonly, onChange, ...otherProps
+    className,
+    label,
+    options,
+    value,
+    readonly,
+    onChange,
+    ...otherProps
   } = props;
 
   const optionsList = useMemo(
-    () => options.map((opt) => (
-      <option className={cls.option} value={opt.value} key={opt.value}>
-        {opt.content}
-      </option>
-    )),
+    () =>
+      options.map((opt) => (
+        <option className={cls.option} value={opt.value} key={opt.value}>
+          {opt.content}
+        </option>
+      )),
     [options],
   );
 
@@ -69,10 +76,7 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   return (
     <div className={classNames(cls.wrapper, {}, [className])}>
       {label && (
-        <label
-          htmlFor="select"
-          className={classNames('', mods, [])}
-        >
+        <label htmlFor="select" className={classNames("", mods, [])}>
           {`${label}>`}
         </label>
       )}

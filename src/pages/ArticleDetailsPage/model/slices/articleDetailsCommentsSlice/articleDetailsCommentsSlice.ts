@@ -1,10 +1,14 @@
-import { PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import {
+  PayloadAction,
+  createEntityAdapter,
+  createSlice,
+} from "@reduxjs/toolkit";
 
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { Comment } from '@/entities/Comment';
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { Comment } from "@/entities/Comment";
 
-import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
+import { fetchCommentsByArticleId } from "../../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { ArticleDetailsCommentsSchema } from "../../types/articleDetailsCommentsSchema";
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
@@ -15,7 +19,7 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
 );
 
 export const articleDetailsCommentsSlice = createSlice({
-  name: 'articleDetailsComments',
+  name: "articleDetailsComments",
   initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
     isLoading: false,
     error: undefined,
@@ -29,10 +33,13 @@ export const articleDetailsCommentsSlice = createSlice({
         state.error = undefined;
         state.isLoading = true;
       })
-      .addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<Comment[]>) => {
-        state.isLoading = false;
-        commentsAdapter.setAll(state, action.payload);
-      })
+      .addCase(
+        fetchCommentsByArticleId.fulfilled,
+        (state, action: PayloadAction<Comment[]>) => {
+          state.isLoading = false;
+          commentsAdapter.setAll(state, action.payload);
+        },
+      )
       .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
@@ -40,4 +47,5 @@ export const articleDetailsCommentsSlice = createSlice({
   },
 });
 
-export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;
+export const { reducer: articleDetailsCommentsReducer } =
+  articleDetailsCommentsSlice;

@@ -1,12 +1,12 @@
-import { AboutPage } from '@/pages/AboutPage';
-import { AdminPanelPage } from '@/pages/AdminPanelPage';
-import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
-import { ArticleEditPage } from '@/pages/ArticleEditPage';
-import { ArticleListPage } from '@/pages/ArticleListPages';
-import { ForbiddenPage } from '@/pages/ForbiddenPage';
-import { MainPage } from '@/pages/MainPage';
-import { NotFoundPage } from '@/pages/NotFoundPage';
-import { ProfilePage } from '@/pages/ProfilePage';
+import { AboutPage } from "@/pages/AboutPage";
+import { AdminPanelPage } from "@/pages/AdminPanelPage";
+import { ArticleDetailsPage } from "@/pages/ArticleDetailsPage";
+import { ArticleEditPage } from "@/pages/ArticleEditPage";
+import { ArticleListPage } from "@/pages/ArticleListPages";
+import { ForbiddenPage } from "@/pages/ForbiddenPage";
+import { MainPage } from "@/pages/MainPage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
+import { ProfilePage } from "@/pages/ProfilePage";
 import {
   AppRoutes,
   getRouteAbout,
@@ -18,9 +18,9 @@ import {
   getRouteForbidden,
   getRouteMain,
   getRouteProfile,
-} from '@/shared/const/AppRoutes';
+} from "@/shared/const/AppRoutes";
 
-import { AppRoutesProps } from '../../shared/types/appRoutesPropsType';
+import { AppRoutesProps } from "../../shared/types/appRoutesPropsType";
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
@@ -32,7 +32,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: getRouteProfile(':id'),
+    path: getRouteProfile(":id"),
     element: <ProfilePage />,
     authOnly: true,
   },
@@ -42,7 +42,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     authOnly: true,
   },
   [AppRoutes.ARTICLE_DETAILS]: {
-    path: getRouteArticleDetails(':id'),
+    path: getRouteArticleDetails(":id"),
     element: <ArticleDetailsPage />,
     authOnly: true,
   },
@@ -52,7 +52,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     authOnly: true,
   },
   [AppRoutes.ARTICLE_EDIT]: {
-    path: getRouteArticleEdit(':id'),
+    path: getRouteArticleEdit(":id"),
     element: <ArticleEditPage />,
     authOnly: true,
   },
@@ -60,7 +60,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteAdmin(),
     element: <AdminPanelPage />,
     authOnly: true,
-    roles: ['ADMIN', 'MANAGER'],
+    roles: ["ADMIN", "MANAGER"],
   },
   [AppRoutes.FORBIDDEN_PAGE]: {
     path: getRouteForbidden(),
@@ -68,7 +68,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     authOnly: true,
   },
   [AppRoutes.NOT_FOUND]: {
-    path: '*',
+    path: "*",
     element: <NotFoundPage />,
   },
 };

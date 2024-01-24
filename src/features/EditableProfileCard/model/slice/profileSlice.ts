@@ -1,10 +1,10 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { Profile } from '@/entities/Profile';
+import { Profile } from "@/entities/Profile";
 
-import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
-import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema } from '../types/profileSchema';
+import { fetchProfileData } from "../services/fetchProfileData/fetchProfileData";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
+import { ProfileSchema } from "../types/profileSchema";
 
 const initialState: ProfileSchema = {
   isLoading: false,
@@ -14,7 +14,7 @@ const initialState: ProfileSchema = {
 };
 
 export const profileSlice = createSlice({
-  name: 'profile',
+  name: "profile",
   initialState,
   reducers: {
     setReadonly: (state, action: PayloadAction<boolean>) => {

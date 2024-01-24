@@ -1,16 +1,16 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import { getRouteProfile } from '@/shared/const/AppRoutes';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
+import { getRouteProfile } from "@/shared/const/AppRoutes";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLink } from "@/shared/ui/AppLink";
+import { Avatar } from "@/shared/ui/Avatar";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { VStack } from "@/shared/ui/Stack";
+import { Text } from "@/shared/ui/Text";
 
-import { Comment } from '../../model/types/comment';
+import { Comment } from "../../model/types/comment";
 
-import cls from './CommentCard.module.scss';
+import cls from "./CommentCard.module.scss";
 
 interface CommentCardProps {
   className?: string;
@@ -19,13 +19,12 @@ interface CommentCardProps {
 }
 
 export const CommentCard: FC<CommentCardProps> = (props) => {
-  const {
-    className, comment, isLoading, ...otherProps
-  } = props;
+  const { className, comment, isLoading, ...otherProps } = props;
 
   if (isLoading) {
     return (
       <VStack
+        data-testid="CommentCard.Loading"
         max
         gap="4"
         align="start"
@@ -41,6 +40,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
 
   return (
     <VStack
+      data-testid="CommentCard.Content"
       gap="4"
       max
       align="start"
@@ -48,10 +48,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
       className={classNames(cls.commentCard, {}, [className])}
       {...otherProps}
     >
-      <AppLink
-        to={getRouteProfile(comment.user.id)}
-        className={cls.header}
-      >
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar && (
           <Avatar src={comment.user.avatar} size={30} alt="user's avatar" />
         )}

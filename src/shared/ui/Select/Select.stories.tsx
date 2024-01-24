@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { Select } from './Select';
+import { Select } from "./Select";
 
 const meta: Meta<typeof Select> = {
-  title: 'shared/Select',
+  title: "shared/Select",
   component: Select,
 };
 
@@ -15,17 +15,20 @@ type Story = StoryObj<typeof Select>;
 
 export const Primary: Story = {
   args: {
-    label: 'Выберите валюту',
-    options: [{ value: '1', content: 'EUR' }, { value: '2', content: 'USD' }],
+    label: "Выберите валюту",
+    options: [
+      { value: "1", content: "EUR" },
+      { value: "2", content: "USD" },
+    ],
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    label: 'Выберите валюту',
+    label: "Выберите валюту",
     options: [
-      { value: '1', content: 'EUR' },
-      { value: '2', content: 'USD' },
+      { value: "1", content: "EUR" },
+      { value: "2", content: "USD" },
     ],
   },
 };

@@ -1,4 +1,4 @@
-import CircularDependencyPlugin from 'circular-dependency-plugin';
+// import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -38,12 +38,12 @@ export function buildPlugins({
       },
     }),
   ];
-  if (isDev) {
-    plugins.push(new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }));
-  }
+  // if (isDev) {
+  //   plugins.push(new CircularDependencyPlugin({
+  //     exclude: /node_modules/,
+  //     failOnError: truncate,
+  //   }));
+  // }
 
   if (!isDev) {
     plugins.push(

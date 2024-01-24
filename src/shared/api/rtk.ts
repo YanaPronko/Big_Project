@@ -1,17 +1,17 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { USER_LOCALSTORAGE_KEY } from '../const/localStorage';
+import { USER_LOCALSTORAGE_KEY } from "../const/localStorage";
 
 // initialize an empty api service that we'll inject endpoints into later as needed
 export const rtkApi = createApi({
-  reducerPath: 'rtkApi',
+  reducerPath: "rtkApi",
   baseQuery: fetchBaseQuery({
     baseUrl: __API__,
     prepareHeaders: (headers) => {
-      const token = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
+      const token = localStorage.getItem(USER_LOCALSTORAGE_KEY) || "";
 
       if (token) {
-        headers.set('Authorization', token);
+        headers.set("Authorization", token);
       }
       return headers;
     },

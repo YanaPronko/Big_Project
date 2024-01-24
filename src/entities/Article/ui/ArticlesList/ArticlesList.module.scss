@@ -1,11 +1,11 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: torem(20);
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: torem(15);
 }

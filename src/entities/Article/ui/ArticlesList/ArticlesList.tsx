@@ -1,14 +1,14 @@
-import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from "react";
 
-import { nanoid } from '@reduxjs/toolkit';
+import { nanoid } from "@reduxjs/toolkit";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Article, ArticleView } from '../../model/types/article';
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Article, ArticleView } from "../../model/types/article";
+import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 
-import cls from './ArticlesList.module.scss';
+import cls from "./ArticlesList.module.scss";
 
 interface ArticlesListProps {
   className?: string;
@@ -18,20 +18,32 @@ interface ArticlesListProps {
   target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === 'grid' ? 9 : 3)
-  .fill(0)
-  .map((_) => <ArticleListItemSkeleton key={nanoid()} view={view} />);
+const getSkeletons = (view: ArticleView) =>
+  new Array(view === "grid" ? 9 : 3)
+    .fill(0)
+    .map((_) => <ArticleListItemSkeleton key={nanoid()} view={view} />);
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
-  const {
-    className, articles, isLoading, view = 'grid', target,
-  } = props;
+  const { className, articles, isLoading, view = "grid", target } = props;
 
-  const renderArticles = useCallback((article: Article) => (
-    <ArticleListItem key={nanoid()} article={article} view={view} target={target} />), [view, target]);
+  const renderArticles = useCallback(
+    (article: Article) => (
+      <ArticleListItem
+        key={nanoid()}
+        article={article}
+        view={view}
+        target={target}
+      />
+    ),
+    [view, target],
+  );
 
   return (
-    <div role="list" className={classNames('', {}, [className, cls[view]])}>
+    <div
+      data-testid="ArticleList"
+      role="list"
+      className={classNames("", {}, [className, cls[view]])}
+    >
       {articles.map(renderArticles)}
       {isLoading && getSkeletons(view)}
     </div>

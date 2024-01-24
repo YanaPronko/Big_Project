@@ -1,22 +1,22 @@
-import { action } from '@storybook/addon-actions';
-import { Meta, StoryObj } from '@storybook/react';
+import { action } from "@storybook/addon-actions";
+import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import { ListBox } from './ListBox';
+import { ListBox } from "./ListBox";
 
 const meta: Meta<typeof ListBox> = {
-  title: 'shared/Popups/ListBox',
+  title: "shared/Popups/ListBox",
   component: ListBox,
   args: {
     items: [
-      { value: '1', content: 'BYN' },
-      { value: '2', content: 'UAN' },
-      { value: '3', content: 'RUB' },
+      { value: "1", content: "BYN" },
+      { value: "2", content: "UAN" },
+      { value: "3", content: "RUB" },
     ],
-    label: 'Choose currency>',
-    onChange: action('onChange'),
+    label: "Choose currency>",
+    onChange: action("onChange"),
   },
 };
 
@@ -25,13 +25,13 @@ type Story = StoryObj<typeof ListBox>;
 
 export const Primary: Story = {
   args: {
-    defaultVal: 'BYN',
+    defaultVal: "BYN",
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    defaultVal: 'BYN',
+    defaultVal: "BYN",
   },
 };
 
@@ -39,28 +39,28 @@ PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Selected: Story = {
   args: {
-    defaultVal: 'BYN',
-    selectedVal: 'UAN',
+    defaultVal: "BYN",
+    selectedVal: "UAN",
   },
 };
 
 export const Readonly: Story = {
   args: {
-    defaultVal: 'BYN',
-    selectedVal: 'UAN',
+    defaultVal: "BYN",
+    selectedVal: "UAN",
     readonly: true,
   },
 };
 
 export const TopDirection: Story = {
   args: {
-    defaultVal: 'BYN',
-    selectedVal: 'UAN',
-    direction: 'topR',
+    defaultVal: "BYN",
+    selectedVal: "UAN",
+    direction: "topR",
   },
   decorators: [
     (Story) => (
-      <div style={{ padding: '12rem' }}>
+      <div style={{ padding: "12rem" }}>
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
       </div>

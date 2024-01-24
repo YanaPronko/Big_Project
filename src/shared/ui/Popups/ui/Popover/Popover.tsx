@@ -1,13 +1,13 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import { Popover as HPopover } from '@headlessui/react';
+import { Popover as HPopover } from "@headlessui/react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { PopupsDirection } from '../../../../types/ui';
-import popoverCls from '../../styles/popup.module.scss';
+import { PopupsDirection } from "../../../../types/ui";
+import popoverCls from "../../styles/popup.module.scss";
 
-import cls from './Popover.module.scss';
+import cls from "./Popover.module.scss";
 
 interface PopoverProps {
   /**
@@ -30,9 +30,7 @@ interface PopoverProps {
 }
 
 export const Popover = (props: PopoverProps) => {
-  const {
-    className, children, direction = 'bottomR', trigger,
-  } = props;
+  const { className, children, direction = "bottomR", trigger } = props;
 
   return (
     <HPopover

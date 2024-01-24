@@ -1,16 +1,18 @@
-import { Decorator } from '@storybook/react';
+import { Decorator } from "@storybook/react";
 
 // eslint-disable-next-line path-checker-pryweb/layers-import
-import { ThemeProvider } from '@/app/providers/Theme';
-import { Theme } from '@/shared/const/theme';
+import { ThemeProvider } from "@/app/providers/Theme";
+import { Theme } from "@/shared/const/theme";
 
-const ThemeDecorator = (theme: Theme): Decorator => (Story) => (
-  <ThemeProvider initialTheme={theme}>
-    <div className={`app ${theme}`}>
-      <Story />
-    </div>
-  </ThemeProvider>
-);
+const ThemeDecorator =
+  (theme: Theme): Decorator =>
+  (Story) => (
+    <ThemeProvider initialTheme={theme}>
+      <div className={`app ${theme}`}>
+        <Story />
+      </div>
+    </ThemeProvider>
+  );
 
 export default ThemeDecorator;
 

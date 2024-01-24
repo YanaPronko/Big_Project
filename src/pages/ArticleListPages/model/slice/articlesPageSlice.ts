@@ -2,13 +2,13 @@ import {
   PayloadAction,
   createEntityAdapter,
   createSlice,
-} from '@reduxjs/toolkit';
+} from "@reduxjs/toolkit";
 
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { Article, ArticleView } from '@/entities/Article';
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { Article, ArticleView } from "@/entities/Article";
 
-import { ArticlesPageSchema } from '../../model/types/articlesPageSchema';
-import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { ArticlesPageSchema } from "../../model/types/articlesPageSchema";
+import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
@@ -21,7 +21,7 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
 export const initialState: ArticlesPageSchema = {
   isLoading: false,
   error: undefined,
-  view: 'grid',
+  view: "grid",
   limit: 9,
   hasMore: true,
   _inited: false,
@@ -30,7 +30,7 @@ export const initialState: ArticlesPageSchema = {
 };
 
 export const articlesPageSlice = createSlice({
-  name: 'articlesPage',
+  name: "articlesPage",
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     ...initialState,
   }),
@@ -54,18 +54,15 @@ export const articlesPageSlice = createSlice({
           articlesAdapter.removeAll(state);
         }
       })
-      .addCase(
-        fetchArticlesList.fulfilled,
-        (state, action) => {
-          state.isLoading = false;
-          state.hasMore = action.payload.length >= state.limit;
-          if (action.meta.arg.replace) {
-            articlesAdapter.setAll(state, action.payload);
-          } else {
-            articlesAdapter.addMany(state, action.payload);
-          }
-        },
-      )
+      .addCase(fetchArticlesList.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.hasMore = action.payload.length >= state.limit;
+        if (action.meta.arg.replace) {
+          articlesAdapter.setAll(state, action.payload);
+        } else {
+          articlesAdapter.addMany(state, action.payload);
+        }
+      })
       .addCase(fetchArticlesList.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;

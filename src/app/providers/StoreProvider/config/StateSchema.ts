@@ -1,19 +1,22 @@
 import {
-  Action, EnhancedStore, Reducer, ReducersMapObject,
-} from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
+  Action,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
+} from "@reduxjs/toolkit";
+import { AxiosInstance } from "axios";
 
-import { ArticleDetailsSchema } from '@/entities/Article';
-import { CounterSchema } from '@/entities/Counter';
-import { UserSchema } from '@/entities/User';
-import { LoginSchema } from '@/features/AuthByUserName';
-import { AddCommentFormSchema } from '@/features/CommentForm';
-import { ProfileSchema } from '@/features/EditableProfileCard';
-import { ArticlesFiltersSchema } from '@/features/FiltersOfArticle';
-import { UISchema } from '@/features/UI';
-import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
-import { ArticlesPageSchema } from '@/pages/ArticleListPages';
-import { rtkApi } from '@/shared/api/rtk';
+import { ArticleDetailsSchema } from "@/entities/Article";
+import { CounterSchema } from "@/entities/Counter";
+import { UserSchema } from "@/entities/User";
+import { LoginSchema } from "@/features/AuthByUserName";
+import { AddCommentFormSchema } from "@/features/CommentForm";
+import { ProfileSchema } from "@/features/EditableProfileCard";
+import { ArticlesFiltersSchema } from "@/features/FiltersOfArticle";
+import { UISchema } from "@/features/UI";
+import { ArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage";
+import { ArticlesPageSchema } from "@/pages/ArticleListPages";
+import { rtkApi } from "@/shared/api/rtk";
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -49,7 +52,7 @@ export interface ThunkExtraArg {
 }
 
 export interface ThunkOptionsConfig<T> {
-  rejectValue: T,
-  extra: ThunkExtraArg,
-  state: StateSchema,
+  rejectValue: T;
+  extra: ThunkExtraArg;
+  state: StateSchema;
 }

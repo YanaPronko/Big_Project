@@ -1,7 +1,7 @@
 .recommendations {
   display: flex;
   flex-wrap: nowrap;
-  gap: 2rem;
+  gap: torem(20);
   overflow-y: hidden;
   overflow-x: auto;
 }

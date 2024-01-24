@@ -1,14 +1,14 @@
-import { action } from '@storybook/addon-actions';
-import { Meta, StoryObj } from '@storybook/react';
+import { action } from "@storybook/addon-actions";
+import { Meta, StoryObj } from "@storybook/react";
 
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
 
-import AddCommentForm from './AddCommentForm';
+import AddCommentForm from "./AddCommentForm";
 
 const meta: Meta<typeof AddCommentForm> = {
-  title: 'features/addCommentForm',
+  title: "features/addCommentForm",
   component: AddCommentForm,
 };
 
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof AddCommentForm>;
 
 export const Primary: Story = {
   args: {
-    onSendComment: action('onSendComment'),
+    onSendComment: action("onSendComment"),
   },
 };
 
@@ -25,7 +25,7 @@ Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark: Story = {
   args: {
-    onSendComment: action('onSendComment'),
+    onSendComment: action("onSendComment"),
   },
 };
 

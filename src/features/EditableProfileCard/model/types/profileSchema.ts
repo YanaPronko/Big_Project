@@ -1,11 +1,11 @@
-import { Profile } from '@/entities/Profile';
+import { Profile } from "@/entities/Profile";
 
 export type ValidateProfileErrors =
-  | 'incorrect user data'
-  | 'incorrect age'
-  | 'incorrect country'
-  | 'server error'
-  | 'no data';
+  | "incorrect user data"
+  | "incorrect age"
+  | "incorrect country"
+  | "server error"
+  | "no data";
 
 export interface ProfileSchema {
   data?: Profile;

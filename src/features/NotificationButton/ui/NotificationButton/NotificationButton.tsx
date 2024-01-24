@@ -1,14 +1,14 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from "react";
 
-import { NotificationList } from '@/entities/Notification';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useDeviceDetect } from '@/shared/lib/hooks/useDeviceDetect/useDeviceDetect';
-import { Button } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { NotificationIcon } from '@/shared/ui/Icons';
-import { Popover } from '@/shared/ui/Popups';
+import { NotificationList } from "@/entities/Notification";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useDeviceDetect } from "@/shared/lib/hooks/useDeviceDetect/useDeviceDetect";
+import { Button } from "@/shared/ui/Button";
+import { Drawer } from "@/shared/ui/Drawer";
+import { NotificationIcon } from "@/shared/ui/Icons";
+import { Popover } from "@/shared/ui/Popups";
 
-import cls from './NotificationButton.module.scss';
+import cls from "./NotificationButton.module.scss";
 
 interface NotificationButtonProps {
   className?: string;
@@ -48,7 +48,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     <Popover
       trigger={trigger}
       direction="bottomL"
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
     >
       <NotificationList className={cls.notifications} />
     </Popover>

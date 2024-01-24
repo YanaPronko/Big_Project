@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from "@storybook/react";
 
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
-import LoginForm from './LoginForm';
+import LoginForm from "./LoginForm";
 
 const meta: Meta<typeof LoginForm> = {
-  title: 'features/LoginForm',
+  title: "features/LoginForm",
   component: LoginForm,
 };
 
@@ -25,7 +25,7 @@ export const WithError: Story = {
 WithError.decorators = [
   StoreDecorator({
     loginForm: {
-      error: 'Invalid password or login',
+      error: "Invalid password or login",
       isLoading: false,
     },
   }),
@@ -35,6 +35,4 @@ export const Loading: Story = {
   args: {},
 };
 
-Loading.decorators = [
-  StoreDecorator({ loginForm: { isLoading: true } }),
-];
+Loading.decorators = [StoreDecorator({ loginForm: { isLoading: true } })];

@@ -1,6 +1,6 @@
 .code {
   position: relative;
-  padding: 2rem;
+  padding: torem(20);
   border: 1px solid var(--primary-color);
   background: var(--code-bg);
   overflow: auto;
@@ -8,6 +8,6 @@
 
 .copyBtn {
   position: absolute;
-  right: 2rem;
-  top: 2rem;
+  right: torem(20);
+  top: torem(20);
 }

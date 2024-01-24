@@ -1,5 +1,6 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from "@/app/providers/StoreProvider";
 
-import { initialState } from '../../slice/loginSlice';
+import { initialState } from "../../slice/loginSlice";
 
-export const getLoginState = (state: StateSchema) => state?.loginForm || initialState;
+export const getLoginState = (state: StateSchema) =>
+  state?.loginForm || initialState;

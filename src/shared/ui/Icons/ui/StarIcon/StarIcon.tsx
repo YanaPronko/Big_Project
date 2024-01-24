@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { memo } from 'react';
+import { memo } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { IconProps } from '@/shared/types/ui';
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { IconProps } from "@/shared/types/ui";
 
-import cls from './StarIcon.module.scss';
+import cls from "./StarIcon.module.scss";
 
 /**
  * @description
@@ -21,7 +21,9 @@ export const StarIcon = memo((props: IconProps) => {
       viewBox="0 0 24 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={classNames(inverted ? cls.inverted : cls.icon, {}, [className])}
+      className={classNames(inverted ? cls.inverted : cls.icon, {}, [
+        className,
+      ])}
       {...otherProps}
     >
       <path
