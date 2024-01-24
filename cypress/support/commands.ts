@@ -1,7 +1,7 @@
-import type {} from 'cypress';
+/// <reference types="cypress" />
 // -- This is a parent command --
-// eslint-disable-next-line no-undef
-// Cypress.Commands.add('login', (email, password) => { });
+
+Cypress.Commands.add('login', (email, password) => { });
 
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
@@ -15,7 +15,7 @@ import type {} from 'cypress';
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(email: string, password: string): Chainable<void>
+      login(email: string, password: string): Chainable<void>;
       // drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       // dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       // visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
@@ -23,4 +23,4 @@ declare global {
   }
 }
 
-export { };
+export {};
