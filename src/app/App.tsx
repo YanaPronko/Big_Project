@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react";
 
 import { useSelector } from "react-redux";
 
-import { getUserInited, userActions } from "@/entities/User";
+import { getUserInited, User, userActions } from "@/entities/User";
 import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -14,6 +14,7 @@ import { ErrorBoundary } from "./providers/ErrorBoundary";
 import { AppRouter } from "./providers/Router";
 import "@/shared/config/i18n/i18n";
 import "./styles/index.scss";
+import { setFeatureFlags } from "@/shared/lib/featureFlags";
 
 export const App = () => {
   const { theme } = useTheme();
@@ -25,7 +26,9 @@ export const App = () => {
     const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
     if (user) {
-      dispatch(setAuthData(JSON.parse(user)));
+      const parcedUser = JSON.parse(user) as User;
+      dispatch(setAuthData(parcedUser));
+      setFeatureFlags(parcedUser.featureFlags);
     }
     dispatch(setInited(true));
   }, [dispatch, setAuthData, setInited]);

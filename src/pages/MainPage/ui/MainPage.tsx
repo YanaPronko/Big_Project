@@ -6,16 +6,20 @@ import { useTranslation } from "react-i18next";
 import { BugButton } from "@/app/providers/ErrorBoundary";
 import { CounterBtn } from "@/features/CounterBtn";
 import { Page } from "@/widgets/Page";
+import { getFeatureFlags } from "@/shared/lib/featureFlags";
 
 const MainPage = memo(() => {
   const { t } = useTranslation("main");
   const [messages, setMessages] = useState(0);
+  const isCounterEnabled = getFeatureFlags('isCounterEnabled');
 
   return (
     <Page data-testid="MainPage">
       <h1>{t("main-page")}</h1>
       <h2>{t("you-have", { count: messages })}</h2>
-      <CounterBtn setMessages={() => setMessages(messages + 1)} />
+      {isCounterEnabled && (
+        <CounterBtn setMessages={() => setMessages(messages + 1)} />
+      )}
       <BugButton />
     </Page>
   );
