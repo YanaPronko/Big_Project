@@ -33,6 +33,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   const { setAuthData } = userActions;
 
   const onLogOut = useCallback(() => {
+    console.log("LogOUT");
     localStorage.removeItem(USER_LOCALSTORAGE_KEY);
     dispatch(setAuthData(undefined));
   }, [dispatch, setAuthData]);
