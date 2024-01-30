@@ -23,5 +23,11 @@
   "create-new-article": "Create new article",
   "failed-loading-of-recommendations": "Failed loading of recommendations",
   "rate-the-article": "Rate the article",
-  "oops-failed-rate-of-article": "Oops! Failed rate of article!"
+  "oops-failed-rate-of-article": "Oops! Failed rate of article!",
+  "welcome-to-the-articles-page-you-can-search-and-view-articles": "Welcome to the articles page! You can search and view articles.",
+  "welcome": "Welcome",
+  "hello": "HELLO",
+  "IT": "IT",
+  "Science": "Science",
+  "Economics": "Economics"
 }

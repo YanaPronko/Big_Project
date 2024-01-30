@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
 import { ArticleView } from "@/entities/Article";
+import { ArticlePageGreeting } from "@/features/ArticlePageGreeting";
 import { ArticlesViewSelector } from "@/features/ArticlesViewSelector";
 import {
   ArticlesFilters,
@@ -79,6 +80,7 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
         <ArticlesViewSelector view={view} onViewClick={onChangeView} />
       </HStack>
       <ArticleInfiniteList isLoading={isLoading} view={view} />
+      <ArticlePageGreeting />
     </Page>
   );
 };

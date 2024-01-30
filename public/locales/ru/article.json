@@ -23,5 +23,11 @@
   "create-new-article": "Создать новую статью",
   "failed-loading-of-recommendations": "Ошибка при загрузке рекоммендаций",
   "rate-the-article": "Оцените статью",
-  "oops-failed-rate-of-article": "Упс! \nНе удалось оценить статью!"
+  "oops-failed-rate-of-article": "Упс! \nНе удалось оценить статью!",
+  "welcome-to-the-articles-page-you-can-search-and-view-articles": "Добро пожаловать на страницу статей! \nВы можете искать и просматривать статьи.",
+  "welcome": "Добро пожаловать",
+  "hello": "ПРИВЕТ",
+  "IT": "IT",
+  "Science": "Наука",
+  "Economics": "Экономика"
 }
