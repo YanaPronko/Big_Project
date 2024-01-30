@@ -14,6 +14,7 @@ import {
 import { ArticleRating } from "@/features/ArticleRating";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { getFeatureFlags } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
   ReducersList,
@@ -27,7 +28,6 @@ import { Page } from "@/widgets/Page";
 import { articleDetailsCommentsReducer } from "../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { getFeatureFlags } from "@/shared/lib/featureFlags";
 
 interface ArticleDetailsPageProps {
   className?: string;

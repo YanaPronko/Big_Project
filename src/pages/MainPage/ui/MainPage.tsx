@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next";
 // eslint-disable-next-line path-checker-pryweb/layers-import
 import { BugButton } from "@/app/providers/ErrorBoundary";
 import { CounterBtn } from "@/features/CounterBtn";
-import { Page } from "@/widgets/Page";
 import { getFeatureFlags } from "@/shared/lib/featureFlags";
+import { Page } from "@/widgets/Page";
 
 const MainPage = memo(() => {
   const { t } = useTranslation("main");
   const [messages, setMessages] = useState(0);
-  const isCounterEnabled = getFeatureFlags('isCounterEnabled');
+  const isCounterEnabled = getFeatureFlags("isCounterEnabled");
 
   return (
     <Page data-testid="MainPage">

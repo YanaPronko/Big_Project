@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { getUserInited, User, userActions } from "@/entities/User";
 import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { setFeatureFlags } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { NavBar } from "@/widgets/NavBar";
@@ -14,7 +15,6 @@ import { ErrorBoundary } from "./providers/ErrorBoundary";
 import { AppRouter } from "./providers/Router";
 import "@/shared/config/i18n/i18n";
 import "./styles/index.scss";
-import { setFeatureFlags } from "@/shared/lib/featureFlags";
 
 export const App = () => {
   const { theme } = useTheme();
