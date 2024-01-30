@@ -42,6 +42,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   });
   config.module?.rules?.push({
     test: /\.s(a|c)ss$/,
+    exclude: /node_modules/,
     // include: path.resolve(__dirname, '../'),
     use: [
       "style-loader",
@@ -52,13 +53,18 @@ export default ({ config }: { config: webpack.Configuration }) => {
             auto: (resPath: string) => resPath.includes(".module."),
             localIdentName: "[path][name]__[local]--[hash:base64:5]",
           },
-          // modules: {
-          //   auto: true,
-          //   localIdentName: '[name]__[local]--[hash:base64:5]',
-          // },
         },
       },
-      "sass-loader",
+      {
+        loader: "sass-loader",
+        options: {
+          additionalData: `
+          @use 'sass:math';
+          @import '@/app/styles/variables/global.scss';
+          `,
+        },
+      },
+      // "sass-loader",
     ],
   });
   config.plugins?.push(
