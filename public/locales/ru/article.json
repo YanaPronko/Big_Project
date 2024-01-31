@@ -24,5 +24,11 @@
   "failed-loading-of-recommendations": "Ошибка при загрузке рекоммендаций",
   "rate-the-article": "Оцените статью",
   "oops-failed-rate-of-article": "Упс! \nНе удалось оценить статью!",
-  "rating-will-be-here-asap": "Рейтинг будет здесь в ближайшее время"
+  "rating-will-be-here-asap": "Рейтинг будет здесь в ближайшее время",
+  "IT": "IT",
+  "Science": "Наука",
+  "Economics": "Экономика",
+  "All": "Все",
+  "welcome-to-the-articles": "Добро пожаловать на страницу статей! \nЗдесь вы можете искать и просматривать статьи на разные темы.",
+  "sort-by": "Сортировать по"
 }

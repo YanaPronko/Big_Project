@@ -27,10 +27,8 @@ import { Page } from "@/widgets/Page";
 import { articleDetailsCommentsReducer } from "../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { getFeatureFlags, toggleFeatures } from "@/shared/lib/featureFlags";
 import { Card } from "@/shared/ui/Card";
-
-
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -48,25 +46,26 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const dispatch = useAppDispatch();
 
   useDynamicLoad(reducers, true);
+
+  // Page
+  const isLoadingArticle = useSelector(getArtcileDetailsIsLoading);
+  const error = useSelector(getArtcileDetailsError);
+
   useInitialEffect(() => {
     if (id) {
       dispatch(fetchArticleById(id));
     }
   });
 
-    if (!id) {
-      return null;
-    }
+  if (!id) {
+    return null;
+  }
 
-  const articleRating = toggleFeatures({
-    name: "isArticleRatingEnabled",
-    on: () => <ArticleRating articleId={id} />,
-    off: () => (<Card>{t('rating-will-be-here-asap')}</Card>),
-  });
-
-  // Page
-  const isLoadingArticle = useSelector(getArtcileDetailsIsLoading);
-  const error = useSelector(getArtcileDetailsError);
+  // const articleRating = toggleFeatures({
+  //   name: "isArticleRatingEnabled",
+  //   on: () => <ArticleRating articleId={id} />,
+  //   off: () => <Card>{t("rating-will-be-here-asap")}</Card>,
+  // });
 
   if (!id) {
     return <Text title={t("article-not-found")} />;
@@ -85,7 +84,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       <VStack gap="32" align="stretch">
         <ArticleDetailsPageHeader />
         <ArticleDetails />
-        {articleRating}
+        <ToggleFeatures
+          feature="isArticleRatingEnabled"
+          on={<ArticleRating articleId={id} />}
+          off={<Card>{t("rating-will-be-here-asap")}</Card>}
+        />
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={id} />
       </VStack>

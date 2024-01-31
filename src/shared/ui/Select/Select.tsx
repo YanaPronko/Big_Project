@@ -5,6 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { typedMemo } from "../../const/typedMemo";
 
 import cls from "./Select.module.scss";
+import { useTranslation } from "react-i18next";
 
 export interface SelectOption<T extends string> {
   /**
@@ -54,6 +55,8 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     onChange,
     ...otherProps
   } = props;
+
+  const { t } = useTranslation("article");
 
   const optionsList = useMemo(
     () =>

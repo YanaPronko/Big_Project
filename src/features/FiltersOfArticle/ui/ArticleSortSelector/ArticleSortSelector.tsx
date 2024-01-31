@@ -45,14 +45,14 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
       <Select<SortOrder>
         key={nanoid()}
         options={orderOptions}
-        label="Sort by"
+        label={t("sort-by")}
         value={order}
         onChange={onChangeOrder}
       />
       <Select<ArticlesSortField>
         key={nanoid()}
         options={sortOptions}
-        label="Sort by"
+        label={t("sort-by")}
         value={sort}
         onChange={onChangeSort}
       />

@@ -24,5 +24,11 @@
   "failed-loading-of-recommendations": "Failed loading of recommendations",
   "rate-the-article": "Rate the article",
   "oops-failed-rate-of-article": "Oops! Failed rate of article!",
-  "rating-will-be-here-asap": "Rating will be here asap"
+  "rating-will-be-here-asap": "Rating will be here asap",
+  "IT": "IT",
+  "Science": "Science",
+  "Economics": "Economics",
+  "All": "All",
+  "welcome-to-the-articles": "Welcome to the articles page! Here you can search and view articles on different topics",
+  "sort-by": "Sort by"
 }
