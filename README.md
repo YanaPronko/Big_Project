@@ -199,6 +199,25 @@ To asynchronously connect reducers (so as not to pull them into a common bundle)
 [useDynamicLoad](/src/shared/lib/hooks/useDynamicLoad/useDynamicLoad.tsx)
 
 ----
+### Working with feature-flags
+
+Allow the use of feature flags only using the toggleFeatures helper
+
+an object with options is passed into it
+
+{
+   name: name of the feature flag,
+   on: function that will work after the feature is enabled
+   of: function that will work after turning off the feature
+}
+
+To automatically remove a feature, use the remove-feature.ts script,
+which takes 2 arguments
+1. Name of the feature flag to be removed
+2. State (on/off)
+
+----
+
 ## Application (app)
 The app layer contains code that is relevant to the entire application.
 
@@ -456,6 +475,27 @@ PrimaryDark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];
 [useDynamicLoad](/src/shared/lib/hooks/useDynamicLoad/useDynamicLoad.tsx)
 
 ----
+
+
+### Работа с feature-flags
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+
+в него передается объект с опциями
+
+{
+   name: название фича-флага,
+   on: функция, которая отработает после Включения фичи
+   of: функция, которая отработает после ВЫключения фичи
+}
+
+Для автоматического удаления фичи использовать скрипт remove-feature.ts,
+который принимает 2 аргумента
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
+
+----
+
 ## Приложение (app)
 В слое app содержится код, который имеет отношение ко всему приложению в целом
 

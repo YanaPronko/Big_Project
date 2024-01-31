@@ -23,5 +23,6 @@
   "create-new-article": "Create new article",
   "failed-loading-of-recommendations": "Failed loading of recommendations",
   "rate-the-article": "Rate the article",
-  "oops-failed-rate-of-article": "Oops! Failed rate of article!"
+  "oops-failed-rate-of-article": "Oops! Failed rate of article!",
+  "rating-will-be-here-asap": "Rating will be here asap"
 }

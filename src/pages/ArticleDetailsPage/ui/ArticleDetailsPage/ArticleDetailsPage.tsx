@@ -27,7 +27,10 @@ import { Page } from "@/widgets/Page";
 import { articleDetailsCommentsReducer } from "../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { getFeatureFlags } from "@/shared/lib/featureFlags";
+import { getFeatureFlags, toggleFeatures } from "@/shared/lib/featureFlags";
+import { Card } from "@/shared/ui/Card";
+
+
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -51,10 +54,19 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     }
   });
 
+    if (!id) {
+      return null;
+    }
+
+  const articleRating = toggleFeatures({
+    name: "isArticleRatingEnabled",
+    on: () => <ArticleRating articleId={id} />,
+    off: () => (<Card>{t('rating-will-be-here-asap')}</Card>),
+  });
+
   // Page
   const isLoadingArticle = useSelector(getArtcileDetailsIsLoading);
   const error = useSelector(getArtcileDetailsError);
-  const isArticleRatingEnabled = getFeatureFlags("isArtcileRatingEnabled");
 
   if (!id) {
     return <Text title={t("article-not-found")} />;
@@ -73,7 +85,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       <VStack gap="32" align="stretch">
         <ArticleDetailsPageHeader />
         <ArticleDetails />
-        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+        {articleRating}
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={id} />
       </VStack>
