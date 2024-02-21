@@ -6,6 +6,8 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/deprecated/Button";
 
 import cls from "./LanguageSwitcher.module.scss";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
+import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -21,14 +23,26 @@ export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
     i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
   };
 
-  return (
-    <Button
+  return (<ToggleFeatures feature="isAppRedesigned" on={
+    <ButtonRedesigned
+      className={classNames('', {}, [className])}
+      variant="clear"
+      onClick={toggleLang}
+      {...otherProps}
+    >
+      {short ? t("ShortLng") : t("Language")}
+    </ButtonRedesigned>
+  }
+    off={<Button
       className={classNames(cls.color_inverted, {}, [className])}
       theme="clear"
       onClick={toggleLang}
       {...otherProps}
     >
       {short ? t("ShortLng") : t("Language")}
-    </Button>
+    </Button> } />)
+
+  return (
+
   );
 });

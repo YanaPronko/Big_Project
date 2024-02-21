@@ -1,0 +1,14 @@
+.icon {
+  color: var(--icon-redesigned);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--accent-redesigned);
+    }
+  }
+}
+
+// .inverted {
+//   fill: var(--inverted-primary-color);
+//   color: var(--inverted-primary-color);
+// }
