@@ -7,8 +7,8 @@ import {
   getRouteMain,
   getRouteProfile,
 } from "@/shared/const/AppRoutes";
-import { AboutIcon } from "@/shared/ui/AboutIcon";
-import { ArticleIcon, MainIcon, ProfileIcon } from "@/shared/ui/Icons";
+import { AboutIcon } from "@/shared/ui/deprecated/AboutIcon";
+import { ArticleIcon, MainIcon, ProfileIcon } from "@/shared/ui/deprecated/Icons";
 
 import { SideBarItemType } from "../types/items";
 

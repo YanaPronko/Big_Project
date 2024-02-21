@@ -9,9 +9,9 @@ import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { NotificationButton } from "@/features/NotificationButton";
 import { getRouteArticleCreate, getRouteMain } from "@/shared/const/AppRoutes";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink } from "@/shared/ui/AppLink";
-import { BtnSize, Button } from "@/shared/ui/Button";
-import { HStack } from "@/shared/ui/Stack";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
+import { BtnSize, Button } from "@/shared/ui/deprecated/Button";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 
 import cls from "./NavBar.module.scss";
 

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { ArticleType } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ARTICLE_TYPES } from "@/shared/types/articlesTypes";
-import { TabItem, Tabs } from "@/shared/ui/Tabs";
+import { TabItem, Tabs } from "@/shared/ui/deprecated/Tabs";
 
 import cls from "./ArticlesTypesTabs.module.scss";
 

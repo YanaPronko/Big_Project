@@ -8,8 +8,8 @@ import { Currency } from "@/entities/Currency";
 import { ProfileCard } from "@/entities/Profile";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { VStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
+import { VStack } from "@/shared/ui/deprecated/Stack";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";

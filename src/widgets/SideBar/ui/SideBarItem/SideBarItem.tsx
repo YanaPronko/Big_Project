@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import { getUserAuthData } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink } from "@/shared/ui/AppLink";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
 
 import { SideBarItemType } from "../../model/types/items";
 

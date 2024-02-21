@@ -18,7 +18,7 @@ import {
   useDynamicLoad,
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { HStack } from "@/shared/ui/Stack";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 import { Page } from "@/widgets/Page";
 
 import {

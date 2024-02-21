@@ -13,8 +13,8 @@ import { getRouteAdmin, getRouteProfile } from "@/shared/const/AppRoutes";
 import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Dropdown, DropdownItem } from "@/shared/ui/Popups";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { Dropdown, DropdownItem } from "@/shared/ui/deprecated/Popups";
 
 interface AvatarDropdownProps {
   className?: string;

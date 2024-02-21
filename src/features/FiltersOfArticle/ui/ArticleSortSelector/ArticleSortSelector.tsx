@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { SortOrder } from "@/shared/types/order";
-import { Select, SelectOption } from "@/shared/ui/Select";
+import { Select, SelectOption } from "@/shared/ui/deprecated/Select";
 
 import { ArticlesSortField } from "../../model/types/articlesFiltersSchema";
 

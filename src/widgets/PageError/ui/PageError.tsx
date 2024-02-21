@@ -3,8 +3,8 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "@/shared/ui/Button";
-import { VRevStack } from "@/shared/ui/Stack";
+import { Button } from "@/shared/ui/deprecated/Button";
+import { VRevStack } from "@/shared/ui/deprecated/Stack";
 
 import img from "../assets/error.gif";
 

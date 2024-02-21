@@ -1,7 +1,7 @@
 {
   "extends": ["stylelint-config-standard-scss"],
   "rules": {
-    "string-quotes": "single",
+    "string-quotes": "double",
     "scss/at-import-partial-extension": "always",
     "custom-property-empty-line-before": "never",
     "selector-class-pattern": null,

@@ -3,10 +3,10 @@ import { memo, useCallback, useState } from "react";
 import { NotificationList } from "@/entities/Notification";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useDeviceDetect } from "@/shared/lib/hooks/useDeviceDetect/useDeviceDetect";
-import { Button } from "@/shared/ui/Button";
-import { Drawer } from "@/shared/ui/Drawer";
-import { NotificationIcon } from "@/shared/ui/Icons";
-import { Popover } from "@/shared/ui/Popups";
+import { Button } from "@/shared/ui/deprecated/Button";
+import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { NotificationIcon } from "@/shared/ui/deprecated/Icons";
+import { Popover } from "@/shared/ui/deprecated/Popups";
 
 import cls from "./NotificationButton.module.scss";
 
