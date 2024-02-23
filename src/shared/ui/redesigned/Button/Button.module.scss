@@ -25,6 +25,14 @@
   outline: none;
 }
 
+.filled {
+  background: var(--light-bg-redesigned);
+  border: none;
+  outline: none;
+  padding: torem(8) torem(16);
+  border-radius: torem(34);
+}
+
 .clear_inverted {
   color: var(--inverted-primary-color);
 }
