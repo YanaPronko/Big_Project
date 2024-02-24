@@ -8,9 +8,9 @@ import { LoginModal } from "@/features/AuthByUserName";
 import { getRouteMain } from "@/shared/const/AppRoutes";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { AppLink } from "@/shared/ui/AppLink";
-import { BtnSize, Button } from "@/shared/ui/Button";
-import { HStack } from "@/shared/ui/Stack";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
+import { BtnSize, Button } from "@/shared/ui/deprecated/Button";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 import { NavBarDeprecated } from "./NavBarDeprecated/NavBarDeprecated";
 import { NavbarRedesigned } from "./NavBarRedesigned/NavBarRedesigned";

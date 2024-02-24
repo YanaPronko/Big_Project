@@ -14,3 +14,35 @@
     opacity: 0;
   }
 }
+
+.item_redesigned {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 torem(16);
+  transition: all 0.3s ease;
+}
+
+.collapsed_redesigned {
+  padding: 0 torem(8);
+
+  .link {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+  }
+}
+
+.active {
+  background: linear-gradient(89.97deg, rgb(29 89 255 / 0.3) 1.15%, rgb(94 211 243 / 0) 99.97%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: torem(2);
+    left: 0;
+    background: var(--accent-redesigned);
+    height: 100%;
+  }
+}

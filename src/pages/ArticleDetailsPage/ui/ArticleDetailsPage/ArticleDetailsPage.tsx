@@ -20,14 +20,14 @@ import {
   useDynamicLoad,
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { VStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
+import { VStack } from "@/shared/ui/deprecated/Stack";
+import { Text } from "@/shared/ui/deprecated/Text";
 import { Page } from "@/widgets/Page";
 
 import { articleDetailsCommentsReducer } from "../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { Card } from "@/shared/ui/Card";
+import { Card } from "@/shared/ui/deprecated/Card";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
 
 interface ArticleDetailsPageProps {

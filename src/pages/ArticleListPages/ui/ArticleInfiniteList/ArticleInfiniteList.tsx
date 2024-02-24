@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import { ArticleView, ArticlesList } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text } from "@/shared/ui/Text";
+import { Text } from "@/shared/ui/deprecated/Text";
 import { PageError } from "@/widgets/PageError";
 
 import { getArticlesPageError } from "../../model/selectors/articles";

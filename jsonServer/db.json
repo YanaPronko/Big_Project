@@ -841,7 +841,7 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_light",
+        "theme": "app_dark",
         "isArticlePageWasOpened": true
       }
     },

@@ -18,7 +18,7 @@ import {
   useDynamicLoad,
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { HStack } from "@/shared/ui/Stack";
+
 import { Page } from "@/widgets/Page";
 
 import {
@@ -34,6 +34,12 @@ import {
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
 
 import cls from "./ArticleListPage.module.scss";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
+import { StickyContentLayout } from "@/shared/layouts/StickyLayout";
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { HStack } from "@/shared/ui/redesigned/Stack";
+import { ViewSelectorContainer } from "../ViewSelectorContainer/ViewSelectorContainer";
+import { useArticleFilters } from "../../lib/hooks/useArticleFilters/useArticleFilters";
 
 interface ArticleListPageProps {
   className?: string;
@@ -54,35 +60,52 @@ const ArticleListPage: FC<ArticleListPageProps> = (props) => {
     dispatch(initArticleListPage(searchParams));
   });
 
-  const view = useSelector(getArticlesPageView);
+  const { view, onChangeView } = useArticleFilters();
   const isLoading = useSelector(getArticlesPageIsLoading);
-
-  const onChangeView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlesPageActions.setView(view));
-      localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, view);
-    },
-    [dispatch],
-  );
 
   const onLoadNextArticles = useCallback(() => {
     dispatch(fetchNextArticles());
   }, [dispatch]);
 
-  return (
-    <Page
-      data-testid="ArticleListPage"
-      className={classNames(cls.articleListPage, {}, [className])}
-      onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
-    >
-      <HStack justify="between" role="section">
-        <ArticlesFilters />
-        <ArticlesViewSelector view={view} onViewClick={onChangeView} />
-      </HStack>
-      <ArticleInfiniteList isLoading={isLoading} view={view} />
-      <ArticlePageGreeting />
-    </Page>
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer/>}
+          content={
+            <Page
+              data-testid="ArticleListPage"
+              className={classNames(cls.ArticlesPageRedesigned, {}, [
+                className,
+              ])}
+              onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
+            >
+              <ArticleInfiniteList isLoading={isLoading} view={view} />
+              <ArticlePageGreeting />
+            </Page>
+          }
+          right={<FiltersContainer/>}
+        />
+      }
+      off={
+        <Page
+          data-testid="ArticleListPage"
+          className={classNames(cls.articleListPage, {}, [className])}
+          onScrollEnd={!isLoading ? onLoadNextArticles : undefined}
+        >
+          <HStack justify="between" role="section">
+            <ArticlesFilters />
+            <ArticlesViewSelector view={view} onViewClick={onChangeView} />
+          </HStack>
+          <ArticleInfiniteList isLoading={isLoading} view={view} />
+          <ArticlePageGreeting />
+        </Page>
+      }
+    />
   );
+
+  return content;
 };
 
 export default memo(ArticleListPage);

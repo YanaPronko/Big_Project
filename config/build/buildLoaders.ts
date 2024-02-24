@@ -21,7 +21,22 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 
   const SVGLoader: RuleSetRule = {
     test: /\.svg$/,
-    use: ['@svgr/webpack', 'url-loader'],
+    use: [{
+      loader: '@svgr/webpack',
+      options: {
+        icon: true,
+        svgoConfig: {
+          plugins: [
+            {
+              name: 'convertColors',
+              params: {
+                currentColor: true,
+              }
+            }
+          ]
+        }
+      }
+    }],
   };
 
   const fileLoader: RuleSetRule = {

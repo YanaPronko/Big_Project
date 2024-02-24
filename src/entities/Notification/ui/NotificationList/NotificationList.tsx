@@ -3,8 +3,8 @@ import { memo } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { VStack } from "@/shared/ui/Stack";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { VStack } from "@/shared/ui/deprecated/Stack";
 
 import { useGetNotifications } from "../../api/notificationsApi";
 import { NotificationItem } from "../NotificationItem/NotificationItem";

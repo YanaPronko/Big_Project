@@ -7,21 +7,32 @@ import {
   getRouteMain,
   getRouteProfile,
 } from "@/shared/const/AppRoutes";
-import { AboutIcon } from "@/shared/ui/AboutIcon";
-import { ArticleIcon, MainIcon, ProfileIcon } from "@/shared/ui/Icons";
+import { AboutIcon } from "@/shared/ui/deprecated/AboutIcon";
+import { ArticleIcon, MainIcon, ProfileIcon } from "@/shared/ui/deprecated/Icons";
 
 import { SideBarItemType } from "../types/items";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
+import { AboutIconRedesigned, ArticleIconRedesigned, MainIconRedesigned } from "@/shared/ui/redesigned/Icons";
+import { ProfileIconRedesigned } from "@/shared/ui/redesigned/Icons/ui/ProfileIcon/ProfileIcon";
 
 export const getSideBarItemsList = createSelector(getUserAuthData, (data) => {
   const list: SideBarItemType[] = [
     {
       path: getRouteMain(),
-      Icon: MainIcon,
+      Icon: toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => MainIconRedesigned,
+        off: () => MainIcon,
+      }),
       text: "Main",
     },
     {
       path: getRouteAbout(),
-      Icon: AboutIcon,
+      Icon: toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => AboutIconRedesigned,
+        off: () => AboutIcon,
+      }),
       text: "About",
     },
   ];
@@ -30,13 +41,21 @@ export const getSideBarItemsList = createSelector(getUserAuthData, (data) => {
     list.push(
       {
         path: getRouteArticles(),
-        Icon: ArticleIcon,
+        Icon: toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => ArticleIconRedesigned,
+          off: () => ArticleIcon,
+        }),
         text: "Articles",
         authOnly: true,
       },
       {
         path: getRouteProfile(data.id),
-        Icon: ProfileIcon,
+        Icon: toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => ProfileIconRedesigned,
+        off: () => ProfileIcon,
+      }),
         text: "Profile",
         authOnly: true,
       },

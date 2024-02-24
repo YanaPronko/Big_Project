@@ -4,8 +4,8 @@ import { nanoid } from "@reduxjs/toolkit";
 
 import { ArticleView } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "@/shared/ui/Button";
-import { GridIcon, ListIcon } from "@/shared/ui/Icons";
+import { Button } from "@/shared/ui/deprecated/Button";
+import { GridIcon, ListIcon } from "@/shared/ui/deprecated/Icons";
 
 import cls from "./ArticlesViewSelector.module.scss";
 

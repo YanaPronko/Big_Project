@@ -9,9 +9,9 @@ import {
   ReducersList,
   useDynamicLoad,
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
-import { BtnSize, Button } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { Text } from "@/shared/ui/Text";
+import { BtnSize, Button } from "@/shared/ui/deprecated/Button";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";

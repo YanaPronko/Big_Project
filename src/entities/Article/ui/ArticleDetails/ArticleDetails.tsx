@@ -4,11 +4,11 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar";
-import { CalendarIcon, EyeIcon } from "@/shared/ui/Icons";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { CalendarIcon, EyeIcon } from "@/shared/ui/deprecated/Icons";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 import { getArtcileDetailsData } from "../../model/selectors/articleDetails";
 import { ArticleBlock } from "../../model/types/article";

@@ -1,0 +1,37 @@
+.card {
+  // padding: torem(24);
+  border-radius: torem(12);
+  transition: all 0.2s;
+}
+
+.normal {
+  background: var(--dark-bg-redesigned);
+}
+
+.light {
+  background: var(--light-bg-redesigned);
+}
+
+.outlined {
+  border: 1px solid var(--accent-redesigned);
+}
+
+.max {
+  width: 100%;
+}
+
+.pad_0 {
+  padding: 0;
+}
+
+.pad_8 {
+  padding: torem(8);
+}
+
+.pad_16 {
+  padding: torem(16);
+}
+
+.pad_24 {
+  padding: torem(24);
+}

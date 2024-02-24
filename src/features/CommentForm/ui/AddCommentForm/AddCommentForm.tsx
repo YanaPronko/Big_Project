@@ -9,10 +9,10 @@ import {
   ReducersList,
   useDynamicLoad,
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
-import { Button } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { HStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
+import { Button } from "@/shared/ui/deprecated/Button";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { HStack } from "@/shared/ui/deprecated/Stack";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 import {
   getAddCommentFormError,

@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Code } from "@/shared/ui/Code";
+import { Code } from "@/shared/ui/deprecated/Code";
 
 import { ArticleBlockCode } from "../../model/types/article";
 

@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 
 import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { Text } from "@/shared/ui/Text";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 import {
   useArticleRate,

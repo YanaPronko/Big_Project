@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button } from "@/shared/ui/Button";
-import { Text } from "@/shared/ui/Text";
+import { Button } from "@/shared/ui/deprecated/Button";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 import { getEditStatus } from "../../model/selectors/getEditStatus/getEditStatus";
 import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";

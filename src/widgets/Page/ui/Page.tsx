@@ -14,6 +14,7 @@ import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitial
 import { useTrottle } from "@/shared/lib/hooks/useTrottle/useTrottle";
 
 import cls from "./Page.module.scss";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 
 interface PageProps extends TestProps {
   className?: string;
@@ -35,7 +36,11 @@ export const Page = memo((props: PageProps) => {
   );
 
   useInfiniteScroll({
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
     triggerRef,
     callback: onScrollEnd,
   });
