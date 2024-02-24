@@ -5,3 +5,7 @@
   height: calc(100vh - var(--navbar-height));
   width: 100%;
 }
+
+.page_redesigned {
+  overflow-y: auto;
+}

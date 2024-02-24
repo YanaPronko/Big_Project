@@ -4,15 +4,15 @@ import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { NavBar } from "./NavBar";
+import { NavBarDeprecated } from "./NavBarDeprecated";
 
-const meta: Meta<typeof NavBar> = {
+const meta: Meta<typeof NavBarDeprecated> = {
   title: "widgets/NavBar",
-  component: NavBar,
+  component: NavBarDeprecated,
 };
 
 export default meta;
-type Story = StoryObj<typeof NavBar>;
+type Story = StoryObj<typeof NavBarDeprecated>;
 
 export const Normal: Story = {
   args: {},

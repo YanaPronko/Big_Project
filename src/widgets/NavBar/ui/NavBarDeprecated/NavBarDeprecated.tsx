@@ -5,23 +5,21 @@ import { useSelector } from "react-redux";
 
 import { getUserAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/AuthByUserName";
-import { getRouteMain } from "@/shared/const/AppRoutes";
+import { AvatarDropdown } from "@/features/AvatarDropdown";
+import { NotificationButton } from "@/features/NotificationButton";
+import { getRouteArticleCreate, getRouteMain } from "@/shared/const/AppRoutes";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { AppLink } from "@/shared/ui/AppLink";
 import { BtnSize, Button } from "@/shared/ui/Button";
 import { HStack } from "@/shared/ui/Stack";
 
-import { NavBarDeprecated } from "./NavBarDeprecated/NavBarDeprecated";
-import { NavbarRedesigned } from "./NavBarRedesigned/NavBarRedesigned";
-
-import cls from "./NavBar.module.scss";
+import cls from "./NavBarDeprecated.module.scss";
 
 interface NavBarProps {
   className?: string;
 }
 
-export const NavBar = memo((props: NavBarProps) => {
+export const NavBarDeprecated = memo((props: NavBarProps) => {
   const { className, ...otherProps } = props;
   const { t } = useTranslation();
 
@@ -41,16 +39,32 @@ export const NavBar = memo((props: NavBarProps) => {
 
   if (authData) {
     return (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        off={<NavBarDeprecated />}
-        on={<NavbarRedesigned />}
-      />
+      <header
+        className={classNames(cls.navBarDeprecated, {}, [className])}
+        {...otherProps}
+      >
+        <HStack justify="center" className={cls.logoBlock}>
+          <AppLink to={getRouteMain()} theme="inverted" size="xl">
+            {t("pryweb")}
+          </AppLink>
+        </HStack>
+        <HStack gap="16">
+          <AppLink to={getRouteArticleCreate()} theme="inverted" size="l">
+            {t("create-article")}
+          </AppLink>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
+        <LoginModal
+          isOpen={isAuthModal}
+          onClose={() => setIsAuthModal(false)}
+        />
+      </header>
     );
   }
 
   return (
-    <header className={classNames(cls.navBar, {}, [className])} {...otherProps}>
+    <header className={classNames(cls.navBarDeprecated, {}, [className])} {...otherProps}>
       <HStack justify="center" className={cls.logoBlock}>
         <AppLink to={getRouteMain()} theme="inverted" size="xl">
           {t("pryweb")}

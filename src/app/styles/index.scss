@@ -4,6 +4,7 @@
 // @import './functions/functions.scss';
 
 // @import './variables/global.scss';
+@import './fonts.scss';
 @import './themes/normal.scss';
 @import './themes/dark.scss';
 @import './themes/orange.scss';
@@ -17,6 +18,13 @@ body {
   font: var(--font-m);
   color: var(--primary-color);
   background-color: var(--bg-color);
+}
+
+.app_redisigned {
+  min-height: 100vh;
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
+  background-color: var(--bg-redesigned);
 }
 
 .content-page {

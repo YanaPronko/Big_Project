@@ -1,0 +1,20 @@
+.appLogoWrapper {
+  position: relative;
+}
+
+.gradientBig {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.gradientSmall {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(30.29% 30.29% at 50% 50%, rgba(94, 211, 243, 0.18) 0%, rgba(94, 211, 243, 0.106) 25.55%, rgba(94, 211, 243, 0.07) 47.27%, rgba(94, 211, 243, 0.038) 69.66%, rgba(94, 211, 243, 0) 100%);
+  border-radius: 50%;
+  opacity: 0.6;
+}

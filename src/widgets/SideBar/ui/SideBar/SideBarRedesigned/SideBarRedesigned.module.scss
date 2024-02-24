@@ -1,0 +1,24 @@
+.sidebar_redesigned {
+  background: var(--light-bg-redesigned);
+  width: torem(220);
+  height: 100%;
+  border-radius: torem(32);
+}
+
+.appLogo {
+  padding-top: torem(20);
+}
+
+.collappsed {
+  width: var(--collapsed-sidebar-width);
+
+  .switchers {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link {
+    opacity: 0;
+  }
+}

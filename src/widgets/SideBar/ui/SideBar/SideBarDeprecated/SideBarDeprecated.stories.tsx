@@ -4,15 +4,15 @@ import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { SideBar } from "./SideBar";
+import { SideBarDeprecated } from "./SideBarDeprecated";
 
-const meta: Meta<typeof SideBar> = {
+const meta: Meta<typeof SideBarDeprecated> = {
   title: "widgets/SideBar",
-  component: SideBar,
+  component: SideBarDeprecated,
 };
 
 export default meta;
-type Story = StoryObj<typeof SideBar>;
+type Story = StoryObj<typeof SideBarDeprecated>;
 
 export const Normal: Story = {
   args: {},

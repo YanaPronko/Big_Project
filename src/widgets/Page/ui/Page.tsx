@@ -7,6 +7,7 @@ import { StateSchema } from "@/app/providers/StoreProvider";
 import { UIActions, getUIScrollPosition } from "@/features/UI";
 import { TestProps } from "@/shared/const/testProps";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -55,7 +56,15 @@ export const Page = memo((props: PageProps) => {
   return (
     <main
       ref={wrapperRef}
-      className={classNames(cls.page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => cls.page_redesigned,
+          off: () => cls.page,
+        }),
+        {},
+        [className],
+      )}
       onScroll={onScroll}
       data-testid={props["data-testid"] ?? "Page"}
     >

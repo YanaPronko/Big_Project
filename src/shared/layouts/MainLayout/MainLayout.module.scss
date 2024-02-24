@@ -1,0 +1,33 @@
+.mainLayout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: torem(284) 1fr torem(176);
+}
+
+.sidebar {
+  justify-self: center;
+  padding: torem(32);
+}
+
+.content {
+  max-width: torem(1200);
+  justify-self: center;
+  padding: torem(32);
+}
+
+.rightbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.rightbar,
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.toolbar {
+  height: 100%;
+}
