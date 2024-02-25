@@ -1,7 +1,0 @@
-.avatar {
-  width: torem(100);
-  height: torem(100);
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}

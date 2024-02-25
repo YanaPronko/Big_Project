@@ -1,5 +1,6 @@
 .icon {
   color: var(--icon-redesigned);
+  transition: all 0.3s ease;
 
   @media (any-hover: hover) {
     &:hover {

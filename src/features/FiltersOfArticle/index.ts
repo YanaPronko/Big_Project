@@ -15,3 +15,8 @@ export {
 } from "./model/selector/articlesFilters";
 
 export { ArticlesFilters } from "./ui/ArticlesFilters/ArticlesFilters";
+export { ArticlesTypesTabs } from "./ui/ArticlesTypesTabs/ArticlesTypesTabs";
+
+export {
+  ArticleSortSelectorRedesigned
+} from "./ui/ArticleSortSelector/ArticleSortSelectorRedesigned/ArticleSortSelector";

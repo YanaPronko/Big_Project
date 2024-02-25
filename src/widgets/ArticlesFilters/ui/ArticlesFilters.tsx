@@ -3,18 +3,18 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleType } from "@/entities/Article";
-
+import {
+  ArticlesSortField,
+  ArticleSortSelectorRedesigned,
+  ArticlesTypesTabs,
+} from "@/features/FiltersOfArticle";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { SortOrder } from "@/shared/types/order";
-import { Card } from "@/shared/ui/deprecated/Card";
 import { Input } from "@/shared/ui/deprecated/Input";
-
-import cls from "./ArticlesFilters.module.scss";
 import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 import { VStack } from "@/shared/ui/redesigned/Stack";
-import { ArticlesSortField } from "@/features/FiltersOfArticle";
-import { ArticleSortSelector } from "@/features/FiltersOfArticle/ui/ArticleSortSelector/ArticleSortSelector";
-import { ArticlesTypesTabs } from "@/features/FiltersOfArticle/ui/ArticlesTypesTabs/ArticlesTypesTabs";
+
+import cls from "./ArticleFilters.module.scss";
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -27,7 +27,6 @@ interface ArticlesFiltersProps {
   onChangeSort: (newSort: ArticlesSortField) => void;
   onChangeType: (type: ArticleType) => void;
 }
-
 
 export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const {
@@ -48,13 +47,13 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
       className={classNames(cls.articlesFilters, {}, [className])}
       padding="24"
     >
-      <VStack gap="32">
+      <VStack gap="32" max align="start">
         <Input
           placeholder={t("search")}
           value={search}
           onChange={onChangeSearch}
         />
-        <ArticleSortSelector
+        <ArticleSortSelectorRedesigned
           order={order}
           sort={sort}
           onChangeOrder={onChangeOrder}

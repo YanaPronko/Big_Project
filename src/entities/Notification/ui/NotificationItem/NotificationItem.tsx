@@ -1,13 +1,13 @@
 import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Card } from "@/shared/ui/deprecated/Card";
 import { Text } from "@/shared/ui/deprecated/Text";
-
-import { Notification } from "../../model/types/notification";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
+
+import { Notification } from "../../model/types/notification";
 
 interface NotificationItemProps {
   className?: string;
@@ -21,7 +21,9 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
     <ToggleFeatures
       feature="isAppRedesigned"
       on={
-        <CardRedesigned className={classNames("", {}, [className])} variant="outlined">
+        <CardRedesigned
+          className={classNames("", {}, [className])}
+        >
           <TextRedesigned title={item.title} text={item.description} />
         </CardRedesigned>
       }

@@ -11,8 +11,8 @@ import {
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { Button } from "@/shared/ui/deprecated/Button";
 import { Input } from "@/shared/ui/deprecated/Input";
-import { HStack } from "@/shared/ui/deprecated/Stack";
 import { Text } from "@/shared/ui/deprecated/Text";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 import {
   getAddCommentFormError,

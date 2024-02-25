@@ -42,7 +42,4 @@ export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
       {short ? t("ShortLng") : t("Language")}
     </Button> } />)
 
-  return (
-
-  );
 });

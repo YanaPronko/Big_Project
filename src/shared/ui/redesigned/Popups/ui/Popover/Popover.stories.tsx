@@ -3,19 +3,19 @@ import { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { Popover } from "./Popover";
-import { Button } from "../../../Button/Button";
-import { Text } from "../../../Text/Text";
+import { PopoverRedesigned } from "./Popover";
+import { ButtonRedesigned } from "../../../Button/Button";
+import { TextRedesigned } from "../../../Text/Text";
 
-const meta: Meta<typeof Popover> = {
+const meta: Meta<typeof PopoverRedesigned> = {
   title: "shared/Popups/Popover",
-  component: Popover,
+  component: PopoverRedesigned,
   args: {
     children: (
       <>
-        <Text title="item 1" />
-        <Text title="item 2" />
-        <Text title="item 3" />
+        <TextRedesigned title="item 1" />
+        <TextRedesigned title="item 2" />
+        <TextRedesigned title="item 3" />
       </>
     ),
   },
@@ -29,19 +29,19 @@ const meta: Meta<typeof Popover> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Popover>;
+type Story = StoryObj<typeof PopoverRedesigned>;
 
 export const Left: Story = {
   args: {
     direction: "bottomL",
-    trigger: <Button>Notification</Button>,
+    trigger: <ButtonRedesigned>Notification</ButtonRedesigned>,
   },
 };
 
 export const RightDark: Story = {
   args: {
     direction: "bottomR",
-    trigger: <Button>Notification</Button>,
+    trigger: <ButtonRedesigned>Notification</ButtonRedesigned>,
   },
 };
 

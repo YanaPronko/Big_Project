@@ -1,6 +1,8 @@
-import { ArticlesViewSelector } from "@/features/ArticlesViewSelector";
-import { useArticleFilters } from "../../lib/hooks/useArticleFilters/useArticleFilters";
 import { memo } from "react";
+
+import { ArticlesViewSelector } from "@/features/ArticlesViewSelector";
+
+import { useArticleFilters } from "../../lib/hooks/useArticleFilters/useArticleFilters";
 
 interface ViewSelectorContainerProps {
   className?: string;

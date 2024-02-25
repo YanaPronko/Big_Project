@@ -2,10 +2,10 @@ import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { AppLogoIcon } from "../Icons/ui/AppLogoIcon/AppLogoIcon";
+import logo from "../../../assets/PrywebLogobyDesigner.png";
 import { HStack } from "../Stack";
 
-import cls from './AppLogo.module.scss';
+import cls from "./AppLogo.module.scss";
 
 interface AppLogoProps {
   className?: string;
@@ -19,6 +19,7 @@ export const AppLogo = memo(({ className }: AppLogoProps) => (
   >
     <div className={cls.gradientBig} />
     <div className={cls.gradientSmall} />
-    <AppLogoIcon />
+    <img src={logo} alt='app logo' className={cls.logo} />
+    {/* <AppLogoIcon /> */}
   </HStack>
 ));

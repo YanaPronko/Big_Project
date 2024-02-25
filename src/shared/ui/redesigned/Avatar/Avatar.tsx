@@ -4,7 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { AppImage } from "../AppImage";
 import { UserIconRedesigned } from "../Icons";
-import { Skeleton } from "../Skeleton";
+import { SkeletonRedesigned } from "../Skeleton";
 
 import cls from "./Avatar.module.scss";
 
@@ -33,13 +33,7 @@ interface AvatarProps {
 }
 
 export const AvatarRedesigned = memo((props: AvatarProps) => {
-  const {
-    className,
-    src,
-    alt,
-    size = 40,
-    ...otherProps
-  } = props;
+  const { className, src, alt, size = 40, ...otherProps } = props;
 
   const styles = useMemo<CSSProperties>(
     () => ({
@@ -55,7 +49,9 @@ export const AvatarRedesigned = memo((props: AvatarProps) => {
       alt={alt}
       src={src}
       className={classNames(cls.avatar, {}, [className])}
-      fallback={<Skeleton width={size} height={size} borderRadius="50%" />}
+      fallback={
+        <SkeletonRedesigned width={size} height={size} borderRadius="50%" />
+      }
       errorFallback={<UserIconRedesigned />}
       {...otherProps}
     />

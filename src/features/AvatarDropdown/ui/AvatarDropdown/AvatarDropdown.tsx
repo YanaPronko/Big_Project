@@ -12,13 +12,15 @@ import {
 import { getRouteAdmin, getRouteProfile } from "@/shared/const/AppRoutes";
 import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Avatar } from "@/shared/ui/deprecated/Avatar";
-import { AvatarRedesigned } from "@/shared/ui/redesigned/Avatar";
-import { DropdownRedesigned, DropdownItem } from "@/shared/ui/redesigned/Popups";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Dropdown } from "@/shared/ui/deprecated/Popups";
-
+import { AvatarRedesigned } from "@/shared/ui/redesigned/Avatar";
+import {
+  DropdownRedesigned,
+  DropdownItem,
+} from "@/shared/ui/redesigned/Popups";
 
 interface AvatarDropdownProps {
   className?: string;
@@ -76,11 +78,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           items={items}
           direction="bottomL"
           trigger={
-            <AvatarRedesigned
-              size={30}
-              src={authData.avatar}
-              alt="avatar"
-            />
+            <AvatarRedesigned size={30} src={authData.avatar} alt="avatar" />
           }
         />
       }
@@ -89,7 +87,14 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           className={classNames("", {}, [className])}
           items={items}
           direction="bottomL"
-          trigger={<Avatar size={30} src={authData.avatar} alt="avatar" fallbackInverted />}
+          trigger={
+            <Avatar
+              size={30}
+              src={authData.avatar}
+              alt="avatar"
+              fallbackInverted
+            />
+          }
         />
       }
     />

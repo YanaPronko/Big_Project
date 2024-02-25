@@ -37,10 +37,10 @@
   bottom: 100%;
 }
 
-.active {
-  background: var(--light-bg-redesigned);
-}
-
 .disabled {
   opacity: 0.7;
+}
+
+.active {
+  background: var(--light-bg-redesigned) !important;
 }

@@ -2,25 +2,25 @@
   position: relative;
 }
 
-.btn {
-  padding: torem(10) torem(15);
-  color: var(--primary-color);
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-  border: 1px solid var(--primary-color);
-  background: none;
+// .btn {
+//   padding: torem(10) torem(15);
+//   color: var(--primary-color);
+//   cursor: pointer;
+//   transition: opacity 0.3s ease-in-out;
+//   border: 1px solid var(--primary-color);
+//   background: none;
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+//   &:disabled {
+//     opacity: 0.5;
+//     cursor: not-allowed;
+//   }
 
-  &:hover {
-    opacity: 0.8;
-    stroke-opacity: 0.8;
-    fill-opacity: 0.8;
-  }
-}
+//   &:hover {
+//     opacity: 0.8;
+//     stroke-opacity: 0.8;
+//     fill-opacity: 0.8;
+//   }
+// }
 
 .label {
   margin-right: torem(1);

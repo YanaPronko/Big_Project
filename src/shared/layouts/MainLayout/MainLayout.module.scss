@@ -1,18 +1,21 @@
 .mainLayout {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: torem(284) 1fr torem(176);
+  grid-template-columns: min-content 1fr torem(176);
 }
 
 .sidebar {
   justify-self: center;
   padding: torem(32);
+  max-width: torem(284);
 }
 
 .content {
-  max-width: torem(1200);
+  display: flex;
+  max-width: torem(1470);
   justify-self: center;
-  padding: torem(32);
+  padding: torem(20);
+  width: 100%;
 }
 
 .rightbar {

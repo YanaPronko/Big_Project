@@ -6,6 +6,7 @@ import cls from "./Card.module.scss";
 
 type CardVariant = "normal" | "outlined" | "light";
 type CardPadding = "0" | "8" | "16" | "24";
+export type CardBorder = "round" | "small";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -17,7 +18,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
    */
   children: ReactNode;
   /**
-   * @description Card theme. Responsible for card's color and border.
+   * @description Card variant. Responsible for card's color and border.
    * @default "normal"
    */
   variant?: CardVariant;
@@ -29,6 +30,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
    * @description Card variant. Responsible for card's paddings.
    */
   padding?: CardPadding;
+  /**
+   * @description Card type. Responsible  for large border-radius.
+   */
+  borderRadius?: CardBorder;
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
@@ -45,6 +50,7 @@ export const CardRedesigned = memo((props: CardProps) => {
     max,
     variant = "normal",
     padding = "8",
+    borderRadius = "normal",
     ...otherProps
   } = props;
 

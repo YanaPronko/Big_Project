@@ -3,7 +3,7 @@ import { memo } from "react";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { NotificationButton } from "@/features/NotificationButton";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { HStack } from "@/shared/ui/Stack";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 import cls from "./NavBarRedesigned.module.scss";
 
@@ -18,7 +18,7 @@ export const NavbarRedesigned = memo((props: NavBarProps) => {
       className={classNames(cls.navBar_redesigned, {}, [className])}
       {...otherProps}
     >
-      <HStack gap="16">
+      <HStack gap="16" className={cls.logoBlock}>
         <NotificationButton />
         <AvatarDropdown />
       </HStack>

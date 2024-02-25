@@ -1,6 +1,8 @@
-import { useArticleFilters } from "../../lib/hooks/useArticleFilters/useArticleFilters";
 import { memo } from "react";
-import { ArticlesFilters } from "@/widgets/ArticlesFilters/ui/ArticlesFilters";
+
+import { ArticlesFilters } from "@/widgets/ArticlesFilters";
+
+import { useArticleFilters } from "../../lib/hooks/useArticleFilters/useArticleFilters";
 
 interface FiltersContainerProps {
   className?: string;

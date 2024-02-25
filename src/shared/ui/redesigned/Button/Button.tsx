@@ -4,10 +4,9 @@ import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 
 import cls from "./Button.module.scss";
 
-export type BtnVariant = "clear" | "outline" | "filled";
+export type BtnVariant = "clear" | "outline" | "filled" | "transparent";
 
-export type BtnSize = 'm' | 'l' | 'xl';
-
+export type BtnSize = "m" | "l" | "xl";
 
 export type BtnType = "button" | "submit" | "reset";
 
@@ -53,7 +52,7 @@ export const ButtonRedesigned = memo((props: ButtonProps) => {
     children,
     variant = "outline",
     square,
-    size = 'm',
+    size = "m",
     fullWidth,
     ...otherProps
   } = props;

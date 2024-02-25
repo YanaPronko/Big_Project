@@ -6,7 +6,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { PopupsDirection } from "../../../../../types/ui";
-import { HStack } from "../../../Stack";
+import { HStack } from "../../../../redesigned/Stack";
 import popoverCls from "../../styles/popup.module.scss";
 
 import cls from "./ListBox.module.scss";

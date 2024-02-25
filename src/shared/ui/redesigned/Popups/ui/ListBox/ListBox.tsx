@@ -1,23 +1,23 @@
-import { Fragment, memo } from "react";
+import { Fragment, useMemo } from "react";
 
 import { Listbox as HListBox } from "@headlessui/react";
 import { nanoid } from "@reduxjs/toolkit";
 
+import { typedMemo } from "@/shared/const/typedMemo";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { PopupsDirection } from "../../../../../types/ui";
+import { ButtonRedesigned } from "../../../Button";
 import { HStack } from "../../../Stack";
 import popoverCls from "../../styles/popup.module.scss";
 
 import cls from "./ListBox.module.scss";
-import { typedMemo } from "@/shared/const/typedMemo";
-import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 
-type ListBoxItem <T extends string> = {
+type ListBoxItem<T extends string> = {
   /**
    * @description The value of ListBoxItem
    */
-  value: string;
+  value: T;
   /**
    * @description ListBoxItem content
    */
@@ -28,7 +28,7 @@ type ListBoxItem <T extends string> = {
   disabled?: boolean;
 };
 
-interface ListBoxProps<T extends string>{
+interface ListBoxProps<T extends string> {
   /**
    * @description additional class.
    */
@@ -65,68 +65,75 @@ interface ListBoxProps<T extends string>{
   onChange: (value: T) => void;
 }
 
-export const ListBoxRedesigned = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
-  const {
-    className,
-    items,
-    label,
-    selectedVal,
-    defaultVal,
-    readonly,
-    direction = "bottomR",
-    onChange,
-  } = props;
+export const ListBoxRedesigned = typedMemo(
+  <T extends string>(props: ListBoxProps<T>) => {
+    const {
+      className,
+      items,
+      label,
+      selectedVal,
+      defaultVal,
+      readonly,
+      direction = "bottomR",
+      onChange,
+    } = props;
 
-  return (
-    <HStack gap="4">
-      {label && (
-        <label htmlFor="box" className={cls.label}>
-          {label}
-        </label>
-      )}
-      <HListBox
-        id="box"
-        as="div"
-        className={classNames(cls.listBox, {}, [className, popoverCls.popup])}
-        value={selectedVal}
-        onChange={onChange}
-        disabled={readonly}
-      >
-        <HListBox.Button as="div">
-          <ButtonRedesigned variant="filled" disabled={readonly}>
-            {selectedVal ?? defaultVal}
-          </ButtonRedesigned>
-        </HListBox.Button>
-        <HListBox.Options
-          className={classNames(cls.options, {}, [popoverCls[direction]])}
+    const selectedItem = useMemo(
+      () => items?.find((item) => item.value === selectedVal),
+      [items, selectedVal],
+    );
+
+    return (
+      <HStack gap="4">
+        {label && (
+          <label htmlFor="box" className={cls.label}>
+            {label}
+          </label>
+        )}
+        <HListBox
+          id="box"
+          as="div"
+          className={classNames(cls.listBox, {}, [className, popoverCls.popup])}
+          value={selectedVal}
+          onChange={onChange}
+          disabled={readonly}
         >
-          {items?.map((item) => (
-            <HListBox.Option
-              key={nanoid()}
-              value={item.value}
-              disabled={item.disabled}
-              as={Fragment}
-            >
-              {({ active, selected }) => (
-                <li
-                  className={classNames(
-                    cls.item,
-                    {
-                      [popoverCls.active]: active,
-                      [popoverCls.disabled]: item.disabled,
-                      [cls.selected]: selected,
-                    },
-                    [],
-                  )}
-                >
-                  {selected}
-                  {item.content}
-                </li>
-              )}
-            </HListBox.Option>
-          ))}
-        </HListBox.Options>
-      </HListBox>
-    </HStack>
-  );
-});
+          <HListBox.Button as="div">
+            <ButtonRedesigned variant="filled" disabled={readonly}>
+              {selectedItem?.content ?? defaultVal}
+            </ButtonRedesigned>
+          </HListBox.Button>
+          <HListBox.Options
+            className={classNames(cls.options, {}, [popoverCls[direction]])}
+          >
+            {items?.map((item) => (
+              <HListBox.Option
+                key={nanoid()}
+                value={item.value}
+                disabled={item.disabled}
+                as={Fragment}
+              >
+                {({ active, selected }) => (
+                  <li
+                    className={classNames(
+                      cls.item,
+                      {
+                        [popoverCls.active]: active,
+                        [popoverCls.disabled]: item.disabled,
+                        [cls.selected]: selected,
+                      },
+                      [],
+                    )}
+                  >
+                    {selected}
+                    {item.content}
+                  </li>
+                )}
+              </HListBox.Option>
+            ))}
+          </HListBox.Options>
+        </HListBox>
+      </HStack>
+    );
+  },
+);

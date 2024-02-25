@@ -2,17 +2,17 @@ import { memo, useCallback, useState } from "react";
 
 import { NotificationList } from "@/entities/Notification";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { useDeviceDetect } from "@/shared/lib/hooks/useDeviceDetect/useDeviceDetect";
 import { Button } from "@/shared/ui/deprecated/Button";
 import { Drawer } from "@/shared/ui/deprecated/Drawer";
 import { NotificationIcon } from "@/shared/ui/deprecated/Icons";
 import { Popover } from "@/shared/ui/deprecated/Popups";
-
-import cls from "./NotificationButton.module.scss";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 import { NotificationIconRedesigned } from "@/shared/ui/redesigned/Icons";
 import { PopoverRedesigned } from "@/shared/ui/redesigned/Popups";
+
+import cls from "./NotificationButton.module.scss";
 
 interface NotificationButtonProps {
   className?: string;
@@ -37,16 +37,16 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
       on={
         <ButtonRedesigned
           variant="clear"
-          onClick = { isMobile? onOpenDrawer: undefined }
+          onClick={isMobile ? onOpenDrawer : undefined}
         >
           <NotificationIconRedesigned />
         </ButtonRedesigned>
       }
-    off={
-      <Button theme="clear" onClick={isMobile ? onOpenDrawer : undefined}>
-        <NotificationIcon inverted />
-      </Button>
-    }
+      off={
+        <Button theme="clear" onClick={isMobile ? onOpenDrawer : undefined}>
+          <NotificationIcon inverted />
+        </Button>
+      }
     />
   );
 

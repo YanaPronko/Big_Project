@@ -8,8 +8,8 @@ import {
   AnimationProvider,
   useAnimationLibs,
 } from "../../../lib/ui/AnimationProvider";
-import { Overlay } from "../Overlay/Overlay";
-import { Portal } from "../Portal/Portal";
+import { Overlay } from "../../redesigned/Overlay";
+import { Portal } from "../../redesigned/Portal";
 
 import cls from "./Drawer.module.scss";
 

@@ -3,15 +3,15 @@ import { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { ArticleSortSelector } from "./ArticleSortSelector";
+import { ArticleSortSelectorRedesigned } from "./ArticleSortSelector";
 
-const meta: Meta<typeof ArticleSortSelector> = {
+const meta: Meta<typeof ArticleSortSelectorRedesigned> = {
   title: "features/ArticleSortSelector",
-  component: ArticleSortSelector,
+  component: ArticleSortSelectorRedesigned,
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleSortSelector>;
+type Story = StoryObj<typeof ArticleSortSelectorRedesigned>;
 
 export const Primary: Story = {
   args: {},

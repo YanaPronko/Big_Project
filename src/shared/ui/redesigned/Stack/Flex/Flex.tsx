@@ -6,7 +6,7 @@ import cls from "./Flex.module.scss";
 
 type FlexJustify = "start" | "end" | "between" | "center" | "around" | "evenly";
 type FlexAlign = "start" | "end" | "stretch" | "center";
-type FlexDirection = "row" | "column" | "columnRev" | "rowRev";
+export type FlexDirection = "row" | "column" | "columnRev" | "rowRev";
 type FlexGap = "4" | "8" | "16" | "32";
 
 const alignClasses: Record<FlexAlign, string> = {

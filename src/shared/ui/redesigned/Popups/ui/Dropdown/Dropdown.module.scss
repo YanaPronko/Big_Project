@@ -13,12 +13,12 @@
   padding: torem(10) torem(25);
   width: 100%;
   border: none;
-  background: none;
+  background: transparent;
   outline-color: transparent;
   color: var(--text-redesigned);
   cursor: pointer;
 }
 
-.active {
-  background: var(--accent-color);
-}
+// .active {
+//   background: var(--accent-color);
+// }

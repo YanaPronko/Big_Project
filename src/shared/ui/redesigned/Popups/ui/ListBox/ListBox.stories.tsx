@@ -4,11 +4,11 @@ import { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { ListBox } from "./ListBox";
+import { ListBoxRedesigned } from "./ListBox";
 
-const meta: Meta<typeof ListBox> = {
+const meta: Meta<typeof ListBoxRedesigned> = {
   title: "shared/Popups/ListBox",
-  component: ListBox,
+  component: ListBoxRedesigned,
   args: {
     items: [
       { value: "1", content: "BYN" },
@@ -21,7 +21,7 @@ const meta: Meta<typeof ListBox> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ListBox>;
+type Story = StoryObj<typeof ListBoxRedesigned>;
 
 export const Primary: Story = {
   args: {

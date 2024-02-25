@@ -17,10 +17,6 @@ import {
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { Page } from "@/widgets/Page";
-import { Transition } from "react-transition-group";
-import { classNames } from "@/shared/lib/classNames/classNames";
-
-import cls from "./ProfilePage.module.scss";
 
 const reducers: ReducersList = {
   profile: profileReducer,

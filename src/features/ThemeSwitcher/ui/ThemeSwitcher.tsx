@@ -2,14 +2,15 @@ import { memo, useCallback } from "react";
 
 import { saveJsonSettings } from "@/entities/User";
 import { Theme } from "@/shared/const/theme";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { Button } from "@/shared/ui/deprecated/Button";
 import { ThemeIcon } from "@/shared/ui/deprecated/Icons";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { ThemeIconRedesigned } from "@/shared/ui/redesigned/Icons";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
+import { ThemeIconRedesigned } from "@/shared/ui/redesigned/Icons";
+
+import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -31,7 +32,7 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
       feature="isAppRedesigned"
       on={
         <ButtonRedesigned
-          className={classNames("", {}, [className])}
+          className={cls.btn}
           variant="clear"
           onClick={toggleHandler}
           {...otherProps}
@@ -41,7 +42,6 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
       }
       off={
         <Button
-          className={classNames("", {}, [className])}
           theme="clear"
           onClick={toggleHandler}
           {...otherProps}

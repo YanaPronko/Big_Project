@@ -15,3 +15,30 @@
     fill-opacity: 1;
   }
 }
+
+.articlesViewSelectorRedesigned {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: torem(10);
+    border-radius: torem(20);
+    background-color: transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--light-bg-redesigned);
+    }
+  }
+
+  .selected {
+    svg {
+      color: var(--accent-redesigned);
+    }
+
+    &.btn {
+      transition: all 0.3s ease;
+      background-color: var(--light-bg-redesigned);
+    }
+  }
+}

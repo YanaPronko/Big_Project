@@ -21,7 +21,7 @@ import {
 } from "../../model/selector/articlesFilters";
 import { articlesFiltersActions } from "../../model/slice/articlesFiltersSlice";
 import { ArticlesSortField } from "../../model/types/articlesFiltersSchema";
-import { ArticleSortSelector } from "../ArticleSortSelector/ArticleSortSelector";
+import { ArticleSortSelector } from "../ArticleSortSelector/ArticleSortSelectorDeprecated/ArticleSortSelector";
 import { ArticlesTypesTabs } from "../ArticlesTypesTabs/ArticlesTypesTabs";
 
 import cls from "./ArticlesFilters.module.scss";

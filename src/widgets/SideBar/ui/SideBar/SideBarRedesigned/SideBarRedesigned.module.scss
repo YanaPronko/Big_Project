@@ -1,16 +1,54 @@
 .sidebar_redesigned {
-  background: var(--light-bg-redesigned);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: torem(10);
   width: torem(220);
   height: 100%;
+  padding-bottom: torem(40);
   border-radius: torem(32);
+  background: var(--light-bg-redesigned);
+  transition: all 0.3s ease;
 }
 
 .appLogo {
   padding-top: torem(20);
+  margin-bottom: torem(20);
+  width: torem(100);
+  height: torem(100);
+  transition: all 0.3s ease;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.switchers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: torem(16);
+  width: 100%;
+}
+
+.arrow {
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.items {
+  flex-grow: 1;
+  width: 100%;
 }
 
 .collappsed {
-  width: var(--collapsed-sidebar-width);
+  width: torem(50);
 
   .switchers {
     width: 100%;
@@ -18,7 +56,21 @@
     align-items: center;
   }
 
+  .items {
+    display: flex;
+    align-items: center;
+  }
+
   .link {
     opacity: 0;
+  }
+
+  .appLogo {
+    width: torem(50);
+    height: torem(50);
+  }
+
+  .arrow {
+    transform: rotate(-90deg);
   }
 }

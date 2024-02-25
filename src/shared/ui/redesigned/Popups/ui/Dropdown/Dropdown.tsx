@@ -75,8 +75,7 @@ export const DropdownRedesigned = memo((props: DropdownProps) => {
               onClick={item.onClick}
               className={classNames(
                 cls.item,
-                { [popoverCls.active]: active },
-                [],
+                { [popoverCls.active]: active }
               )}
             >
               {item.content}
