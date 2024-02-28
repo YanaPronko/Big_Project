@@ -6,6 +6,8 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { ListBox } from "@/shared/ui/deprecated/Popups";
 
 import { Country } from "../../model/types/country";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
+import { ListBoxRedesigned } from "@/shared/ui/redesigned/Popups";
 
 interface CountrySelectProps {
   className?: string;
@@ -33,17 +35,17 @@ export const CountrySelect = memo(
       [onChange],
     );
 
-    return (
-      <ListBox
-        className={classNames("", {}, [className])}
-        label={t("enter-country")}
-        items={options}
-        selectedVal={value}
-        defaultVal="Belarus"
-        onChange={onChangeHandler}
-        readonly={readonly}
-        direction="topR"
-      />
-    );
+    const props = {
+      className: classNames('', { }, [className]),
+      label: t("enter-country"),
+      items: options,
+      selectedVal: value,
+      defaultVal: "Belarus",
+      onChange: onChangeHandler,
+      readonly,
+      direction: "topR" as const,
+    }
+
+    return (<ToggleFeatures feature="isAppRedesigned" on={<ListBoxRedesigned {...props} />} off={<ListBox {...props} />} />);
   },
 );

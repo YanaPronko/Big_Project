@@ -1,8 +1,15 @@
 .button {
-  padding: torem(6) torem(15);
+  display: flex;
+  align-items: center;
+  padding: torem(8) torem(16);
   color: var(--text-redesigned);
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
+
+  .addonRight svg,
+  .addonLeft svg {
+    color: var(--hint-redesigned);
+  }
 
   &:disabled {
     opacity: 0.5;
@@ -11,7 +18,21 @@
 
   &:hover {
     color: var(--accent-redesigned);
+
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-redesigned);
+    }
   }
+}
+
+.withAddon {
+  padding: torem(2) torem(16);
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
 }
 
 .clear {
@@ -34,12 +55,11 @@
   background: var(--light-bg-redesigned);
   border: none;
   outline: none;
-  padding: torem(8) torem(16);
   border-radius: torem(34);
 }
 
 .outline {
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--bg-redesigned);
   background: none;
 }
 

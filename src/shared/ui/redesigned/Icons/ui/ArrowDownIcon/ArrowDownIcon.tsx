@@ -4,14 +4,14 @@ import { memo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { IconProps } from "@/shared/types/ui";
 
-import cls from "./SideBarCollapseIcon.module.scss";
+import cls from "./ArrowDownIcon.module.scss";
 
 /**
  * @description
  * it's wrapper for svg icon
  */
 
-export const SideBarCollapseIconRedesigned = memo((props: IconProps) => {
+export const ArrowDownIconRedesigned = memo((props: IconProps) => {
   const { className, ...otherProps } = props;
 
   return (

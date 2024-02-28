@@ -8,6 +8,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { PopupsDirection } from "../../../../../types/ui";
 import { ButtonRedesigned } from "../../../Button";
+import { ArrowDownIconRedesigned } from "../../../Icons";
 import { HStack } from "../../../Stack";
 import popoverCls from "../../styles/popup.module.scss";
 
@@ -84,7 +85,7 @@ export const ListBoxRedesigned = typedMemo(
     );
 
     return (
-      <HStack gap="4">
+      <HStack gap="4" max>
         {label && (
           <label htmlFor="box" className={cls.label}>
             {label}
@@ -99,12 +100,16 @@ export const ListBoxRedesigned = typedMemo(
           disabled={readonly}
         >
           <HListBox.Button as="div">
-            <ButtonRedesigned variant="filled" disabled={readonly}>
+            <ButtonRedesigned
+              className={cls.optionText} variant="filled"
+              disabled={readonly}
+              addonRight={<ArrowDownIconRedesigned />}
+            >
               {selectedItem?.content ?? defaultVal}
             </ButtonRedesigned>
           </HListBox.Button>
           <HListBox.Options
-            className={classNames(cls.options, {}, [popoverCls[direction]])}
+            className={classNames(cls.options, {}, [popoverCls[direction], popoverCls.menu])}
           >
             {items?.map((item) => (
               <HListBox.Option

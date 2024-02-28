@@ -10,8 +10,9 @@ import {
 } from "@/features/FiltersOfArticle";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { SortOrder } from "@/shared/types/order";
-import { Input } from "@/shared/ui/deprecated/Input";
 import { CardRedesigned } from "@/shared/ui/redesigned/Card";
+import { SearchIconRedesigned } from "@/shared/ui/redesigned/Icons";
+import { InputRedesigned } from "@/shared/ui/redesigned/Input";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 
 import cls from "./ArticleFilters.module.scss";
@@ -48,10 +49,11 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
       padding="24"
     >
       <VStack gap="32" max align="start">
-        <Input
+        <InputRedesigned
           placeholder={t("search")}
           value={search}
           onChange={onChangeSearch}
+          addonLeft={<SearchIconRedesigned />}
         />
         <ArticleSortSelectorRedesigned
           order={order}

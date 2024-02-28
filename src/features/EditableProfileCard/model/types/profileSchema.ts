@@ -4,6 +4,7 @@ export type ValidateProfileErrors =
   | "incorrect user data"
   | "incorrect age"
   | "incorrect country"
+  | "incorrect city"
   | "server error"
   | "no data";
 

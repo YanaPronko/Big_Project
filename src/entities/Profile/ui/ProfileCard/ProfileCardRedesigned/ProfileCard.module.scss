@@ -1,0 +1,12 @@
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: torem(10);
+  margin-bottom: torem(20);
+}
+
+.ref {
+  overflow: hidden;
+}

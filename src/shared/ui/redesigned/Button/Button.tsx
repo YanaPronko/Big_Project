@@ -1,4 +1,4 @@
-import { HTMLAttributes, memo } from "react";
+import { HTMLAttributes, memo, ReactNode } from "react";
 
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 
@@ -44,6 +44,14 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
    * @description Flag to make button's width 100%.
    */
   fullWidth?: boolean;
+  /**
+   * @description element(icon) in left side
+   */
+  addonLeft?: ReactNode;
+  /**
+   * @description element(icon) in right side
+   */
+  addonRight?: ReactNode;
 }
 
 export const ButtonRedesigned = memo((props: ButtonProps) => {
@@ -54,12 +62,15 @@ export const ButtonRedesigned = memo((props: ButtonProps) => {
     square,
     size = "m",
     fullWidth,
+    addonLeft,
+    addonRight,
     ...otherProps
   } = props;
 
   const mods: Mods = {
     [cls.square]: square,
     [cls.fullWidth]: fullWidth,
+    [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
   };
 
   return (
@@ -72,7 +83,9 @@ export const ButtonRedesigned = memo((props: ButtonProps) => {
       ])}
       {...otherProps}
     >
+      {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
       {children}
+      {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
     </button>
   );
 });

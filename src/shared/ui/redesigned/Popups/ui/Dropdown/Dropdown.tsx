@@ -62,9 +62,9 @@ export const DropdownRedesigned = memo((props: DropdownProps) => {
         {trigger}
       </Menu.Button>
       <Menu.Items
-        className={classNames(cls.menu, {}, [
+        className={classNames(cls.dropdownMenu, {}, [
           popoverCls[direction],
-          popoverCls.menu
+          popoverCls.menu,
         ])}
       >
         {items.map((item) => {
@@ -73,10 +73,7 @@ export const DropdownRedesigned = memo((props: DropdownProps) => {
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
-              className={classNames(
-                cls.item,
-                { [popoverCls.active]: active }
-              )}
+              className={classNames(cls.item, { [popoverCls.active]: active })}
             >
               {item.content}
             </button>

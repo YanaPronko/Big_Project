@@ -1,0 +1,61 @@
+.input_wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  padding: torem(8) torem(16);
+  border: 2px solid var(--icon-redesigned);
+  width: 100%;
+  gap: torem(10);
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
+
+  &:focus {
+    color: var(--accent-redesigned);
+  }
+}
+
+.withAddonLeft {
+  padding-left: torem(8);
+}
+
+.withAddonRight {
+  padding-right: torem(8);
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-redesigned);
+  border-radius: torem(4);
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    font: var(--font-m-redesigned);
+    color: var(--hint-redesigned);
+    transition: all 0.3s ease;
+  }
+
+  &:focus {
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-redesigned);
+    }
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.label {
+  flex-shrink: 0;
+}
+
+.readonly {
+  opacity: 0.6;
+}

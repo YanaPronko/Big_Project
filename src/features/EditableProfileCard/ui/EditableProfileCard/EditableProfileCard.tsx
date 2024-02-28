@@ -49,6 +49,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     dispatch(profileActions.updateProfile({ age: Number(value) }));
   };
 
+  const onChangeCity = (value: string) => {
+    dispatch(profileActions.updateProfile({ city: value }));
+  };
+
   const onChangeUsername = (value: string) => {
     dispatch(profileActions.updateProfile({ username: value }));
   };
@@ -91,6 +95,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         onChangeAvatar={onChangeAvatar}
         onChangeCountry={onChangeCountry}
         onChangeCurrency={onChangeCurrency}
+        onChangeCity={onChangeCity}
       />
     </section>
   );

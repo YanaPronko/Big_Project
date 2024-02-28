@@ -7,7 +7,7 @@ import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
-import { SideBarCollapseIconRedesigned } from "@/shared/ui/redesigned/Icons";
+import { ArrowDownIconRedesigned } from "@/shared/ui/redesigned/Icons";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 
 import { getSideBarItemsList } from "../../../model/selectors/getSideBarItemsList";
@@ -59,7 +59,7 @@ export const SideBarRedesigned = memo((props: SideBarProps) => {
         size="xl"
         onClick={onToggle}
       >
-        <SideBarCollapseIconRedesigned
+        <ArrowDownIconRedesigned
           className={classNames(cls.arrow, { [cls.collappsed]: collapsed })}
         />
       </ButtonRedesigned>

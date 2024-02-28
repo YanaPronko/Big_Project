@@ -9,7 +9,7 @@ export const validateProfileData = (
     return ["no data"];
   }
 
-  const { first, lastname, age, country } = profile;
+  const { first, lastname, age, country, city } = profile;
 
   const validateErrors: ValidateProfileErrors[] = [];
   if (!first || !lastname) {
@@ -20,6 +20,9 @@ export const validateProfileData = (
   }
   if (!country) {
     validateErrors.push("incorrect country");
+  }
+  if (!city) {
+    validateErrors.push("incorrect city");
   }
   return validateErrors;
 };

@@ -12,4 +12,5 @@ export { GridIconRedesigned } from "./ui/GridIcon/GridIcon";
 // export { CalendarIcon } from "./ui/CalendarIcon/CalendarIcon";
 export { ArticleIconRedesigned } from "./ui/ArticleIcon/ArticleIcon";
 export { UserIconRedesigned } from "./ui/UserIcon/UserIcon";
-export { SideBarCollapseIconRedesigned } from "./ui/SideBarCollapseIcon/SideBarCollapseIcon";
+export { SearchIconRedesigned } from './ui/SearchIcon/SearchIcon';
+export { ArrowDownIconRedesigned } from './ui/ArrowDownIcon/ArrowDownIcon';

@@ -30,5 +30,8 @@
   "Economics": "Economics",
   "All": "All",
   "welcome-to-the-articles": "Welcome to the articles page! Here you can search and view articles on different topics",
-  "sort-by": "Sort by"
+  "sort-by": "Sort by",
+  "article": {
+    "search": "search"
+  }
 }

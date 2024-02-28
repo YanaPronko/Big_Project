@@ -1,12 +1,10 @@
-.menu {
+.dropdownMenu {
   position: absolute;
   display: flex;
   flex-direction: column;
   width: max-content;
   background: var(--dark-bg-redesigned);
   z-index: 10000;
-  border-radius: torem(8);
-  border: 1px solid var(--dark-bg-redesigned);
 }
 
 .item {
