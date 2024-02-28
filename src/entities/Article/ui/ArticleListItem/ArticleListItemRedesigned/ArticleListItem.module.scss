@@ -1,0 +1,108 @@
+.list {
+  // .cardItem {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: torem(20);
+  // }
+
+  // .views {
+  //   margin-left: auto;
+  // }
+
+  // .header {
+  //   display: flex;
+  //   align-items: center;
+  // }
+
+  // .username {
+  //   margin-left: torem(8);
+  // }
+
+  // .date {
+  //   margin-left: auto;
+  // }
+
+  // .title {
+  //   margin-top: torem(8);
+  // }
+
+  .img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 732 /420;
+  }
+
+  // .footer {
+  //   display: flex;
+  //   align-items: center;
+  // }
+
+  .textBlock {
+    max-height: torem(72);
+    overflow: hidden;
+  }
+
+  // .btn {
+  //   &:hover {
+  //     transform: scale(1.01);
+  //   }
+  // }
+}
+
+.grid {
+  .cardItem {
+    max-width: torem(240);
+    min-height: 100%;
+    overflow: hidden;
+    transition: 0.2s all ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    // .date {
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   visibility: hidden;
+    //   transition: 0.2s all ease-in-out;
+    // }
+
+    &:hover {
+      transform: scale(1.01);
+      opacity: 0.8;
+
+      // .date {
+      //   visibility: visible;
+      // }
+    }
+  }
+
+  .textBlock {
+    max-height: torem(72);
+    overflow: hidden;
+  }
+
+  .img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 249 /141;
+    border-radius: torem(32) torem(32) 0 0;
+  }
+
+  .infoWrapper {
+    padding: torem(8)  torem(8)  torem(16)  torem(8);
+    height: 100%;
+  }
+
+  .footer {
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  // .title h3 {
+  //   width: torem(200);
+  //   white-space: nowrap;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  // }
+}

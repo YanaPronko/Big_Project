@@ -6,9 +6,11 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
-import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArtcileListItemSkeleton/ArticleListItemSkeleton";
 
 import cls from "./ArticlesList.module.scss";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 interface ArticlesListProps {
   className?: string;
@@ -39,13 +41,32 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   );
 
   return (
-    <div
-      data-testid="ArticleList"
-      role="list"
-      className={classNames("", {}, [className, cls[view]])}
-    >
-      {articles.map(renderArticles)}
-      {isLoading && getSkeletons(view)}
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <HStack
+          wrap="wrap"
+          gap="16"
+          align="stretch"
+          data-testid="ArticleList"
+          role="list"
+          className={classNames(cls.articleListRedesigned, {}, [])}
+        >
+          {articles.map(renderArticles)}
+          {isLoading && getSkeletons(view)}
+        </HStack>
+      }
+      off={
+        <div
+          data-testid="ArticleList"
+          role="list"
+          className={classNames("", {}, [className, cls[view]])}
+        >
+          {articles.map(renderArticles)}
+          {isLoading && getSkeletons(view)}
+        </div>
+      }
+    />
   );
+
 });

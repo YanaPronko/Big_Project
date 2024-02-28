@@ -8,6 +8,7 @@ type FlexJustify = "start" | "end" | "between" | "center" | "around" | "evenly";
 type FlexAlign = "start" | "end" | "stretch" | "center";
 export type FlexDirection = "row" | "column" | "columnRev" | "rowRev";
 type FlexGap = "4" | "8" | "16" | "24" | "32";
+export type FlexWrap = "nowrap" | "wrap";
 
 const alignClasses: Record<FlexAlign, string> = {
   start: cls.alignStart,
@@ -74,6 +75,11 @@ export interface FlexProps extends DivProps {
    * @description Flag to set width: 100%
    */
   max?: boolean;
+  /**
+   * @description Flag to set wrap/nowrap property
+   * @default "nowrap"
+   */
+  wrap?: FlexWrap;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -84,6 +90,7 @@ export const Flex = (props: FlexProps) => {
     align = "center",
     direction = "row",
     gap,
+    wrap = "nowrap",
     max,
     ...otherProps
   } = props;
@@ -94,6 +101,7 @@ export const Flex = (props: FlexProps) => {
     alignClasses[align],
     directionClasses[direction],
     gap && gapClasses[gap],
+    cls[wrap],
   ];
 
   const mods = {

@@ -1,5 +1,6 @@
 .appLink {
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .primary {
@@ -19,11 +20,11 @@
 }
 
 .m {
-  font: var(--font-m--redesigned);
+  font: var(--font-m-redesigned);
 }
 
 .s {
-  font: var(--font-s--redesigned);
+  font: var(--font-s-redesigned);
 }
 
 .red {

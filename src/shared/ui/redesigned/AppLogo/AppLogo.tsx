@@ -17,9 +17,8 @@ export const AppLogo = memo(({ className }: AppLogoProps) => (
     justify="center"
     className={classNames(cls.appLogoWrapper, {}, [className])}
   >
+    <img src={logo} alt="app logo" className={cls.logo} />
     <div className={cls.gradientBig} />
     <div className={cls.gradientSmall} />
-    <img src={logo} alt='app logo' className={cls.logo} />
-    {/* <AppLogoIcon /> */}
   </HStack>
 ));

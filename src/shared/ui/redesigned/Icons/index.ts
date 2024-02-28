@@ -7,7 +7,7 @@ export { AboutIconRedesigned } from "./ui/AboutIcon/AboutIcon";
 
 export { ListIconRedesigned } from "./ui/ListIcon/ListIcon";
 export { GridIconRedesigned } from "./ui/GridIcon/GridIcon";
-// export { EyeIcon } from "./ui/EyeIcon/EyeIcon";
+export { EyeIconRedesigned } from "./ui/EyeIcon/EyeIcon";
 // export { CopyIcon } from "./ui/CopyIcon/CopyIcon";
 // export { CalendarIcon } from "./ui/CalendarIcon/CalendarIcon";
 export { ArticleIconRedesigned } from "./ui/ArticleIcon/ArticleIcon";

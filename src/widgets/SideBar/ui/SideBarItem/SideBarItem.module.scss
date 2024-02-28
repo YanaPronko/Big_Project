@@ -6,7 +6,7 @@
   margin-left: torem(5);
   opacity: 1;
   text-decoration: none;
-  transition: 0.2s opacity ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .collappsed {
@@ -21,6 +21,10 @@
   width: 100%;
   padding: 0 torem(16);
   transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(90deg, rgb(94 211 243 / 0.3) 1.15%, rgb(94 211 243 / 0) 99.97%);
+  }
 }
 
 .collapsedRedesigned {
@@ -34,7 +38,7 @@
 }
 
 .active {
-  background: linear-gradient(89.97deg, rgb(29 89 255 / 0.3) 1.15%, rgb(94 211 243 / 0) 99.97%);
+  background: linear-gradient(90deg, rgb(94 211 243 / 0.3) 1.15%, rgb(94 211 243 / 0) 99.97%);
   position: relative;
 
   &::before {

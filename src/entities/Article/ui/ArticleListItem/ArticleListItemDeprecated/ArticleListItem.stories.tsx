@@ -3,16 +3,16 @@ import { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { ArticleListItem } from "./ArticleListItem";
-import { articleMock } from "../../model/mocks/articles";
+import { ArticleListItemDeprecated } from "./ArticleListItemDeprecated";
+import { articleMock } from "../../../model/mocks/articles";
 
-const meta: Meta<typeof ArticleListItem> = {
+const meta: Meta<typeof ArticleListItemDeprecated> = {
   title: "entities/Article/ArticleListItem",
-  component: ArticleListItem,
+  component: ArticleListItemDeprecated,
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleListItem>;
+type Story = StoryObj<typeof ArticleListItemDeprecated>;
 
 export const Grid: Story = {
   args: {

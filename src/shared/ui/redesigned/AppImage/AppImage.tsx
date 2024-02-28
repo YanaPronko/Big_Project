@@ -1,5 +1,6 @@
 import {
   ImgHTMLAttributes,
+  memo,
   ReactElement,
   useLayoutEffect,
   useState,
@@ -39,11 +40,11 @@ export const AppImage = typedMemo((props: AppImageProps) => {
     };
   }, [src]);
 
-  if (isLoading) {
+  if (isLoading && fallback) {
     return fallback;
   }
 
-  if (hasError) {
+  if (hasError && errorFallback) {
     return errorFallback;
   }
 

@@ -44,6 +44,10 @@ interface TextProps {
    * @default "m"
    */
   size?: TextSize;
+  /**
+   * @description The style of the text
+   */
+  bold?: boolean,
 }
 
 export const TextRedesigned = memo((props: TextProps) => {
@@ -54,6 +58,7 @@ export const TextRedesigned = memo((props: TextProps) => {
     variant = "primary",
     align = "left",
     size = "m",
+    bold,
     ...otherProps
   } = props;
 
@@ -61,7 +66,7 @@ export const TextRedesigned = memo((props: TextProps) => {
 
   return (
     <div
-      className={classNames(cls.textWrapper, {}, [
+      className={classNames(cls.textWrapper, {[cls.bold]: bold}, [
         className,
         cls[variant],
         cls[align],

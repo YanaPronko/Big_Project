@@ -44,42 +44,46 @@
   text-align: center;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 .xl {
   .title {
     font-size: torem(35);
   }
 
   .text {
-    font: var(--font-xl--redesigned);
+    font: var(--font-xl-redesigned);
   }
 }
 
 .l {
   .title {
-    font: var(--font-xl--redesigned);
+    font: var(--font-xl-redesigned);
   }
 
   .text {
-    font: var(--font-xl--redesigned);
+    font: var(--font-xl-redesigned);
   }
 }
 
 .m {
   .title {
-    font: var(--font-xl--redesigned);
+    font: var(--font-xl-redesigned);
   }
 
   .text {
-    font: var(--font-m--redesigned);
+    font: var(--font-m-redesigned);
   }
 }
 
 .s {
   .title {
-    font: var(--font-m--redesigned);
+    font: var(--font-m-redesigned);
   }
 
   .text {
-    font: var(--font-s--redesigned);
+    font: var(--font-s-redesigned);
   }
 }
