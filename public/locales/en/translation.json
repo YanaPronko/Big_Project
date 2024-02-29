@@ -28,5 +28,10 @@
   "send": "Send",
   "Feedback": "Feedback",
   "thank-you-for-feedback": "Thank you for feedback",
-  "leave-your-feedback": "Leave your feedback"
+  "leave-your-feedback": "Leave your feedback",
+  "interfaces-varian": "Interface's variant",
+  "new-interface": "New interface",
+  "old-interface": "Old interface",
+  "users-settings": "User's settings",
+  "settings": "Settings"
 }

@@ -19,12 +19,11 @@ import "../styles/index.scss";
 export const AppDeprecated = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
-  const { setAuthData, setInited } = userActions;
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(initUserAuthData());
-  }, [dispatch, setAuthData, setInited]);
+  }, [dispatch]);
 
   if (!inited) {
     return <PageLoader />;

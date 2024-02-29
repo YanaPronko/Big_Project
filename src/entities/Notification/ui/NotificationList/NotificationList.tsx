@@ -3,11 +3,13 @@ import { memo } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 
 import { useGetNotifications } from "../../api/notificationsApi";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 
 interface NotificationListProps {
   className?: string;
@@ -18,6 +20,12 @@ export const NotificationList = memo((props: NotificationListProps) => {
   const { data: notifications, isLoading } = useGetNotifications(null, {
     pollingInterval: 500,
   });
+
+  const Skeleton = toggleFeatures({
+    name: "isAppRedesigned",
+    on: () => SkeletonRedesigned,
+    off: ()=> SkeletonDeprecated,
+  })
 
   if (isLoading) {
     return (

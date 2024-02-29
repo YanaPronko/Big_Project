@@ -28,5 +28,10 @@
   "send": "Отправить",
   "Feedback": "Отзыв",
   "thank-you-for-feedback": "Спасибо за отзыв",
-  "leave-your-feedback": "Оставьте свой отзыв"
+  "leave-your-feedback": "Оставьте свой отзыв",
+  "interfaces-varian": "Вариант интерфейса",
+  "new-interface": "Новый интерфейс",
+  "old-interface": "Старый интерфейс",
+  "users-settings": "Настройки пользователя",
+  "settings": "Настройки"
 }

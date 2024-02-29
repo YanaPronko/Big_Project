@@ -6,10 +6,11 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { useKeyDown } from "@/shared/lib/hooks/useKeyDown/useKeyDown";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
-import { Overlay } from "../../redesigned/Overlay";
-import { Portal } from "../../redesigned/Portal";
+import { Overlay } from "../Overlay";
+import { Portal } from "../Portal";
 
 import cls from "./Modal.module.scss";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 
 interface ModalProps {
   /**
@@ -29,11 +30,6 @@ interface ModalProps {
    */
   onClose?: () => void;
 }
-
-/**
- * @deprecated
- * this component deprecated, see in redesigned folder
- */
 
 export const Modal: FC<ModalProps> = (props) => {
   const { children, className, isOpen, onClose } = props;
@@ -62,6 +58,11 @@ export const Modal: FC<ModalProps> = (props) => {
             className={classNames(cls.popup, { [cls[state]]: true }, [
               className,
               theme,
+              toggleFeatures({
+                name: "isAppRedesigned",
+                on: () => cls.popupRedesigned,
+                off: ()=> cls.popupDeprecated,
+              })
             ])}
           >
             <Overlay onClose={closeHandler} />

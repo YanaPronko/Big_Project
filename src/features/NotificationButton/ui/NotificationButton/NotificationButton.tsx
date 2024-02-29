@@ -5,7 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { useDeviceDetect } from "@/shared/lib/hooks/useDeviceDetect/useDeviceDetect";
 import { Button } from "@/shared/ui/deprecated/Button";
-import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { Drawer } from "@/shared/ui/redesigned/Drawer";
 import { NotificationIcon } from "@/shared/ui/deprecated/Icons";
 import { Popover } from "@/shared/ui/deprecated/Popups";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";

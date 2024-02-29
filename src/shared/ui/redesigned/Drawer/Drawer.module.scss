@@ -3,9 +3,6 @@
   display: flex;
   align-items: flex-end;
   inset: 0;
-  color: var(--primary-color);
-
-  // opacity: 0;
   transition: all 0.5s ease-in-out;
 }
 
@@ -13,23 +10,24 @@
   position: fixed;
   left: 2vw;
   width: 96vw;
-
-  // bottom: 0;
   height: calc(100vh + 100px);
-
-  // max-height: 70%;
-  // min-height: 10rem;
-  // width: 100%;
   padding: torem(20);
-  background: var(--bg-color);
   border-top-left-radius: torem(12);
   border-top-right-radius: torem(12);
   touch-action: none;
-
-  // overflow-y: auto;
-  // overflow-x: hidden;
-  // transform: translateY(100%);
   transition: all 0.5s ease-in-out;
+}
+
+.drawerRedesigned {
+  .content {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+.drawerDeprecated {
+  .content {
+    background: var(--bg-color);
+  }
 }
 
 .entering,

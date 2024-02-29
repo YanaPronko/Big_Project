@@ -14,12 +14,11 @@ import { AppRedesigned } from "./AppRedesigned/AppRedesigned";
 
 export const App = () => {
   const dispatch = useAppDispatch();
-  const { setAuthData, setInited } = userActions;
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(initUserAuthData());
-  }, [dispatch, setAuthData, setInited]);
+  }, [dispatch]);
 
   if (!inited) {
     return <PageLoader />;

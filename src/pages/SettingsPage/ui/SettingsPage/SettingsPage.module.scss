@@ -1,0 +1,5 @@
+.title {
+  &:not(:last-child) {
+    margin-bottom: torem(50);
+  }
+}

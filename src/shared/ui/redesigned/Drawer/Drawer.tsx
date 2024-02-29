@@ -8,10 +8,11 @@ import {
   AnimationProvider,
   useAnimationLibs,
 } from "../../../lib/ui/AnimationProvider";
-import { Overlay } from "../../redesigned/Overlay";
-import { Portal } from "../../redesigned/Portal";
+import { Overlay } from "../Overlay";
+import { Portal } from "../Portal";
 
 import cls from "./Drawer.module.scss";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 
 interface DrawerProps {
   /**
@@ -98,7 +99,17 @@ const DrawerContent = (props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.drawer, {}, [className, theme])}>
+      <div
+        className={classNames(cls.drawer, {}, [
+          className,
+          theme,
+          toggleFeatures({
+            name: "isAppRedesigned",
+            on: () => cls.drawerRedesigned,
+            off: () => cls.drawerDeprecated,
+          }),
+        ])}
+      >
         <Overlay onClose={onClose} />
         <Spring.a.div
           className={classNames(cls.content)}
@@ -122,10 +133,6 @@ const DrawerAsync = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-/**
- * @deprecated
- * this component deprecated, see in redesigned folder
- */
 
 export const Drawer = (props: DrawerProps) => (
   <AnimationProvider>

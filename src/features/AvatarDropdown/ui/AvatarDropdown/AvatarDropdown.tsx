@@ -9,7 +9,7 @@ import {
   getUserAuthData,
   userActions,
 } from "@/entities/User";
-import { getRouteAdmin, getRouteProfile } from "@/shared/const/AppRoutes";
+import { getRouteAdmin, getRouteProfile, getRouteSettings } from "@/shared/const/AppRoutes";
 import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
@@ -60,6 +60,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
       {
         content: t("vyiti"),
         onClick: onLogOut,
+      },
+      {
+        content: t('settings'),
+        href: getRouteSettings(),
       },
     ],
     [t, onLogOut, authData, isAdminPanelAvailable],

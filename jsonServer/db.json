@@ -791,6 +791,11 @@
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
+      },
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true,
+        "isAppRedesigned": false
       }
     },
     {
