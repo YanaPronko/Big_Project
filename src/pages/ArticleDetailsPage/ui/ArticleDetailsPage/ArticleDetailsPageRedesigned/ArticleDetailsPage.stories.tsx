@@ -5,11 +5,11 @@ import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import ArticleDetailsPage from "./ArticleDetailsPage";
+import ArticleDetailsPageRedesigned from "./ArticleDetailsPageRedesigned";
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-  title: "pages/ ArticleDetailsPage/ArticleDetailsPage",
-  component: ArticleDetailsPage,
+const meta: Meta<typeof ArticleDetailsPageRedesigned> = {
+  title: "pages/ ArticleDetailsPage/ArticleDetailsPageRedesigned",
+  component: ArticleDetailsPageRedesigned,
   parameters: {
     router: {
       path: "/articles/:id",
@@ -90,7 +90,7 @@ const data: Article = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleDetailsPage>;
+type Story = StoryObj<typeof ArticleDetailsPageRedesigned>;
 
 export const Primary: Story = {
   args: {},

@@ -33,5 +33,9 @@
   "sort-by": "Сортировать по",
   "article": {
     "search": "поиск"
-  }
+  },
+  "views_one": "{{count}} просмотр",
+  "views_zero": "0 просмотров",
+  "views_few": "{{count}} просмотра",
+  "views_many": "{{count}} просмотров"
 }

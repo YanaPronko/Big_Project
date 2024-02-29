@@ -33,5 +33,8 @@
   "sort-by": "Sort by",
   "article": {
     "search": "search"
-  }
+  },
+  "views_one": "view",
+  "views_zero": "0 views",
+  "views_other": "{{count}} views"
 }

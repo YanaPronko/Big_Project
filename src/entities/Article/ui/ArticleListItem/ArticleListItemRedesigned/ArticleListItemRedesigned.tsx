@@ -87,14 +87,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       >
         <CardRedesigned className={cls.cardItem} borderRadius="round">
           {imgGrid}
-          <VStack className={cls.infoWrapper} gap="4">
+          <VStack className={cls.infoWrapper} gap="4" justify="between">
             {title}
-            {textBlock?.paragraphs && (
-              <TextRedesigned
-                text={textBlock.paragraphs.slice(0, 2).join(" ")}
-                className={cls.textBlock}
-              />
-            )}
             <VStack gap="4" max className={cls.footer} align="start">
               <HStack justify="between" max>
                 {date}
