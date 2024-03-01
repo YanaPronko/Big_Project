@@ -26,6 +26,7 @@ import { AdditionalInfoContainer } from "../../AdditionalInfoContainer/Additiona
 // import { articleDetailsCommentsReducer } from "../../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../../ArticleDetailsComments/ArticleDetailsComments";
 import { DetailsContainer } from "../../DetailsContainer/DetailsContainer";
+import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -63,12 +64,14 @@ const ArticleDetailsPageRedesigned: FC<ArticleDetailsPageProps> = (props) => {
     <StickyContentLayout
       content={
         <Page className={classNames("", {}, [className])}>
-          <VStack gap="16" max align="stretch">
-            <DetailsContainer />
-            <ArticleRating articleId={id} />
-            <ArticleRecommendationsList />
-            <ArticleDetailsComments id={id} />
-          </VStack>
+          <CardRedesigned max padding="24" borderRadius="round">
+            <VStack gap="16" max align="stretch">
+              <DetailsContainer />
+              <ArticleRating articleId={id} />
+              <ArticleRecommendationsList />
+              <ArticleDetailsComments id={id} />
+            </VStack>
+          </CardRedesigned>
         </Page>
       }
       right={<AdditionalInfoContainer />}

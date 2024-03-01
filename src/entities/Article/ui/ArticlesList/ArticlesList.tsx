@@ -52,6 +52,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
           role="list"
           className={classNames(cls.articleListRedesigned, {}, [])}
         >
+
           {articles.map(renderArticles)}
           {isLoading && getSkeletons(view)}
         </HStack>

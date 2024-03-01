@@ -23,7 +23,7 @@ export const DetailsContainer = memo((props: DetailsContainterProps) => {
   });
 
   return (
-    <CardRedesigned borderRadius="round" className={className} padding="24" max>
+    <CardRedesigned borderRadius="round" className={className} padding="24">
       <ArticleDetails />
     </CardRedesigned>
   );

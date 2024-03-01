@@ -83,20 +83,6 @@
     align-items: center;
     justify-content: space-between;
   }
-
-  .types p {
-    width: torem(115);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .title h3 {
-    width: torem(200);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 .articleListItemRedesigned {
@@ -111,8 +97,17 @@
       overflow: hidden;
       transition: 0.2s all ease-in-out;
       cursor: pointer;
-      display: flex;
-      flex-direction: column;
+    }
+
+    .imageWrapper {
+      width: 100%;
+    }
+
+    .img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 249 /141;
+      border-radius: torem(12) torem(12) 0 0;
     }
   }
 }

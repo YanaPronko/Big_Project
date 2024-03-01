@@ -4,22 +4,11 @@ import { useTranslation } from "react-i18next";
 
 import { getRouteArticleDetails } from "@/shared/const/AppRoutes";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink } from "@/shared/ui/deprecated/AppLink";
-import { Avatar } from "@/shared/ui/deprecated/Avatar";
-import { Button } from "@/shared/ui/deprecated/Button";
-import { Card } from "@/shared/ui/deprecated/Card";
-import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
-import { Text } from "@/shared/ui/deprecated/Text";
+
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
 
-import {
-  Article,
-  ArticleTextBlock,
-  ArticleView,
-} from "../../../model/types/article";
-import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import {  ArticleTextBlock} from "../../../model/types/article";
 
-import cls from "./ArticleListItem.module.scss";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { EyeIconRedesigned } from "@/shared/ui/redesigned/Icons";
@@ -29,6 +18,8 @@ import { AvatarRedesigned } from "@/shared/ui/redesigned/Avatar";
 import { AppLinkRedesigned } from "@/shared/ui/redesigned/AppLink";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 import { ArticleListItemProps } from "../../../model/types/articleListItem";
+
+import cls from "./ArticleListItem.module.scss";
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   const { className, view, article, target } = props;
@@ -41,6 +32,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         size={32}
         alt={article.user.username}
         src={article.user.avatar}
+        className={cls.avatar}
       />
       <TextRedesigned
         bold
@@ -63,7 +55,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       src={article.img}
       alt={article.title}
       className={cls.img}
-      fallback={<SkeletonRedesigned height="200px" width="200px" />}
+      fallback={<SkeletonRedesigned height="200px" width='240px' />}
     />
   );
   const imgList = (
@@ -85,16 +77,22 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         to={getRouteArticleDetails(article.id)}
         target={target}
       >
-        <CardRedesigned className={cls.cardItem} borderRadius="round">
+        <CardRedesigned
+          className={cls.cardItem}
+          borderRadius="round"
+          padding="0"
+        >
           {imgGrid}
-          <VStack className={cls.infoWrapper} gap="4" justify="between">
+          <VStack className={cls.infoWrapper} gap="4">
             {title}
             <VStack gap="4" max className={cls.footer} align="start">
               <HStack justify="between" max>
                 {date}
                 {views}
               </HStack>
-              <HStack gap="4" justify="start">{userInfo}</HStack>
+              <HStack gap="4" justify="start">
+                {userInfo}
+              </HStack>
             </VStack>
           </VStack>
         </CardRedesigned>

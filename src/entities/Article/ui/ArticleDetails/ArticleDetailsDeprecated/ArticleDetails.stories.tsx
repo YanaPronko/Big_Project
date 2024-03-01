@@ -4,8 +4,8 @@ import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { ArticleDetails } from "./ArticleDetails";
-import { Article } from "../../model/types/article";
+import { ArticleDetailsDeprecated } from "./ArticleDetails";
+import { Article } from "../../../model/types/article";
 
 const data: Article = {
   id: "1",
@@ -78,13 +78,13 @@ const data: Article = {
   ],
 };
 
-const meta: Meta<typeof ArticleDetails> = {
-  title: "entities/Article/ArticleDetails",
-  component: ArticleDetails,
+const meta: Meta<typeof ArticleDetailsDeprecated> = {
+  title: "entities/Article/ArticleDetailsDeprecated",
+  component: ArticleDetailsDeprecated,
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleDetails>;
+type Story = StoryObj<typeof ArticleDetailsDeprecated>;
 
 export const Primary: Story = {
   args: {},
