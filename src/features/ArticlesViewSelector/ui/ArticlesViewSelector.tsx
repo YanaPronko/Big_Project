@@ -61,7 +61,7 @@ export const ArticlesViewSelector = memo((props: ArticlesViewSelectorProps) => {
             className,
           ])}
           borderRadius="round"
-          padding="16"
+          padding="8"
           {...otherProps}
         >
           <HStack>

@@ -39,7 +39,7 @@ export const ArticleListItemSkeleton = memo(
     if (view === "list") {
       return (
         <div className={classNames(mainClass, {}, [className, cls[view]])}>
-          <Card className={cls.card} max>
+          <Card className={cls.card} max padding="24">
             <div className={cls.header}>
               <Skeleton borderRadius="50%" height={30} width={30} />
               <Skeleton width={150} height={16} className={cls.username} />
@@ -57,7 +57,7 @@ export const ArticleListItemSkeleton = memo(
 
     return (
       <div className={classNames(mainClass, {}, [className, cls[view]])}>
-        <Card className={cls.card}>
+        <Card className={cls.card} borderRadius="round">
           <div className={cls.imageWrapper}>
             <Skeleton width={200} height={200} className={cls.img} />
           </div>

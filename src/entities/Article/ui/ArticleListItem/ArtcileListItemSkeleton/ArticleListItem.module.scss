@@ -103,4 +103,16 @@
   &.list {
     width: 100%;
   }
+
+  &.grid {
+    .card {
+      max-width: torem(240);
+      min-height: 100%;
+      overflow: hidden;
+      transition: 0.2s all ease-in-out;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
