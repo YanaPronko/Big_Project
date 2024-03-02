@@ -5,7 +5,7 @@ import { Text } from "@/shared/ui/deprecated/Text";
 
 import { ArticleIMGBlock } from "../../model/types/article";
 
-import cls from "./ArticleImageBlockComponent.module.scss";
+import cls from './ArticleImageBlockComponent.module.scss';
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
@@ -20,11 +20,11 @@ export const ArticleImageBlockComponent = memo(
 
     return (
       <>
-        <img
+        {/* <img
           src={block.src}
-          className={classNames(cls.img, {}, [className])}
+          className={cls.image}
           alt={block.title}
-        />
+        /> */}
         {block.title && (
           <ToggleFeatures
             feature="isAppRedesigned"

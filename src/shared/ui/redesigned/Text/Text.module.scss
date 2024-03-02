@@ -14,11 +14,11 @@
 
 .error {
   .title {
-    color: var(--primary-error-color);
+    color: var(--red-light);
   }
 
   .text {
-    color: var(--secondary-error-color);
+    color: var(--red-dark);
   }
 }
 
@@ -44,10 +44,6 @@
   text-align: center;
 }
 
-.bold {
-  font-weight: 700;
-}
-
 .xl {
   .title {
     font-size: torem(35);
@@ -64,13 +60,13 @@
   }
 
   .text {
-    font: var(--font-xl-redesigned);
+    font: var(--font-l-redesigned);
   }
 }
 
 .m {
   .title {
-    font: var(--font-xl-redesigned);
+    font: var(--font-l-redesigned);
   }
 
   .text {
@@ -85,5 +81,12 @@
 
   .text {
     font: var(--font-s-redesigned);
+  }
+}
+
+.bold {
+  .text,
+  .title {
+    font-weight: 700;
   }
 }

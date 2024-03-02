@@ -3,5 +3,9 @@
 }
 
 .paragraph {
-  margin-bottom: torem(8);
+  &:not(:last-child) {
+    margin-bottom: torem(8);
+  }
+
+  text-align: justify;
 }

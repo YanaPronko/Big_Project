@@ -10,3 +10,5 @@ export { ArticlesList } from "./ui/ArticlesList/ArticlesList";
 export { ArticleListItemSkeleton } from "./ui/ArticleListItem/ArtcileListItemSkeleton/ArticleListItemSkeleton";
 export { articleDetailsReducer } from "./model/slice/articleDetailsSlice";
 export { fetchArticleById } from "./model/services/fetchArticleById/fetchArticleById";
+
+
