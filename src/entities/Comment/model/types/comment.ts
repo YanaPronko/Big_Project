@@ -6,3 +6,9 @@ export interface Comment {
   text: string;
   articleId: string;
 }
+
+export interface CommentCardProps {
+  className?: string;
+  comment: Comment;
+  isLoading?: boolean;
+}

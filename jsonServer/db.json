@@ -770,6 +770,12 @@
       "articleId": "10",
       "text": "MY new comment",
       "id": "cHqgMqI"
+    },
+    {
+      "userId": "1",
+      "articleId": "17",
+      "text": "dferferferfwe",
+      "id": "Zkf25Tb"
     }
   ],
   "users": [
@@ -787,7 +793,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light",
+        "theme": "app_dark",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true

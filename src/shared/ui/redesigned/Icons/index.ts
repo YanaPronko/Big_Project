@@ -1,5 +1,5 @@
 export { ThemeIconRedesigned } from "./ui/ThemeIcon/ThemeIcon";
-// export { StarIcon } from "./ui/StarIcon/StarIcon";
+export { StarIconRedesigned } from "./ui/StarIcon/StarIcon";
 // export { ProfileIcon } from "./ui/ProfileIcon/ProfileIcon";
 export { NotificationIconRedesigned } from "./ui/NotificationIcon/NotificationIcon";
 export { MainIconRedesigned } from "./ui/MainIcon/MainIcon";

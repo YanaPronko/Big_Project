@@ -11,17 +11,15 @@ import { Text } from "@/shared/ui/deprecated/Text";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 import { getArtcileDetailsData } from "../../../model/selectors/articleDetails";
+import { renderBlock } from "../renderArticleBlocks";
 
 import cls from "./ArticleDetails.module.scss";
-import { renderBlock } from "../renderArticleBlocks";
 
 interface ArticleDetailsProps {
   className?: string;
   isLoading?: boolean;
   error?: string;
 }
-
-
 
 export const ArticleDetailsDeprecated = memo((props: ArticleDetailsProps) => {
   const { className, isLoading, error } = props;

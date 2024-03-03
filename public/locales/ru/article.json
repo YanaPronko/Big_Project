@@ -4,9 +4,9 @@
   "articledetail": "Детали статьи",
   "article-not-found": "Статья не найдена",
   "comments": "Комментарии",
-  "no-comments": "Без комментариев",
+  "no-comments": "Комментарии отсутствуют",
   "enter-your-comment": "Введите свой комментарий",
-  "send-comment": "Отправить комментарий",
+  "send-comment": "Отправить",
   "something-goes-wrong": "Что-то идет не так...",
   "read-more": "Читать далее...",
   "title": "названию",
@@ -37,5 +37,6 @@
   "views_one": "{{count}} просмотр",
   "views_zero": "0 просмотров",
   "views_few": "{{count}} просмотра",
-  "views_many": "{{count}} просмотров"
+  "views_many": "{{count}} просмотров",
+  "edit": "Редактировать"
 }

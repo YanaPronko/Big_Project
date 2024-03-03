@@ -1,10 +1,11 @@
 .button {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: torem(8) torem(16);
   color: var(--text-redesigned);
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   .addonRight svg,
   .addonLeft svg {
@@ -41,6 +42,30 @@
   background: none;
   border: none;
   outline: none;
+
+  &.normal {
+    color: var(--text-redesigned);
+
+    &:hover {
+      color: var(--text-redesigned);
+    }
+  }
+
+  &.success {
+    color: var(--save-redesigned);
+
+    &:hover {
+      color: var(--save-redesigned);
+    }
+  }
+
+  &.error {
+    color: var(--cancel-redesigned);
+
+    &:hover {
+      color: var(--cancel-redesigned);
+    }
+  }
 }
 
 .transparent {
@@ -49,6 +74,30 @@
   border: none;
   outline: none;
   background: transparent;
+
+  &.normal {
+    color: var(--text-redesigned);
+
+    &:hover {
+      color: var(--text-redesigned);
+    }
+  }
+
+  &.success {
+    color: var(--save-redesigned);
+
+    &:hover {
+      color: var(--save-redesigned);
+    }
+  }
+
+  &.error {
+    color: var(--cancel-redesigned);
+
+    &:hover {
+      color: var(--cancel-redesigned);
+    }
+  }
 }
 
 .filled {
@@ -56,12 +105,72 @@
   border: none;
   outline: none;
   border-radius: torem(34);
+
+  &.normal {
+    color: var(--text-redesigned);
+
+    &:hover {
+      color: var(--text-redesigned);
+      transform: scale(1.02);
+    }
+  }
+
+  &.success {
+    color: var(--save-redesigned);
+
+    &:hover {
+      color: var(--save-redesigned);
+      transform: scale(1.02);
+    }
+  }
+
+  &.error {
+    color: var(--cancel-redesigned);
+
+    &:hover {
+      color: var(--cancel-redesigned);
+      transform: scale(1.02);
+    }
+  }
 }
 
 .outline {
   border: 1px solid var(--icon-redesigned);
   background: none;
   border-radius: torem(34);
+
+  &.normal {
+    color: var(--text-redesigned);
+    border: 1px solid var(--accent-redesigned);
+
+    &:hover {
+      color: var(--text-redesigned);
+      border: 1px solid var(--icon-redesigned);
+      transform: scale(1.02);
+    }
+  }
+
+  &.success {
+    color: var(--save-redesigned);
+    border: 1px solid var(--save-redesigned);
+
+    &:hover {
+      color: var(--save-redesigned);
+      border: 1px solid var(--save-redesigned);
+      transform: scale(1.02);
+    }
+  }
+
+  &.error {
+    color: var(--cancel-redesigned);
+    border: 1px solid var(--cancel-redesigned);
+
+    &:hover {
+      color: var(--cancel-redesigned);
+      border: 1px solid var(--cancel-redesigned);
+      transform: scale(1.02);
+    }
+  }
 
   &:hover {
     border: 1px solid var(--accent-redesigned);

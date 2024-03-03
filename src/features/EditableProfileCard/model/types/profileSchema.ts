@@ -16,3 +16,6 @@ export interface ProfileSchema {
   readonly: boolean;
   validateProfileErrors?: ValidateProfileErrors[];
 }
+export interface ProfilePageHeaderProps {
+  className?: string;
+}

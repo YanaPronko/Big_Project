@@ -1,13 +1,10 @@
 import { memo } from "react";
 
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Text } from "@/shared/ui/deprecated/Text";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import { ArticleIMGBlock } from "../../model/types/article";
-
-import cls from './ArticleImageBlockComponent.module.scss';
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 interface ArticleImageBlockComponentProps {
   className?: string;

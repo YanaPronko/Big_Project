@@ -5,13 +5,16 @@ import { useSelector } from "react-redux";
 
 import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Skeleton as SkeletonDeprecated} from "@/shared/ui/deprecated/Skeleton";
 import { Text } from "@/shared/ui/deprecated/Text";
 
 import {
   useArticleRate,
   useGetArticleRating,
 } from "../../api/articleRatingApi";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/featureFlags";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 export interface ArticleRatingProps {
   className?: string;
@@ -29,6 +32,12 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     userId: userData?.id ?? "",
   });
   const [rateArticle, { error }] = useArticleRate();
+
+  const Skeleton = toggleFeatures({
+    name: "isAppRedesigned",
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+  });
 
   const handleRateArticle = useCallback(
     (starsCount: number, feedback?: string) => {
@@ -62,11 +71,24 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
   if (error) {
     return (
-      <Text
-        theme="error"
-        text={t("oops-failed-rate-of-article")}
-        align="center"
-        size="l"
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        off={
+          <Text
+            theme="error"
+            text={t("oops-failed-rate-of-article")}
+            align="center"
+            size="l"
+          />
+        }
+        on={
+          <TextRedesigned
+            variant="error"
+            text={t("oops-failed-rate-of-article")}
+            align="center"
+            size="l"
+          />
+        }
       />
     );
   }

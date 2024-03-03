@@ -3,13 +3,13 @@ import { memo } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text as TextDeprecated} from "@/shared/ui/deprecated/Text";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
+import { Text as TextDeprecated } from "@/shared/ui/deprecated/Text";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import { ArticleTextBlock } from "../../model/types/article";
 
 import cls from "./ArticleTextBlockComponent.module.scss";
-import { toggleFeatures } from "@/shared/lib/featureFlags";
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 interface ArticleTextBlockComponentProps {
   className?: string;
@@ -22,7 +22,7 @@ export const ArticleTextBlockComponent = memo(
 
     const Text = toggleFeatures({
       name: "isAppRedesigned",
-      on: ()=> TextRedesigned,
+      on: () => TextRedesigned,
       off: () => TextDeprecated,
     });
     return (

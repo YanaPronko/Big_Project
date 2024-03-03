@@ -22,6 +22,8 @@ import {
   DropdownItem,
 } from "@/shared/ui/redesigned/Popups";
 
+import cls from './AvatarDropdown.module.scss';
+
 interface AvatarDropdownProps {
   className?: string;
 }
@@ -82,7 +84,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           items={items}
           direction="bottomL"
           trigger={
-            <AvatarRedesigned size={30} src={authData.avatar} alt="avatar" />
+            <AvatarRedesigned size={30} src={authData.avatar} alt="avatar" className={cls.avatarCenter} />
           }
         />
       }

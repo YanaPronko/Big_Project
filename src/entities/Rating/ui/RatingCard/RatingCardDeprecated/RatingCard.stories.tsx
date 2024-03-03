@@ -4,11 +4,11 @@ import { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { RatingCard } from "./RatingCard";
+import { RatingCardDeprecated } from "./RatingCard";
 
-const meta: Meta<typeof RatingCard> = {
-  title: "entities/Rating/RatingCard",
-  component: RatingCard,
+const meta: Meta<typeof RatingCardDeprecated> = {
+  title: "entities/Rating/RatingCardDeprecated",
+  component: RatingCardDeprecated,
   args: {
     title: "Article Rating",
     onAccept: action("onAccept"),
@@ -17,7 +17,7 @@ const meta: Meta<typeof RatingCard> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RatingCard>;
+type Story = StoryObj<typeof RatingCardDeprecated>;
 
 export const Primary: Story = {
   args: {},

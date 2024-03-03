@@ -8,6 +8,7 @@ import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
+
 interface ArticleAdditionalInfoProps {
   author: User;
   createdAt: string;

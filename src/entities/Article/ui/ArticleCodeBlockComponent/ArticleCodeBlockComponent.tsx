@@ -1,13 +1,13 @@
 import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 import { Code as CodeDeprecated } from "@/shared/ui/deprecated/Code";
+import { CodeRedesigned } from "@/shared/ui/redesigned/Code";
 
 import { ArticleBlockCode } from "../../model/types/article";
 
 import cls from "./ArticleCodeBlockComponent.module.scss";
-import { toggleFeatures } from "@/shared/lib/featureFlags";
-import { CodeRedesigned } from "@/shared/ui/redesigned/Code";
 
 interface ArticleCodeBlockComponentProps {
   className?: string;
@@ -21,8 +21,8 @@ export const ArticleCodeBlockComponent = memo(
     const Code = toggleFeatures({
       name: "isAppRedesigned",
       on: () => CodeRedesigned,
-      off: ()=> CodeDeprecated
-    })
+      off: () => CodeDeprecated,
+    });
 
     return (
       <div

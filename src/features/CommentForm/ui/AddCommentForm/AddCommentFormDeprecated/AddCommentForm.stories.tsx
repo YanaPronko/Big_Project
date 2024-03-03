@@ -5,15 +5,15 @@ import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import AddCommentForm from "./AddCommentForm";
+import AddCommentFormDeprecated from "./AddCommentForm";
 
-const meta: Meta<typeof AddCommentForm> = {
-  title: "features/addCommentForm",
-  component: AddCommentForm,
+const meta: Meta<typeof AddCommentFormDeprecated> = {
+  title: "features/AddCommentFormDeprecated",
+  component: AddCommentFormDeprecated,
 };
 
 export default meta;
-type Story = StoryObj<typeof AddCommentForm>;
+type Story = StoryObj<typeof AddCommentFormDeprecated>;
 
 export const Primary: Story = {
   args: {

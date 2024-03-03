@@ -4,15 +4,13 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-
+import { AppImage } from "@/shared/ui/redesigned/AppImage";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { VStack } from "@/shared/ui/redesigned/Stack";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import { getArtcileDetailsData } from "../../../model/selectors/articleDetails";
-
 import { renderBlock } from "../renderArticleBlocks";
-import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
-import { AppImage } from "@/shared/ui/redesigned/AppImage";
 
 import cls from "./ArticleDetails.module.scss";
 
@@ -21,8 +19,6 @@ interface ArticleDetailsProps {
   isLoading?: boolean;
   error?: string;
 }
-
-
 
 export const ArticleDetailsRedesigned = memo((props: ArticleDetailsProps) => {
   const { className, isLoading, error } = props;
@@ -72,7 +68,9 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsProps) => {
         <TextRedesigned title={article?.title} size="l" bold />
         <TextRedesigned title={article?.subtitle} />
         <AppImage
-          fallback={<SkeletonRedesigned width="100%" height={420} borderRadius="16px" />}
+          fallback={
+            <SkeletonRedesigned width="100%" height={420} borderRadius="16px" />
+          }
           src={article?.img}
           className={cls.img}
         />

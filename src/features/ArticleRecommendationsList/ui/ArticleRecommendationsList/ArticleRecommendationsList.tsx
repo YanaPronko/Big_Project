@@ -5,8 +5,10 @@ import { useTranslation } from "react-i18next";
 
 import { ArticlesList, ArticleListItemSkeleton } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/featureFlags";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import { useGetArticleRecommendations } from "../../api/articleRecommendationsApi";
 
@@ -40,10 +42,20 @@ export const ArticleRecommendationsList = memo(
 
     if (error || !recommendations) {
       return (
-        <Text
-          title={t("failed-loading-of-recommendations")}
-          theme="error"
-          size="l"
+        <ToggleFeatures feature="isAppRedesigned"
+          off={<Text
+            title={t("failed-loading-of-recommendations")}
+            theme="error"
+            size="l"
+            />
+          }
+          on={
+            <TextRedesigned
+              title={t("failed-loading-of-recommendations")}
+              variant="error"
+              size="l"
+            />
+          }
         />
       );
     }
@@ -54,7 +66,12 @@ export const ArticleRecommendationsList = memo(
         align="stretch"
         className={classNames("", {}, [className])}
       >
-        <Text title={t("recommendations")} />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={<TextRedesigned size="l" title={t("recommendations")} />}
+          off={<Text size="l" title={t("recommendations")} />}
+        />
+
         <ArticlesList
           articles={recommendations}
           isLoading={isLoading}

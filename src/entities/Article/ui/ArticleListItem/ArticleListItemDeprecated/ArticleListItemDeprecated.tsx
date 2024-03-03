@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
+import { memo } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -12,15 +12,11 @@ import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
 
-import {
-  Article,
-  ArticleTextBlock,
-  ArticleView,
-} from "../../../model/types/article";
+import { ArticleTextBlock } from "../../../model/types/article";
+import { ArticleListItemProps } from "../../../model/types/articleListItem";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 import cls from "./ArticleListItem.module.scss";
-import { ArticleListItemProps } from "../../../model/types/articleListItem";
 
 export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
   const { className, view, article, target } = props;

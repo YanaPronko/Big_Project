@@ -6,7 +6,7 @@
   "comments": "Comments",
   "no-comments": "No comments",
   "enter-your-comment": "Enter your comment",
-  "send-comment": "Send comment",
+  "send-comment": "Send",
   "something-goes-wrong": "Something goes wrong...",
   "read-more": "Read more...",
   "title": "title",
@@ -36,5 +36,6 @@
   },
   "views_one": "view",
   "views_zero": "0 views",
-  "views_other": "{{count}} views"
+  "views_other": "{{count}} views",
+  "edit": "Edit article"
 }

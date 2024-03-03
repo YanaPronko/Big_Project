@@ -3,16 +3,16 @@ import { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { CommentCard } from "./CommentCard";
+import { CommentCardDeprecated } from "./CommentCard";
 import IMG from "../../../../shared/assets/test/avatar.png";
 
-const meta: Meta<typeof CommentCard> = {
-  title: "entities/Comment/CommentCard",
-  component: CommentCard,
+const meta: Meta<typeof CommentCardDeprecated> = {
+  title: "entities/Comment/CommentCardDeprecated",
+  component: CommentCardDeprecated,
 };
 
 export default meta;
-type Story = StoryObj<typeof CommentCard>;
+type Story = StoryObj<typeof CommentCardDeprecated>;
 
 export const Primary: Story = {
   args: {

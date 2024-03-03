@@ -1,22 +1,20 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
+import { memo } from "react";
 
 import { useTranslation } from "react-i18next";
 
 import { getRouteArticleDetails } from "@/shared/const/AppRoutes";
 import { classNames } from "@/shared/lib/classNames/classNames";
-
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
-
-import {  ArticleTextBlock} from "../../../model/types/article";
-
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
-import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
+import { AppLinkRedesigned } from "@/shared/ui/redesigned/AppLink";
+import { AvatarRedesigned } from "@/shared/ui/redesigned/Avatar";
+import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
+import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 import { EyeIconRedesigned } from "@/shared/ui/redesigned/Icons";
 import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
-import { CardRedesigned } from "@/shared/ui/redesigned/Card";
-import { AvatarRedesigned } from "@/shared/ui/redesigned/Avatar";
-import { AppLinkRedesigned } from "@/shared/ui/redesigned/AppLink";
-import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
+
+import { ArticleTextBlock } from "../../../model/types/article";
 import { ArticleListItemProps } from "../../../model/types/articleListItem";
 
 import cls from "./ArticleListItem.module.scss";
@@ -34,10 +32,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         src={article.user.avatar}
         className={cls.avatar}
       />
-      <TextRedesigned
-        bold
-        text={article.user.username}
-      />
+      <TextRedesigned bold text={article.user.username} />
     </>
   );
   const views = (
@@ -47,15 +42,17 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     </HStack>
   );
 
-  const title = <TextRedesigned title={article.title} className={cls.title} bold/>;
-  const subtitle = <TextRedesigned title={article.subtitle} size="s" />
+  const title = (
+    <TextRedesigned title={article.title} className={cls.title} bold />
+  );
+  const subtitle = <TextRedesigned title={article.subtitle} size="s" />;
   const date = <TextRedesigned text={article.createdAt} className={cls.date} />;
   const imgGrid = (
     <AppImage
       src={article.img}
       alt={article.title}
       className={cls.img}
-      fallback={<SkeletonRedesigned height="200px" width='240px' />}
+      fallback={<SkeletonRedesigned height="200px" width="240px" />}
     />
   );
   const imgList = (

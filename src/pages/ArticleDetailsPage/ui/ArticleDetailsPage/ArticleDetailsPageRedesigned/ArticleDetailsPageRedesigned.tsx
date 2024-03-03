@@ -18,6 +18,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 //   ReducersList,
 //   useDynamicLoad,
 // } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
+import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
@@ -26,7 +27,6 @@ import { AdditionalInfoContainer } from "../../AdditionalInfoContainer/Additiona
 // import { articleDetailsCommentsReducer } from "../../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../../ArticleDetailsComments/ArticleDetailsComments";
 import { DetailsContainer } from "../../DetailsContainer/DetailsContainer";
-import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -64,7 +64,7 @@ const ArticleDetailsPageRedesigned: FC<ArticleDetailsPageProps> = (props) => {
     <StickyContentLayout
       content={
         <Page className={classNames("", {}, [className])}>
-          <CardRedesigned max padding="24" borderRadius="round">
+          <CardRedesigned max padding="24">
             <VStack gap="16" max align="stretch">
               <DetailsContainer />
               <ArticleRating articleId={id} />

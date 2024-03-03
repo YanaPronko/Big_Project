@@ -3,14 +3,14 @@ import { HTMLAttributeAnchorTarget, memo, useCallback } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-
-import { Article, ArticleView } from "../../model/types/article";
-import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
-import { ArticleListItemSkeleton } from "../ArticleListItem/ArtcileListItemSkeleton/ArticleListItemSkeleton";
-
-import cls from "./ArticlesList.module.scss";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { HStack } from "@/shared/ui/redesigned/Stack";
+
+import { Article, ArticleView } from "../../model/types/article";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArtcileListItemSkeleton/ArticleListItemSkeleton";
+import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+
+import cls from "./ArticlesList.module.scss";
 
 interface ArticlesListProps {
   className?: string;
@@ -52,7 +52,6 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
           role="list"
           className={classNames(cls.articleListRedesigned, {}, [])}
         >
-
           {articles.map(renderArticles)}
           {isLoading && getSkeletons(view)}
         </HStack>
@@ -69,5 +68,4 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
       }
     />
   );
-
 });

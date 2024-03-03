@@ -7,7 +7,7 @@ import { Theme } from "@/shared/const/theme";
 import { NavBarDeprecated } from "./NavBarDeprecated";
 
 const meta: Meta<typeof NavBarDeprecated> = {
-  title: "widgets/NavBar",
+  title: "widgets/NavBarDeprecated",
   component: NavBarDeprecated,
 };
 

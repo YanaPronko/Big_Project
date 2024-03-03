@@ -3,8 +3,10 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { VStack } from "@/shared/ui/redesigned/Stack";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import { Comment } from "../../model/types/comment";
 import { CommentCard } from "../CommentCard/CommentCard";
@@ -35,7 +37,11 @@ export const CommentList = memo((props: CommentListProps) => {
           />
         ))
       ) : (
-        <Text text={t("no-comments")} size="xl" />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={<TextRedesigned text={t("no-comments")} size="xl" />}
+          off={<Text text={t("no-comments")} size="xl" />}
+        />
       )}
     </VStack>
   );

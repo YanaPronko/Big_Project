@@ -1,0 +1,10 @@
+.commentCard {
+  border: 1px solid var(--accent-redesigned);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: torem(20);
+}

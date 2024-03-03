@@ -1,18 +1,15 @@
 import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Card as CardDeprecated} from "@/shared/ui/deprecated/Card";
-import { Skeleton as SkeletonDeprecated} from "@/shared/ui/deprecated/Skeleton";
-
-import { ArticleView } from "../../../model/types/article";
-
-import cls from "./ArticleListItem.module.scss";
 import { toggleFeatures } from "@/shared/lib/featureFlags";
-import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { Card as CardDeprecated } from "@/shared/ui/deprecated/Card";
+import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton";
 import { CardRedesigned } from "@/shared/ui/redesigned/Card";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+
 import { ArticleListItemSkeletonProps } from "../../../model/types/articleListItem";
 
-
+import cls from "./ArticleListItem.module.scss";
 
 export const ArticleListItemSkeleton = memo(
   (props: ArticleListItemSkeletonProps) => {
@@ -62,7 +59,7 @@ export const ArticleListItemSkeleton = memo(
             <Skeleton width="100%" className={cls.img} />
           </div>
           <div className={cls.infoWrapper}>
-            <Skeleton width="100%"/>
+            <Skeleton width="100%" />
           </div>
           <Skeleton width="100%" height={16} className={cls.title} />
         </Card>

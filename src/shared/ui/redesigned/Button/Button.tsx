@@ -6,6 +6,8 @@ import cls from "./Button.module.scss";
 
 export type BtnVariant = "clear" | "outline" | "filled" | "transparent";
 
+export type BtnColor = "normal" | "success" | "error";
+
 export type BtnSize = "m" | "l" | "xl";
 
 export type BtnType = "button" | "submit" | "reset";
@@ -17,11 +19,16 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
 
   /**
-   * @description Button theme. Responsible for button's color and border.
+   * @description Button variant. Responsible for button's  border.
    * @default "outline"
    */
   variant?: BtnVariant;
 
+  /**
+   * @description Button color. Responsible for button's color and border.
+   * @default "normal"
+   */
+  color?: BtnColor;
   /**
    * @description Flag to make button squared.
    */
@@ -59,6 +66,7 @@ export const ButtonRedesigned = memo((props: ButtonProps) => {
     className,
     children,
     variant = "outline",
+    color = 'normal',
     square,
     size = "m",
     fullWidth,
@@ -79,6 +87,7 @@ export const ButtonRedesigned = memo((props: ButtonProps) => {
       className={classNames(cls.button, mods, [
         cls[variant],
         cls[size],
+        cls[color],
         className,
       ])}
       {...otherProps}
