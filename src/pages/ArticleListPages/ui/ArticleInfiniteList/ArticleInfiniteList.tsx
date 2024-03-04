@@ -10,6 +10,10 @@ import { PageError } from "@/widgets/PageError";
 
 import { getArticlesPageError } from "../../model/selectors/articles";
 import { getArticles } from "../../model/slice/articlesPageSlice";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
+
+import cls from './ArticleInfiniteList.module.scss';
 
 interface ArticleInfiniteListProps {
   className?: string;
@@ -30,7 +34,27 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   }
 
   if (!isLoading && !articles.length) {
-    return <Text title={t("articles-not-found")} />;
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <TextRedesigned
+            className={cls.title}
+            title={t("articles-not-found")}
+            bold
+            size="xl"
+            align="center"
+          />
+        }
+        off={
+          <Text
+            className={cls.title}
+            title={t("articles-not-found")}
+            align="center"
+          />
+        }
+      />
+    );
   }
 
   return (

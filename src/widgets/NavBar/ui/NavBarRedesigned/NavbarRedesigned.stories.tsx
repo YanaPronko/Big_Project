@@ -4,7 +4,7 @@ import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecora
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
-import { NavbarRedesigned } from "./NavBarDeprecated";
+import { NavbarRedesigned } from "./NavBarRedesigned";
 
 const meta: Meta<typeof NavbarRedesigned> = {
   title: "widgets/NavbarRedesigned",

@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
 import { User, userActions } from "@/entities/User";
+import { LOCAL_STORAGE_LAST_DESIGN_KEY, USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 
 export interface LoginByUsernameProps {
   username: string;
@@ -21,6 +22,11 @@ export const loginByUsername = createAsyncThunk<
       throw new Error();
     }
     dispatch(userActions.setAuthData(response.data));
+    localStorage.setItem(USER_LOCALSTORAGE_KEY, response.data.id);
+
+    const appRedesigned = response.data.featureFlags?.isAppRedesigned ? 'new' : "old";
+
+    localStorage.setItem(LOCAL_STORAGE_LAST_DESIGN_KEY, appRedesigned);
     return response.data;
   } catch (e) {
     // eslint-disable-next-line no-console

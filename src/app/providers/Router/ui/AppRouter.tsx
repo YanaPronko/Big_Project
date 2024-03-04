@@ -7,6 +7,8 @@ import { PageLoader } from "@/widgets/PageLoader";
 
 import { RequireAuth } from "./RequireAuth";
 import { routeConfig } from "../../../config/routeConfig";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
+import { AppLoaderLayout } from "@/shared/layouts";
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
@@ -25,6 +27,13 @@ export const AppRouter = memo(() => {
       />
     );
   }, []);
+
+  // const PageLoader = toggleFeatures({
+  //   name: "isAppRedesigned",
+  //   on: ()=> AppLoaderLayout,
+  //   off: () => PageLoaderDeprecated,
+  // });
+
 
   return (
     <Suspense fallback={<PageLoader />}>

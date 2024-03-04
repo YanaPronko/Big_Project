@@ -11,17 +11,41 @@ import "@/shared/config/i18n/i18n";
 import "./styles/index.scss";
 import { AppDeprecated } from "./AppDeprecated/AppDeprecated";
 import { AppRedesigned } from "./AppRedesigned/AppRedesigned";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLoaderLayout } from "@/shared/layouts";
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from "@/shared/const/localStorage";
 
 export const App = () => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
+  const { theme } = useTheme();
 
   useEffect(() => {
-    dispatch(initUserAuthData());
+    const initFunction = async () => {
+      const result = await dispatch(initUserAuthData()).unwrap();
+      localStorage.setItem(
+        LOCAL_STORAGE_LAST_DESIGN_KEY,
+        result.featureFlags?.isAppRedesigned ? "new" : "old",
+      );
+    }
+    if (!inited) {
+      initFunction();
+    }
   }, [dispatch]);
 
   if (!inited) {
-    return <PageLoader />;
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <div id="app" className={classNames("app_redesigned", {}, [theme])}>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (

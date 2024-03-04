@@ -1,13 +1,13 @@
 // @use 'sass:math';
-@import './reset.scss';
+@import "./reset.scss";
 
 // @import './functions/functions.scss';
 
 // @import './variables/global.scss';
-@import './fonts.scss';
-@import './themes/normal.scss';
-@import './themes/dark.scss';
-@import './themes/orange.scss';
+@import "./fonts.scss";
+@import "./themes/normal.scss";
+@import "./themes/dark.scss";
+@import "./themes/orange.scss";
 
 body {
   font: var(--font-m);
@@ -20,7 +20,7 @@ body {
   background-color: var(--bg-color);
 }
 
-.app_redisigned {
+.app_redesigned {
   min-height: 100vh;
   font: var(--font-m-redesigned);
   color: var(--text-redesigned);
@@ -37,10 +37,25 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg); /* цвет дорожки */
+  background: var(--light-bg-redesigned); /* цвет дорожки */
 }
 
 *::-webkit-scrollbar-thumb {
+  background-color: var(--icon-redesigned); /* цвет плашки */
+  border-radius: torem(20); /* закругления плашки */
+  border: 2px solid var(--accent-redesigned); /* padding вокруг плашки */
+}
+
+.app *::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+  height: 8px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--card-bg); /* цвет дорожки */
+}
+
+.app *::-webkit-scrollbar-thumb {
   background-color: var(--inverted-primary-color); /* цвет плашки */
   border-radius: torem(20); /* закругления плашки */
   border: 2px solid var(--primary-color); /* padding вокруг плашки */

@@ -793,15 +793,10 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_dark",
+        "theme": "app_light",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
-      },
-      "features": {
-        "isArticleRatingEnabled": true,
-        "isCounterEnabled": true,
-        "isAppRedesigned": false
       }
     },
     {

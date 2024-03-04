@@ -5,10 +5,6 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-// import {
-//   ReducersList,
-//   useDynamicLoad,
-// } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { BtnSize, Button } from "@/shared/ui/deprecated/Button";
 import { Input } from "@/shared/ui/deprecated/Input";
 import { Text } from "@/shared/ui/deprecated/Text";
@@ -16,14 +12,12 @@ import { Text } from "@/shared/ui/deprecated/Text";
 import { getLoginError } from "../../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { loginByUsername } from "../../../model/services/loginByUsername";
-// import { loginReducer } from "../../../model/slice/loginSlice";
+
 import { LoginFormProps } from "../../../model/types/loginSchema";
 
 import cls from "./LoginForm.module.scss";
+import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 
-// const initialAsyncReducers: ReducersList = {
-//   loginForm: loginReducer,
-// };
 
 const LoginFormDeprecated = memo(
   ({ className, ...otherProps }: LoginFormProps) => {
@@ -31,8 +25,7 @@ const LoginFormDeprecated = memo(
     const dispatch = useAppDispatch();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-    // useDynamicLoad(initialAsyncReducers, true);
+    const forceUpdate = useForceUpdate();
 
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
@@ -51,9 +44,12 @@ const LoginFormDeprecated = memo(
       [setPassword],
     );
 
-    const onLoginClick = useCallback(() => {
-      dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+    const onLoginClick = useCallback(async () => {
+      const result = await dispatch(loginByUsername({ username, password }));
+      if (result.meta.requestStatus === "fulfilled") {
+        forceUpdate();
+      }
+    }, [dispatch, username, password, forceUpdate]);
 
     return (
       <form

@@ -18,16 +18,16 @@ import "../styles/index.scss";
 
 export const AppDeprecated = () => {
   const { theme } = useTheme();
-  const dispatch = useAppDispatch();
-  const inited = useSelector(getUserInited);
+  // const dispatch = useAppDispatch();
+  // const inited = useSelector(getUserInited);
 
-  useEffect(() => {
-    dispatch(initUserAuthData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(initUserAuthData());
+  // }, [dispatch]);
 
-  if (!inited) {
-    return <PageLoader />;
-  }
+  // if (!inited) {
+  //   return <PageLoader />;
+  // }
 
   return (
     <div className={classNames("app", {}, [theme])}>
@@ -35,7 +35,9 @@ export const AppDeprecated = () => {
         <NavBar />
         <div className="content-page">
           <SideBar />
-          <ErrorBoundary>{inited && <AppRouter />}</ErrorBoundary>
+          <ErrorBoundary>
+            <AppRouter />
+          </ErrorBoundary>
         </div>
       </Suspense>
     </div>

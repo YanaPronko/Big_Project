@@ -2,8 +2,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { FeatureFlags } from "@/shared/types/featureFlags";
 import { updateFeatureFlagsMutation } from "../api/featureFlagsApi";
-import { getAllFeatureFlags } from "../lib/setGetFeatureFlags";
+import { getAllFeatureFlags, setFeatureFlags } from "../lib/setGetFeatureFlags";
 import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from "@/shared/const/localStorage";
 
 interface UpdateFeatureFlagOptions {
   userId: string;
@@ -17,17 +18,23 @@ export const updateFeatureFlags = createAsyncThunk<
 >("features/toggleFeatureFlag", async ({ userId, newFeatures }, thunkApi) => {
   const { rejectWithValue, dispatch } = thunkApi;
 
+  const allFeatures = {
+    ...getAllFeatureFlags(),
+    ...newFeatures,
+  };
+
   try {
     await dispatch(
       updateFeatureFlagsMutation({
         userId,
-        featureFlags: {
-          ...getAllFeatureFlags(),
-          ...newFeatures,
-        },
+        featureFlags: allFeatures,
       }),
     );
-
+    localStorage.setItem(
+      LOCAL_STORAGE_LAST_DESIGN_KEY,
+      newFeatures?.isAppRedesigned ? "new" : "old",
+    );
+    setFeatureFlags(allFeatures);
     window.location.reload();
     return undefined;
   } catch (e) {

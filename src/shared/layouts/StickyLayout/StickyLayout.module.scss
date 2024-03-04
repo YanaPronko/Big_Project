@@ -1,4 +1,5 @@
 .stickyLayout {
+  width: 100%;
   display: grid;
   grid-template-areas: "left content right";
   grid-template-columns: min-content 1fr min-content;

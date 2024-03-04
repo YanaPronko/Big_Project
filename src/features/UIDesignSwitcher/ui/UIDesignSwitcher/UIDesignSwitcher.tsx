@@ -22,9 +22,6 @@ export const UIDesignSwitcher = memo((props: UIDesignSwitcherProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
 
-  // if (authData) {
-  //   isAppRedesigned= authData?.featureFlags?.isAppRedesigned
-  // }
   const items = [
     {
       content: t("new-interface"),
@@ -51,7 +48,6 @@ export const UIDesignSwitcher = memo((props: UIDesignSwitcherProps) => {
     }
   };
 
-  console.log(isAppRedesigned);
   return (
     <HStack gap="8">
       <TextRedesigned text={t("interfaces-varian")}/>

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
-import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
+import { LOCAL_STORAGE_LAST_DESIGN_KEY, USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 
 import { getUserDataByIdQuery } from "../../api/userApi";
 import { User } from "../types/user";
@@ -21,10 +21,15 @@ export const initUserAuthData = createAsyncThunk<
 
   try {
     const response = await dispatch(getUserDataByIdQuery(userId)).unwrap();
+    // localStorage.setItem(
+    //   LOCAL_STORAGE_LAST_DESIGN_KEY,
+    //   response.featureFlags?.isAppRedesigned ? "new" : "old",
+    // );
 
     if (!response) {
       return rejectWithValue("User not found");
     }
+
     return response;
   } catch (err) {
     // eslint-disable-next-line no-console

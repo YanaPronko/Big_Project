@@ -5,10 +5,7 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-// import {
-//   ReducersList,
-//   useDynamicLoad,
-// } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
+
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 import { InputRedesigned } from "@/shared/ui/redesigned/Input";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
@@ -16,14 +13,11 @@ import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { getLoginError } from "../../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { loginByUsername } from "../../../model/services/loginByUsername";
-// import { loginReducer } from "../../../model/slice/loginSlice";
+
 import { LoginFormProps } from "../../../model/types/loginSchema";
 
 import cls from "./LoginForm.module.scss";
-
-// const initialAsyncReducers: ReducersList = {
-//   loginForm: loginReducer,
-// };
+import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 
 const LoginFormRedesigned = memo(
   ({ className, ...otherProps }: LoginFormProps) => {
@@ -31,8 +25,8 @@ const LoginFormRedesigned = memo(
     const dispatch = useAppDispatch();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const forceUpdate = useForceUpdate();
 
-    // useDynamicLoad(initialAsyncReducers, true);
 
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
@@ -51,9 +45,12 @@ const LoginFormRedesigned = memo(
       [setPassword],
     );
 
-    const onLoginClick = useCallback(() => {
-      dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+    const onLoginClick = useCallback(async () => {
+      const result = await dispatch(loginByUsername({ username, password }));
+      if (result.meta.requestStatus === "fulfilled") {
+        forceUpdate();
+      }
+    }, [dispatch, username, password, forceUpdate]);
 
     return (
       <form
