@@ -14,3 +14,4 @@ export { ArticleIconRedesigned } from "./ui/ArticleIcon/ArticleIcon";
 export { UserIconRedesigned } from "./ui/UserIcon/UserIcon";
 export { SearchIconRedesigned } from './ui/SearchIcon/SearchIcon';
 export { ArrowDownIconRedesigned } from './ui/ArrowDownIcon/ArrowDownIcon';
+export { ScrollToTopIcon } from "./ui/ScrollToTopIcon/ScrollToTopIcon";

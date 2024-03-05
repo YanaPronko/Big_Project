@@ -23,17 +23,15 @@ export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => "/admin";
 export const getRouteForbidden = () => "/forbidden";
 
-// export const RoutePaths: Record<AppRoutes, string> = {
-//   [AppRoutes.MAIN]: '/',
-//   [AppRoutes.ABOUT]: '/about',
-//   [AppRoutes.PROFILE]: '/profile/' /* id */,
-//   [AppRoutes.ARTICLES]: '/articles',
-//   [AppRoutes.ARTICLE_DETAILS]: '/articles/',
-//   [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-//   [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-//   [AppRoutes.ADMIN_PANEL]: '/admin',
-//   [AppRoutes.FORBIDDEN_PAGE]: '/forbidden',
-
-//   // last
-//   [AppRoutes.NOT_FOUND]: '*',
-// };
+export const AppRouteByPathPattern: Record<string, AppRoutes> = {
+  [getRouteMain()]: AppRoutes.MAIN,
+  [getRouteSettings()]: AppRoutes.SETTINGS,
+  [getRouteAbout()]: AppRoutes.ABOUT,
+  [getRouteProfile(":id")]: AppRoutes.PROFILE,
+  [getRouteArticles()]: AppRoutes.ARTICLES,
+  [getRouteArticleDetails(":id")]: AppRoutes.ARTICLE_DETAILS,
+  [getRouteArticleCreate()]: AppRoutes.ARTICLE_CREATE,
+  [getRouteArticleEdit(":id")]: AppRoutes.ARTICLE_EDIT,
+  [getRouteAdmin()]: AppRoutes.ADMIN_PANEL,
+  [getRouteForbidden()]: AppRoutes.FORBIDDEN_PAGE,
+};

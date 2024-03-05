@@ -50,7 +50,7 @@ export const CardRedesigned = memo((props: CardProps) => {
     max,
     variant = "normal",
     padding = "8",
-    borderRadius = "normal",
+    borderRadius = "small",
     ...otherProps
   } = props;
 
@@ -62,6 +62,7 @@ export const CardRedesigned = memo((props: CardProps) => {
         className,
         cls[variant],
         cls[paddingClass],
+        cls[borderRadius],
       ])}
       {...otherProps}
     >
