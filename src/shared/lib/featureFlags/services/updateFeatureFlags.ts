@@ -1,10 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { FeatureFlags } from "@/shared/types/featureFlags";
-import { updateFeatureFlagsMutation } from "../api/featureFlagsApi";
-import { getAllFeatureFlags, setFeatureFlags } from "../lib/setGetFeatureFlags";
 import { ThunkOptionsConfig } from "@/app/providers/StoreProvider";
 import { LOCAL_STORAGE_LAST_DESIGN_KEY } from "@/shared/const/localStorage";
+import { FeatureFlags } from "@/shared/types/featureFlags";
+
+import { updateFeatureFlagsMutation } from "../api/featureFlagsApi";
+import { getAllFeatureFlags, setFeatureFlags } from "../lib/setGetFeatureFlags";
 
 interface UpdateFeatureFlagOptions {
   userId: string;
@@ -38,6 +39,7 @@ export const updateFeatureFlags = createAsyncThunk<
     window.location.reload();
     return undefined;
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
     return rejectWithValue("");
   }

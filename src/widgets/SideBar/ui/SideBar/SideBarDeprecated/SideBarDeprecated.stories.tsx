@@ -7,7 +7,7 @@ import { Theme } from "@/shared/const/theme";
 import { SideBarDeprecated } from "./SideBarDeprecated";
 
 const meta: Meta<typeof SideBarDeprecated> = {
-  title: "widgets/SideBar",
+  title: "widgets/SideBarDeprecated",
   component: SideBarDeprecated,
 };
 

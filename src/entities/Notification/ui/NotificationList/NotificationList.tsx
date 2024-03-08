@@ -3,13 +3,13 @@ import { memo } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 
 import { useGetNotifications } from "../../api/notificationsApi";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
-import { toggleFeatures } from "@/shared/lib/featureFlags";
-import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 
 interface NotificationListProps {
   className?: string;

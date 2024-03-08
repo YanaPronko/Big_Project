@@ -15,8 +15,8 @@ export const AppLoaderLayout = memo(() => (
       </HStack>
     }
     content={
-      <VStack gap="16" className={cls.height}>
-        <SkeletonRedesigned className={cls.width} borderRadius="16px" />
+      <VStack gap="16" className={cls.size}>
+        <SkeletonRedesigned width="70%" height={32} borderRadius="16px" />
         <SkeletonRedesigned width="40%" height={20} borderRadius="16px" />
         <SkeletonRedesigned width="50%" height={20} borderRadius="16px" />
         <SkeletonRedesigned width="30%" height={32} borderRadius="16px" />

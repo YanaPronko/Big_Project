@@ -7,7 +7,7 @@ import { ArticleListItemDeprecated } from "./ArticleListItemDeprecated";
 import { articleMock } from "../../../model/mocks/articles";
 
 const meta: Meta<typeof ArticleListItemDeprecated> = {
-  title: "entities/Article/ArticleListItem",
+  title: "entities/Article/ArticleListItemDeprecated",
   component: ArticleListItemDeprecated,
 };
 

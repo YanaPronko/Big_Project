@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
@@ -38,6 +39,30 @@ Primary.decorators = [
   }),
 ];
 
+export const PrimaryRedesigned: Story = {
+  args: {},
+};
+
+PrimaryRedesigned.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        id: "1",
+        first: "Yana",
+        lastname: "Prankonkjj,",
+        age: 78,
+        currency: "USD",
+        country: "Kazakhstan",
+        city: "Minsk",
+        username: "adminbnm,",
+        avatar: IMG,
+      },
+      readonly: true,
+    },
+  }),
+  RedesignedThemeDecorator(),
+];
+
 export const PrimaryDark: Story = {
   args: {},
 };
@@ -60,6 +85,30 @@ PrimaryDark.decorators = [
     },
   }),
   ThemeDecorator(Theme.DARK),
+];
+
+export const PrimaryDarkRedesigned: Story = {
+  args: {},
+};
+
+PrimaryDarkRedesigned.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        id: "1",
+        first: "Yana",
+        lastname: "Prankonkjj,",
+        age: 78,
+        currency: "USD",
+        country: "Kazakhstan",
+        city: "Minsk",
+        username: "adminbnm,",
+        avatar: IMG,
+      },
+      readonly: true,
+    },
+  }),
+  RedesignedThemeDecorator(Theme.DARK),
 ];
 
 export const Edit: Story = {
@@ -107,4 +156,52 @@ EditDark.decorators = [
     },
   }),
   ThemeDecorator(Theme.DARK),
+];
+
+export const EditRedesigned: Story = {
+  args: {},
+};
+
+EditRedesigned.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        id: "1",
+        first: "Yana",
+        lastname: "Prankonkjj,",
+        age: 78,
+        currency: "USD",
+        country: "Kazakhstan",
+        city: "Minsk",
+        username: "adminbnm,",
+        avatar: IMG,
+      },
+      readonly: false,
+    },
+  }),
+  RedesignedThemeDecorator(),
+];
+
+export const EditDarkRedesigned: Story = {
+  args: {},
+};
+
+EditDarkRedesigned.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        id: "1",
+        first: "Yana",
+        lastname: "Prankonkjj,",
+        age: 78,
+        currency: "USD",
+        country: "Kazakhstan",
+        city: "Minsk",
+        username: "adminbnm,",
+        avatar: IMG,
+      },
+      readonly: false,
+    },
+  }),
+  RedesignedThemeDecorator(Theme.DARK),
 ];

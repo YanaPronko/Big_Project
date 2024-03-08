@@ -1,4 +1,4 @@
-import { HTMLAttributes, memo } from "react";
+import { HTMLAttributes} from "react";
 
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 
@@ -61,7 +61,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
  * this component deprecated, see in redesigned folder
  */
 
-export const Button = memo((props: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
   const {
     className,
     children,
@@ -90,4 +90,4 @@ export const Button = memo((props: ButtonProps) => {
       {children}
     </button>
   );
-});
+};

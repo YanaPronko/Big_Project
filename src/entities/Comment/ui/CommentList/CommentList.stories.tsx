@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
@@ -38,6 +39,33 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryRedesigned: Story = {
+  args: {
+    comments: [
+      {
+        id: "1",
+        text: "hello",
+        articleId: "1",
+        user: {
+          id: "1",
+          username: "vasya",
+        },
+      },
+      {
+        id: "2",
+        text: "HEY",
+        articleId: "1",
+        user: {
+          id: "2",
+          username: "Yana",
+        },
+      },
+    ],
+  },
+};
+
+PrimaryRedesigned.decorators = [RedesignedThemeDecorator()];
+
 export const PrimaryDark: Story = {
   args: {
     comments: [
@@ -64,3 +92,30 @@ export const PrimaryDark: Story = {
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryDarkRedesigned: Story = {
+  args: {
+    comments: [
+      {
+        id: "1",
+        text: "hello",
+        articleId: "1",
+        user: {
+          id: "1",
+          username: "vasya",
+        },
+      },
+      {
+        id: "2",
+        text: "HEY",
+        articleId: "1",
+        user: {
+          id: "2",
+          username: "Yana",
+        },
+      },
+    ],
+  },
+};
+
+PrimaryDarkRedesigned.decorators = [RedesignedThemeDecorator(Theme.DARK)];

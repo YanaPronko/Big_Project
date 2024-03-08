@@ -1,14 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { ArticleListItemRedesigned } from "./ArticleListItemRedesigned";
 import { articleMock } from "../../../model/mocks/articles";
 
 const meta: Meta<typeof ArticleListItemRedesigned> = {
-  title: "entities/Article/ArticleListItem",
+  title: "entities/Article/ArticleListItemRedesigned",
   component: ArticleListItemRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -28,7 +29,7 @@ export const GridDark: Story = {
   },
 };
 
-GridDark.decorators = [ThemeDecorator(Theme.DARK)];
+GridDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const List: Story = {
   args: {
@@ -44,4 +45,4 @@ export const ListDark: Story = {
   },
 };
 
-ListDark.decorators = [ThemeDecorator(Theme.DARK)];
+ListDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];

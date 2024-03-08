@@ -1,10 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
+
 import { InputRedesigned } from "./Input";
 
 const meta: Meta<typeof InputRedesigned> = {
-  title: "shared/Input",
+  title: "shared/InputRedesigned",
   component: InputRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;

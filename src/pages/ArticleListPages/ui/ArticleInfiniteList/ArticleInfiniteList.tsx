@@ -5,13 +5,13 @@ import { useSelector } from "react-redux";
 
 import { ArticleView, ArticlesList } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Text } from "@/shared/ui/deprecated/Text";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { PageError } from "@/widgets/PageError";
 
 import { getArticlesPageError } from "../../model/selectors/articles";
 import { getArticles } from "../../model/slice/articlesPageSlice";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import cls from './ArticleInfiniteList.module.scss';
 

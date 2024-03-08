@@ -3,9 +3,9 @@ import { BrowserRouter } from "react-router-dom";
 
 import { StoreProvider } from "@/app/providers/StoreProvider";
 import { ThemeProvider } from "@/app/providers/Theme";
-
-import { App } from "./app/App";
 import { ForceUpdateProvider } from "@/shared/lib/render/forceUpdate";
+
+import  App from "./app/App";
 
 const container = document.getElementById("root");
 

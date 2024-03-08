@@ -6,11 +6,13 @@ import { useSelector } from "react-redux";
 import { CommentList } from "@/entities/Comment";
 import { AddCommentForm } from "@/features/CommentForm";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Loader } from "@/shared/ui/deprecated/Loader";
-import { Text } from "@/shared/ui/deprecated/Text";
+import { Text as TextDeprecated } from "@/shared/ui/deprecated/Text";
 import { VStack } from "@/shared/ui/redesigned/Stack";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import { getArticleDetailsCommentsIsLoading } from "../../model/selectors/comments/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
@@ -41,6 +43,13 @@ export const ArticleDetailsComments = memo(
 
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+
+    const Text = toggleFeatures({
+      name: "isAppRedesigned",
+      on: () => TextRedesigned,
+      off: () => TextDeprecated,
+    });
+
     return (
       <VStack
         gap="16"

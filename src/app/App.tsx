@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 
 import { useSelector } from "react-redux";
 
@@ -15,8 +15,9 @@ import "@/shared/config/i18n/i18n";
 import "./styles/index.scss";
 import { AppDeprecated } from "./AppDeprecated/AppDeprecated";
 import { AppRedesigned } from "./AppRedesigned/AppRedesigned";
+import { WithTheme } from "./providers/Theme/ui/WithTheme";
 
-export const App = () => {
+const App = memo(() => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
   const { theme } = useTheme();
@@ -55,4 +56,6 @@ export const App = () => {
       off={<AppDeprecated />}
     />
   );
-};
+});
+
+export default WithTheme(App);

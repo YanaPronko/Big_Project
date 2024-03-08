@@ -1,5 +1,6 @@
-import { rtkApi } from "../../../api/rtk";
 import { FeatureFlags } from "@/shared/types/featureFlags";
+
+import { rtkApi } from "../../../api/rtk";
 
 interface UpdateFeatureFlagsOptions {
   userId: string;

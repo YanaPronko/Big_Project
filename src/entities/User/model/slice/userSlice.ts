@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { LOCAL_STORAGE_LAST_DESIGN_KEY, USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 import { setFeatureFlags } from "@/shared/lib/featureFlags";
 
 import { initUserAuthData } from "../services/initAuthData";

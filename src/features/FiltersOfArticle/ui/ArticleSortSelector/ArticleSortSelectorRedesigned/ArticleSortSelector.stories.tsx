@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { ArticleSortSelectorRedesigned } from "./ArticleSortSelector";
 
 const meta: Meta<typeof ArticleSortSelectorRedesigned> = {
-  title: "features/ArticleSortSelector",
+  title: "features/ArticleSortSelectorRedesigned",
   component: ArticleSortSelectorRedesigned,
 };
 
@@ -17,8 +17,10 @@ export const Primary: Story = {
   args: {},
 };
 
+Primary.decorators = [RedesignedThemeDecorator()];
+
 export const PrimaryDark: Story = {
   args: {},
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];

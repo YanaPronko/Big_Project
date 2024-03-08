@@ -3,6 +3,7 @@ import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { IconProps } from "@/shared/types/ui";
+
 import cls from './EyeIcon.module.scss';
 
 /**

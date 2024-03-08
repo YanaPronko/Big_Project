@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { ArticlesList, ArticleListItemSkeleton } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { ToggleFeatures, toggleFeatures } from "@/shared/lib/featureFlags";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";

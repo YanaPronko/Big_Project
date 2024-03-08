@@ -5,8 +5,11 @@ import { useSelector } from "react-redux";
 
 import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/featureFlags";
+import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton";
 import { Text } from "@/shared/ui/deprecated/Text";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import {
   useGetProfileRating,
@@ -56,17 +59,37 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     [handleRateArticle],
   );
 
+  const Skeleton = toggleFeatures({
+    name: "isAppRedesigned",
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+  });
+
+
   if (isLoading) {
     return <Skeleton width="100%" height={120} />;
   }
 
   if (error) {
     return (
-      <Text
-        theme="error"
-        text={t("oops-failed-rate-of-profile")}
-        align="center"
-        size="l"
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <TextRedesigned
+            variant="error"
+            text={t("oops-failed-rate-of-profile")}
+            align="center"
+            size="l"
+          />
+        }
+        off={
+          <Text
+            theme="error"
+            text={t("oops-failed-rate-of-profile")}
+            align="center"
+            size="l"
+          />
+        }
       />
     );
   }

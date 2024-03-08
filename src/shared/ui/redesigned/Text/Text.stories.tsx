@@ -1,13 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { TextRedesigned } from "./Text";
 
 const meta: Meta<typeof TextRedesigned> = {
-  title: "shared/Text",
+  title: "shared/TextRedesigned",
   component: TextRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -27,7 +28,7 @@ export const PrimaryDark: Story = {
   },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const ErrorText: Story = {
   args: {
@@ -45,7 +46,7 @@ export const ErrorTextDark: Story = {
   },
 };
 
-ErrorText.decorators = [ThemeDecorator(Theme.DARK)];
+ErrorText.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const TextXL: Story = {
   args: {

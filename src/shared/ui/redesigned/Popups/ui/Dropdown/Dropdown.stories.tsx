@@ -1,14 +1,15 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
+
 import { DropdownRedesigned } from "./Dropdown";
-import ThemeDecorator from "../../../../../config/storybook/ThemeDecorator/ThemeDecorator";
 import { getRouteProfile } from "../../../../../const/AppRoutes";
 import { Theme } from "../../../../../const/theme";
 import { ButtonRedesigned } from "../../../Button/Button";
 
 const meta: Meta<typeof DropdownRedesigned> = {
-  title: "shared/Popups/Dropdown",
+  title: "shared/Popups/DropdownRedesigned",
   component: DropdownRedesigned,
   decorators: [
     (Story) => (
@@ -16,6 +17,7 @@ const meta: Meta<typeof DropdownRedesigned> = {
         <Story />
       </div>
     ),
+    RedesignedThemeDecorator(),
   ],
   args: {
     items: [
@@ -45,7 +47,7 @@ export const PrimaryDark: Story = {
   args: {},
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const BottomLeft: Story = {
   args: {

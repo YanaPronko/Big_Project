@@ -1,13 +1,13 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { ListBoxRedesigned } from "./ListBox";
 
 const meta: Meta<typeof ListBoxRedesigned> = {
-  title: "shared/Popups/ListBox",
+  title: "shared/Popups/ListBoxRedesigned",
   component: ListBoxRedesigned,
   args: {
     items: [
@@ -18,6 +18,7 @@ const meta: Meta<typeof ListBoxRedesigned> = {
     label: "Choose currency>",
     onChange: action("onChange"),
   },
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -35,7 +36,7 @@ export const PrimaryDark: Story = {
   },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const Selected: Story = {
   args: {

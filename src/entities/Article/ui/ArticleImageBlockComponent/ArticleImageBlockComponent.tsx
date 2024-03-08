@@ -1,5 +1,6 @@
 import { memo } from "react";
 
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
@@ -25,7 +26,13 @@ export const ArticleImageBlockComponent = memo(
         {block.title && (
           <ToggleFeatures
             feature="isAppRedesigned"
-            on={<TextRedesigned text={block.title} align="center" />}
+            on={
+              <TextRedesigned
+                className={classNames("", {}, [className])}
+                text={block.title}
+                align="center"
+              />
+            }
             off={<Text text={block.title} align="center" />}
           />
         )}

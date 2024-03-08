@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-
+import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 import { InputRedesigned } from "@/shared/ui/redesigned/Input";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
@@ -13,11 +13,10 @@ import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { getLoginError } from "../../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { loginByUsername } from "../../../model/services/loginByUsername";
-
 import { LoginFormProps } from "../../../model/types/loginSchema";
 
 import cls from "./LoginForm.module.scss";
-import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
+
 
 const LoginFormRedesigned = memo(
   ({ className, ...otherProps }: LoginFormProps) => {

@@ -9,8 +9,9 @@ import {
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 
+import { HStack } from '../Stack';
+
 import cls from "./Input.module.scss";
-import { HStack } from "@/shared/ui/redesigned/Stack";
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

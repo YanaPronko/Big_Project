@@ -1,13 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { SkeletonRedesigned } from "./Skeleton";
 
 const meta: Meta<typeof SkeletonRedesigned> = {
-  title: "shared/Skeleton",
+  title: "shared/SkeletonRedesigned",
   component: SkeletonRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -27,7 +28,7 @@ export const PrimaryDark: Story = {
   },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const Circle: Story = {
   args: {
@@ -45,4 +46,4 @@ export const CircleDark: Story = {
   },
 };
 
-CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
+CircleDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];

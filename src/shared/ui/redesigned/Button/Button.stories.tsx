@@ -1,13 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { ButtonRedesigned } from "./Button";
 
 const meta: Meta<typeof ButtonRedesigned> = {
-  title: "shared/Button",
+  title: "shared/ButtonRedesigned",
   component: ButtonRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -38,14 +39,14 @@ export const OutlineDark: Story = {
     children: "Text",
     variant: "outline",
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [RedesignedThemeDecorator(Theme.DARK)],
 };
 
 export const OutlineSizeM: Story = {
   args: {
     children: "Text",
     variant: "outline",
-    size: 'm'
+    size: "m",
   },
 };
 
@@ -53,7 +54,7 @@ export const OutlineSizeL: Story = {
   args: {
     children: "Text",
     variant: "outline",
-    size: 'l',
+    size: "l",
   },
 };
 
@@ -61,7 +62,7 @@ export const OutlineSizeXL: Story = {
   args: {
     children: "Text",
     variant: "outline",
-    size: 'xl',
+    size: "xl",
   },
 };
 
@@ -81,7 +82,7 @@ export const DisabledDark: Story = {
   },
 };
 
-DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];
+DisabledDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const Square: Story = {
   args: {
@@ -96,7 +97,7 @@ export const SquarL: Story = {
     children: "<",
     variant: "outline",
     square: true,
-    size: 'l',
+    size: "l",
   },
 };
 
@@ -105,7 +106,7 @@ export const SquarXL: Story = {
     children: "<",
     variant: "outline",
     square: true,
-    size: 'xl',
+    size: "xl",
   },
 };
 

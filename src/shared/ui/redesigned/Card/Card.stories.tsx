@@ -1,14 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { CardRedesigned } from "./Card";
 import { TextRedesigned } from "../Text/Text";
 
 const meta: Meta<typeof CardRedesigned> = {
-  title: "shared/Card",
+  title: "shared/CardRedesigned",
   component: CardRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -28,7 +29,7 @@ export const PrimaryDark: Story = {
   },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const Outlined: Story = {
   args: {
@@ -44,4 +45,4 @@ export const OutlinedDark: Story = {
   },
 };
 
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlinedDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];

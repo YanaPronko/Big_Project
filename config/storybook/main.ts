@@ -1,14 +1,14 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
-  previewHead: (head) => `
-    ${head}
-    <style>
-      html {
-        font-size: 10px;
-      }
-    </style>
-  `,
+  // previewHead: (head) => `
+  //   ${head}
+  //   <style>
+  //     html {
+  //       font-size: 10px;
+  //     }
+  //   </style>
+  // `,
   stories: ["../../src/**/*.stories.@(js|jsx|ts|tsx)"],
   staticDirs: ["../../public"],
   addons: [

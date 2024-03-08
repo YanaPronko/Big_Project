@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 import ArticleEditPage from "./ArticleEditPage";
@@ -23,6 +24,18 @@ export const CreatePage: Story = {
   },
 };
 
+export const CreatePageRedesigned: Story = {
+  args: {},
+  parameters: {
+    router: {
+      path: "/articles/new",
+      route: "/articles/new",
+    },
+  },
+};
+
+CreatePageRedesigned.decorators = [RedesignedThemeDecorator()];
+
 export const EditPage: Story = {
   args: {},
   parameters: {
@@ -32,3 +45,15 @@ export const EditPage: Story = {
     },
   },
 };
+
+export const EditPageRedesigned: Story = {
+  args: {},
+  parameters: {
+    router: {
+      path: "/articles/:id/edit",
+      route: "/articles/1/edit",
+    },
+  },
+};
+
+EditPageRedesigned.decorators = [RedesignedThemeDecorator()];

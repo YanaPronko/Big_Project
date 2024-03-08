@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 import LoginFormRedesigned from "./LoginForm";
@@ -7,6 +8,7 @@ import LoginFormRedesigned from "./LoginForm";
 const meta: Meta<typeof LoginFormRedesigned> = {
   title: "features/LoginFormRedesigned",
   component: LoginFormRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;

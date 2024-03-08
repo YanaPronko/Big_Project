@@ -9,6 +9,7 @@ import {
   fetchProfileData,
 } from "@/features/EditableProfileCard";
 import { ProfileRating } from "@/features/ProfileRating";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
   ReducersList,
@@ -16,6 +17,7 @@ import {
 } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text } from "@/shared/ui/deprecated/Text";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 
 const reducers: ReducersList = {
@@ -35,7 +37,26 @@ const ProfilePage = memo(() => {
   }, [dispatch, id]);
 
   if (!id) {
-    return <Text theme="error" text={t("such-profile-hasnt-been-found")} />;
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <TextRedesigned
+            variant="error"
+            text={t("such-profile-hasnt-been-found")}
+            size="l"
+            bold
+          />
+        }
+        off={
+          <Text
+            theme="error"
+            text={t("such-profile-hasnt-been-found")}
+            size="l"
+          />
+        }
+      />
+    );
   }
 
   return (

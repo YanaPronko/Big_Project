@@ -125,15 +125,13 @@ const replaceToggleComponent = (node: Node) => {
 };
 
 files.forEach((file) => {
+  // eslint-disable-next-line consistent-return
   file.forEachDescendant((node) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
       return replaceToggleFunction(node);
     }
 
-    if (
-      node.isKind(SyntaxKind.JsxSelfClosingElement) &&
-      isToggleComponent(node)
-    ) {
+    if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleComponent(node)) {
       return replaceToggleComponent(node);
     }
   });

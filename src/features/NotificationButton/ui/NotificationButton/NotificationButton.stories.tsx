@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { mockNotifications } from "@/entities/Notification/testing";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
@@ -30,6 +31,22 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryRedesigned: Story = {
+  args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/notifications`,
+        method: "GET",
+        status: 200,
+        response: [...mockNotifications],
+      },
+    ],
+  },
+};
+
+PrimaryRedesigned.decorators = [RedesignedThemeDecorator()];
+
 export const PrimaryDark: Story = {
   args: {},
   parameters: {
@@ -45,3 +62,21 @@ export const PrimaryDark: Story = {
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryDarkRedesigned: Story = {
+  args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/notifications`,
+        method: "GET",
+        status: 200,
+        response: [...mockNotifications],
+      },
+    ],
+  },
+};
+
+PrimaryDarkRedesigned.decorators = [
+  RedesignedThemeDecorator(Theme.DARK),
+];

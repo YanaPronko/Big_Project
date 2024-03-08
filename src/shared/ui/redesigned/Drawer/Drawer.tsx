@@ -1,5 +1,6 @@
 import { ReactNode, useCallback, useEffect } from "react";
 
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 import { classNames } from "../../../lib/classNames/classNames";
@@ -12,7 +13,6 @@ import { Overlay } from "../Overlay";
 import { Portal } from "../Portal";
 
 import cls from "./Drawer.module.scss";
-import { toggleFeatures } from "@/shared/lib/featureFlags";
 
 interface DrawerProps {
   /**

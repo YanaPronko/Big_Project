@@ -1,9 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Article } from "@/entities/Article";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
+import { MainLayout } from "@/shared/layouts";
+import { SideBarRedesigned } from "@/widgets/SideBar";
 
 import ArticleDetailsPageRedesigned from "./ArticleDetailsPageRedesigned";
 
@@ -16,6 +18,9 @@ const meta: Meta<typeof ArticleDetailsPageRedesigned> = {
       route: "/articles/1",
     },
   },
+  decorators: [
+    (Story) => <MainLayout content={<Story />} sidebar={<SideBarRedesigned/>} />,
+  ],
 };
 
 const data: Article = {
@@ -117,6 +122,7 @@ Primary.decorators = [
       ids: ["1", "2"],
     },
   }),
+  RedesignedThemeDecorator(),
 ];
 
 export const PrimaryDark: Story = {
@@ -144,5 +150,5 @@ PrimaryDark.decorators = [
       ids: ["1", "2"],
     },
   }),
-  ThemeDecorator(Theme.DARK),
+  RedesignedThemeDecorator(Theme.DARK),
 ];

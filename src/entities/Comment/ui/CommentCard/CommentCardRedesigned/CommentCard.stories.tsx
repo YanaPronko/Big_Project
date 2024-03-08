@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { CommentCardRedesigned } from "./CommentCard";
-import IMG from "../../../../shared/assets/test/avatar.png";
+import IMG from "../../../../../shared/assets/icons/user-32-32.png";
 
 const meta: Meta<typeof CommentCardRedesigned> = {
   title: "entities/Comment/CommentCardRedesigned",
@@ -29,6 +29,8 @@ export const Primary: Story = {
   },
 };
 
+Primary.decorators = [RedesignedThemeDecorator()];
+
 export const PrimaryDark: Story = {
   args: {
     comment: {
@@ -44,17 +46,20 @@ export const PrimaryDark: Story = {
   },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const LoadingCard: Story = {
   args: {
     isLoading: true,
   },
 };
+
+LoadingCard.decorators = [RedesignedThemeDecorator()];
+
 export const LoadingCardDark: Story = {
   args: {
     isLoading: true,
   },
 };
 
-LoadingCardDark.decorators = [ThemeDecorator(Theme.DARK)];
+LoadingCardDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];

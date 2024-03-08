@@ -1,13 +1,15 @@
+import { memo, useState } from "react";
+
 import { useTranslation } from "react-i18next";
-import { memo, useEffect, useLayoutEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { ListBoxRedesigned } from "@/shared/ui/redesigned/Popups";
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+
 import { getUserAuthData } from "@/entities/User";
-import { HStack } from "@/shared/ui/redesigned/Stack";
-import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { getFeatureFlags, updateFeatureFlags } from "@/shared/lib/featureFlags";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { ListBoxRedesigned } from "@/shared/ui/redesigned/Popups";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { HStack } from "@/shared/ui/redesigned/Stack";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 interface UIDesignSwitcherProps {
   className?: string;

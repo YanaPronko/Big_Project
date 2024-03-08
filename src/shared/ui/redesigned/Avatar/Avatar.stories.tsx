@@ -1,11 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
+
 import { AvatarRedesigned } from "./Avatar";
-import Img from "../../assets/test/avatar.png";
+import Img from "../../../assets/icons/user-32-32.png";
 
 const meta: Meta<typeof AvatarRedesigned> = {
-  title: "shared/Avatar",
+  title: "shared/AvatarRedesigned",
   component: AvatarRedesigned,
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;

@@ -3,11 +3,11 @@ import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { ListBox } from "@/shared/ui/deprecated/Popups";
+import { ListBoxRedesigned } from "@/shared/ui/redesigned/Popups";
 
 import { Country } from "../../model/types/country";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { ListBoxRedesigned } from "@/shared/ui/redesigned/Popups";
 
 interface CountrySelectProps {
   className?: string;

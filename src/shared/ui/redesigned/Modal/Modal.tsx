@@ -3,6 +3,7 @@ import { FC, ReactNode, useCallback } from "react";
 import { Transition } from "react-transition-group";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { toggleFeatures } from "@/shared/lib/featureFlags";
 import { useKeyDown } from "@/shared/lib/hooks/useKeyDown/useKeyDown";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
@@ -10,7 +11,6 @@ import { Overlay } from "../Overlay";
 import { Portal } from "../Portal";
 
 import cls from "./Modal.module.scss";
-import { toggleFeatures } from "@/shared/lib/featureFlags";
 
 interface ModalProps {
   /**

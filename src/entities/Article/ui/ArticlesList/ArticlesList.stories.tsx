@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
@@ -21,6 +22,15 @@ export const Grid: Story = {
   },
 };
 
+export const GridRedesigned: Story = {
+  args: {
+    articles: articlesMock,
+    view: "grid",
+  },
+};
+
+GridRedesigned.decorators = [RedesignedThemeDecorator()];
+
 export const GridDark: Story = {
   args: {
     articles: articlesMock,
@@ -30,12 +40,32 @@ export const GridDark: Story = {
 
 GridDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const GridDarkredesigned: Story = {
+  args: {
+    articles: articlesMock,
+    view: "grid",
+  },
+};
+
+GridDarkredesigned.decorators = [
+  RedesignedThemeDecorator(Theme.DARK),
+];
+
 export const List: Story = {
   args: {
     articles: articlesMock,
     view: "list",
   },
 };
+
+export const ListRedesigned: Story = {
+  args: {
+    articles: articlesMock,
+    view: "list",
+  },
+};
+
+ListRedesigned.decorators = [RedesignedThemeDecorator()];
 
 export const ListDark: Story = {
   args: {
@@ -46,6 +76,17 @@ export const ListDark: Story = {
 
 ListDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const ListDarkRedesigned: Story = {
+  args: {
+    articles: articlesMock,
+    view: "list",
+  },
+};
+
+ListDarkRedesigned.decorators = [
+  RedesignedThemeDecorator(Theme.DARK),
+];
+
 export const ListIsLoading: Story = {
   args: {
     view: "list",
@@ -53,6 +94,16 @@ export const ListIsLoading: Story = {
     articles: [],
   },
 };
+
+export const ListIsLoadingRedesigned: Story = {
+  args: {
+    view: "list",
+    isLoading: true,
+    articles: [],
+  },
+};
+
+ListIsLoadingRedesigned.decorators = [RedesignedThemeDecorator()];
 
 export const ListIsLoadingDark: Story = {
   args: {
@@ -64,6 +115,18 @@ export const ListIsLoadingDark: Story = {
 
 ListIsLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const ListIsLoadingDarkRedesigned: Story = {
+  args: {
+    view: "list",
+    isLoading: true,
+    articles: [],
+  },
+};
+
+ListIsLoadingDarkRedesigned.decorators = [
+  RedesignedThemeDecorator(Theme.DARK),
+];
+
 export const GridIsLoading: Story = {
   args: {
     view: "grid",
@@ -71,6 +134,16 @@ export const GridIsLoading: Story = {
     articles: [],
   },
 };
+
+export const GridIsLoadingRedesigned: Story = {
+  args: {
+    view: "grid",
+    isLoading: true,
+    articles: [],
+  },
+};
+
+GridIsLoadingRedesigned.decorators = [RedesignedThemeDecorator()];
 
 export const GridIsLoadingDark: Story = {
   args: {
@@ -81,3 +154,15 @@ export const GridIsLoadingDark: Story = {
 };
 
 GridIsLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const GridIsLoadingDarkRedesigned: Story = {
+  args: {
+    view: "grid",
+    isLoading: true,
+    articles: [],
+  },
+};
+
+GridIsLoadingDarkRedesigned.decorators = [
+  RedesignedThemeDecorator(Theme.DARK),
+];

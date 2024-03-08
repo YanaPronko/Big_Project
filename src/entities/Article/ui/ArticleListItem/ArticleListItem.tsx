@@ -1,16 +1,16 @@
 import { memo } from "react";
-import { ArticleListItemProps } from "../../model/types/articleListItem";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { ArticleListItemRedesigned } from "./ArticleListItemRedesigned/ArticleListItemRedesigned";
-import { ArticleListItemDeprecated } from "./ArticleListItemDeprecated/ArticleListItemDeprecated";
 
-export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  return (
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
+
+import { ArticleListItemDeprecated } from "./ArticleListItemDeprecated/ArticleListItemDeprecated";
+import { ArticleListItemRedesigned } from "./ArticleListItemRedesigned/ArticleListItemRedesigned";
+import { ArticleListItemProps } from "../../model/types/articleListItem";
+
+export const ArticleListItem = memo((props: ArticleListItemProps) => (
     <ToggleFeatures
       feature="isAppRedesigned"
       on={<ArticleListItemRedesigned {...props} />}
       off={<ArticleListItemDeprecated {...props} />}
     />
-  );
-});
+  ));
 

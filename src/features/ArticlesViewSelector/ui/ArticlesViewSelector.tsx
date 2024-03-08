@@ -13,9 +13,9 @@ import {
   GridIconRedesigned,
   ListIconRedesigned,
 } from "@/shared/ui/redesigned/Icons";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 import cls from "./ArticlesViewSelector.module.scss";
-import { HStack } from "@/shared/ui/redesigned/Stack";
 
 interface ArticlesViewSelectorProps {
   className?: string;

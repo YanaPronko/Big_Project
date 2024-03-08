@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
@@ -20,6 +21,15 @@ export const Normal: Story = {
   },
 };
 
+export const NormalRedesigned: Story = {
+  args: {},
+  parameters: {
+    loki: { skip: true },
+  },
+};
+
+NormalRedesigned.decorators = [RedesignedThemeDecorator()];
+
 export const Dark: Story = {
   args: {},
   parameters: {
@@ -28,3 +38,14 @@ export const Dark: Story = {
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkRedesigned: Story = {
+  args: {},
+  parameters: {
+    loki: { skip: true },
+  },
+};
+
+DarkRedesigned.decorators = [
+  RedesignedThemeDecorator(Theme.DARK),
+];

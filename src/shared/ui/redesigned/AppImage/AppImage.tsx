@@ -1,6 +1,5 @@
 import {
   ImgHTMLAttributes,
-  memo,
   ReactElement,
   useLayoutEffect,
   useState,

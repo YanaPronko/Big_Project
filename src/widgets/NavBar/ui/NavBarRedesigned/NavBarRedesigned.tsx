@@ -7,9 +7,7 @@ import { getUserAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/AuthByUserName";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { NotificationButton } from "@/features/NotificationButton";
-import { getRouteMain } from "@/shared/const/AppRoutes";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLinkRedesigned } from "@/shared/ui/redesigned/AppLink";
 import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 import { HStack } from "@/shared/ui/redesigned/Stack";
 

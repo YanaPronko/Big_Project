@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 import { BtnSize, Button } from "@/shared/ui/deprecated/Button";
 import { Input } from "@/shared/ui/deprecated/Input";
 import { Text } from "@/shared/ui/deprecated/Text";
@@ -12,11 +13,9 @@ import { Text } from "@/shared/ui/deprecated/Text";
 import { getLoginError } from "../../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { loginByUsername } from "../../../model/services/loginByUsername";
-
 import { LoginFormProps } from "../../../model/types/loginSchema";
 
 import cls from "./LoginForm.module.scss";
-import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 
 
 const LoginFormDeprecated = memo(

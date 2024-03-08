@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { ProfileCardDeprecated } from "./ProfileCardDeprecated";
-import IMG from "../../../../shared/assets/test/avatar.png";
+import IMG from "../../../../../shared/assets/icons/user-32-32.png";
 
 const meta: Meta<typeof ProfileCardDeprecated> = {
-  title: "entities/ProfileCard",
+  title: "entities/ProfileCardDeprecated",
   component: ProfileCardDeprecated,
 };
 

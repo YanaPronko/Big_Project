@@ -5,10 +5,6 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {
-  ReducersList,
-  useDynamicLoad,
-} from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { Button } from "@/shared/ui/deprecated/Button";
 import { Input } from "@/shared/ui/deprecated/Input";
 import { Text } from "@/shared/ui/deprecated/Text";

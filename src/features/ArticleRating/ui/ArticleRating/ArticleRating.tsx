@@ -5,16 +5,16 @@ import { useSelector } from "react-redux";
 
 import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/featureFlags";
 import { Skeleton as SkeletonDeprecated} from "@/shared/ui/deprecated/Skeleton";
 import { Text } from "@/shared/ui/deprecated/Text";
+import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 import {
   useArticleRate,
   useGetArticleRating,
 } from "../../api/articleRatingApi";
-import { ToggleFeatures, toggleFeatures } from "@/shared/lib/featureFlags";
-import { SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
-import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 
 export interface ArticleRatingProps {
   className?: string;

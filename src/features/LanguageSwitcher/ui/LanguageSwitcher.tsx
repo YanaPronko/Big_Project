@@ -3,11 +3,11 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { Button } from "@/shared/ui/deprecated/Button";
+import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 
 import cls from "./LanguageSwitcher.module.scss";
-import { ToggleFeatures } from "@/shared/lib/featureFlags";
-import { ButtonRedesigned } from "@/shared/ui/redesigned/Button";
 
 interface LanguageSwitcherProps {
   className?: string;

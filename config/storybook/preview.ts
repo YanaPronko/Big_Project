@@ -2,6 +2,7 @@ import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
 import { ReactRenderer } from "@storybook/react";
 
+import { FeatureFlagsDecorator } from "../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator";
 import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { StoreDecorator } from "../../src/shared/config/storybook/StoreDecorator/StoreDecorator";
 import StyleDecorator from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
@@ -54,6 +55,7 @@ const preview: Preview = {
     StoreDecorator({
       user: {},
     }),
+    FeatureFlagsDecorator({}),
   ],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -63,7 +65,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    // layout: 'fullscreen',
+    layout: 'fullscreen',
   },
 };
 

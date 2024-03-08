@@ -8,7 +8,7 @@ import { Theme } from "@/shared/const/theme";
 import ArticleDetailsPageDeprecated from "./ArticleDetailsPageDeprecated";
 
 const meta: Meta<typeof ArticleDetailsPageDeprecated> = {
-  title: "pages/ ArticleDetailsPage/ArticleDetailsPage",
+  title: "pages/ ArticleDetailsPage/ArticleDetailsPageDeprecated",
   component: ArticleDetailsPageDeprecated,
   parameters: {
     router: {

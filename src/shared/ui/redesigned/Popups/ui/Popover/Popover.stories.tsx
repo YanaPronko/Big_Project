@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { PopoverRedesigned } from "./Popover";
@@ -8,7 +8,7 @@ import { ButtonRedesigned } from "../../../Button/Button";
 import { TextRedesigned } from "../../../Text/Text";
 
 const meta: Meta<typeof PopoverRedesigned> = {
-  title: "shared/Popups/Popover",
+  title: "shared/Popups/PopoverRedesigned",
   component: PopoverRedesigned,
   args: {
     children: (
@@ -25,6 +25,7 @@ const meta: Meta<typeof PopoverRedesigned> = {
         <Story />
       </div>
     ),
+    RedesignedThemeDecorator(),
   ],
 };
 
@@ -45,4 +46,4 @@ export const RightDark: Story = {
   },
 };
 
-RightDark.decorators = [ThemeDecorator(Theme.DARK)];
+RightDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];

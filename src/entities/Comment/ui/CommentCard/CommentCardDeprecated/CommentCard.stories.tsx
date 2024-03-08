@@ -4,7 +4,7 @@ import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecora
 import { Theme } from "@/shared/const/theme";
 
 import { CommentCardDeprecated } from "./CommentCard";
-import IMG from "../../../../shared/assets/test/avatar.png";
+import IMG from '../../../../../shared/assets/icons/user-32-32.png';
 
 const meta: Meta<typeof CommentCardDeprecated> = {
   title: "entities/Comment/CommentCardDeprecated",

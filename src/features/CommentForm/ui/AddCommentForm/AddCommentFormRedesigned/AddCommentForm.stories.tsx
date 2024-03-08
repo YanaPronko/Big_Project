@@ -1,8 +1,8 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj } from "@storybook/react";
 
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import StoreDecorator from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import AddCommentFormRedesigned from "./AddCommentForm";
@@ -21,7 +21,7 @@ export const Primary: Story = {
   },
 };
 
-Primary.decorators = [StoreDecorator({})];
+Primary.decorators = [StoreDecorator({}), RedesignedThemeDecorator()];
 
 export const PrimaryDark: Story = {
   args: {
@@ -29,4 +29,7 @@ export const PrimaryDark: Story = {
   },
 };
 
-PrimaryDark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [
+  StoreDecorator({}),
+  RedesignedThemeDecorator(Theme.DARK),
+];

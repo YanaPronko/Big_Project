@@ -1,5 +1,6 @@
-import { Article, ArticleView } from "./article";
 import { HTMLAttributeAnchorTarget } from "react";
+
+import { Article, ArticleView } from "./article";
 
 export interface ArticleListItemProps {
   className?: string;

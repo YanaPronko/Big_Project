@@ -1,14 +1,17 @@
-import { fetchArticlesList } from '../../../model/services/fetchArticlesList/fetchArticlesList';
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useCallback } from "react";
+
 import { useSelector } from "react-redux";
+
+import { ArticleType, ArticleView } from '@/entities/Article';
 import { articlesFiltersActions, ArticlesSortField, getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType } from '@/features/FiltersOfArticle';
+import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from '@/shared/types/order';
-import { ArticleType, ArticleView } from '@/entities/Article';
-import { articlesPageActions } from '@/pages/ArticleListPages/model/slice/articlesPageSlice';
-import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
-import { getArticlesPageView } from '@/pages/ArticleListPages/model/selectors/articles';
+
+import { getArticlesPageView } from '../../../model/selectors/articles';
+import { fetchArticlesList } from '../../../model/services/fetchArticlesList/fetchArticlesList';
+import { articlesPageActions } from '../../../model/slice/articlesPageSlice';
 
 export function useArticleFilters() {
   const order = useSelector(getArticlesOrder);

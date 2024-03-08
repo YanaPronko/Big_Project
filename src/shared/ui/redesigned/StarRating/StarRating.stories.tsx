@@ -1,18 +1,19 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { StarRatingRedesigned } from "./StarRating";
 
 const meta: Meta<typeof StarRatingRedesigned> = {
-  title: "shared/StarRating",
+  title: "shared/StarRatingRedesigned",
   component: StarRatingRedesigned,
   args: {
     size: 50,
     onSelect: action("OnSelect"),
   },
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -26,7 +27,7 @@ export const PrimaryDark: Story = {
   args: {},
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const Selected: Story = {
   args: {

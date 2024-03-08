@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import { Meta, StoryObj } from "@storybook/react";
 
-import ThemeDecorator from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RedesignedThemeDecorator } from "@/shared/config/storybook/RedesignedThemeDecorator/RedesignedThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { RatingCardRedesigned } from "./RatingCard";
@@ -14,6 +14,7 @@ const meta: Meta<typeof RatingCardRedesigned> = {
     onAccept: action("onAccept"),
     onCancel: action("onCancel"),
   },
+  decorators: [RedesignedThemeDecorator()],
 };
 
 export default meta;
@@ -27,7 +28,7 @@ export const PrimaryDark: Story = {
   args: {},
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [RedesignedThemeDecorator(Theme.DARK)];
 
 export const WithFeedback: Story = {
   args: {
