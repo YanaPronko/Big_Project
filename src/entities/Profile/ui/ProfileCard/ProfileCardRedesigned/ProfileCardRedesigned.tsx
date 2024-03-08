@@ -12,7 +12,7 @@ import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 import { ProfileCardErrorRedesigned } from "./ProfileCardErrorRedesigned";
 import { ProfileCardSkeletonRedesigned } from "./ProfileCardSkeletonRedesigned";
-import { ProfileCardProps } from '../ProfileCard';
+import { ProfileCardProps } from "../ProfileCard";
 
 import cls from "./ProfileCard.module.scss";
 
@@ -89,7 +89,7 @@ export const ProfileCardRedesigned: FC<ProfileCardProps> = (props) => {
             onChange={onChangeAge}
           />
           <InputRedesigned
-            value={data?.city}
+            value={t(`${data?.city}`)}
             label={t("gorod")}
             onChange={onChangeCity}
             readonly={readonly}

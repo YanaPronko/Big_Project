@@ -29,7 +29,8 @@ npm run start:dev or npm run start:dev:vite - start the server + frontend projec
 - `npm run build-storybook` - Build the storybook build
 - `npm run prepare` - precommit hooks
 - `npm run generate:slice` - Script for generating FSD slices
-
+- `npm run remove:feature` - Removes feature using feature flag name, and state on/off (read more about feature flags [here)
+- `npm run postinstall` - Apply patches after npm i
 ----
 
 ## Project architecture
