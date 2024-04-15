@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 import {
   ArticleDetails,
-  // articleDetailsReducer,
   fetchArticleById,
   getArtcileDetailsError,
   getArtcileDetailsIsLoading,
@@ -16,17 +15,12 @@ import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsLis
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ToggleFeatures } from "@/shared/lib/featureFlags";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-// import {
-//   ReducersList,
-//   useDynamicLoad,
-// } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Card } from "@/shared/ui/deprecated/Card";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Page } from "@/widgets/Page";
 
-// import { articleDetailsCommentsReducer } from "../../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleDetailsPageHeader } from "../../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
@@ -34,18 +28,11 @@ interface ArticleDetailsPageProps {
   className?: string;
 }
 
-// const reducers: ReducersList = {
-//   comments: articleDetailsCommentsReducer,
-//   articleDetails: articleDetailsReducer,
-// };
-
 const ArticleDetailsPageDeprecated: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation("article");
   const dispatch = useAppDispatch();
   const { id } = useParams<string>();
-
-  // useDynamicLoad(reducers, true);
 
   useInitialEffect(() => {
     if (id) {

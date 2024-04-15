@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 import {
   ArticleDetails,
-  // articleDetailsReducer,
   getArtcileDetailsError,
   getArtcileDetailsIsLoading,
 } from "@/entities/Article";
@@ -14,17 +13,12 @@ import { ArticleRating } from "@/features/ArticleRating";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
 import { StickyContentLayout } from "@/shared/layouts/StickyLayout";
 import { classNames } from "@/shared/lib/classNames/classNames";
-// import {
-//   ReducersList,
-//   useDynamicLoad,
-// } from "@/shared/lib/hooks/useDynamicLoad/useDynamicLoad";
 import { CardRedesigned } from "@/shared/ui/redesigned/Card";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { TextRedesigned } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 
 import { AdditionalInfoContainer } from "../../AdditionalInfoContainer/AdditionalInfoContainer";
-// import { articleDetailsCommentsReducer } from "../../../model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { ArticleDetailsComments } from "../../ArticleDetailsComments/ArticleDetailsComments";
 import { DetailsContainer } from "../../DetailsContainer/DetailsContainer";
 
@@ -32,17 +26,10 @@ interface ArticleDetailsPageProps {
   className?: string;
 }
 
-// const reducers: ReducersList = {
-//   comments: articleDetailsCommentsReducer,
-//   articleDetails: articleDetailsReducer,
-// };
-
 const ArticleDetailsPageRedesigned: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation("article");
   const { id } = useParams<string>();
-
-  // useDynamicLoad(reducers, true);
 
   // Page
   const isLoadingArticle = useSelector(getArtcileDetailsIsLoading);
