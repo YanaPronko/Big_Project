@@ -4,7 +4,7 @@ import { ScrollToTopButton } from "@/features/ScrollToTopbutton";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 
-import cls from "./ScrollToolbar.module.scss";
+import cls from "./ScrollToolBar.module.scss";
 
 interface ScrollToolbarProps {
   className?: string;
