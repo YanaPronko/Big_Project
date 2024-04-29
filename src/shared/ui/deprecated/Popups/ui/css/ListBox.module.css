@@ -1,0 +1,60 @@
+.listBox {
+  position: relative;
+}
+
+.btn {
+  padding: torem(10) torem(15);
+  color: var(--primary-color);
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  border: 1px solid var(--primary-color);
+  background: none;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn:hover {
+  opacity: 0.8;
+  stroke-opacity: 0.8;
+  fill-opacity: 0.8;
+}
+
+.label {
+  margin-right: torem(1);
+}
+
+.options {
+  position: absolute;
+  min-width: 100%;
+  z-index: 10000;
+  border-radius: torem(8);
+  -webkit-box-shadow: torem(4) torem(4) torem(8) var(--listbox-bg);
+          box-shadow: torem(4) torem(4) torem(8) var(--listbox-bg);
+  background: var(--listbox-bg);
+}
+.options.topR {
+  bottom: 100%;
+  left: 0;
+}
+.options.topL {
+  bottom: 100%;
+  right: 0;
+}
+.options.bottomL {
+  top: 100%;
+  right: 0;
+}
+.options.bottomR {
+  top: 100%;
+  left: 0;
+}
+
+.item {
+  padding: torem(10) torem(20);
+}
+
+.active {
+  background: var(--inverted-primary-color);
+}

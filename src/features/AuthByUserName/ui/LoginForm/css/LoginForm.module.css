@@ -1,0 +1,18 @@
+.loginForm {
+  width: 100%;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: torem(16);
+}
+
+.loginBtn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border-radius: torem(3);
+}

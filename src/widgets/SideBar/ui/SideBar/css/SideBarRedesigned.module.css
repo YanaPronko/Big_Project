@@ -1,0 +1,105 @@
+.sidebar_redesigned {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: torem(10);
+  width: torem(220);
+  height: 100%;
+  padding-bottom: torem(40);
+  border-radius: torem(32);
+  background: var(--light-bg-redesigned);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.appLogo {
+  padding-top: torem(20);
+  margin-bottom: torem(20);
+  width: torem(100);
+  height: torem(100);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.switchers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: torem(16);
+  width: 100%;
+}
+
+.arrow {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.items {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+}
+
+.collappsed {
+  width: torem(50);
+}
+.collappsed .switchers {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.collappsed .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.collappsed .link {
+  opacity: 0;
+}
+.collappsed .appLogo {
+  width: torem(50);
+  height: torem(50);
+}
+.collappsed .arrow {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}

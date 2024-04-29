@@ -1,0 +1,9 @@
+.pageError {
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: calc(100% - var(--sidebar-width));
+  padding-top: torem(10);
+}

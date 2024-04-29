@@ -1,0 +1,23 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: torem(10);
+}
+
+.select {
+  padding: torem(2) torem(10) torem(2) torem(2);
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.option {
+  color: var(--inverted-primary-color);
+  background: var(--inverted-bg-color);
+}
+
+.readonly {
+  opacity: 0.6;
+}

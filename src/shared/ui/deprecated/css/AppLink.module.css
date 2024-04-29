@@ -1,0 +1,31 @@
+.appLink {
+  color: var(--primary-color);
+}
+.appLink:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.inverted {
+  color: var(--inverted-primary-color);
+}
+
+.xl {
+  font: var(--font-xl);
+}
+
+.l {
+  font: var(--font-l);
+}
+
+.m {
+  font: var(--font-m);
+}
+
+.s {
+  font: var(--font-s);
+}

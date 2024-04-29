@@ -1,0 +1,10 @@
+.title {
+  margin-bottom: torem(16);
+}
+
+.paragraph {
+  text-align: justify;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: torem(8);
+}

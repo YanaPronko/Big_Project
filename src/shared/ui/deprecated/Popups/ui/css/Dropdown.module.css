@@ -1,0 +1,31 @@
+.menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: var(--card-bg);
+  z-index: 10000;
+  border-radius: torem(8);
+  border: 1px solid var(--primary-color);
+}
+
+.item {
+  padding: torem(10) torem(25);
+  width: 100%;
+  border: none;
+  background: none;
+  outline-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.active {
+  background: var(--inverted-primary-color);
+}

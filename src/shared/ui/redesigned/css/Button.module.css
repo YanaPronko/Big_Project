@@ -1,0 +1,205 @@
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: torem(8) torem(16);
+  color: var(--text-redesigned);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.button .addonRight svg,
+.button .addonLeft svg {
+  color: var(--hint-redesigned);
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.button:hover {
+  color: var(--accent-redesigned);
+}
+.button:hover .addonLeft svg,
+.button:hover .addonRight svg {
+  color: var(--accent-redesigned);
+}
+
+.withAddon {
+  padding: torem(2) torem(16);
+}
+
+.addonLeft,
+.addonRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.clear {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+.clear.normal {
+  color: var(--text-redesigned);
+}
+.clear.normal:hover {
+  color: var(--text-redesigned);
+}
+.clear.success {
+  color: var(--save-redesigned);
+}
+.clear.success:hover {
+  color: var(--save-redesigned);
+}
+.clear.error {
+  color: var(--cancel-redesigned);
+}
+.clear.error:hover {
+  color: var(--cancel-redesigned);
+}
+
+.transparent {
+  padding: torem(100) torem(12);
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.transparent.normal {
+  color: var(--text-redesigned);
+}
+.transparent.normal:hover {
+  color: var(--text-redesigned);
+}
+.transparent.success {
+  color: var(--save-redesigned);
+}
+.transparent.success:hover {
+  color: var(--save-redesigned);
+}
+.transparent.error {
+  color: var(--cancel-redesigned);
+}
+.transparent.error:hover {
+  color: var(--cancel-redesigned);
+}
+
+.filled {
+  background: var(--light-bg-redesigned);
+  border: none;
+  outline: none;
+  border-radius: torem(34);
+}
+.filled.normal {
+  color: var(--text-redesigned);
+}
+.filled.normal:hover {
+  color: var(--text-redesigned);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.filled.success {
+  color: var(--save-redesigned);
+}
+.filled.success:hover {
+  color: var(--save-redesigned);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.filled.error {
+  color: var(--cancel-redesigned);
+}
+.filled.error:hover {
+  color: var(--cancel-redesigned);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.outline {
+  border: 1px solid var(--icon-redesigned);
+  background: none;
+  border-radius: torem(34);
+}
+.outline.normal {
+  color: var(--text-redesigned);
+  border: 1px solid var(--accent-redesigned);
+}
+.outline.normal:hover {
+  color: var(--text-redesigned);
+  border: 1px solid var(--icon-redesigned);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.outline.success {
+  color: var(--save-redesigned);
+  border: 1px solid var(--save-redesigned);
+}
+.outline.success:hover {
+  color: var(--save-redesigned);
+  border: 1px solid var(--save-redesigned);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.outline.error {
+  color: var(--cancel-redesigned);
+  border: 1px solid var(--cancel-redesigned);
+}
+.outline.error:hover {
+  color: var(--cancel-redesigned);
+  border: 1px solid var(--cancel-redesigned);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.outline:hover {
+  border: 1px solid var(--accent-redesigned);
+}
+
+.square {
+  padding: 0;
+}
+
+.m {
+  font: var(--font-m-redesigned);
+}
+
+.l {
+  font: var(--font-l-redesigned);
+}
+
+.xl {
+  font: var(--font-xl-redesigned);
+}
+
+.square.m {
+  width: var(--size-m);
+  height: var(--size-m);
+}
+
+.square.l {
+  width: var(--size-l);
+  height: var(--size-l);
+}
+
+.square._xl {
+  width: var(--size-xl);
+  height: var(--size-xl);
+}
+
+.fullWidth {
+  width: 100%;
+}

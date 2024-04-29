@@ -1,0 +1,10 @@
+.recommendations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  gap: torem(20);
+  overflow-y: hidden;
+  overflow-x: auto;
+}

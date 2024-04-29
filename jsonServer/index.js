@@ -6,34 +6,38 @@ const path = require("path");
 const http = require("http");
 
 
-function getOptions() {
-  if (
-    fs.existsSync(
-      path.resolve(
-        __dirname,
-        "/etc/letsencrypt/live/yaniarweb.com/privkey.pem",
-      ),
-    )
-  ) {
-    return {
-      key: fs.readFileSync(
-        path.resolve(
-          __dirname,
-          "/etc/letsencrypt/live/yaniarweb.com/privkey.pem",
-        ),
-      ),
-      cert: fs.readFileSync(
-        path.resolve(
-          __dirname,
-          "/etc/letsencrypt/live/yaniarweb.com/fullchain.pem",
-        ),
-      ),
-    };
-  }
-  return {};
-}
+// function getOptions() {
+//   if (
+//     fs.existsSync(
+//       path.resolve(
+//         __dirname,
+//         "/etc/letsencrypt/live/yaniarweb.com/privkey.pem",
+//       ),
+//     )
+//   ) {
+//     return {
+//       key: fs.readFileSync(
+//         path.resolve(
+//           __dirname,
+//           "/etc/letsencrypt/live/yaniarweb.com/privkey.pem",
+//         ),
+//       ),
+//       cert: fs.readFileSync(
+//         path.resolve(
+//           __dirname,
+//           "/etc/letsencrypt/live/yaniarweb.com/fullchain.pem",
+//         ),
+//       ),
+//     };
+//   }
+//   return {};
+// }
 
-const options = getOptions();
+// const options = getOptions();
+const options = {
+  key: fs.readFileSync(path.resolve(__dirname, "server.key")),
+  cert: fs.readFileSync(path.resolve(__dirname, "server.crt")),
+};
 
 
 const server = jsonServer.create();
