@@ -11,7 +11,7 @@ function getOptions() {
     fs.existsSync(
       path.resolve(
         __dirname,
-        "/etc/letsencrypt/live/openblogapp.ru/privkey.pem",
+        "/etc/letsencrypt/live/yaniarweb.com/privkey.pem",
       ),
     )
   ) {
