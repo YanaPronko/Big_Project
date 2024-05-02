@@ -1,0 +1,116 @@
+.list .avatar {
+  margin-left: torem(8);
+}
+.list .img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 732/420;
+}
+.list .textBlock {
+  max-height: torem(72);
+  overflow: hidden;
+}
+
+.grid .cardItem {
+  max-width: torem(240);
+  min-height: 100%;
+  overflow: hidden;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  cursor: pointer;
+}
+.grid .cardItem:hover {
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
+  opacity: 0.8;
+}
+.grid .img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 249/141;
+  border-radius: torem(12) torem(12) 0 0;
+}
+.grid .infoWrapper {
+  padding: torem(8) torem(8) torem(16) torem(8);
+  height: 200px;
+}
+.grid .footer {
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.grid .title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}rm: scale(1.01);
+          transform: scale(1.01);
+}
+
+.grid .cardItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: torem(10);
+  max-width: torem(230);
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  cursor: pointer;
+}
+.grid .cardItem .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+}
+.grid .cardItem:hover {
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
+  opacity: 0.8;
+}
+.grid .cardItem:hover .date {
+  visibility: visible;
+}
+.grid .imageWrapper {
+  position: relative;
+  width: torem(200);
+  height: torem(200);
+}
+.grid .img {
+  width: torem(200);
+  height: torem(200);
+}
+.grid .infoWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.grid .types p {
+  width: torem(115);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.grid .title h3 {
+  width: torem(200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

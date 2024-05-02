@@ -1,0 +1,19 @@
+.profilePageHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: torem(10);
+}
+
+.headerBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: torem(10);
+}

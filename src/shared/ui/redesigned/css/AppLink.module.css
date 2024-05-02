@@ -1,0 +1,35 @@
+.appLink {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  color: var(--text-redesigned);
+}
+.primary:hover {
+  color: var(--accent-redesigned);
+}
+
+.xl {
+  font: var(--font-xl-redesigned);
+}
+
+.l {
+  font: var(--font-l-redesigned);
+}
+
+.m {
+  font: var(--font-m-redesigned);
+}
+
+.s {
+  font: var(--font-s-redesigned);
+}
+
+.red {
+  color: var(--cancel-redesigned);
+}
+.red:hover {
+  opacity: 0.8;
+}

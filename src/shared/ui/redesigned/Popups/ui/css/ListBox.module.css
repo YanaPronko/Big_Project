@@ -1,0 +1,45 @@
+.listBox {
+  position: relative;
+}
+
+.label {
+  margin-right: torem(1);
+}
+
+.optionText {
+  text-align: left;
+}
+
+.options {
+  position: absolute;
+  min-width: 100%;
+  z-index: 10000;
+  border-radius: torem(12);
+  -webkit-box-shadow: torem(4) torem(4) torem(8) var(--dark-bg-redesignedg);
+          box-shadow: torem(4) torem(4) torem(8) var(--dark-bg-redesignedg);
+  background: var(--dark-bg-redesigned);
+}
+.options.topR {
+  bottom: 100%;
+  left: 0;
+}
+.options.topL {
+  bottom: 100%;
+  right: 0;
+}
+.options.bottomL {
+  top: 100%;
+  right: 0;
+}
+.options.bottomR {
+  top: 100%;
+  left: 0;
+}
+
+.item {
+  padding: torem(10) torem(20);
+}
+
+.selected {
+  background: var(--light-bg-redesigned);
+}

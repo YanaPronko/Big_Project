@@ -1,0 +1,77 @@
+.textWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: torem(10);
+}
+
+.title {
+  color: var(--text-redesigned);
+}
+
+.text {
+  color: var(--text-redesigned);
+}
+
+.error .title {
+  color: var(--red-light);
+}
+.error .text {
+  color: var(--red-dark);
+}
+
+.accent .title {
+  color: var(--accent-redesigned);
+}
+.accent .text {
+  color: var(--accent-redesigned);
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.xl .title {
+  font-size: torem(35);
+}
+.xl .text {
+  font: var(--font-xl-redesigned);
+}
+
+.l .title {
+  font: var(--font-xl-redesigned);
+}
+.l .text {
+  font: var(--font-l-redesigned);
+}
+
+.m .title {
+  font: var(--font-l-redesigned);
+}
+.m .text {
+  font: var(--font-m-redesigned);
+}
+
+.s .title {
+  font: var(--font-m-redesigned);
+}
+.s .text {
+  font: var(--font-s-redesigned);
+}
+
+.bold .text,
+.bold .title {
+  font-weight: 700;
+}

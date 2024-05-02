@@ -1,0 +1,10 @@
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: torem(20);
+}
+
+.tab {
+  cursor: pointer;
+}

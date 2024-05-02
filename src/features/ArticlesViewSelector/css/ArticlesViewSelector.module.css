@@ -1,0 +1,41 @@
+.articlesViewSelector {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.btn svg {
+  fill: var(--secondary-color);
+  fill-opacity: 0.6;
+}
+
+.selected svg {
+  fill: var(--primary-color);
+  fill-opacity: 1;
+}
+
+.articlesViewSelectorRedesigned .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: torem(10);
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.articlesViewSelectorRedesigned .btn:hover {
+  background-color: var(--light-bg-redesigned);
+}
+.articlesViewSelectorRedesigned .selected svg {
+  color: var(--accent-redesigned);
+}
+.articlesViewSelectorRedesigned .selected.btn {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: var(--light-bg-redesigned);
+}

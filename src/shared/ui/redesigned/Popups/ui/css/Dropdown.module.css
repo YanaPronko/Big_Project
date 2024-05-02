@@ -1,0 +1,25 @@
+.dropdownMenu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: var(--dark-bg-redesigned);
+  z-index: 10000;
+}
+
+.item {
+  padding: torem(10) torem(25);
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline-color: transparent;
+  color: var(--text-redesigned);
+  cursor: pointer;
+}

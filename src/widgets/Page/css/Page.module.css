@@ -1,0 +1,16 @@
+.page {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: torem(20) torem(20) torem(20) torem(40);
+  overflow-y: auto;
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+}
+
+.page_redesigned {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}

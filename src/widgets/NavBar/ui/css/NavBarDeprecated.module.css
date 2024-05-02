@@ -1,0 +1,21 @@
+.navBarDeprecated {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: torem(20);
+  background: var(--inverted-bg-color);
+}
+
+.signinBtn {
+  position: relative;
+  z-index: 15;
+}
+
+.logoBlock {
+  margin-right: auto;
+}

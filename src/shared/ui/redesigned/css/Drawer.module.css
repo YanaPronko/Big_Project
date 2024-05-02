@@ -1,0 +1,56 @@
+.drawer {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  inset: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.content {
+  position: fixed;
+  left: 2vw;
+  width: 96vw;
+  height: calc(100vh + 100px);
+  padding: torem(20);
+  border-top-left-radius: torem(12);
+  border-top-right-radius: torem(12);
+  -ms-touch-action: none;
+      touch-action: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.drawerRedesigned .content {
+  background: var(--light-bg-redesigned);
+}
+
+.drawerDeprecated .content {
+  background: var(--bg-color);
+}
+
+.entering,
+.entered {
+  opacity: 1;
+}
+.entering .content,
+.entered .content {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.exiting,
+.exited {
+  opacity: 0;
+}
+.exiting .content,
+.exited .content {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+}

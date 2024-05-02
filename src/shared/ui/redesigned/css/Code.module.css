@@ -1,0 +1,13 @@
+.code {
+  position: relative;
+  padding: torem(20);
+  border: 1px solid var(--primary-color);
+  background: var(--code-bg);
+  overflow: auto;
+}
+
+.copyBtn {
+  position: absolute;
+  right: torem(20);
+  top: torem(20);
+}
